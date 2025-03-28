@@ -53,40 +53,103 @@
     </header>
 
     <!-- Servicios Section -->
-    <section id="servicios" class="bg-dark py-5">
-        <div class="container">
-            <h2 class="text-center mb-5 text-light">Nuestros Servicios</h2>
-            <div class="row">
-                <div class="col-md-4 text-center">
-                    <div class="card mb-4">
-                        <img src="img/Como reparar y probar de Tarjeta Inverter Samsung, RT53, RT50, RT46, RT43.jpg" class="card-img-top" alt="Reparación de Tarjetas">
-                        <div class="card-body">
-                            <h5 class="card-title">Reparación de Tarjetas</h5>
-                            <p class="card-text">Diagnóstico y reparación de tarjetas electrónicas para aires acondicionados.</p>
-                        </div>
+<section id="servicios" class="bg-dark py-5">
+    <div class="container">
+        <h2 class="text-center mb-5 text-light">Nuestros Servicios</h2>
+        <div class="row">
+            <!-- Servicio 1 -->
+            <div class="col-md-4 text-center">
+                <div class="card mb-4">
+                    <img src="img/Como reparar y probar de Tarjeta Inverter Samsung, RT53, RT50, RT46, RT43.jpg" class="card-img-top" alt="Reparación de Tarjetas" data-bs-toggle="modal" data-bs-target="#modalServicio1">
+                    <div class="card-body">
+                        <h5 class="card-title">Reparación de Tarjetas</h5>
+                        <p class="card-text">Diagnóstico y reparación de tarjetas electrónicas para aires acondicionados.</p>
                     </div>
                 </div>
-                <div class="col-md-4 text-center">
-                    <div class="card mb-4">
-                        <img src="img/Hombre técnico reparación, limpieza y mantenimiento Aire acondicionado _ Foto Premium.jpg" class="card-img-top" alt="Mantenimiento Preventivo">
-                        <div class="card-body">
-                            <h5 class="card-title">Mantenimiento Preventivo</h5>
-                            <p class="card-text">Servicios de mantenimiento para evitar fallas futuras.</p>
-                        </div>
+            </div>
+
+            <!-- Servicio 2 -->
+            <div class="col-md-4 text-center">
+                <div class="card mb-4">
+                    <img src="img/Hombre técnico reparación, limpieza y mantenimiento Aire acondicionado _ Foto Premium.jpg" class="card-img-top" alt="Mantenimiento Preventivo" data-bs-toggle="modal" data-bs-target="#modalServicio2">
+                    <div class="card-body">
+                        <h5 class="card-title">Mantenimiento Preventivo</h5>
+                        <p class="card-text">Servicios de mantenimiento para evitar fallas futuras.</p>
                     </div>
                 </div>
-                <div class="col-md-4 text-center">
-                    <div class="card mb-4">
-                        <img src="img/componentes electrónicos.jpg" class="card-img-top" alt="Venta de Componentes">
-                        <div class="card-body">
-                            <h5 class="card-title">Componentes</h5>
-                            <p class="card-text">Componentes originales y de alta calidad para tus equipos.</p>
-                        </div>
+            </div>
+
+            <!-- Servicio 3 -->
+            <div class="col-md-4 text-center">
+                <div class="card mb-4">
+                    <img src="img/componentes electrónicos.jpg" class="card-img-top" alt="Venta de Componentes" data-bs-toggle="modal" data-bs-target="#modalServicio3">
+                    <div class="card-body">
+                        <h5 class="card-title">Componentes</h5>
+                        <p class="card-text">Componentes originales y de alta calidad para tus equipos.</p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<!-- Modales -->
+<!-- Modal Servicio 1 (reparacion)-->
+<div class="modal fade" id="modalServicio1" tabindex="-1" aria-labelledby="modalServicio1Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <di class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalServicio1Label">Reparación de Tarjetas</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+                <img src="img/taller.jpeg" class="img-fluid mb-3" alt="Reparación de Tarjetas">
+                <p>Ofrecemos servicios especializados en diagnóstico y reparación de tarjetas electrónicas para aires acondicionados con tecnología inverter. Nuestro equipo utiliza herramientas avanzadas para garantizar resultados de alta calidad.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Servicio 2 (mantenimiento)  -->
+<div class="modal fade" id="modalServicio2" tabindex="-1" aria-labelledby="modalServicio2Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalServicio2Label">Mantenimiento Preventivo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+                <img src="img/Hombre técnico reparación, limpieza y mantenimiento Aire acondicionado _ Foto Premium.jpg" class="img-fluid mb-3" alt="Mantenimiento Preventivo">
+                <p>Realizamos mantenimiento preventivo para garantizar el correcto funcionamiento de tus equipos. Esto incluye limpieza, revisión de componentes y ajustes necesarios para evitar fallas futuras.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Servicio 3 (componentes)-->
+<div class="modal fade" id="modalServicio3" tabindex="-1" aria-labelledby="modalServicio3Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalServicio3Label">Componentes</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+                <img src="img/componentes.webp" class="img-fluid mb-3" alt="Venta de Componentes">
+                <p>Ofrecemos una amplia gama de componentes electrónicos originales y de alta calidad para garantizar el rendimiento óptimo de tus equipos.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
 
     <!-- Nosotros Section -->
     <section id="nosotros" class="bg-secondary py-5">
@@ -110,7 +173,7 @@
         <h2 class="text-center mb-5">Contacto</h2>
         <div class="row">
             <!-- Formulario de Contacto -->
-            <div class="col-md-6 mx-auto mb-5">
+            <div class="col-md-6 mb-5">
                 <form action="enviar.php" method="POST">
                     <div class="mb-3">
                         <label for="nombre" class="form-label">Nombre</label>
@@ -124,7 +187,7 @@
                         <label for="mensaje" class="form-label">Mensaje</label>
                         <textarea class="form-control" id="mensaje" name="mensaje" rows="5" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary w-100">Enviar Mensaje</button>
+                    <button type="submit" class="btn btn-primary w-50">Enviar Mensaje</button>
                 </form>
             </div>
 
@@ -138,15 +201,15 @@
                 <div class="mb-4">
                     <h4>Redes Sociales</h4>
                     <div class="social-media">
-                        <a href="#" class="text-dark me-3"><i class="fab fa-facebook fa-2x"></i></a>
-                        <a href="https://www.instagram.com/rafael_soluciones_electronica?igsh=MTFiNm14cW9jY3FxMg%3D%3D&utm_source=qr" class="text-primary me-3"><i class="fab fa-instagram fa-2x">Instagram</i></a>
-                        <a href="#" class="text-dark"><i class="fab fa-whatsapp fa-2x"></i></a>
+                        <a href="#" class="text-dark me-3" aria-label="Facebook"><i class="fab fa-facebook fa-2x"></i></a>
+                        <a href="https://www.instagram.com/rafael_soluciones_electronica" class="text-primary me-3" aria-label="Instagram"><i class="fab fa-instagram fa-2x"></i></a>
+                        <a href="#" class="text-dark" aria-label="WhatsApp"><i class="fab fa-whatsapp fa-2x"></i></a>
                     </div>
                 </div>
 
                 <div class="mb-4">
                     <h4>Escanea el Código QR</h4>
-                    <img src="img/Codigo QR de WhatsApp.jpg" alt="Código QR de WhatsApp" class="img-fluid" width="160" height="110">
+                    <img src="img/Codigo QR de WhatsApp.jpg" alt="Código QR de WhatsApp" class="img-fluid" width="160" height="110" loading="lazy">
                 </div>
             </div>
         </div>
@@ -170,9 +233,13 @@
     <footer class="bg-dark text-white text-center py-4">
         <div class="container">
             <div class="row">
-                <div class="container">
+                <div class="col-md-6 text-md-start">
                     <p>&copy; 2025 R.S.E</p>
-                   <a href="politica-privacidad.html">Política de Privacidad</a> | <a href="terminos-condiciones.html">Términos y Condiciones</a>
+                    <p>809-747-0675</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="politica-privacidad.html" class="text-white me-3">Política de Privacidad</a>
+                    <a href="terminos-condiciones.html" class="text-white">Términos y Condiciones</a>
                 </div>
             </div>
         </div>

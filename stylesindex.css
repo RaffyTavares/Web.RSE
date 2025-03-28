@@ -103,7 +103,7 @@ footer {
 
 /* Estilos para el toast */
 .toast {
-    background-color: #28a745; /* Color de fondo */
+    background-color: #46d467; /* Color de fondo */
     color: white; /* Color del texto */
     border-radius: 5px; /* Bordes redondeados */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */

@@ -7,52 +7,35 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <style>
-        body {
-            background-color: #f8f9fa;
-            color: #343a40;
-        }
-        .container {
-            margin-top: 20px;
-        }
-        h2 {
-            margin-top: 40px;
-        }
-        .accordion-button:not(.collapsed) {
-            color: #fff;
-            background-color: #007bff;
-        }
-        .accordion-button {
-            color: #007bff;
-        }
-        .accordion-button:hover {
-            color: #0056b3;
-        }
-        .table thead {
-            background-color: #007bff;
-            color: #fff;
-        }
-    </style>
+    <link rel="stylesheet" href="guia-reparacion.css">
 </head>
 <body>
-    <div class="container"  style="background-color: #f4f4f9;">
-        <h1 class="text-center my-4">Guía de Reparación de Aire Acondicionado Inverter</h1>
+    <!-- Contenedor principal -->
+    <div class="container">
+        <div class="text-center">
+            <img src="img/guia-reparacion.jpeg" alt="Energía" class="img-fluid mb-3" style="max-width: 200px;">
+        </div>
+        <!-- Título principal -->
+        <h1 class="text-center my-4 text-info">Guía de Reparación de Aire Acondicionado Inverter</h1>
         
+        <!-- Sección 1: Introducción -->
         <h2>1. Introducción</h2>
         <p>Esta guía está diseñada para ayudar a técnicos en la identificación y solución de fallas comunes en sistemas de aire acondicionado inverter.</p>
 
+        <!-- Sección 2: Herramientas necesarias -->
         <h2>2. Herramientas necesarias</h2>
         <ul class="list-group">
-            <li class="list-group-item">Multímetro digital</li>
-            <li class="list-group-item">Pinza amperimétrica</li>
-            <li class="list-group-item">Manómetro de refrigeración</li>
-            <li class="list-group-item">Termómetro infrarrojo</li>
-            <li class="list-group-item">Detector de fugas de gas refrigerante</li>
-            <li class="list-group-item">Analizador de tarjetas electrónicas</li>
-            <li class="list-group-item">Osciloscopio</li>
-            <li class="list-group-item">Bomba de vacío</li>
+            <li class="list-group-item"><i class="bi bi-tools"></i> Multímetro digital</li>
+            <li class="list-group-item"><i class="bi bi-tools"></i> Pinza amperimétrica</li>
+            <li class="list-group-item"><i class="bi bi-tools"></i> Manómetro de refrigeración</li>
+            <li class="list-group-item"><i class="bi bi-tools"></i> Termómetro infrarrojo</li>
+            <li class="list-group-item"><i class="bi bi-tools"></i> Detector de fugas de gas refrigerante</li>
+            <li class="list-group-item"><i class="bi bi-tools"></i> Analizador de tarjetas electrónicas</li>
+            <li class="list-group-item"><i class="bi bi-tools"></i> Osciloscopio</li>
+            <li class="list-group-item"><i class="bi bi-tools"></i> Bomba de vacío</li>
         </ul>
 
+        <!-- Sección 3: Diagnóstico inicial -->
         <h2>3. Diagnóstico inicial</h2>
         <ol class="list-group list-group-numbered">
             <li class="list-group-item">Verificar la alimentación eléctrica.</li>
@@ -60,56 +43,208 @@
             <li class="list-group-item">Revisar el control remoto y la configuración.</li>
         </ol>
 
+        <!-- Sección 4: Verificación de fallas comunes -->
         <h2>4. Verificación de fallas comunes</h2>
-        <div class="accordion" id="fallas">
-            <div class="accordion-item">
-                <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#falla1">El aire no enciende</button></h2>
-                <div id="falla1" class="accordion-collapse collapse" data-bs-parent="#fallas">
-                    <div class="accordion-body">Posibles causas: Fusibles quemados, fallo en la tarjeta electrónica, cableado defectuoso.</div>
+        <div class="row">
+            <!-- Falla 1 -->
+            <div class="col-md-4">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-danger">El aire no enciende</h5>
+                        <p class="card-text">Haz clic para más información.</p>
+                        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#falla1Modal">Ver detalles</button>
+                    </div>
                 </div>
             </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#falla2">El aire enciende pero no enfría</button></h2>
-                <div id="falla2" class="accordion-collapse collapse" data-bs-parent="#fallas">
-                    <div class="accordion-body">Posibles causas: Fuga de gas refrigerante, compresor defectuoso, condensador sucio.</div>
+
+            <!-- Falla 2 -->
+            <div class="col-md-4">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-danger">El aire enciende pero no enfría</h5>
+                        <p class="card-text">Haz clic para más información.</p>
+                        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#falla2Modal">Ver detalles</button>
+                    </div>
                 </div>
             </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#falla3">El equipo se apaga solo</button></h2>
-                <div id="falla3" class="accordion-collapse collapse" data-bs-parent="#fallas">
-                    <div class="accordion-body">Posibles causas: Sobrecalentamiento del compresor, error en sensores, problemas eléctricos.</div>
+
+            <!-- Falla 3 -->
+            <div class="col-md-4">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-danger">El equipo se apaga solo</h5>
+                        <p class="card-text">Haz clic para más información.</p>
+                        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#falla3Modal">Ver detalles</button>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <h2>5. Códigos de error comunes por marcas</h2>
-        <table class="table table-striped table-bordered">
-            <thead>
-                <tr>
-                    <th>Marca</th>
-                    <th>Código de error</th>
-                    <th>Descripción</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>LG</td>
-                    <td>CH 05</td>
-                    <td>Problema de comunicación</td>
-                </tr>
-                <tr>
-                    <td>Samsung</td>
-                    <td>E4</td>
-                    <td>Sobrecalentamiento del compresor</td>
-                </tr>
-                <tr>
-                    <td>Daikin</td>
-                    <td>U4</td>
-                    <td>Falla en el sistema de inversión</td>
-                </tr>
-            </tbody>
-        </table>
+        <!-- Modales para las fallas -->
+        <!-- Modal Falla 1 -->
+        <div class="modal fade" id="falla1Modal" tabindex="-1" aria-labelledby="falla1ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="falla1ModalLabel">El aire no enciende</h5>
+                    </div>
+                    <div class="modal-body">
+                        <p><strong>Posibles causas:</strong></p>
+                        <ul>
+                            <li>Problema con la alimentacion energética.</li>
+                            <li>Cableado defectuoso.</li>
+                            <li>Fallo en la tarjeta electrónica.</li> 
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+        <!-- Modal Falla 2 -->
+        <div class="modal fade" id="falla2Modal" tabindex="-1" aria-labelledby="falla2ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="falla2ModalLabel">El aire enciende pero no enfría</h5>
+                    </div>
+                    <div class="modal-body">
+                        <p><strong>Posibles causas:</strong></p>
+                        <ul>
+                            <li>Fuga de gas refrigerante.</li>
+                            <li>Compresor defectuoso.</li>
+                            <li>Condensador sucio.</li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Falla 3 -->
+        <div class="modal fade" id="falla3Modal" tabindex="-1" aria-labelledby="falla3ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="falla3ModalLabel">El equipo se apaga solo</h5>
+                    </div>
+                    <div class="modal-body">
+                        <p><strong>Posibles causas:</strong></p>
+                        <ul>
+                            <li>Sobrecalentamiento del compresor.</li>
+                            <li>Error en sensores.</li>
+                            <li>Problemas eléctricos.</li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección 5: Códigos de error comunes por marcas -->
+        <h2>5. Códigos de error comunes por marcas</h2>
+        <div class="accordion" id="erroresPorMarcas">
+            <!-- Marca LG -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingLG">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLG" aria-expanded="false" aria-controls="collapseLG">
+                        LG
+                    </button>
+                </h2>
+                <div id="collapseLG" class="accordion-collapse collapse show" aria-labelledby="headingLG" data-bs-parent="#erroresPorMarcas">
+                    <div class="accordion-body">
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Código de error</th>
+                                    <th>Descripción</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>CH05</td>
+                                    <td>Problema de comunicación</td>
+                                </tr>
+                                <tr>
+                                    <td>CH10</td>
+                                    <td>Error en el sensor de temperatura</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Marca Samsung -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingSamsung">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSamsung" aria-expanded="false" aria-controls="collapseSamsung">
+                        Samsung
+                    </button>
+                </h2>
+                <div id="collapseSamsung" class="accordion-collapse collapse" aria-labelledby="headingSamsung" data-bs-parent="#erroresPorMarcas">
+                    <div class="accordion-body">
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Código de error</th>
+                                    <th>Descripción</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>E4</td>
+                                    <td>Sobrecalentamiento del compresor</td>
+                                </tr>
+                                <tr>
+                                    <td>E5</td>
+                                    <td>Error en el ventilador</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Marca Daikin -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingDaikin">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDaikin" aria-expanded="false" aria-controls="collapseDaikin">
+                        Daikin
+                    </button>
+                </h2>
+                <div id="collapseDaikin" class="accordion-collapse collapse" aria-labelledby="headingDaikin" data-bs-parent="#erroresPorMarcas">
+                    <div class="accordion-body">
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Código de error</th>
+                                    <th>Descripción</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>U4</td>
+                                    <td>Falla en el sistema de inversión</td>
+                                </tr>
+                                <tr>
+                                    <td>U5</td>
+                                    <td>Error en la comunicación entre unidades</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección 6: Mantenimiento preventivo -->
         <h2>6. Mantenimiento preventivo recomendado</h2>
         <ul class="list-group">
             <li class="list-group-item"><strong>Cada 3 meses:</strong> Limpieza de filtros.</li>
@@ -118,12 +253,24 @@
             <li class="list-group-item"><strong>Anualmente:</strong> Pruebas de eficiencia energética y calibración de sensores.</li>
         </ul>
 
+        <!-- Sección 7: Conclusión -->
         <h2>7. Conclusión</h2>
         <p>Siguiendo esta guía, cualquier técnico podrá realizar un diagnóstico eficiente y corregir las fallas en aires acondicionados inverter.</p>
-        <p><strong>Autor:</strong> [Tu Nombre o Empresa]</p>
+        <p><strong>Autor:</strong> <span class="text-primary">RAFAEL SOLUCIONES ELECTRONICAS</span></p>
     </div>
+
+    <!-- Botón "Volver al inicio" -->
+    <button class="btn-back-to-top" onclick="scrollToTop()">
+        <i class="bi bi-arrow-up">Inicio</i>
+    </button>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Función para volver al inicio
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>
