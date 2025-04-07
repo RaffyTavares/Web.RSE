@@ -22,7 +22,7 @@
         <h2>1. Introducción</h2>
         <p>Esta guía está diseñada para ayudar a técnicos en la identificación y solución de fallas comunes en sistemas de aire acondicionado inverter.</p>
 
-        <!-- Sección 2: Herramientas necesarias -->
+        <!-- Sección 2: Herramientas necesarias --------------------------------------------------------------------------------------->
         <h2>2. Herramientas necesarias</h2>
         <ul class="list-group">
             <li class="list-group-item"><i class="bi bi-tools"></i> Multímetro digital</li>
@@ -35,7 +35,7 @@
             <li class="list-group-item"><i class="bi bi-tools"></i> Bomba de vacío</li>
         </ul>
 
-        <!-- Sección 3: Diagnóstico inicial -->
+        <!-- Sección 3: Diagnóstico inicial -------------------------------------------------------------------------------------------->
         <h2>3. Diagnóstico inicial</h2>
         <ol class="list-group list-group-numbered">
             <li class="list-group-item">Verificar la alimentación eléctrica.</li>
@@ -43,7 +43,7 @@
             <li class="list-group-item">Revisar el control remoto y la configuración.</li>
         </ol>
 
-        <!-- Sección 4: Verificación de fallas comunes -->
+        <!-- Sección 4: Verificación de fallas comunes ---------------------------------------------------------------------------------->
         <h2>4. Verificación de fallas comunes</h2>
         <div class="row">
             <!-- Falla 1 -->
@@ -80,7 +80,7 @@
             </div>
         </div>
 
-        <!-- Modales para las fallas -->
+        <!-- Modales para las fallas ---------------------------------------------------------------------------------------------------->
         <!-- Modal Falla 1 -->
         <div class="modal fade" id="falla1Modal" tabindex="-1" aria-labelledby="falla1ModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
@@ -147,14 +147,14 @@
             </div>
         </div>
 
-        <!-- Sección 5: Códigos de error comunes por marcas -->
+        <!-- Sección 5: Códigos de error comunes por marcas -------------------------------------------------------------------------->
         <h2>5. Códigos de error comunes por marcas</h2>
         <div class="accordion" id="erroresPorMarcas">
-            <!-- Marca LG -->
+            <!-- Marcas: Lennox, Daikin ------------------------->
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingLG">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLG" aria-expanded="false" aria-controls="collapseLG">
-                        LG
+                        Lennox, Daikin
                     </button>
                 </h2>
                 <div id="collapseLG" class="accordion-collapse collapse show" aria-labelledby="headingLG" data-bs-parent="#erroresPorMarcas">
@@ -168,12 +168,16 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>CH05</td>
+                                    <td>E6</td>
                                     <td>Problema de comunicación</td>
                                 </tr>
                                 <tr>
-                                    <td>CH10</td>
-                                    <td>Error en el sensor de temperatura</td>
+                                    <td>F0</td>
+                                    <td>Falta de refrigerante</td>
+                                </tr>
+                                <tr>
+                                    <td>H5</td>
+                                    <td>Mal funcionamiento del IPM</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -181,11 +185,11 @@
                 </div>
             </div>
 
-            <!-- Marca Samsung -->
+            <!-- Marcas: Royal, Ifalcon, PG, American. ------------------------->
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingSamsung">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSamsung" aria-expanded="false" aria-controls="collapseSamsung">
-                        Samsung
+                        Royal, Ifalcon, PG, American.
                     </button>
                 </h2>
                 <div id="collapseSamsung" class="accordion-collapse collapse" aria-labelledby="headingSamsung" data-bs-parent="#erroresPorMarcas">
@@ -199,12 +203,12 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>E4</td>
-                                    <td>Sobrecalentamiento del compresor</td>
+                                    <td>E0</td>
+                                    <td>Problema de comunicación</td>
                                 </tr>
                                 <tr>
-                                    <td>E5</td>
-                                    <td>Error en el ventilador</td>
+                                    <td>E6</td>
+                                    <td>Error en el ventilador del evaporador</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -212,11 +216,11 @@
                 </div>
             </div>
 
-            <!-- Marca Daikin -->
+            <!-- Marca Daikin --------------------------------->
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingDaikin">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDaikin" aria-expanded="false" aria-controls="collapseDaikin">
-                        Daikin
+                        Tecnomaster, Corfort-timer
                     </button>
                 </h2>
                 <div id="collapseDaikin" class="accordion-collapse collapse" aria-labelledby="headingDaikin" data-bs-parent="#erroresPorMarcas">
@@ -230,12 +234,12 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>U4</td>
-                                    <td>Falla en el sistema de inversión</td>
+                                    <td>E5</td>
+                                    <td>Problema de comunicación</td>
                                 </tr>
                                 <tr>
-                                    <td>U5</td>
-                                    <td>Error en la comunicación entre unidades</td>
+                                    <td>L4</td>
+                                    <td>Se recomienda remplazar la tarjeta de uan unidad condensadora</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -244,7 +248,7 @@
             </div>
         </div>
 
-        <!-- Sección 6: Mantenimiento preventivo -->
+        <!-- Sección 6: Mantenimiento preventivo ---------------------------------------------------------------------------------------->
         <h2>6. Mantenimiento preventivo recomendado</h2>
         <ul class="list-group">
             <li class="list-group-item"><strong>Cada 3 meses:</strong> Limpieza de filtros.</li>
@@ -253,13 +257,13 @@
             <li class="list-group-item"><strong>Anualmente:</strong> Pruebas de eficiencia energética y calibración de sensores.</li>
         </ul>
 
-        <!-- Sección 7: Conclusión -->
+        <!-- Sección 7: Conclusión ------------------------------------------------------------------------------------------------------>
         <h2>7. Conclusión</h2>
         <p>Siguiendo esta guía, cualquier técnico podrá realizar un diagnóstico eficiente y corregir las fallas en aires acondicionados inverter.</p>
         <p><strong>Autor:</strong> <span class="text-primary">RAFAEL SOLUCIONES ELECTRONICAS</span></p>
     </div>
 
-    <!-- Botón "Volver al inicio" -->
+    <!-- Botón "Volver al inicio" ------------------------------------------------------------------------------------------------------>
     <button class="btn-back-to-top" onclick="scrollToTop()">
         <i class="bi bi-arrow-up">Inicio</i>
     </button>
