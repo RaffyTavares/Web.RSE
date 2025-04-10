@@ -118,3 +118,27 @@ footer {
 .toast-body {
     padding: 1rem; /* Espaciado interno */
 }
+
+
+
+
+/* Ajustar el tamaño del logo en pantallas pequeñas */
+@media (max-width: 576px) {
+    .navbar-brand img {
+        width: 100px;
+        height: auto;
+    }
+}
+
+/* Centrar el contenido del footer en pantallas pequeñas */
+@media (max-width: 576px) {
+    footer .text-md-start, footer .text-md-end {
+        text-align: center !important;
+    }
+}
+
+/* Espaciado adicional entre íconos de redes sociales */
+.social-media a {
+    margin-bottom: 10px;
+    display: inline-block;
+}
