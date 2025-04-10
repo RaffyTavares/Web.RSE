@@ -120,7 +120,7 @@ footer {
 }
 
 
-
+/*ajustes generales para pantallas pequeñas---------------------------------------------------------------------*/
 
 /* Ajustar el tamaño del logo en pantallas pequeñas */
 @media (max-width: 576px) {
@@ -141,4 +141,20 @@ footer {
 .social-media a {
     margin-bottom: 10px;
     display: inline-block;
+}
+
+
+
+ /* Ajustes para pantallas pequeñas */
+ @media (max-width: 576px) {
+    #inicio h3 {
+        font-size: 1.5rem; /* Reducir el tamaño del texto */
+    }
+    #inicio p {
+        font-size: 1rem; /* Reducir el tamaño del párrafo */
+    }
+    #inicio .btn {
+        font-size: 0.9rem; /* Reducir el tamaño del botón */
+        padding: 0.5rem 1rem; /* Ajustar el padding del botón */
+    }
 }
