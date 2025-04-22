@@ -36,7 +36,7 @@ footer {
 /* Estilos para el header con imagen de fondo translúcida */
 #inicio {
     position: relative;
-    background-image: url('img/tecnología\ gris.jpg');
+    background-image: url('img/tecnologia-gris.jpg');
     background-size: cover;
     background-position: center;
     color: white;
