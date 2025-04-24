@@ -148,7 +148,7 @@ footer {
  /* Ajustes para pantallas pequeñas */
  @media (max-width: 576px) {
     #inicio h3 {
-        font-size: 1.5rem; /* Reducir el tamaño del texto */
+        font-size: 0.8rem; /* Reducir el tamaño del texto */
     }
     #inicio p {
         font-size: 1rem; /* Reducir el tamaño del párrafo */
