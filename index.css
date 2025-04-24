@@ -9,8 +9,11 @@ body {
 }
 
 header {
-    padding: 100px 0;
+   
+    padding: 100px;
+    
 }
+
 
 .card {
     transition: transform 0.3s;
@@ -42,6 +45,7 @@ footer {
     color: white;
     text-align: center;
     padding: 5rem 0;
+    scroll-margin-top: 70px;
    
 }
 
@@ -155,7 +159,7 @@ footer {
  @media (max-width: 576px) {
     
     #inicio {
-        padding-top: 70px; /* o lo que mida tu navbar */
+        padding-top: 54px; /* o lo que mida tu navbar */
     }
     
     #inicio h3 {
