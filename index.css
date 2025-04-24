@@ -45,6 +45,11 @@ footer {
    
 }
 
+#inicio h3 {
+    border: 1px solid red;
+}
+
+
 #inicio::before {
     content: '';
     position: absolute;
@@ -149,7 +154,7 @@ footer {
  /* Ajustes del texto del header para pantallas pequeñas */
  @media (max-width: 576px) {
     #inicio h3 {
-        font-size: 0.5rem; /* Reducir el tamaño del texto */
+        font-size: 1.1rem; /* Reducir el tamaño del texto */
     }
     #inicio p {
         font-size: 1rem; /* Reducir el tamaño del párrafo */
