@@ -46,7 +46,7 @@ footer {
 }
 
 #inicio h3 {
-    border: 1px solid red;
+    border: 1px solid rgb(248, 245, 245);
 }
 
 
@@ -153,6 +153,11 @@ footer {
 
  /* Ajustes del texto del header para pantallas pequeñas */
  @media (max-width: 576px) {
+    
+    #inicio {
+        padding-top: 70px; /* o lo que mida tu navbar */
+    }
+    
     #inicio h3 {
         font-size: 1.1rem; /* Reducir el tamaño del texto */
     }
