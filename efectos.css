@@ -1,0 +1,105 @@
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInMove 2.5s ease-out forwards;
+  }
+  
+  @keyframes fadeInMove {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+
+.zoom-in {
+    transform: scale(0.8);
+    opacity: 0;
+    animation: zoomIn 1s ease forwards;
+  }
+  
+  @keyframes zoomIn {
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  
+.img-grayscale {
+    filter: grayscale(100%);
+    transition: filter 0.4s ease;
+  }
+  
+  .img-grayscale:hover {
+    filter: grayscale(0%);
+  }
+  
+
+.img-shadow {
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .img-shadow:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+.img-rotate {
+    transition: transform 0.4s ease;
+  }
+  
+  .img-rotate:hover {
+    transform: rotate(3deg);
+  }
+  
+.img-zoom {
+    transition: transform 0.5s ease;
+  }
+  
+  .img-zoom:hover {
+    transform: scale(1.8);
+  }
+
+
+#contacto input:focus,
+#contacto textarea:focus {
+  border-color: #6f42c1; /* morado elegante */
+  box-shadow: 0 0 10px rgba(111, 66, 193, 0.4);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Estado inicial del formulario */
+#contacto form {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInContacto 1s ease forwards;
+}
+
+/* Clase que activa la animación */
+.fadeInContacto {
+    animation: fadeInContacto 1s ease forwards;
+}
+
+/* Definición de la animación */
+@keyframes fadeInContacto {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+  
+
+#contacto .btn-primary {
+    background-color: #6f42c1;
+    border-color: #6f42c1;
+    transition: all 0.3s ease;
+  }
+  
+#contacto .btn-primary:hover {
+    background-color: #5a379e;
+    border-color: #5a379e;
+    box-shadow: 0 0 10px rgba(111, 66, 193, 0.5);
+  }
+  

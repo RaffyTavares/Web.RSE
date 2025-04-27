@@ -18,3 +18,21 @@ document.querySelector('form').addEventListener('submit', function (event) {
         successToast.show();
     }
 });
+
+
+document.querySelector('a[href="#contacto"]').addEventListener('click', function (e) {
+    // Opcional: prevenir comportamiento predeterminado para controlar el scroll manualmente
+    e.preventDefault();
+
+    const form = document.querySelector('#contacto form');
+
+    // Scroll suave hacia el formulario
+    form.scrollIntoView({ behavior: 'smooth' });
+
+    // Reinicia animación
+    form.classList.remove('fadeInContacto');
+    void form.offsetWidth;
+    form.classList.add('fadeInContacto');
+});
+
+
