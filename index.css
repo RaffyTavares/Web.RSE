@@ -50,7 +50,16 @@ footer {
 }
 
 #inicio h5 {
-    border: 2px solid rgb(248, 245, 245);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#inicio p {
+    font-style: italic;
+    max-width: 700px;
+    margin: 0 auto;
+    color: #f8f9fa;
 }
 
 
@@ -69,6 +78,8 @@ footer {
     position: relative;
     z-index: 2;
 }
+
+
 
 /* Estilos para la sección de Contacto */
 #contacto {
@@ -110,6 +121,9 @@ footer {
     font-size: 1.25rem;
     color: #333;
 }
+
+
+
 
 /* Estilos para el toast */
 .toast {
