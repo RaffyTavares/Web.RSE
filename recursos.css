@@ -1,6 +1,7 @@
 /* Estilos para la sección de Recursos */
 #recursos {
-    padding: 60px 0;
+    
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
 }
 
 #recursos h2 {
@@ -29,4 +30,13 @@
 #recursos .card:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.list-group-item:hover {
+    background-color: #c9def4;
+    text-decoration: underline;
+}
+
+footer {
+    border-top: 4px solid #f9f9f9;
 }
