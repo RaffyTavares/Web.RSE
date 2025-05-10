@@ -173,7 +173,7 @@ footer {
 
 
  /* Ajustes del texto del header para pantallas pequeñas */
- @media (max-width: 576px) {
+ @media (max-width: 500px) {
     
     #inicio {
         padding-top: 54px; /* o lo que mida tu navbar */
