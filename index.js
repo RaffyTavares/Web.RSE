@@ -36,3 +36,23 @@ document.querySelector('a[href="#contacto"]').addEventListener('click', function
 });
 
 
+document.addEventListener('DOMContentLoaded', function () {
+    const carousel = document.getElementById('servicios-carousel');
+    const btnLeft = document.getElementById('btn-left');
+    const btnRight = document.getElementById('btn-right');
+
+    // Ancho de desplazamiento (igual al ancho de una tarjeta)
+    const scrollAmount = carousel.querySelector('.col-md-4').offsetWidth;
+
+    // Botón Izquierdo
+    btnLeft.addEventListener('click', () => {
+        carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
+
+    // Botón Derecho
+    btnRight.addEventListener('click', () => {
+        carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+});
+
+

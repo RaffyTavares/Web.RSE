@@ -69,12 +69,26 @@
     <!-- Servicios Section ------------------------------------------------------------------------------------------------------->
 <section id="servicios" class="bg-dark py-5">
     <div class="container">
+        <!-- Contenedor del título y botones -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <!-- Botón Izquierdo -->
+            <button id="btn-left" class="btn btn-light">
+                <i class="bi bi-chevron-left"></i>
+            </button>
 
-        <h2 class="text-center mb-5 text-light">Nuestros Servicios</h2>
+            <!-- Título -->
+            <h2 class="text-center text-light m-0">Nuestros Servicios</h2>
 
-        <div class="row">
+            <!-- Botón Derecho -->
+            <button id="btn-right" class="btn btn-light">
+                <i class="bi bi-chevron-right"></i>
+            </button>
+        </div>
+
+        <!-- Contenedor del carrusel -->
+        <div id="servicios-carousel" class="d-flex overflow-hidden" style="scroll-behavior: smooth;">
             <!-- Servicio 1 -->
-            <div class="col-md-4 text-center">
+            <div class="col-md-4 flex-shrink-0 text-center">
                 <div class="card mb-4">
                     <img src="img/reparacion.JPG" class="img-rotate img-shadow card-img-top" alt="Reparación de Tarjetas" data-bs-toggle="modal" data-bs-target="#modalServicio1">
                     <div class="card-body">
@@ -85,7 +99,7 @@
             </div>
 
             <!-- Servicio 2 -->
-            <div class="col-md-4 text-center">
+            <div class="col-md-4 flex-shrink-0 text-center">
                 <div class="card mb-4">
                     <img src="img/Hombre-técnico.jpg" class="img-rotate card-img-top" alt="Mantenimiento Preventivo" data-bs-toggle="modal" data-bs-target="#modalServicio2">
                     <div class="card-body">
@@ -96,7 +110,7 @@
             </div>
 
             <!-- Servicio 3 -->
-            <div class="col-md-4 text-center">
+            <div class="col-md-4 flex-shrink-0 text-center">
                 <div class="card mb-4">
                     <img src="img/componentes electrónicos.jpg" class="img-rotate card-img-top" alt="Venta de Componentes" data-bs-toggle="modal" data-bs-target="#modalServicio3">
                     <div class="card-body">
@@ -106,13 +120,13 @@
                 </div>
             </div>
 
-            <!-- Servicio 3 -->
-            <div class="col-md-4 text-center">
+            <!-- Servicio 4 -->
+            <div class="col-md-4 flex-shrink-0 text-center">
                 <div class="card mb-4">
-                    <img src="img/componentes electrónicos.jpg" class="img-rotate card-img-top" alt="Venta de Componentes" data-bs-toggle="modal" data-bs-target="#modalServicio3">
+                    <img src="img/servicio4.jpg" class="img-rotate card-img-top" alt="Servicio Adicional">
                     <div class="card-body">
-                        <h5 class="card-title">Componentes</h5>
-                        <p class="card-text">Componentes originales y de alta calidad para tus equipos.</p>
+                        <h5 class="card-title">Servicio Adicional</h5>
+                        <p class="card-text">Descripción del servicio adicional.</p>
                     </div>
                 </div>
             </div>
@@ -121,10 +135,10 @@
 </section>
 
 <!-- Modales -->
-<!-- Modal Servicio 1 (reparacion)-->
+<!-- Modal Servicio 1 -->
 <div class="modal fade" id="modalServicio1" tabindex="-1" aria-labelledby="modalServicio1Label" aria-hidden="true">
     <div class="modal-dialog modal-lg">
-        <di class="modal-content">
+        <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="modalServicio1Label">Reparación de Tarjetas</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
@@ -140,7 +154,7 @@
     </div>
 </div>
 
-<!-- Modal Servicio 2 (mantenimiento)  -->
+<!-- Modal Servicio 2 -->
 <div class="modal fade" id="modalServicio2" tabindex="-1" aria-labelledby="modalServicio2Label" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -159,7 +173,7 @@
     </div>
 </div>
 
-<!-- Modal Servicio 3 (componentes)-->
+<!-- Modal Servicio 3 -->
 <div class="modal fade" id="modalServicio3" tabindex="-1" aria-labelledby="modalServicio3Label" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -178,8 +192,7 @@
     </div>
 </div>
 
-
-<!-- Galería Section ------------------------------------------------------------------------------------------------------------>
+<!-- Galería de trabajos realizados Section ------------------------------------------------------------------------------------------------------------>
 <section id="galeria" class="py-5 bg-light d-none">
     <div class="container">
         <h2 class="text-center mb-5 fw-bold">Galería de Trabajos Realizados</h2>
