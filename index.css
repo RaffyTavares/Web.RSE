@@ -199,7 +199,21 @@ footer {
     color: #333;
 }
 
-
+.footer-label {
+    display: none;
+    margin-left: 6px;
+    vertical-align: middle;
+    transition: opacity 0.2s;
+}
+.footer-icon:hover .footer-label,
+.footer-icon:focus .footer-label {
+    display: inline;
+    opacity: 1;
+}
+.footer-icon i {
+    font-size: 1.3rem;
+    vertical-align: middle;
+}
 
 
 /* Estilos para el toast */
