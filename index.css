@@ -105,15 +105,15 @@ footer {
 }
 
 #btn-left, #btn-right {
-    background-color: #f8f9fa;
+    background-color: #eff1f4;
     border: none;
-    color: #343a40;
+    color: #2a2f33;
     font-size: 1.5rem;
     cursor: pointer;
 }
 
 #btn-left:hover, #btn-right:hover {
-    background-color: #e9ecef;
+    background-color: #79b0e6;
 }
 
 
@@ -121,9 +121,10 @@ footer {
   /* Estilo para el carrusel */
 #servicios-carousel {
     display: flex;
-    gap: 1rem; /* Espaciado entre tarjetas */
+    gap: 2rem; /* Espaciado entre tarjetas */
     overflow-x: auto; /* Permite el desplazamiento horizontal */
     scroll-behavior: smooth; /* Desplazamiento suave */
+  
 }
 
 /* Ajustar el contenedor del título y los botones */
@@ -147,13 +148,15 @@ footer {
 }
  /* Aumentar el tamaño de las tarjetas */
 #servicios-carousel .card {
+    width: 300px;
+    flex-shrink: 0; /* Evita que las tarjetas se reduzcan */
     transform: scale(1.1); /* Escala ligeramente las tarjetas */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación suave */
 }
 
 /* Efecto hover para destacar aún más */
 #servicios-carousel .card:hover {
-    transform: scale(1.25); /* Aumenta el tamaño al pasar el mouse */
+    transform: scale(1.20); /* Aumenta el tamaño al pasar el mouse */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Agrega una sombra más pronunciada */
 }
 
@@ -279,7 +282,16 @@ footer {
     }
 }
 
-
+    @media (max-width: 1000px) {
+    #servicios-carousel {
+        width: 100%;
+        gap: 1rem;
+    }
+    #servicios-carousel .card {
+        width: 90vw;
+        max-width: 300px;
+    }
+}
 
 
 
