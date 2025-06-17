@@ -130,10 +130,10 @@
             <!-- Servicio 4 -->
             <div class="col-md-4 flex-shrink-0 text-center">
                 <div class="card mb-4 shadow" style="width: 20rem; min-height: 20rem;">
-                    <img src="img/servicio4.jpg" class="img-rotate card-img-top" alt="Servicio Adicional" style="height: 220px; object-fit: cover;">
+                    <img src="img/Inverter_Samsung.JPG" class="img-rotate card-img-top" alt="Servicio Adicional"  data-bs-toggle="modal" data-bs-target="#modalServicio4" style="height: 200px; object-fit: cover;">
                     <div class="card-body">
-                        <h5 class="card-title">Servicio Adicional</h5>
-                        <p class="card-text">Descripción del servicio adicional.</p>
+                        <h5 class="card-title">Tarjetas de neveras inverter</h5>
+                        <p class="card-text">Reparacion y modificacion de neveras inverter.</p>
                         <button class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#modalServicio4">Ver detalles</button>
                     </div>
                 </div>
@@ -152,7 +152,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
             </div>
             <div class="modal-body">
-                <img src="img/taller1.JPG" class="img-fluid mb-3" alt="Reparación de Tarjetas">
+                <img src="img/taller1.JPG" class="img-modal img-shadow img-fluid mb-3" alt="Reparación de Tarjetas">
                 <p>Ofrecemos servicios especializados en diagnóstico y reparación de tarjetas electrónicas para aires acondicionados con tecnología inverter. Nuestro equipo utiliza herramientas avanzadas para garantizar resultados de alta calidad.</p>
             </div>
             <div class="modal-footer">
@@ -171,7 +171,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
             </div>
             <div class="modal-body">
-                <img src="img/mantenimiento-electronico.jpeg" class="img-fluid mb-3" alt="Mantenimiento Preventivo">
+                <img src="img/mantenimiento-electronico.jpeg" class="img-modal img-shadow img-fluid mb-3" alt="Mantenimiento Preventivo">
                 <p>Realizamos mantenimiento preventivo para garantizar el correcto funcionamiento de tus equipos. Esto incluye limpieza, revisión de componentes y ajustes necesarios para evitar fallas futuras.</p>
             </div>
             <div class="modal-footer">
@@ -190,7 +190,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
             </div>
             <div class="modal-body">
-                <img src="img/dispositivos2.jpeg" class="img-fluid mb-3" alt="Venta de Componentes">
+                <img src="img/dispositivos2.jpeg" class=" img-modal img-shadow  img-fluid mb-3 " alt="Venta de Componentes">
                 <p>Ofrecemos una amplia gama de componentes electrónicos originales y de alta calidad para garantizar el rendimiento óptimo de tus equipos.</p>
             </div>
             <div class="modal-footer">
@@ -199,7 +199,25 @@
         </div>
     </div>
 </div>
-
+<!-- Modal Servicio 4 -->
+<div class="modal fade" id="modalServicio4" tabindex="-1" aria-labelledby="modalServicio4Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalServicio4Label">Tarjetas de neveras inverter</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+                <img src="img/Samsung-refrigerator.jpeg" class="img-modal img-shadow img-fluid mb-3" alt="Servicio Adicional" style=" height: 400px; object-fit: cover;">
+                <p>Ofrecemos servicios especializados en la reparación y modificación de tarjetas electrónicas de neveras inverter. Nuestro equipo está capacitado para diagnosticar y reparar fallas, asegurando un funcionamiento óptimo de tus equipos.</p>
+                <p>Reparamos y modificamos tarjetas de neveras inverter, asegurando un funcionamiento eficiente y prolongando la vida útil del equipo.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- Galería de trabajos realizados Section ------------------------------------------------------------------------------------------------------------>
 <section id="galeria" class="py-5 bg-light d-none">
     <div class="container">
@@ -275,19 +293,27 @@
 
 
     <!-- Nosotros Section --------------------------------------------------------------------------------------------------------->
-    <section id="nosotros" class="bg-secondary py-5">
-        <div class="container">
-            <h2 class="text-center mb-5">Sobre Nosotros</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <img src="img/nuevo logo png.RSE.png" alt="Nosotros" class="img-fluid rounded">
-                </div>
-                <div class="col-md-6">
-                    <p class="lead">Somos una empresa especializada en la reparación de tarjetas electrónicas para aires acondicionados con tecnología inverter. Con más de 10 años de experiencia, ofrecemos soluciones rápidas y confiables para mantener tus equipos en óptimas condiciones.</p>
-                    <p>Nuestro equipo de técnicos altamente capacitados utiliza herramientas de última generación para garantizar la calidad de nuestros servicios.</p>
+   <section id="nosotros" class="bg-secondary py-5">
+    <div class="container">
+        <h2 class="text-center text-uppercase mb-5">Sobre Nosotros</h2>
+        <div class="row">
+            <div class="col-md-6 d-flex align-items-center justify-content-center">
+                <div style="width: 600px; height: 500px; overflow: hidden;">
+                    <img id="nosotros-img" src="img/fachada.RSE.jpg" alt="Nosotros" class="img-fluid rounded w-100 h-100" 
+                    style="object-fit: cover; object-position: center; min-width: 100%; min-height: 100%;">
                 </div>
             </div>
+            <div class="col-md-6">
+                <p class="lead text-justify">Somos una empresa especializada en la reparación de tarjetas electrónicas para aires acondicionados con tecnología inverter. 
+                    Con más de 10 años de experiencia, ofrecemos soluciones rápidas y confiables para mantener tus equipos en óptimas condiciones.</p>
+                <p class="text-uppercase">Nuestro equipo de técnicos altamente capacitados utiliza herramientas de última generación 
+                    para garantizar la calidad de nuestros servicios.</p>
+                <p class="text-uppercase">Nos enorgullece ofrecer un servicio personalizado, adaptándonos a las necesidades de cada cliente y asegurando su satisfacción.</p>
+                <p class="text-uppercase">Nuestra misión es ser la solución confiable para todos tus problemas electrónicos, 
+                    brindando un servicio técnico especializado y de alta calidad.</p>
+            </div>
         </div>
+    </div>
     </section>
 
 
@@ -463,36 +489,78 @@
             <div class="accordion-item">
                 <h2 class="accordion-header" id="faq1-heading">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
-                        ¿Cómo identifico el código de error de mi aire acondicionado inverter?
+                        ¿Cuáles son las ventajas de un aire acondicionado inverter?
                     </button>
                 </h2>
                 <div id="faq1" class="accordion-collapse collapse show" aria-labelledby="faq1-heading" data-bs-parent="#faqAccordion">
                     <div class="accordion-body">
-                        Los códigos de error suelen mostrarse en el display o en los LEDs de la tarjeta. Consulta los manuales en la sección Recursos para identificar el significado según la tarjeta.
+                        Entre las ventajas se encuentran el ahorro energético, la temperatura más estable, mayor confort y un funcionamiento más silencioso. 
                     </div>
                 </div>
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header" id="faq2-heading">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
-                        ¿Qué mantenimiento preventivo se recomienda?
+                        ¿Cuál es la temperatura ideal para usar un aire acondicionado inverter?
                     </button>
                 </h2>
                 <div id="faq2" class="accordion-collapse collapse" aria-labelledby="faq2-heading" data-bs-parent="#faqAccordion">
                     <div class="accordion-body">
-                        Limpieza de filtros, revisión de conexiones eléctricas y verificación de sensores cada seis meses para evitar fallas.
+                       Se recomienda una temperatura entre 22 y 25 grados Celsius para un equilibrio entre confort y eficiencia energética. 
+
                     </div>
                 </div>
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header" id="faq3-heading">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
-                        ¿Dónde puedo conseguir repuestos originales?
+                        ¿Es mejor apagar o dejar encendido el aire acondicionado inverter?
                     </button>
                 </h2>
                 <div id="faq3" class="accordion-collapse collapse" aria-labelledby="faq3-heading" data-bs-parent="#faqAccordion">
                     <div class="accordion-body">
-                        Consulta con distribuidores autorizados o proveedores recomendados en la sección Componentes. Verifica siempre la compatibilidad con tu modelo.
+                       Si se va a ausentar por poco tiempo, es más eficiente dejarlo encendido a baja potencia. Si la ausencia es prolongada, es mejor apagarlo. 
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faq4-heading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
+                        ¿Cuánto tiempo puede durar un aire acondicionado inverter?
+                    </button>
+                </h2>
+                <div id="faq4" class="accordion-collapse collapse" aria-labelledby="faq4-heading" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body text-justify">
+                       La vida útil de un aire acondicionado inverter puede variar segun la marca del equipo, 
+                       las mas recomendadas por nosotros son: Panasonic, Lennox, AirMax, TGM, 
+                       pero un buen mantenimiento puede extender su funcionamiento por muchos años. 
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faq-heading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">
+                        ¿Porque la tarjetas de los aires inverter dan tanto problema?
+                    </button>
+                </h2>
+                <div id="faq5" class="accordion-collapse collapse" aria-labelledby="faq5-heading" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                       Las tarjetas electrónicas de los aires acondicionados tipo inverter pueden dañarse con facilidad debido a varios factores, 
+                       principalmente relacionados con fluctuaciones de voltaje, humedad y malas instalaciones eléctricas.
+                       <br><br> 
+                       <p class="text-dark text-justify">
+                        <strong> Factores que contribuyen al daño de las tarjetas inverter:</strong>
+                        <strong> Fluctuaciones de voltaje:</strong>
+                        Los aires inverter son muy sensibles a las variaciones de voltaje, ya sean subidas o bajadas, que pueden dañar los componentes electrónicos de la tarjeta. 
+                        <strong>Humedad:</strong> 
+                        La humedad ambiental puede causar corrosión en los componentes de la tarjeta, especialmente si no está bien protegida, lo que puede llevar a cortocircuitos y fallos. 
+                        <strong>Mala instalación:</strong> 
+                        Una instalación incorrecta puede exponer la tarjeta a condiciones adversas, como sobrecargas eléctricas o conexiones defectuosas, aumentando el riesgo de daño. 
+                        <strong>Componentes defectuosos:</strong> 
+                        Aunque no siempre es la causa principal, fallos en componentes como los reguladores de voltaje pueden generar sobrecargas y dañar la tarjeta. 
+                        <strong>Desgaste natural:</strong> 
+                        Con el tiempo, los componentes de la tarjeta pueden desgastarse, especialmente si el equipo se utiliza con frecuencia y en condiciones extremas, lo que puede llevar a fallos. 
+                       </p>
                     </div>
                 </div>
             </div>
@@ -534,7 +602,12 @@
                     </a>
                 </nav>
                 <p class="mt-3 mb-0">&copy; 2025 R.S.E</p>
+                <br>
                 <p class="mb-0"><i class="bi bi-telephone"></i>829-596-5912</p>
+                <br>
+                <a href="https://maps.app.goo.gl/VwUhjC9KbW2UYQVP8" target="_blank" class="text-white text-decoration-none">
+                    <i class="bi bi-geo-alt-fill"></i> Calle barahona #163, San carlos, Santo Domingo, R.D.
+                </a>
             </div>
             <div class="col-md-6 text-md-end">
                 <a href="politica-privacidad.html" class="text-white me-3">Política de Privacidad</a>
@@ -547,13 +620,14 @@
 
 
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script src="index.js"> </script>
+   <script src="index.js"></script>
 
    <!-- Chat de WhatsApp Flotante  -->
         <a href="https://wa.me/18297470675" class="btn btn-success rounded-circle shadow-lg position-fixed" style="bottom: 30px; right: 30px; z-index: 1050;" target="_blank" aria-label="WhatsApp">
             <i class="bi bi-whatsapp" style="font-size: 2rem;"></i>
         </a>
+
 </body>
 </html>

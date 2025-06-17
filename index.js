@@ -1,4 +1,3 @@
-
 document.querySelector('form').addEventListener('submit', function (event) {
     const nombre = document.getElementById('nombre').value;
     const email = document.getElementById('email').value;
@@ -55,4 +54,29 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// Rotación de imágenes en la sección "Nosotros" con efecto desvaneciente 
+document.addEventListener('DOMContentLoaded', function () {
+    const imagenes = [
+        'img/fachada.RSE.jpg',
+        'img/taller1.JPG',
+        // Agregar aquí más rutas de imágenes si es necesario
+    ];
+    let idx = 0;
+    const imgElement = document.getElementById('nosotros-img');
 
+
+    imgElement.style.transition = 'opacity 0.7s';
+
+    setInterval(() => {
+        // Desvanece la imagen
+        imgElement.style.opacity = 0;
+        setTimeout(() => {
+            idx = (idx + 1) % imagenes.length;
+            imgElement.src = imagenes[idx];
+            // Cuando la imagen nueva esté cargada, vuelve a aparecer
+            imgElement.onload = () => {
+                imgElement.style.opacity = 1;
+            };
+        }, 700); // Tiempo igual a la transición
+    }, 3000);
+});

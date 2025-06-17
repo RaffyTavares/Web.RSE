@@ -104,6 +104,8 @@ footer {
     object-fit: cover;
 }
 
+
+
 #btn-left, #btn-right {
     background-color: #eff1f4;
     border: none;
@@ -158,6 +160,13 @@ footer {
 #servicios-carousel .card:hover {
     transform: scale(1.20); /* Aumenta el tamaño al pasar el mouse */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Agrega una sombra más pronunciada */
+}
+
+.img-modal {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
 }
 
 
