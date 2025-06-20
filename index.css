@@ -8,11 +8,6 @@ body {
     margin-right: 10px;
 }
 
-header {
-   padding: 100px; 
-}
-
-
 .card {
     transition: transform 0.3s;
 }
@@ -104,6 +99,11 @@ footer {
     object-fit: cover;
 }
 
+#servicios-carousel.dragging {
+    cursor: grabbing;
+    user-select: none;
+}
+
 
 
 #btn-left, #btn-right {
@@ -118,7 +118,10 @@ footer {
     background-color: #79b0e6;
 }
 
-
+#servicios-carousel > .col-md-4 {
+    margin-left: 0;
+    margin-right: 0;
+}
 
   /* Estilo para el carrusel */
 #servicios-carousel {
@@ -126,7 +129,10 @@ footer {
     gap: 2rem; /* Espaciado entre tarjetas */
     overflow-x: auto; /* Permite el desplazamiento horizontal */
     scroll-behavior: smooth; /* Desplazamiento suave */
-  
+    padding-left: 1rem;
+    padding-right: 1rem;
+    scroll-padding-left: 1rem; /* Para scroll suave */
+    scroll-padding-right: 1rem;
 }
 
 /* Ajustar el contenedor del título y los botones */
@@ -276,7 +282,7 @@ footer {
  @media (max-width: 500px) {
     
     #inicio {
-        padding-top: 54px; /* o lo que mida tu navbar */
+        padding-top: 54px; /* o lo que mide tu navbar */
     }
     
     #inicio h3 {

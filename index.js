@@ -36,12 +36,12 @@ document.querySelector('a[href="#contacto"]').addEventListener('click', function
 
 
 document.addEventListener('DOMContentLoaded', function () {
+    // --- Carrusel de servicios ---
     const carousel = document.getElementById('servicios-carousel');
     const btnLeft = document.getElementById('btn-left');
     const btnRight = document.getElementById('btn-right');
-
-    // Ancho de desplazamiento (igual al ancho de una tarjeta)
-    const scrollAmount = carousel.querySelector('.col-md-4').offsetWidth;
+    const card = carousel.querySelector('.col-md-4, .col-md-4.flex-shrink-0, .col-md-4.text-center');
+    const scrollAmount = card ? card.offsetWidth : 320;
 
     // Botón Izquierdo
     btnLeft.addEventListener('click', () => {
@@ -52,31 +52,85 @@ document.addEventListener('DOMContentLoaded', function () {
     btnRight.addEventListener('click', () => {
         carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     });
-});
 
-// Rotación de imágenes en la sección "Nosotros" con efecto desvaneciente 
-document.addEventListener('DOMContentLoaded', function () {
+    // --- Soporte para arrastrar con el mouse ---
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    carousel.addEventListener('mousedown', (e) => {
+        isDown = true;
+        carousel.classList.add('dragging');
+        startX = e.pageX - carousel.offsetLeft;
+        scrollLeft = carousel.scrollLeft;
+        e.preventDefault();
+    });
+
+    carousel.addEventListener('mouseleave', () => {
+        isDown = false;
+        carousel.classList.remove('dragging');
+    });
+
+    carousel.addEventListener('mouseup', () => {
+        isDown = false;
+        carousel.classList.remove('dragging');
+    });
+
+    carousel.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - carousel.offsetLeft;
+        const walk = (x - startX) * 1.2; // Sensibilidad
+        carousel.scrollLeft = scrollLeft - walk;
+    });
+
+    // --- Soporte para pantallas táctiles ---
+    let touchStartX = 0;
+    let touchScrollLeft = 0;
+
+    carousel.addEventListener('touchstart', (e) => {
+        touchStartX = e.touches[0].pageX;
+        touchScrollLeft = carousel.scrollLeft;
+    });
+
+    carousel.addEventListener('touchmove', (e) => {
+        const x = e.touches[0].pageX;
+        const walk = (x - touchStartX) * 1.2;
+        carousel.scrollLeft = touchScrollLeft - walk;
+    });
+
+     // --- Soporte para scroll horizontal con la rueda del mouse ---
+    carousel.addEventListener('wheel', (e) => {
+    // Solo mover si el scroll es horizontal (deltaX)
+    if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+        e.preventDefault();
+        const direction = e.deltaX > 0 ? 1 : -1;
+        carousel.scrollBy({
+            left: scrollAmount * direction,
+            behavior: 'smooth'
+        });
+        }
+    });
+    
+    // --- Rotación de imágenes en la sección "Nosotros" con efecto desvaneciente ---
     const imagenes = [
         'img/fachada.RSE.jpg',
         'img/taller1.JPG',
-        // Agregar aquí más rutas de imágenes si es necesario
+        // Agrega más rutas si lo deseas
     ];
     let idx = 0;
     const imgElement = document.getElementById('nosotros-img');
-
-
-    imgElement.style.transition = 'opacity 0.7s';
-
-    setInterval(() => {
-        // Desvanece la imagen
-        imgElement.style.opacity = 0;
-        setTimeout(() => {
-            idx = (idx + 1) % imagenes.length;
-            imgElement.src = imagenes[idx];
-            // Cuando la imagen nueva esté cargada, vuelve a aparecer
-            imgElement.onload = () => {
-                imgElement.style.opacity = 1;
-            };
-        }, 700); // Tiempo igual a la transición
-    }, 3000);
+    if (imgElement) {
+        imgElement.style.transition = 'opacity 0.7s';
+        setInterval(() => {
+            imgElement.style.opacity = 0;
+            setTimeout(() => {
+                idx = (idx + 1) % imagenes.length;
+                imgElement.src = imagenes[idx];
+                imgElement.onload = () => {
+                    imgElement.style.opacity = 1;
+                };
+            }, 700);
+        }, 3000);
+    }
 });
