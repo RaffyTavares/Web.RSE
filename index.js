@@ -106,12 +106,12 @@ document.addEventListener('DOMContentLoaded', function () {
         e.preventDefault();
         const direction = e.deltaX > 0 ? 1 : -1;
         carousel.scrollBy({
-            left: scrollAmount * direction,
+            left: scrollAmount * direction * 8, // Multiplicador para mayor velocidad
             behavior: 'smooth'
         });
         }
     });
-    
+
     // --- Rotación de imágenes en la sección "Nosotros" con efecto desvaneciente ---
     const imagenes = [
         'img/fachada.RSE.jpg',
