@@ -37,6 +37,7 @@
                     <li class="nav-item">
                         <a class="nav-link text-dark" href="recursos.html">Recursos<i class="bi bi-file-earmark-pdf-fill"></i><i class="bi bi-folder"></i><i class="bi bi-gear-wide-connected"></i></a>
                     </li>
+
                 </ul>
             </div>
         </div>
@@ -243,7 +244,7 @@
 </section>
 
 
- <!-- Footer ------------------------------------------------------------------------------------------------------------>
+ <!-- Footer ---------------------------------------------------------------->
  <footer class="bg-dark text-white text-center py-4">
     <div class="container">
         <div class="row">
@@ -295,7 +296,16 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     updateVideos();
+
+
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+    return new bootstrap.Popover(popoverTriggerEl)
+    })
 });
+
+
+
 </script>
 </body>
 </html>
