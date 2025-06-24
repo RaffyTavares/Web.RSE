@@ -217,6 +217,12 @@ footer {
     color: #333;
 }
 
+[data-bs-toggle="popover"] {
+  cursor: help;
+  
+}
+
+
 .footer-label {
     display: none;
     margin-left: 6px;
