@@ -219,7 +219,9 @@
         </div>
     </div>
 </div>
-<!-- Galería de trabajos realizados Section ------------------------------------------------------------------------------------------------------------>
+
+
+<!-- Galería de trabajos realizados Section ---------------------------------------------->
 <section id="galeria" class="py-5 bg-light d-none">
     <div class="container">
         <h2 class="text-center mb-5 fw-bold">Galería de Trabajos Realizados</h2>
@@ -392,7 +394,15 @@
                         <input type="email" class="form-control" id="email" name="email" required>
                     </div>
                     <div class="mb-3">
-                        <label for="mensaje" class="form-label">Mensaje</label>
+                        <label for="mensaje" class="form-label">Mensaje
+                            <i class="bi bi-info-circle text-primary ms-2" 
+                            tabindex="0" 
+                            data-bs-toggle="popover" 
+                            data-bs-trigger="click"
+                            title="¿Qué escribir aquí?" 
+                            data-bs-content="Describe brevemente tu problema, por ejemplo: el aire no enciende, el display parpadea, etc.">
+                        </i>
+                        </label>
                         <textarea class="form-control" id="mensaje" name="mensaje" rows="5" required></textarea>
                     </div>
                     <div class="mb-3 d-none">
@@ -609,7 +619,8 @@
                     <a href="https://maps.app.goo.gl/VwUhjC9KbW2UYQVP8" target="_blank" class="text-white text-decoration-none">
                     <i class="bi bi-geo-alt-fill"></i> Calle barahona #163, San carlos, Santo Domingo, R.D.
                     </a>
-                
+                    
+                    <!--Boton tipo popover, horario de atencion-->
                     <button type="button" class="btn btn-secondary" data-bs-toggle="popover" title="Horario de atención"
                         data-bs-content="Lunes a viernes de 9:00 a.m. a 5:30 p.m. sabados de 9:00 a.m. a 1:00 p.m.">
                         <i class="bi bi-clock"></i>
@@ -632,6 +643,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
    <script src="index.js"></script>
+
+    <!--script boton popover-->
+        <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
+        const popoverList = [...popoverTriggerList].map(triggerEl => new bootstrap.Popover(triggerEl));
+        });
+        </script>
 
    <!-- Chat de WhatsApp Flotante  -->
         <a href="https://wa.me/18297470675" class="btn btn-success rounded-circle shadow-lg position-fixed" style="bottom: 30px; right: 30px; z-index: 1050;" target="_blank" aria-label="WhatsApp">
