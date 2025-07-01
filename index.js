@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     imgElement.style.opacity = 1;
                 };
             }, 700);
-        }, 3000);
+        }, 5000);
     }
 });
 

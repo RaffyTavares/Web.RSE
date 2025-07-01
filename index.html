@@ -17,51 +17,45 @@
 </head>
 <body>
     <!-- Navbar ------------------------------------------------------------------------------------------------------------------->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary bg-opacity-75 shadow-sm fixed-top" style="backdrop-filter: blur(8px);">
         <div class="container">
-
-           
-            <a class="navbar-brand d-flex align-items-center gap-2" href="#nosotros">
-                <img src="img/logo1.png" alt="Logo de Rafael Soluciones Electronica" class="img-zoom d-inline-block align-text-top" style="width: 100px; height: auto;">
-                <b class="text-info mb-0">Rafael Soluciones Electronica</b>
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#inicio">
+                <img src="img/logo1.png" alt="Logo de Rafael Soluciones Electronica" style="width: 48px; height: auto;">
+                <span class="fw-bold text-info">RSE</span>
             </a>
-
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-lg-center gap-lg-2">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#inicio">Inicio<i class="bi bi-house"></i></a>
+                        <a class="nav-link" href="#inicio"><i class="bi bi-house"></i> <span class="d-none d-lg-inline">Inicio</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="#servicios">Servicios<i class="bi bi-tools"></i></a>
+                        <a class="nav-link" href="#servicios"><i class="bi bi-tools"></i> <span class="d-none d-lg-inline">Servicios</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="mensaje-provicional.html">Trabajos Realizados<i class="bi bi-check-square"></i></a>
+                        <a class="nav-link" href="mensaje-provicional.html"><i class="bi bi-check-square"></i> <span class="d-none d-lg-inline">Trabajos</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="#nosotros">Nosotros<i class="bi bi-building-fill-gear"></i></a>
+                        <a class="nav-link" href="#nosotros"><i class="bi bi-building-fill-gear"></i> <span class="d-none d-lg-inline">Nosotros</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="#contacto">Contacto<i class="bi bi-person-lines-fill"></i></a>
+                        <a class="nav-link" href="#contacto"><i class="bi bi-person-lines-fill"></i> <span class="d-none d-lg-inline">Contacto</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="#blog">Blog<i class="bi bi-journal-text"></i></a>
-                    <li class="nav-item">
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" href="#noticias">Noticias<i class="bi bi-newspaper"></i></a>
+                        <a class="nav-link" href="#blog"><i class="bi bi-journal-text"></i> <span class="d-none d-lg-inline">Blog</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="recursos.html">Recursos<i class="bi bi-file-earmark-pdf-fill"></i> <i class="bi bi-file-play"></i> <i class="bi bi-gear-wide-connected"></i></a>
+                        <a class="nav-link" href="#noticias"><i class="bi bi-newspaper"></i> <span class="d-none d-lg-inline">Noticias</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="recursos.html"><i class="bi bi-folder"></i> <span class="d-none d-lg-inline">Recursos</span></a>
                     </li>
                 </ul>
             </div>
-
         </div>
-
     </nav>
 
     <!-- Encabezado Section ------------------------------------------------------------------------------------------------------>
@@ -305,29 +299,38 @@
 
 
     <!-- Nosotros Section --------------------------------------------------------------------------------------------------------->
-   <section id="nosotros" class="bg-secondary py-5">
+   <section id="nosotros" class="py-5" style="background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);">
     <div class="container">
-        <h2 class="text-center text-uppercase mb-5">Sobre Nosotros</h2>
+        <h2 class="text-center text-uppercase mb-5 text-primary fw-bold">Sobre Nosotros</h2>
         <div class="row">
-            <div class="col-md-6 d-flex align-items-center justify-content-center">
+            <div class="col-md-6 d-flex align-items-center justify-content-center mb-4 mb-md-0">
                 <div style="width: 600px; height: 500px; overflow: hidden;">
                     <img id="nosotros-img" src="img/fachada.RSE.jpg" alt="Nosotros" class="img-fluid rounded w-100 h-100"  
                     style="object-fit: cover; object-position: center; min-width: 100%; min-height: 100%;">
                 </div>
             </div>
             <div class="col-md-6">
-                <p class="lead text-justify">Somos una empresa especializada en la reparación de tarjetas electrónicas para aires acondicionados con tecnología inverter. 
-                    Con más de 10 años de experiencia, ofrecemos soluciones rápidas y confiables para mantener tus equipos en óptimas condiciones.</p>
-                <p class="text-uppercase">Nuestro equipo de técnicos altamente capacitados utiliza herramientas de última generación 
-                    para garantizar la calidad de nuestros servicios.</p>
-                <p class="text-uppercase">Nos enorgullece ofrecer un servicio personalizado, adaptándonos a las necesidades de cada cliente y asegurando su satisfacción.</p>
-                <p class="text-uppercase">Nuestra misión es ser la solución confiable para todos tus problemas electrónicos, 
-                    brindando un servicio técnico especializado y de alta calidad.</p>
+                <div class="card shadow border-0 bg-white bg-opacity-75">
+                    <div class="card-body">
+                        <p class="lead text-dark mb-3">
+                            <strong>Rafael Soluciones Electrónica</strong> es una empresa líder en reparación y mantenimiento de tarjetas electrónicas para aires acondicionados y neveras inverter. 
+                            Con más de <strong>10 años de experiencia</strong>, brindamos soluciones rápidas, confiables y personalizadas para cada cliente.
+                        </p>
+                        <ul class="mb-3 text-dark">
+                            <li>Equipo técnico altamente capacitado y en constante actualización.</li>
+                            <li>Herramientas y tecnología de última generación.</li>
+                            <li>Atención personalizada y asesoría profesional.</li>
+                            <li>Compromiso con la calidad, la honestidad y la satisfacción del cliente.</li>
+                        </ul>
+                        <p class="mb-0 text-dark">
+                            <em>Nuestra misión es ser tu aliado de confianza, asegurando el óptimo funcionamiento de tus equipos electrónicos y tu tranquilidad.</em>
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    </section>
-
+</section>
 
     <!-- Misión, Visión y Valores Section -------------------------------------------------------------------------------------------->
 <section id="mision-vision-valores" class="py-5 bg-light">
