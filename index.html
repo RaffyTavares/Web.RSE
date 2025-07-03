@@ -109,7 +109,7 @@
             <!-- Servicio 2 -->
             <div class="col-md-4 flex-shrink-0 text-center border-primary border-2">
                 <div class="card mb-4 shadow" style="width: 20rem; min-height: 20rem;">
-                    <img src="img/Hombre-técnico.jpg" class="img-rotate card-img-top" alt="Mantenimiento Preventivo" data-bs-toggle="modal" data-bs-target="#modalServicio2" style="height: 200px; object-fit: cover;">
+                    <img src="img/mantenimiento.jpg" class="img-rotate card-img-top" alt="Mantenimiento Preventivo" data-bs-toggle="modal" data-bs-target="#modalServicio2" style="height: 200px; object-fit: cover;">
                     <div class="card-body">
                         <h5 class="card-title">Mantenimiento Preventivo</h5>
                         <p class="card-text">Servicios de mantenimiento para evitar fallas futuras.</p>
@@ -224,28 +224,28 @@
 </div>
 
 <!-- Carrusel de Tarjetas Electrónicas con Errores Comunes -->
-<section id="tarjetas-carrusel" class="py-5" style="background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);">
+<section id="tarjetas-carrusel" class="py-5" style="background: linear-gradient(135deg, #e0eafc 0%, #eaeff8 100%);">
   <div class="container">
-    <h2 class="text-center mb-3 text-primary fw-bold display-5">Errores Comunes en Tarjetas Electrónicas</h2>
-    <div id="carouselTarjetas" class="carousel slide shadow-lg rounded-4 overflow-hidden" data-bs-ride="carousel">
-      <div class="carousel-inner">
+    <h2 class="text-center mb-3 text-primary fw-bold fs-2"> Errores Comunes en Tarjetas Electrónicas</h2>
+    <div id="carouselTarjetas" class="carousel slide shadow-lg rounded-4 overflow-hidden" data-bs-ride="carousel" data-bs-interval="6000">
+      <div class="carousel-inner" >
 
         <!-- Tarjeta 1 -->
         <div class="carousel-item active">
           <div class="row align-items-center g-4">
             <div class="col-lg-6 text-center">
               <div class="bg-white rounded-4 shadow p-3 h-100 d-flex align-items-center justify-content-center" style="min-height:320px;">
-                <img src="img/mantenimiento-electronico.jpeg" class="img-fluid rounded-3 border border-3 border-primary" alt="Tarjeta Inverter LG" style="max-height:260px; object-fit:contain;">
+                <img src="img/tarjeta-LG-cond.avif" class="img-fluid rounded-3 border border-3 border-primary" alt="Tarjeta Inverter LG" style="max-height:260px; object-fit:contain;">
               </div>
             </div>
             <div class="col-lg-6">
               <div class="bg-white rounded-4 shadow p-4 h-100">
                 <h4 class="fw-bold text-primary mb-3"><i class="bi bi-cpu me-2"></i>Tarjeta Inverter LG</h4>
                 <ul class="list-group list-group-flush mb-3">
-                  <li class="list-group-item bg-transparent"><span class="fw-semibold text-danger"><i class="bi bi-exclamation-triangle-fill me-1"></i>Errores comunes:</span> CH05, CH38, error de comunicación, sobrecalentamiento.</li>
-                  <li class="list-group-item bg-transparent"><span class="fw-semibold text-success"><i class="bi bi-fan me-1"></i>Marcas:</span> LG, algunas Samsung compatibles.</li>
+                  <li class="list-group-item bg-transparent"><span class="fw-semibold text-danger"><i class="bi bi-exclamation-triangle-fill me-1"></i>Errores comunes:</span> CH05: Error de comunicación, CH10: Error del fan de la consola, CH21: Error de ipm.</li>
+                  <li class="list-group-item bg-transparent"><span class="fw-semibold text-success"><i class="bi bi-fan me-1"></i>Marcas:</span> LG.</li>
                 </ul>
-                <p class="text-muted fst-italic mb-0">Estas tarjetas suelen fallar por humedad, soldaduras frías o picos de voltaje.</p>
+                <p class="text-muted fst-italic mb-0">Estas tarjetas suelen fallar por humedad y picos de voltaje.</p>
               </div>
             </div>
           </div>
@@ -255,18 +255,18 @@
         <div class="carousel-item">
           <div class="row align-items-center g-4">
             <div class="col-lg-6 text-center">
-              <div class="bg-white rounded-4 shadow p-3 h-100 d-flex align-items-center justify-content-center" style="min-height:320px;">
-                <img src="img/tarjeta2.jpg" class="img-fluid rounded-3 border border-3 border-success" alt="Tarjeta Midea Universal" style="max-height:260px; object-fit:contain;">
+              <div class="bg-white rounded-4 shadow p-3 h-100 d-flex align-items-center justify-content-center" style="min-height:390px;">
+                <img src="img/generica-moderna.jpg" class="img-fluid rounded-3 border border-3 border-success " alt="Tarjeta Midea " style="max-height:260px; object-fit:contain;">
               </div>
             </div>
             <div class="col-lg-6">
               <div class="bg-white rounded-4 shadow p-4 h-100">
-                <h4 class="fw-bold text-success mb-3"><i class="bi bi-cpu me-2"></i>Tarjeta Universal Midea</h4>
+                <h4 class="fw-bold text-success mb-3"><i class="bi bi-cpu me-2"></i>Tarjeta Midea (generica moderna)</h4>
                 <ul class="list-group list-group-flush mb-3">
-                  <li class="list-group-item bg-transparent"><span class="fw-semibold text-danger"><i class="bi bi-exclamation-triangle-fill me-1"></i>Errores comunes:</span> E1, E5, E6, problemas de sensor y relé.</li>
-                  <li class="list-group-item bg-transparent"><span class="fw-semibold text-success"><i class="bi bi-fan me-1"></i>Marcas:</span> Midea, Carrier, Gree.</li>
+                  <li class="list-group-item bg-transparent"><span class="fw-semibold text-danger"><i class="bi bi-exclamation-triangle-fill me-1"></i>Errores comunes:</span> E1: Error de comunicacion, P0: Error de IPM E5: Error del fan del condensador.</li>
+                  <li class="list-group-item bg-transparent"><span class="fw-semibold text-success"><i class="bi bi-fan me-1"></i>Marcas:</span> Midea, Carrier, Tgm, .</li>
                 </ul>
-                <p class="text-muted fst-italic mb-0">Frecuente daño en sensores de temperatura y relés de compresor.</p>
+                <p class="text-muted fst-italic mb-0">Frecuente daño en el Pfc, Ipm y fuente de alimentación.</p>
               </div>
             </div>
           </div>
@@ -277,17 +277,17 @@
           <div class="row align-items-center g-4">
             <div class="col-lg-6 text-center">
               <div class="bg-white rounded-4 shadow p-3 h-100 d-flex align-items-center justify-content-center" style="min-height:320px;">
-                <img src="img/tarjeta3.jpg" class="img-fluid rounded-3 border border-3 border-info" alt="Tarjeta Samsung Inverter" style="max-height:260px; object-fit:contain;">
+                <img src="img/tarjeta-royal-cond.webp" class="img-fluid rounded-3 border border-3 border-info" alt="Tarjeta royal" style="max-height:260px; object-fit:contain;">
               </div>
             </div>
             <div class="col-lg-6">
               <div class="bg-white rounded-4 shadow p-4 h-100">
-                <h4 class="fw-bold text-info mb-3"><i class="bi bi-cpu me-2"></i>Tarjeta Samsung Inverter</h4>
+                <h4 class="fw-bold text-info mb-3"><i class="bi bi-cpu me-2"></i>Tarjeta royal</h4>
                 <ul class="list-group list-group-flush mb-3">
                   <li class="list-group-item bg-transparent"><span class="fw-semibold text-danger"><i class="bi bi-exclamation-triangle-fill me-1"></i>Errores comunes:</span> E101, E202, error de IPM, fallo de ventilador.</li>
-                  <li class="list-group-item bg-transparent"><span class="fw-semibold text-success"><i class="bi bi-fan me-1"></i>Marcas:</span> Samsung.</li>
+                  <li class="list-group-item bg-transparent"><span class="fw-semibold text-success"><i class="bi bi-fan me-1"></i>Marcas:</span> Royal, TCL, American, PG entre otros.</li>
                 </ul>
-                <p class="text-muted fst-italic mb-0">El daño en el módulo IPM y la falta de mantenimiento son causas frecuentes.</p>
+                <p class="text-muted fst-italic mb-0">Frecuente daño en el Pfc, fuente de alimentación y circuito de comunicacion.</p>
               </div>
             </div>
           </div>
