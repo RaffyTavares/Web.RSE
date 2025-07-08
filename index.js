@@ -112,23 +112,31 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // --- Rotación de imágenes en la sección "Nosotros" con efecto desvaneciente ---
+    // --- Rotación de imágenes en la sección "Nosotros" con efecto elegante (fade + slide) ---
     const imagenes = [
         'img/fachada.RSE.jpg',
         'img/taller1.JPG',
+        'img/logo1.png',
         // Agrega más rutas si lo deseas
     ];
     let idx = 0;
     const imgElement = document.getElementById('nosotros-img');
     if (imgElement) {
-        imgElement.style.transition = 'opacity 0.7s';
+        imgElement.style.transition = 'opacity 0.7s, transform 0.7s';
         setInterval(() => {
+            // Efecto: desvanecer y deslizar a la izquierda
             imgElement.style.opacity = 0;
+            imgElement.style.transform = 'translateX(-30px) scale(0.98)';
             setTimeout(() => {
                 idx = (idx + 1) % imagenes.length;
                 imgElement.src = imagenes[idx];
                 imgElement.onload = () => {
-                    imgElement.style.opacity = 1;
+                    // Efecto: aparecer y deslizar desde la derecha
+                    imgElement.style.transform = 'translateX(80px) scale(0.58)';
+                    setTimeout(() => {
+                        imgElement.style.opacity = 1;
+                        imgElement.style.transform = 'translateX(0) scale(1)';
+                    }, 50);
                 };
             }, 700);
         }, 5000);
@@ -140,4 +148,3 @@ document.addEventListener('DOMContentLoaded', function () {
     new bootstrap.Popover(popoverTriggerEl)
   })
 
-   
