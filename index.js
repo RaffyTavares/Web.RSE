@@ -1,3 +1,8 @@
+document.oncontextmenu = e => {
+    alert('Clic derecho deshabilitado en esta página.');
+    return false; // Evita el menú contextual del navegador
+}
+
 document.querySelector('form').addEventListener('submit', function (event) {
     const nombre = document.getElementById('nombre').value;
     const email = document.getElementById('email').value;
@@ -147,4 +152,6 @@ document.addEventListener('DOMContentLoaded', function () {
     popoverTriggerList.forEach(popoverTriggerEl => {
     new bootstrap.Popover(popoverTriggerEl)
   })
+
+
 
