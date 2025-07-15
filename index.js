@@ -1,43 +1,51 @@
 document.oncontextmenu = e => {
     alert('Clic derecho deshabilitado en esta página.');
-    return false; // Evita el menú contextual del navegador
+    return false;
+};
+
+// --- FORMULARIO DE CONTACTO ---
+const contactForm = document.getElementById('contactForm') || document.querySelector('form');
+if (contactForm) {
+    contactForm.addEventListener('submit', function (event) {
+        const nombre = document.getElementById('nombre').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const mensaje = document.getElementById('mensaje').value.trim();
+
+        if (!nombre || !email || !mensaje) {
+            alert('Todos los campos son obligatorios.');
+            event.preventDefault();
+            return;
+        }
+
+        // Mostrar el toast de éxito 
+        const successToastEl = document.getElementById('successToast');
+        if (successToastEl) {
+            const successToast = new bootstrap.Toast(successToastEl, {
+                autohide: true,
+                delay: 3000
+            });
+            successToast.show();
+        }
+
+        // Limpiar el formulario después de enviar (espera breve para no interferir con el envío)
+        setTimeout(() => contactForm.reset(), 100);
+    });
 }
 
-document.querySelector('form').addEventListener('submit', function (event) {
-    const nombre = document.getElementById('nombre').value;
-    const email = document.getElementById('email').value;
-    const mensaje = document.getElementById('mensaje').value;
-
-    if (!nombre || !email || !mensaje) {
-        alert('Todos los campos son obligatorios.');
-        event.preventDefault(); // Evita que el formulario se envíe
-    }
-
-    else {
-        // Mostrar el toast de éxito
-        const successToast = new bootstrap.Toast(document.getElementById('successToast'), {
-        autohide: true, // Oculta automáticamente el toast
-        delay: 3000 // Duración en milisegundos (3 segundos)
+// --- SCROLL SUAVE AL FORMULARIO DE CONTACTO ---
+const contactoLink = document.querySelector('a[href="#contacto"]');
+if (contactoLink) {
+    contactoLink.addEventListener('click', function (e) {
+        e.preventDefault();
+        const form = document.querySelector('#contacto form');
+        if (form) {
+            form.scrollIntoView({ behavior: 'smooth' });
+            form.classList.remove('fadeInContacto');
+            void form.offsetWidth;
+            form.classList.add('fadeInContacto');
+        }
     });
-        successToast.show();
-    }
-});
-
-
-document.querySelector('a[href="#contacto"]').addEventListener('click', function (e) {
-    // Opcional: prevenir comportamiento predeterminado para controlar el scroll manualmente
-    e.preventDefault();
-
-    const form = document.querySelector('#contacto form');
-
-    // Scroll suave hacia el formulario
-    form.scrollIntoView({ behavior: 'smooth' });
-
-    // Reinicia animación
-    form.classList.remove('fadeInContacto');
-    void form.offsetWidth;
-    form.classList.add('fadeInContacto');
-});
+}
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -146,12 +154,15 @@ document.addEventListener('DOMContentLoaded', function () {
             }, 700);
         }, 5000);
     }
+
+    const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
+    popoverTriggerList.forEach(popoverTriggerEl => {
+        new bootstrap.Popover(popoverTriggerEl);
+    });
 });
 
-    const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
-    popoverTriggerList.forEach(popoverTriggerEl => {
-    new bootstrap.Popover(popoverTriggerEl)
-  })
+
+
 
 
 
