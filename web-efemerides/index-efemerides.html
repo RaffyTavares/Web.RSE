@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code History</title>
+    <meta name="description" content="Efemérides y eventos históricos del mundo del código y la tecnología.">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style-efemerides.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="terminal" role="region" aria-label="Terminal de efemérides">
+        <header>
+            <h1 class="visually-hidden">Tecno History</h1>
+            <span aria-label="Versión de la aplicación">&gt;_ Tecno-history v0.1.0</span>
+            <span id="clock" aria-live="polite"></span>
+        </header>
+
+        <main id="terminal-body" tabindex="0" aria-label="Contenido principal">
+            <!-- Aquí se mostrarán las efemérides -->
+        </main>
+
+        <div style="text-align:center; margin: 2rem 0;">
+            <a href="../index.html" class="btn-volver-inicio" 
+
+                style="
+                display: inline-block;
+                background: #222;
+                color: #fff;
+                padding: 0.75rem 2rem;
+                border-radius: 2rem;
+                text-decoration: none;
+                font-family: 'Fira Code', monospace;
+                font-size: 1.1rem;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+                transition: background 0.2s, color 0.2s;
+                "   
+                onmouseover="this.style.background='#444';" 
+                onmouseout="this.style.background='#222';">
+                ← Volver al inicio
+            </a>
+        </div>
+
+        <footer>
+            <span>© 2025 R.S.E</span>
+            <span>Desarrollado por Rafael Tavares</span>
+        </footer>
+    </div>
+
+    <script src="script-efemerides.js"></script>
+</body>
+</html>

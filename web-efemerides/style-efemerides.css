@@ -1,0 +1,109 @@
+/* Estilo general y fuente */
+body {
+    background-color: #0d1117;
+    color: #58a6ff;
+    font-family: 'Fira Code', monospace;
+    font-size: 16px;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+/* Contenedor principal del terminal */
+.terminal {
+    width: 100%;
+    max-width: 800px;
+    background-color: #010409;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Encabezado y pie de página */
+header, footer {
+    padding: 10px 15px;
+    background-color: #161b22;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #30363d;
+}
+
+footer {
+    border-top: 1px solid #30363d;
+    border-bottom: none;
+    font-size: 0.8em;
+    color: #8b949e;
+}
+
+/* Área de contenido principal */
+main {
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.prompt, .linea {
+    display: flex;
+    align-items: center;
+}
+
+.prompt > span:first-child {
+    color: #a371f7;
+    font-weight: bold;
+}
+
+.prompt > span:last-child {
+    color: #c9d1d9;
+    margin-left: 8px;
+}
+
+/* Cursor parpadeante */
+.cursor {
+    display: inline-block;
+    width: 8px;
+    height: 1.2em;
+    background-color: #58a6ff;
+    margin-left: 8px;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    from, to { background-color: transparent; }
+    50% { background-color: #58a6ff; }
+}
+
+/* Estilo para la caja de efeméride */
+.efemeride-box {
+    border: 1px solid #30363d;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 6px;
+    background-color: #0d1117;
+}
+
+.efemeride-box h2 {
+    font-size: 1.1em;
+    color: #58a6ff;
+    margin: 0 0 10px 0;
+}
+
+.efemeride-box p {
+    margin: 0 0 20px 0;
+    color: #c9d1d9;
+}
+
+.status-ok {
+    color: #3fb950;
+    font-weight: bold;
+    margin-left: 8px;
+}
+
+.linea-ok::before {
+    content: "●";
+    color: #3fb950;
+    margin-right: 10px;
+}
+
