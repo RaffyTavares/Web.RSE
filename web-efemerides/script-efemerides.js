@@ -163,7 +163,8 @@ document.addEventListener('DOMContentLoaded', () => {
 '31-08': {
     fecha: '31 de agosto de 2020',
     texto: 'Se lanza una plataforma digital para el monitoreo y control remoto de sistemas de climatización inverter en edificios inteligentes.'
-}
+}       
+
         // Agrega más fechas aquí en formato 'DD-MM'
     };
 

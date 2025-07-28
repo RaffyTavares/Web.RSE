@@ -175,6 +175,19 @@ footer {
     transition: transform 0.3s ease;
 }
 
+/* Galeria de trabajos realizados */
+.card-pequena {
+    width: 26rem;
+    min-height: 26rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (max-width: 775.98px) {
+    .card-pequena {
+        width: 100%;
+    }
+}
+
 
 /* Estilos para la sección de Contacto */
 #contacto {
