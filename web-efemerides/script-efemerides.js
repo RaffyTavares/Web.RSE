@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
     // --- Base de datos de eventos históricos ---------------------------------------------------------
     const efemerides = {
         '24-07': {
@@ -171,9 +170,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
-
-
     // --- Funciones del Terminal -------------------------------------------------------
 
     // 1. Actualizar el reloj
@@ -213,10 +209,10 @@ document.addEventListener('DOMContentLoaded', () => {
         await sleep(500);
 
         // Secuencia de arranque
-        await mostrarLineaConRetraso('● Iniciando sistema de efemérides de programación...', 'linea-ok');
+        await mostrarLineaConRetraso('● Iniciando sistema de efemérides de refrigeracion y tecnologia inverter...', 'linea-ok');
         await mostrarLineaConRetraso('● Conectando con la base de datos... <span class="status-ok">[OK]</span>', 'linea-ok');
         await mostrarLineaConRetraso('● Cargando datos históricos... <span class="status-ok">[OK]</span>', 'linea-ok');
-        await mostrarLineaConRetraso('● Sistema listo. Descubre la historia de la programación día a día.', 'linea-ok');
+        await mostrarLineaConRetraso('● Sistema listo. Descubre la historia de la refrigeracion y tecnologia inverter día a día.', 'linea-ok');
         await sleep(500);
 
         // Mostrar fecha actual

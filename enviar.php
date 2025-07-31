@@ -3,9 +3,23 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 // Cargar las clases de PHPMailer
-require 'C:/xampp/htdocs/Web.RSE/PHPMailer-master/PHPMailer-master/src/Exception.php';
-require 'C:/xampp/htdocs/Web.RSE/PHPMailer-master/PHPMailer-master/src/PHPMailer.php';
-require 'C:/xampp/htdocs/Web.RSE/PHPMailer-master/PHPMailer-master/src/SMTP.php';
+require __DIR__. '/PHPMailer-master/PHPMailer-master/src/Exception.php';
+require __DIR__.'/PHPMailer-master/PHPMailer-master/src/PHPMailer.php';
+require __DIR__.'/PHPMailer-master/PHPMailer-master/src/SMTP.php';
+
+// Configuración de la base de datos
+$host = '82.197.82.94';
+$db   = 'u594713118_RSE_WEB';
+$user = 'u594713118_Rafael_Tavares';
+$pass = '@Sebastian1992'; // Asegúrate de que esta contraseña sea correcta
+$charset = 'utf8mb4';
+
+$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+$options = [
+    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+    PDO::ATTR_EMULATE_PREPARES   => false,
+];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Verifica si los campos están definidos en $_POST
@@ -21,33 +35,44 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit;
         }
 
+          // 1. Guardar en la base de datos
+        try {
+            $pdo = new PDO($dsn, $user, $pass, $options);
+            $stmt = $pdo->prepare("INSERT INTO contacto (nombre, email, mensaje, fecha_envio) VALUES (?, ?, ?, NOW())");
+            $stmt->execute([$nombre, $email, $mensaje]);
+        } catch (PDOException $e) {
+            echo "Error al guardar el mensaje: " . $e->getMessage();
+            exit;
+        }
+
         // Configurar PHPMailer
         $mail = new PHPMailer(true);
 
         try {
             // Configuración del servidor SMTP
             $mail->isSMTP();
-            $mail->Host = 'smtp.gmail.com'; // Servidor SMTP de Gmail
+            $mail->Host = 'smtp.hostinger.com'; // Servidor SMTP de Gmail
             $mail->SMTPAuth = true; // Habilitar autenticación SMTP
-            $mail->Username = ' rafaeltavares0266@gmail.com'; // Tu correo Gmail
-            $mail->Password = 'dvzw bvqa mzrd rzgg'; // Tu contraseña de Gmail
-            $mail->SMTPSecure = 'tls'; // Habilitar encriptación TLS
-            $mail->Port = 587; // Puerto SMTP de Gmail
+            $mail->Username = 'info@rselectronicas.com'; // Tu correo Gmail
+            $mail->Password = '@Sebastian1992'; // Tu contraseña de Gmail
+            $mail->SMTPSecure = 'ssl'; // Habilitar encriptación TLS
+            $mail->Port = 465; // Puerto SMTP de Gmail
 
             // Destinatarios
-            $mail->setFrom(' rafaeltavares0266@gmail.com', 'R.S.E'); // Remitente
-            $mail->addAddress(' rafaeltavares0266@gmail.com'); // Destinatario
+            $mail->setFrom('info@rselectronicas.com', 'R.S.E'); // Remitente
+            $mail->addAddress('info@rselectronicas.com'); // Destinatario
 
             // Contenido del correo
             $mail->isHTML(true ); // Formato de texto plano
-            $mail->Subject = 'Nuevo mensaje de contacto'; // Asunto del correo
+            $mail->CharSet = 'UTF-8';
+            $mail->Subject = 'Nuevo mensaje de R.S.E'; // Asunto del correo
             $mail->Body = "
                     <!DOCTYPE html>
             <html lang='es'>
                 <head>
                     <meta charset='UTF-8'>
                     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-                    <title>Nuevo Mensaje de Contacto</title>
+                    <title>Nuevo Mensaje de R.S.E</title>
                     <style>
                         body {
                         font-family: Arial, sans-serif;
@@ -94,7 +119,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 <body>
                     <div class='container'>
-                            <h1>Nuevo Mensaje de Contacto</h1>
+                            <h1>Nuevo Mensaje de R.S.E</h1>
                             <p><span class='label'>Nombre:</span> $nombre</p>
                             <p><span class='label'>Email:</span> $email</p>
                         <div class='message'>
@@ -108,7 +133,41 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Enviar el correo
             $mail->send();
-            echo 'Mensaje enviado correctamente.';
+            echo '
+            <div style="text-align:center; margin: 2rem 0;">
+                <div style="
+                    display: inline-block;
+                    background: #222;
+                    color: #fff;
+                    padding: 0.75rem 2rem;
+                    border-radius: 2rem;
+                    text-decoration: none;
+                    font-family: Arial, sans-serif;
+                    font-size: 1.1rem;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+                    margin-bottom: 1.5rem;
+                ">
+                    Mensaje enviado correctamente.
+                </div>
+                <br>
+                 <a href="index.html" style="
+                    display: inline-block;
+                    background: #007bff;
+                    color: #fff;
+                    padding: 0.75rem 2rem;
+                    border-radius: 2rem;
+                    text-decoration: none;
+                    font-family: Arial, sans-serif;
+                    font-size: 1.1rem;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+                    transition: background 0.2s, color 0.2s;
+                    margin-top: 1.5rem;
+                " onmouseover="this.style.background=\'#0056b3\';" onmouseout="this.style.background=\'#007bff\';">
+                    ← Volver al inicio
+                </a>
+            </div>
+            ';
+
         } catch (Exception $e) {
             echo "Error al enviar el mensaje: {$mail->ErrorInfo}";
         }

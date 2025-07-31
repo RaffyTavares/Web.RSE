@@ -40,3 +40,28 @@
 footer {
     border-top: 4px solid #f9f9f9;
 }
+
+/* Slide effect for video carousel */
+#videoCarousel {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    min-height: 350px;
+    gap: 1rem;
+}
+.video-item {
+    flex: 0 0 33.3333%;
+    max-width: 33.3333%;
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.5s, transform 0.5s;
+    display: none;
+}
+.video-item.active {
+    opacity: 1;
+    transform: translateX(0);
+    display: block;
+}
+@media (max-width: 991.98px) {
+    .video-item { flex: 0 0 100%; max-width: 100%; }
+}

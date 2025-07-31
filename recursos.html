@@ -288,12 +288,27 @@
 document.addEventListener('DOMContentLoaded', function () {
     const videoItems = Array.from(document.querySelectorAll('#videoCarousel .video-item'));
     let start = 0;
-    const visible = 3; // Número de videos visibles
+
+    function getVisible() {
+        if (window.innerWidth < 768) return 1; // 1 video en móvil
+        if (window.innerWidth < 992) return 2; // 2 en tablet
+        return 3; // 3 en desktop
+    }
 
     function updateVideos() {
+        const visible = getVisible();
         videoItems.forEach((item, idx) => {
-            item.style.display = (idx >= start && idx < start + visible) ? '' : 'none';
+            item.classList.remove('active');
+            item.style.display = 'none';
         });
+        for (let i = start; i < start + visible && i < videoItems.length; i++) {
+            videoItems[i].classList.add('active');
+            videoItems[i].style.display = 'block';
+        }
+        // Ajusta el inicio si te pasas del final
+        if (start > videoItems.length - visible) {
+            start = Math.max(0, videoItems.length - visible);
+        }
     }
 
     document.getElementById('prevVideo').addEventListener('click', function () {
@@ -304,23 +319,25 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     document.getElementById('nextVideo').addEventListener('click', function () {
+        const visible = getVisible();
         if (start < videoItems.length - visible) {
             start++;
             updateVideos();
         }
     });
 
+    window.addEventListener('resize', function () {
+        updateVideos();
+    });
+
     updateVideos();
 
-
+    // Popover Bootstrap
     var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
     var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-    return new bootstrap.Popover(popoverTriggerEl)
+        return new bootstrap.Popover(popoverTriggerEl)
     })
 });
-
-
-
 </script>
 </body>
 </html>
