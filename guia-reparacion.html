@@ -6,26 +6,35 @@
     <title>Guía de Reparación de Aire Acondicionado Inverter</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts para fuentes elegantes -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Lora:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <!-- Animate.css para animaciones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="CSS/guia-reparacion.css">
     <link rel="icon" href="img/calculadora.jpeg" type="image/jpg">
+    
 </head>
 <body>
     <!-- Contenedor principal -->
-    <div class="container">
-        <div class="text-center">
-            <img src="img/air_conditioner_technician.png" alt="Energía" class="img-fluid mb-3" style="max-width: 200px;">
+    <div class="container py-4">
+        <div class="text-center animate__animated animate__fadeInDown">
+            <img src="img/air_conditioner_technician.png" alt="Energía" class="img-fluid mb-3" style="max-width: 180px;">
         </div>
         <!-- Título principal -->
-        <h1 class="text-center my-4 text-info">Guía de Reparación de Aire Acondicionado Inverter</h1>
+        <h1 class="text-center my-4 text-info animate__animated animate__fadeInDown">Guía de Reparación de Aire Acondicionado Inverter</h1>
         
         <!-- Sección 1: Introducción -->
-        <h2>1. Introducción</h2>
-        <p>Esta guía está diseñada para ayudar a técnicos en la identificación y solución de fallas comunes en sistemas de aire acondicionado inverter.</p>
+        <h2 class="section-title animate__animated animate__fadeInLeft">1. Introducción</h2>
+        <p class="text-center lead animate__animated animate__fadeInLeft animate__delay-1s">
+            Esta guía está diseñada para ayudar a técnicos en la identificación y solución de fallas comunes en sistemas de aire acondicionado inverter.
+        </p>
 
-        <!-- Sección 2: Herramientas necesarias --------------------------------------------------------------------------------------->
-        <h2>2. Herramientas necesarias</h2>
-        <ul class="list-group">
+        <!-- Sección 2: Herramientas necesarias -->
+        <h2 class="section-title animate__animated animate__fadeInRight">2. Herramientas necesarias</h2>
+        <ul class="list-group mb-4 animate__animated animate__fadeInRight animate__delay-1s">
             <li class="list-group-item"><i class="bi bi-tools"></i> Multímetro digital</li>
             <li class="list-group-item"><i class="bi bi-tools"></i> Pinza amperimétrica</li>
             <li class="list-group-item"><i class="bi bi-tools"></i> Manómetro de refrigeración</li>
@@ -36,44 +45,42 @@
             <li class="list-group-item"><i class="bi bi-tools"></i> Bomba de vacío</li>
         </ul>
 
-        <!-- Sección 3: Diagnóstico inicial -------------------------------------------------------------------------------------------->
-        <h2>3. Diagnóstico inicial</h2>
-        <ol class="list-group list-group-numbered">
+        <!-- Sección 3: Diagnóstico inicial -->
+        <h2 class="section-title animate__animated animate__fadeInLeft">3. Diagnóstico inicial</h2>
+        <ol class="list-group list-group-numbered mb-4 animate__animated animate__fadeInLeft animate__delay-1s">
             <li class="list-group-item">Verificar la alimentación eléctrica.</li>
             <li class="list-group-item">Observar el comportamiento del equipo.</li>
             <li class="list-group-item">Revisar el control remoto y la configuración.</li>
         </ol>
 
-        <!-- Sección 4: Verificación de fallas comunes ---------------------------------------------------------------------------------->
-        <h2>4. Verificación de fallas comunes</h2>
+        <!-- Sección 4: Verificación de fallas comunes -->
+        <h2 class="section-title animate__animated animate__fadeInRight">4. Verificación de fallas comunes</h2>
         <div class="row">
             <!-- Falla 1 -->
-            <div class="col-md-4">
+            <div class="col-md-4 animate__animated animate__zoomIn">
                 <div class="card shadow-sm mb-4">
                     <div class="card-body text-center">
-                        <h5 class="card-title text-danger">El aire no enciende</h5>
+                        <h5 class="card-title text-danger"><i class="bi bi-exclamation-triangle-fill"></i> El aire no enciende</h5>
                         <p class="card-text">Haz clic para más información.</p>
                         <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#falla1Modal">Ver detalles</button>
                     </div>
                 </div>
             </div>
-
             <!-- Falla 2 -->
-            <div class="col-md-4">
+            <div class="col-md-4 animate__animated animate__zoomIn animate__delay-1s">
                 <div class="card shadow-sm mb-4">
                     <div class="card-body text-center">
-                        <h5 class="card-title text-danger">El aire enciende pero no enfría</h5>
+                        <h5 class="card-title text-danger"><i class="bi bi-exclamation-triangle-fill"></i> El aire enciende pero no enfría</h5>
                         <p class="card-text">Haz clic para más información.</p>
                         <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#falla2Modal">Ver detalles</button>
                     </div>
                 </div>
             </div>
-
             <!-- Falla 3 -->
-            <div class="col-md-4">
+            <div class="col-md-4 animate__animated animate__zoomIn animate__delay-2s">
                 <div class="card shadow-sm mb-4">
                     <div class="card-body text-center">
-                        <h5 class="card-title text-danger">El equipo se apaga solo</h5>
+                        <h5 class="card-title text-danger"><i class="bi bi-exclamation-triangle-fill"></i> El equipo se apaga solo</h5>
                         <p class="card-text">Haz clic para más información.</p>
                         <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#falla3Modal">Ver detalles</button>
                     </div>
@@ -81,18 +88,19 @@
             </div>
         </div>
 
-        <!-- Modales para las fallas ---------------------------------------------------------------------------------------------------->
+        <!-- Modales para las fallas -->
         <!-- Modal Falla 1 -->
         <div class="modal fade" id="falla1Modal" tabindex="-1" aria-labelledby="falla1ModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
-                <div class="modal-content">
+                <div class="modal-content animate__animated animate__fadeInDown">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="falla1ModalLabel">El aire no enciende</h5>
+                        <h5 class="modal-title" id="falla1ModalLabel"><i class="bi bi-exclamation-triangle-fill text-danger"></i> El aire no enciende</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                     </div>
                     <div class="modal-body">
                         <p><strong>Posibles causas:</strong></p>
                         <ul>
-                            <li>Problema con la alimentacion energética.</li>
+                            <li>Problema con la alimentación energética.</li>
                             <li>Cableado defectuoso.</li>
                             <li>Fallo en la tarjeta electrónica.</li> 
                         </ul>
@@ -103,13 +111,13 @@
                 </div>
             </div>
         </div>
-
         <!-- Modal Falla 2 -->
         <div class="modal fade" id="falla2Modal" tabindex="-1" aria-labelledby="falla2ModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
-                <div class="modal-content">
+                <div class="modal-content animate__animated animate__fadeInDown">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="falla2ModalLabel">El aire enciende pero no enfría</h5>
+                        <h5 class="modal-title" id="falla2ModalLabel"><i class="bi bi-exclamation-triangle-fill text-danger"></i> El aire enciende pero no enfría</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                     </div>
                     <div class="modal-body">
                         <p><strong>Posibles causas:</strong></p>
@@ -125,13 +133,13 @@
                 </div>
             </div>
         </div>
-
         <!-- Modal Falla 3 -->
         <div class="modal fade" id="falla3Modal" tabindex="-1" aria-labelledby="falla3ModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
-                <div class="modal-content">
+                <div class="modal-content animate__animated animate__fadeInDown">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="falla3ModalLabel">El equipo se apaga solo</h5>
+                        <h5 class="modal-title" id="falla3ModalLabel"><i class="bi bi-exclamation-triangle-fill text-danger"></i> El equipo se apaga solo</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                     </div>
                     <div class="modal-body">
                         <p><strong>Posibles causas:</strong></p>
@@ -148,10 +156,10 @@
             </div>
         </div>
 
-        <!-- Sección 5: Códigos de error comunes por marcas -------------------------------------------------------------------------->
-        <h2>5. Códigos de error comunes por marcas</h2>
-        <div class="accordion" id="erroresPorMarcas">
-            <!-- Marcas: Lennox, Daikin ------------------------->
+        <!-- Sección 5: Códigos de error comunes por marcas -->
+        <h2 class="section-title animate__animated animate__fadeInLeft">5. Códigos de error comunes por marcas</h2>
+        <div class="accordion mb-4 animate__animated animate__fadeInLeft animate__delay-1s" id="erroresPorMarcas">
+            <!-- Marcas: Lennox, Daikin -->
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingLG">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLG" aria-expanded="false" aria-controls="collapseLG">
@@ -185,8 +193,7 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Marcas: Royal, Ifalcon, PG, American. ------------------------->
+            <!-- Marcas: Royal, Ifalcon, PG, American. -->
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingSamsung">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSamsung" aria-expanded="false" aria-controls="collapseSamsung">
@@ -216,8 +223,7 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Marca Daikin --------------------------------->
+            <!-- Marca Daikin -->
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingDaikin">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDaikin" aria-expanded="false" aria-controls="collapseDaikin">
@@ -249,28 +255,31 @@
             </div>
         </div>
 
-        <!-- Sección 6: Mantenimiento preventivo ---------------------------------------------------------------------------------------->
-        <h2>6. Mantenimiento preventivo recomendado</h2>
-        <ul class="list-group">
+        <!-- Sección 6: Mantenimiento preventivo recomendado -->
+        <h2 class="section-title animate__animated animate__fadeInRight">6. Mantenimiento preventivo recomendado</h2>
+        <ul class="list-group mb-4 animate__animated animate__fadeInRight animate__delay-1s">
             <li class="list-group-item"><strong>Cada 3 meses:</strong> Limpieza de filtros.</li>
             <li class="list-group-item"><strong>Cada 6 meses:</strong> Inspección de conexiones eléctricas y condensador.</li>
             <li class="list-group-item"><strong>Cada 12 meses:</strong> Revisión de presión de refrigerante y limpieza profunda.</li>
             <li class="list-group-item"><strong>Anualmente:</strong> Pruebas de eficiencia energética y calibración de sensores.</li>
         </ul>
 
-        <!-- Sección 7: Conclusión ------------------------------------------------------------------------------------------------------>
-        <h2>7. Conclusión</h2>
-        <p>Siguiendo esta guía, cualquier técnico podrá realizar un diagnóstico eficiente y corregir las fallas en aires acondicionados inverter.</p>
-        <p><strong>Autor:</strong> <span class="text-primary">RAFAEL SOLUCIONES ELECTRONICAS</span></p>
+        <!-- Sección 7: Conclusión -->
+        <h2 class="section-title animate__animated animate__fadeInLeft">7. Conclusión</h2>
+        <p class="text-center lead animate__animated animate__fadeInLeft animate__delay-1s">
+            Siguiendo esta guía, cualquier técnico podrá realizar un diagnóstico eficiente y corregir las fallas en aires acondicionados inverter.
+        </p>
+        <p class="author text-center"><strong>Autor:</strong> <span class="text-primary">RAFAEL SOLUCIONES ELECTRONICAS</span></p>
     </div>
 
-    <!-- Botón "Volver al inicio" ------------------------------------------------------------------------------------------------------>
+    <!-- Botón "Volver al inicio" -->
     <button class="btn-back-to-top" onclick="scrollToTop()">
-        <i class="bi bi-arrow-up">Inicio</i>
+        <i class="bi bi-arrow-up"></i> Inicio
     </button>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Animate.css ya está en el head -->
     <script>
         // Función para volver al inicio
         function scrollToTop() {

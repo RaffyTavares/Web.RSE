@@ -1,4 +1,13 @@
 /* Estilos personalizados */
+
+ body, .navbar, .footer-label, .card-title, .card-text, .accordion-button, .accordion-body, .form-label, .btn, .lead, h1, h2, h3, h4, h5, h6, p, ul, li, .modal-title {
+        font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif !important;
+    }
+    .fst-italic, .lead, .card-text.fst-italic, .text-muted, .modal-body p, .faq .accordion-body {
+        font-family: 'Lora', 'Georgia', serif !important;
+    }
+
+    
 body {
     font-family: 'Arial', sans-serif;
     padding-top: 56px; /* Ajuste para el navbar fijo */

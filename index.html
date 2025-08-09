@@ -11,6 +11,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!--Personal CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Lora:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
     <link href="CSS/efectos.css"  rel="stylesheet">
     <link href="CSS/index.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="img/logo1.png">
@@ -20,7 +23,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-secondary bg-opacity-75 shadow-sm fixed-top" style="backdrop-filter: blur(8px);">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center gap-2" href="#inicio">
-                <img src="img/logo1.png" alt="Logo de Rafael Soluciones Electronica" style="width: 48px; height: auto;">
+                <img src="img/logo1.png" alt="Logo de Rafael Soluciones Electronica"  style="width: 48px; height: auto;">
                 <span class="fw-bold text-info">RSE</span>
             </a>
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -66,12 +69,15 @@
         background-blend-mode: overlay;
     " >
         <div class="container">
+            <div class="d-flex justify-content-center align-items-center gap-3 mb-2">
+            <i class="bi bi-gear-fill text-info animate__animated animate__rotateIn animate__infinite animate__slower" style="font-size: 3rem;"></i>
+            <!-- Puedes cambiar el icono por otro de Bootstrap Icons si lo prefieres -->
+        </div>
             <h5 class="fade-in display-5 fw-bold text-uppercase py-3" style="letter-spacing: 2px;">
-                Soluciones Electrónicas de Confianza para Aires Inverter
+                Innovación y Excelencia en Soluciones Electrónicas Inverter
             </h5>
-               
-            <p class="lead text-light" style="font-style: italic; max-width: 700px; margin: 0 auto;">
-                Reparamos tarjetas electrónicas con tecnología avanzada, garantizando calidad y eficiencia en cada proyecto.
+            <p class="lead text-light fs-4 fst-italic" style="max-width: 700px; margin: 0 auto; letter-spacing: 0.5px;">
+                Transformamos la tecnología en tranquilidad. Expertos en reparación de tarjetas electrónicas para aires acondicionados y neveras inverter, garantizando resultados superiores y atención personalizada en cada servicio.
             </p>
             <a href="#contacto" class="btn btn-outline-light btn-lg mt-4 px-5">Contáctanos</a>
                 <br>
@@ -97,7 +103,7 @@
             </button>
             
             <!-- Título -->
-            <h2 class="text-center text-light m-0">Nuestros Servicios</h2>
+            <h2 class="text-center text-light m-0">Servicios Especializados</h2>
 
             <!-- Botón Derecho -->
             <button id="btn-right" class="btn btn-light">
@@ -113,7 +119,7 @@
                     <img src="img/reparacion.JPG" class="img-rotate img-shadow card-img-top" alt="Reparación de Tarjetas" data-bs-toggle="modal" data-bs-target="#modalServicio1" style="height: 200px; object-fit: cover; border-radius: 20px;">
                     <div class="card-body">
                         <h5 class="card-title text-white">Reparación de Tarjetas</h5>
-                        <p class="card-text text-white">Diagnóstico y reparación de tarjetas electrónicas para aires acondicionados.</p>
+                        <p class="card-text text-white">Soluciones precisas y confiables en diagnóstico y reparación de tarjetas electrónicas para equipos inverter.</p>
                         <button class="btn btn-outline-dark text-white" data-bs-toggle="modal" data-bs-target="#modalServicio1">Ver detalles</button>
                     </div>
                 </div>
@@ -126,7 +132,7 @@
                     <img src="img/mantenimiento.jpg" class="img-rotate card-img-top" alt="Mantenimiento Preventivo" data-bs-toggle="modal" data-bs-target="#modalServicio2" style="height: 200px; object-fit: cover; border-radius: 20px;">
                     <div class="card-body">
                         <h5 class="card-title text-white">Mantenimiento Preventivo</h5>
-                        <p class="card-text text-white">Servicios de mantenimiento para evitar fallas futuras.</p>
+                        <p class="card-text text-white">Cuida tu inversión con mantenimiento profesional que previene fallas y prolonga la vida útil de tus equipos.</p>
                          <button class="btn btn-outline-dark text-white" data-bs-toggle="modal" data-bs-target="#modalServicio2">Ver detalles</button>
                     </div>
                 </div>
@@ -138,7 +144,7 @@
                     <img src="img/componentes electrónicos.jpg" class="img-rotate card-img-top" alt="Venta de Componentes" data-bs-toggle="modal" data-bs-target="#modalServicio3" style="height: 200px; object-fit: cover; border-radius: 20px;">
                     <div class="card-body">
                         <h5 class="card-title text-white">Componentes</h5>
-                        <p class="card-text text-white">Componentes originales y de alta calidad para tus equipos.</p>
+                        <p class="card-text text-white">Ofrecemos componentes originales y certificados para garantizar el óptimo rendimiento de tus sistemas electrónicos.</p>
                          <button class="btn btn-outline-dark text-white" data-bs-toggle="modal" data-bs-target="#modalServicio3">Ver detalles</button>
                     </div>
                 </div>
@@ -149,8 +155,8 @@
                 <div class="card mb-4 shadow" style="width: 20rem; min-height: 13rem; border-radius: 20px; background-color: rgba(0, 0, 0, 0.011);">
                     <img src="img/Inverter_Samsung.JPG" class="img-rotate card-img-top" alt="Servicio Adicional"  data-bs-toggle="modal" data-bs-target="#modalServicio4" style="height: 200px; object-fit: cover; border-radius: 40px;">
                     <div class="card-body">
-                        <h5 class="card-title text-white">Tarjetas de neveras inverter</h5>
-                        <p class="card-text text-white">Reparacion y modificacion de neveras inverter.</p>
+                        <h5 class="card-title text-white">Tarjetas de Neveras Inverter</h5>
+                        <p class="card-text text-white">Expertos en reparación y modificación de tarjetas electrónicas para neveras inverter, asegurando eficiencia y durabilidad.</p>
                         <button class="btn btn-outline-dark text-white" data-bs-toggle="modal" data-bs-target="#modalServicio4">Ver detalles</button>
                     </div>
                 </div>
@@ -163,102 +169,147 @@
 <!-- Modales -->
 <!-- Modal Servicio 1 -->
 <div class="modal fade" id="modalServicio1" tabindex="-1" aria-labelledby="modalServicio1Label" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modalServicio1Label">Reparación de Tarjetas</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-            </div>
-            <div class="modal-body">
-                <img src="img/taller1.JPG" class="img-modal img-shadow img-fluid mb-3" alt="Reparación de Tarjetas" style=" height: 400px; object-fit: cover;">
-                <p>Ofrecemos servicios especializados en diagnóstico y reparación de tarjetas electrónicas para aires acondicionados con tecnología inverter. Nuestro equipo utiliza herramientas avanzadas para garantizar resultados de alta calidad.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            </div>
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content rounded-4 shadow-lg border-0 animate__animated animate__fadeIn">
+      <div class="modal-header bg-primary text-white rounded-top-4">
+        <h5 class="modal-title fw-bold" id="modalServicio1Label">
+          <i class="bi bi-cpu me-2"></i>Reparación de Tarjetas
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body bg-light">
+        <div class="text-center mb-3">
+          <img src="img/taller1.JPG" class="img-modal img-shadow img-fluid rounded-4 border border-3 border-primary" alt="Reparación de Tarjetas" style="height: 320px; object-fit: cover;">
         </div>
+        <p class="fs-5 text-dark mb-3">
+          Ofrecemos <strong>diagnóstico y reparación profesional</strong> de tarjetas electrónicas para aires acondicionados inverter. Utilizamos <span class="text-primary">herramientas avanzadas</span> y repuestos originales para garantizar resultados duraderos.
+        </p>
+        <ul class="list-unstyled mb-0">
+          <li><i class="bi bi-check-circle-fill text-success me-2"></i> Diagnóstico especializado</li>
+          <li><i class="bi bi-check-circle-fill text-success me-2"></i> Reparación de fallas comunes y complejas</li>
+          <li><i class="bi bi-check-circle-fill text-success me-2"></i> Garantía en cada servicio</li>
+        </ul>
+      </div>
+      <div class="modal-footer bg-light rounded-bottom-4">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
     </div>
+  </div>
 </div>
 
 <!-- Modal Servicio 2 -->
 <div class="modal fade" id="modalServicio2" tabindex="-1" aria-labelledby="modalServicio2Label" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modalServicio2Label">Mantenimiento Preventivo</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-            </div>
-            <div class="modal-body">
-                <img src="img/mantenimiento-electronico.jpeg" class="img-modal img-shadow img-fluid mb-3" alt="Mantenimiento Preventivo" style=" height: 400px; object-fit: cover;">
-                <p>Realizamos mantenimiento preventivo para garantizar el correcto funcionamiento de tus equipos. Esto incluye limpieza, revisión de componentes y ajustes necesarios para evitar fallas futuras.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            </div>
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content rounded-4 shadow-lg border-0 animate__animated animate__fadeIn">
+      <div class="modal-header bg-success text-white rounded-top-4">
+        <h5 class="modal-title fw-bold" id="modalServicio2Label">
+          <i class="bi bi-tools me-2"></i>Mantenimiento Preventivo
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body bg-light">
+        <div class="text-center mb-3">
+          <img src="img/mantenimiento-electronico.jpeg" class="img-modal img-shadow img-fluid rounded-4 border border-3 border-success" alt="Mantenimiento Preventivo" style="height: 320px; object-fit: cover;">
         </div>
+        <p class="fs-5 text-dark mb-3">
+          <strong>Cuida tus equipos</strong> con nuestro mantenimiento preventivo: limpieza, revisión de componentes y ajustes para evitar fallas y prolongar la vida útil.
+        </p>
+        <ul class="list-unstyled mb-0">
+          <li><i class="bi bi-check-circle-fill text-success me-2"></i> Limpieza profesional</li>
+          <li><i class="bi bi-check-circle-fill text-success me-2"></i> Revisión de conexiones y sensores</li>
+          <li><i class="bi bi-check-circle-fill text-success me-2"></i> Informe técnico detallado</li>
+        </ul>
+      </div>
+      <div class="modal-footer bg-light rounded-bottom-4">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
     </div>
+  </div>
 </div>
 
 <!-- Modal Servicio 3 -->
 <div class="modal fade" id="modalServicio3" tabindex="-1" aria-labelledby="modalServicio3Label" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modalServicio3Label">Componentes</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-            </div>
-            <div class="modal-body">
-                <img src="img/dispositivos2.jpeg" class=" img-modal img-shadow  img-fluid mb-3 " alt="Venta de Componentes" style=" height: 400px; object-fit: cover;">
-                <p>Ofrecemos una amplia gama de componentes electrónicos originales y de alta calidad para garantizar el rendimiento óptimo de tus equipos.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            </div>
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content rounded-4 shadow-lg border-0 animate__animated animate__fadeIn">
+      <div class="modal-header bg-info text-white rounded-top-4">
+        <h5 class="modal-title fw-bold" id="modalServicio3Label">
+          <i class="bi bi-box-seam me-2"></i>Componentes
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body bg-light">
+        <div class="text-center mb-3">
+          <img src="img/dispositivos2.jpeg" class="img-modal img-shadow img-fluid rounded-4 border border-3 border-info" alt="Venta de Componentes" style="height: 320px; object-fit: cover;">
         </div>
+        <p class="fs-5 text-dark mb-3">
+          <strong>Componentes originales y certificados</strong> para garantizar el óptimo rendimiento y seguridad de tus sistemas electrónicos.
+        </p>
+        <ul class="list-unstyled mb-0">
+          <li><i class="bi bi-check-circle-fill text-success me-2"></i> Variedad de repuestos</li>
+          <li><i class="bi bi-check-circle-fill text-success me-2"></i> Asesoría técnica</li>
+          <li><i class="bi bi-check-circle-fill text-success me-2"></i> Garantía de calidad</li>
+        </ul>
+      </div>
+      <div class="modal-footer bg-light rounded-bottom-4">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
     </div>
+  </div>
 </div>
+
 <!-- Modal Servicio 4 -->
 <div class="modal fade" id="modalServicio4" tabindex="-1" aria-labelledby="modalServicio4Label" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modalServicio4Label">Tarjetas de neveras inverter</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-            </div>
-            <div class="modal-body">
-                <img src="img/Samsung-refrigerator.jpeg" class="img-modal img-shadow img-fluid mb-3" alt="Servicio Adicional" style=" height: 400px; object-fit: cover;">
-                <p>Ofrecemos servicios especializados en la reparación y modificación de tarjetas electrónicas de neveras inverter. 
-                    Nuestro equipo está capacitado para diagnosticar y reparar fallas, asegurando un funcionamiento óptimo de tus equipos.</p>
-                <p>Reparamos y modificamos tarjetas de neveras inverter, asegurando un funcionamiento eficiente y prolongando la vida útil del equipo.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            </div>
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content rounded-4 shadow-lg border-0 animate__animated animate__fadeIn">
+      <div class="modal-header bg-warning text-dark rounded-top-4">
+        <h5 class="modal-title fw-bold" id="modalServicio4Label">
+          <i class="bi bi-snow me-2"></i>Tarjetas de Neveras Inverter
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body bg-light">
+        <div class="text-center mb-3">
+          <img src="img/Samsung-refrigerator.jpeg" class="img-modal img-shadow img-fluid rounded-4 border border-3 border-warning" alt="Servicio Adicional" style="height: 320px; object-fit: cover;">
         </div>
+        <p class="fs-5 text-dark mb-3">
+          <strong>Reparación y modificación</strong> de tarjetas electrónicas para neveras inverter. Diagnóstico preciso y soluciones que aseguran eficiencia y durabilidad.
+        </p>
+        <ul class="list-unstyled mb-0">
+          <li><i class="bi bi-check-circle-fill text-success me-2"></i> Diagnóstico de fallas</li>
+          <li><i class="bi bi-check-circle-fill text-success me-2"></i> Reparación y modificación profesional</li>
+          <li><i class="bi bi-check-circle-fill text-success me-2"></i> Garantía y soporte</li>
+        </ul>
+      </div>
+      <div class="modal-footer bg-light rounded-bottom-4">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
     </div>
+  </div>
 </div>
 
 <!-- Carrusel de Tarjetas Electrónicas con Errores Comunes -->
 <section id="tarjetas-carrusel" class="py-5" style="background: linear-gradient(135deg, #181b20 0%, #c5d4f1 100%);">
   <div class="container">
     <h2 class="text-center mb-3 text-white fw-bold fs-2"> Errores Comunes en Tarjetas Electrónicas</h2>
-    <!--Para que el carrucel cambie automatico cambia false en data-bs-ride por carrucel.-->
-    <div id="carouselTarjetas" class="carousel slide shadow-lg rounded-4 overflow-hidden" data-bs-ride="false" data-bs-interval="6000">
-      <div class="carousel-inner" >
+    <div id="carouselTarjetas" class="carousel slide shadow-lg rounded-4 overflow-hidden" data-bs-ride="carousel" data-bs-interval="6000">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselTarjetas" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Tarjeta 1"></button>
+        <button type="button" data-bs-target="#carouselTarjetas" data-bs-slide-to="1" aria-label="Tarjeta 2"></button>
+        <button type="button" data-bs-target="#carouselTarjetas" data-bs-slide-to="2" aria-label="Tarjeta 3"></button>
+      </div>
+      <div class="carousel-inner">
 
         <!-- Tarjeta 1 -->
         <div class="carousel-item active">
           <div class="row align-items-center g-4">
             <div class="col-lg-6 text-center">
-              <div class="bg-white rounded-4 shadow p-3 h-100 d-flex align-items-center justify-content-center" style="min-height:320px;">
-                <img src="img/tarjeta-LG-cond.avif" class="img-fluid rounded-3 border border-3 border-primary" alt="Tarjeta Inverter LG" style="max-height:260px; object-fit:contain;">
-              </div>
+              <img src="img/tarjeta-LG-cond.avif" class="img-fluid rounded-3 border border-3 border-primary animate__animated animate__fadeInLeft" alt="Tarjeta Inverter LG" style="max-height:260px; object-fit:contain;">
             </div>
             <div class="col-lg-6">
-              <div class="bg-white rounded-4 shadow p-4 h-100">
+              <div class="bg-white rounded-4 shadow p-4 h-100 animate__animated animate__fadeInRight">
                 <h4 class="fw-bold text-primary mb-3"><i class="bi bi-cpu me-2"></i>Tarjeta Inverter LG</h4>
                 <ul class="list-group list-group-flush mb-3">
-                  <li class="list-group-item bg-transparent"><span class="fw-semibold text-danger"><i class="bi bi-exclamation-triangle-fill me-1"></i>Errores comunes:</span> CH05: Error de comunicación, CH10: Error del fan de la consola, CH21: Error de ipm.</li>
+                  <li class="list-group-item bg-transparent"><span class="fw-semibold text-danger"><i class="bi bi-exclamation-triangle-fill me-1"></i>Errores comunes:</span> CH05: Error de comunicación, CH10: Error del fan de la consola, CH21: Error de IPM.</li>
                   <li class="list-group-item bg-transparent"><span class="fw-semibold text-success"><i class="bi bi-fan me-1"></i>Marcas:</span> LG.</li>
                 </ul>
                 <p class="text-muted fst-italic mb-0">Estas tarjetas suelen fallar por humedad y picos de voltaje.</p>
@@ -271,18 +322,16 @@
         <div class="carousel-item">
           <div class="row align-items-center g-4">
             <div class="col-lg-6 text-center">
-              <div class="bg-white rounded-4 shadow p-3 h-100 d-flex align-items-center justify-content-center" style="min-height:390px;">
-                <img src="img/generica-moderna.jpg" class="img-fluid rounded-3 border border-3 border-success " alt="Tarjeta Midea " style="max-height:260px; object-fit:contain;">
-              </div>
+              <img src="img/generica-moderna.jpg" class="img-fluid rounded-3 border border-3 border-success animate__animated animate__fadeInLeft" alt="Tarjeta Midea" style="max-height:260px; object-fit:contain;">
             </div>
             <div class="col-lg-6">
-              <div class="bg-white rounded-4 shadow p-4 h-100">
-                <h4 class="fw-bold text-success mb-3"><i class="bi bi-cpu me-2"></i>Tarjeta inverter Midea (generica moderna)</h4>
+              <div class="bg-white rounded-4 shadow p-4 h-100 animate__animated animate__fadeInRight">
+                <h4 class="fw-bold text-success mb-3"><i class="bi bi-cpu me-2"></i>Tarjeta inverter Midea (genérica moderna)</h4>
                 <ul class="list-group list-group-flush mb-3">
-                  <li class="list-group-item bg-transparent"><span class="fw-semibold text-danger"><i class="bi bi-exclamation-triangle-fill me-1"></i>Errores comunes:</span> E1: Error de comunicacion, P0: Error de IPM E5: Error del fan del condensador.</li>
-                  <li class="list-group-item bg-transparent"><span class="fw-semibold text-success"><i class="bi bi-fan me-1"></i>Marcas:</span> Midea, Carrier, Tgm, .</li>
+                  <li class="list-group-item bg-transparent"><span class="fw-semibold text-danger"><i class="bi bi-exclamation-triangle-fill me-1"></i>Errores comunes:</span> E1: Error de comunicación, P0: Error de IPM, E5: Error del fan del condensador.</li>
+                  <li class="list-group-item bg-transparent"><span class="fw-semibold text-success"><i class="bi bi-fan me-1"></i>Marcas:</span> Midea, Carrier, TGM.</li>
                 </ul>
-                <p class="text-muted fst-italic mb-0">Frecuente daño en el Pfc, Ipm y fuente de alimentación.</p>
+                <p class="text-muted fst-italic mb-0">Frecuente daño en el PFC, IPM y fuente de alimentación.</p>
               </div>
             </div>
           </div>
@@ -292,18 +341,16 @@
         <div class="carousel-item">
           <div class="row align-items-center g-4">
             <div class="col-lg-6 text-center">
-              <div class="bg-white rounded-4 shadow p-3 h-100 d-flex align-items-center justify-content-center" style="min-height:320px;">
-                <img src="img/tarjeta-royal-cond.webp" class="img-fluid rounded-3 border border-3 border-info" alt="Tarjeta royal" style="max-height:260px; object-fit:contain;">
-              </div>
+              <img src="img/tarjeta-royal-cond.webp" class="img-fluid rounded-3 border border-3 border-info animate__animated animate__fadeInLeft" alt="Tarjeta Royal" style="max-height:260px; object-fit:contain;">
             </div>
             <div class="col-lg-6">
-              <div class="bg-white rounded-4 shadow p-4 h-100">
+              <div class="bg-white rounded-4 shadow p-4 h-100 animate__animated animate__fadeInRight">
                 <h4 class="fw-bold text-info mb-3"><i class="bi bi-cpu me-2"></i>Tarjeta inverter Royal</h4>
                 <ul class="list-group list-group-flush mb-3">
                   <li class="list-group-item bg-transparent"><span class="fw-semibold text-danger"><i class="bi bi-exclamation-triangle-fill me-1"></i>Errores comunes:</span> E101, E202, error de IPM, fallo de ventilador.</li>
                   <li class="list-group-item bg-transparent"><span class="fw-semibold text-success"><i class="bi bi-fan me-1"></i>Marcas:</span> Royal, TCL, American, PG entre otros.</li>
                 </ul>
-                <p class="text-muted fst-italic mb-0">Frecuente daño en el Pfc, fuente de alimentación y circuito de comunicacion.</p>
+                <p class="text-muted fst-italic mb-0">Frecuente daño en el PFC, fuente de alimentación y circuito de comunicación.</p>
               </div>
             </div>
           </div>
@@ -320,6 +367,10 @@
         <span class="visually-hidden">Siguiente</span>
       </button>
     </div>
+    <div class="text-center mt-3">
+      <button id="pauseCarousel" class="btn btn-outline-secondary btn-sm"><i class="bi bi-pause-circle"></i> Pausar</button>
+      <button id="playCarousel" class="btn btn-outline-success btn-sm"><i class="bi bi-play-circle"></i> Reanudar</button>
+    </div>
   </div>
 </section>
 
@@ -328,8 +379,8 @@
 <section id="galeria" class="py-5 d-none" style="background: linear-gradient(135deg, #e0eafc 0%, #eaeff8 100%);">
     <div class="container">
         <h2 class="text-center mb-3 fw-bold">Casos de Éxito</h2>
-        <p class="text-center text-muted mb-5">
-            Mira cómo diagnosticamos y resolvemos problemas reales en tarjetas electrónicas inverter y de refrigeración.
+        <p class="text-center text-muted mb-5 fs-5 fst-italic" style="letter-spacing: 0.5px;">
+            Descubre casos de éxito donde la experiencia y el conocimiento técnico marcan la diferencia en la reparación de tarjetas electrónicas inverter y de refrigeración.
         </p>
         <div class="row g-4 justify-content-center">
 
@@ -409,21 +460,20 @@
                     style="object-fit: cover; object-position: center; min-width: 100%; min-height: 100%;">
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6" data-aos="fade-down" data-aos-delay="200">
                 <div class="card shadow border-0 bg-white bg-opacity-75">
                     <div class="card-body">
-                        <p class="lead text-dark mb-3">
-                            <strong>Rafael Soluciones Electrónica</strong> es una empresa líder en reparación y mantenimiento de tarjetas electrónicas para aires acondicionados y neveras inverter. 
-                            Con más de <strong>10 años de experiencia</strong>, brindamos soluciones rápidas, confiables y personalizadas para cada cliente.
+                        <p class="lead text-dark mb-3 fs-5 fst-italic">
+                            <strong>Rafael Soluciones Electrónica</strong> es sinónimo de liderazgo y excelencia en el sector de reparación y mantenimiento de tarjetas electrónicas para aires acondicionados y neveras inverter. Más de <strong>10 años de experiencia</strong> nos respaldan, ofreciendo soluciones ágiles, confiables y adaptadas a las necesidades de cada cliente.
                         </p>
                         <ul class="mb-3 text-dark">
-                            <li>Equipo técnico altamente capacitado y en constante actualización.</li>
-                            <li>Herramientas y tecnología de última generación.</li>
-                            <li>Atención personalizada y asesoría profesional.</li>
-                            <li>Compromiso con la calidad, la honestidad y la satisfacción del cliente.</li>
+                            <li>Equipo técnico certificado y en constante formación.</li>
+                            <li>Herramientas y tecnología de vanguardia.</li>
+                            <li>Atención personalizada y asesoría experta.</li>
+                            <li>Compromiso absoluto con la calidad, la transparencia y la satisfacción del cliente.</li>
                         </ul>
                         <p class="mb-0 text-dark">
-                            <em>Nuestra misión es ser tu aliado de confianza, asegurando el óptimo funcionamiento de tus equipos electrónicos y tu tranquilidad.</em>
+                            <em>Nos comprometemos a ser tu aliado estratégico, garantizando el óptimo funcionamiento de tus equipos y tu tranquilidad.</em>
                         </p>
                         <!-- Botón para mostrar el modal -->
                         <button class="btn btn-outline-primary mt-3 mb-4" type="button" data-bs-toggle="modal" data-bs-target="#modalSobreMi">
@@ -440,49 +490,56 @@
 <!-- Modal Sobre mí -------------------------------------------------------------------------------->
 <div class="modal fade" id="modalSobreMi" tabindex="-1" aria-labelledby="modalSobreMiLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content rounded-4 shadow-lg border-0">
-                    <!-- Encabezado del modal -->
-                    <div class="modal-header bg-primary text-white rounded-top-4">
-                        <h5 class="modal-title fw-bold" id="modalSobreMiLabel">
-                            <i class="bi bi-person-circle me-2"></i>Sobre mí
-                        </h5>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        <div class="modal-content rounded-4 shadow-lg border-0 animate__animated animate__fadeIn">
+            <!-- Encabezado del modal -->
+            <div class="modal-header bg-primary text-white rounded-top-4">
+                <h5 class="modal-title fw-bold" id="modalSobreMiLabel" style="font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;">
+                    <i class="bi bi-person-circle me-2"></i>Sobre mí
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <!-- Cuerpo del modal -->
+            <div class="modal-body bg-light">
+                <div class="text-center mb-3">
+                    <img src="img/RT.jpeg" alt="Rafael Tavares" class="rounded-circle shadow-lg border border-4 border-primary " oncontextmenu="return false;" width="120" height="120" style="object-fit:cover; pointer-events: none;">
+                    <h5 class="fw-bold text-primary text-center mb-1 mt-3" style="font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;">Rafael Tavares</h5>
+                    <p class="text-muted text-center mb-3 small" style="font-family: 'Lora', 'Georgia', serif;">Especialista en Electrónica y Tecnología Inverter</p>
+                </div>
+                <div class="px-2">
+                    <p class="text-center mb-3" style="font-family: 'Lora', 'Georgia', serif; font-size: 1.1rem;">
+                        Soy <span class="fw-bold text-primary">Técnico Profesional en Electrónica</span> con más de <span class="fw-bold text-primary">10 años de experiencia</span>, enfocado en la <span class="fw-bold text-primary">reparación de tarjetas electrónicas</span> de aires acondicionados y neveras con tecnología inverter.
+                    </p>
+                    <p class="text-center mb-3" style="font-family: 'Lora', 'Georgia', serif; font-size: 1.1rem;">
+                        Actualmente curso la carrera de <span class="fw-bold text-success">Ingeniería de Software</span>, con más de <span class="fw-bold text-success">30 materias completadas</span>, integrando conocimientos técnicos y digitales en cada solución.
+                    </p>
+                    <p class="text-center mb-4" style="font-family: 'Lora', 'Georgia', serif; font-size: 1.1rem;">
+                        Trabajo con <span class="fw-bold text-warning">precisión</span>, <span class="fw-bold text-warning">compromiso</span> y <span class="fw-bold text-warning">garantía</span>, brindando resultados confiables en cada reparación.
+                    </p>
+                </div>
+                <div class="row text-center mb-2">
+                    <div class="col-6 border-end">
+                        <span class="fw-semibold text-primary" style="font-size: 1.3rem;"><i class="bi bi-award"></i> +2000</span>
+                        <div class="small text-muted" style="font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;">Tarjetas reparadas</div>
                     </div>
-                    <!-- Cuerpo del modal -->
-                    <div class="modal-body bg-light">
-                        <div class="text-center mb-3">
-                            <img src="img/RT.jpeg" alt="Rafael Tavares" class="rounded-circle shadow" oncontextmenu="return false;" width="110" height="110" style="object-fit:cover; border: 3px solid #0d6efd; pointer-events: none;">
-
-                            <h5 class="fw-bold text-primary text-center mb-1">Rafael Tavares</h5>
-                            <p class="text-muted text-center mb-3 small">Especialista en Electrónica y Tecnología Inverter</p>
-
-                            <p class="text-center mb-3">
-                                Soy <strong>Técnico Profesional en Electrónica</strong> con más de <strong>10 años de experiencia</strong>, enfocado en la <strong>reparación de tarjetas electrónicas</strong> de aires acondicionados y neveras con tecnología inverter.
-                            </p>
-
-                            <p class="text-center mb-3">
-                                Actualmente curso la carrera de <strong>Ingeniería de Software</strong>, con más de <strong>30 materias completadas</strong>, lo que me permite integrar conocimientos técnicos y digitales en cada solución.
-                            </p>
-
-                            <p class="text-center mb-4">
-                                Trabajo con precisión, compromiso y garantía, brindando resultados confiables en cada reparación.
-                            </p>
-
-                            <div class="row text-center mb-2">
-                                <div class="col-6 border-end">
-                                    <span class="fw-semibold text-primary"><i class="bi bi-award"></i> +2000</span>
-                                <div class="small text-muted">Tarjetas reparadas</div>
-                        </div>
-                            <div class="col-6">
-                            <span class="fw-semibold text-primary"><i class="bi bi-gear"></i> 100%</span>
-                            <div class="small text-muted">Garantía y soporte</div>
-                        </div>
+                    <div class="col-6">
+                        <span class="fw-semibold text-success" style="font-size: 1.3rem;"><i class="bi bi-gear"></i> 100%</span>
+                        <div class="small text-muted" style="font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;">Garantía y soporte</div>
                     </div>
+                </div>
+                <div class="text-center mt-3">
+                    <a href="https://www.instagram.com/rafael_soluciones_electronica" class="btn btn-outline-danger btn-sm me-2" target="_blank">
+                        <i class="bi bi-instagram"></i> Instagram
+                    </a>
+                    <a href="https://wa.me/18297470675" class="btn btn-outline-success btn-sm" target="_blank">
+                        <i class="bi bi-whatsapp"></i> WhatsApp
+                    </a>
+                </div>
             </div>
             <!-- Pie del modal -->
             <div class="modal-footer bg-light rounded-bottom-4">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
             </div>
+        </div>
     </div>
 </div>
 
@@ -494,43 +551,35 @@
 <section id="mision-vision-valores" class="py-5 bg-light">
     <div class="container">
         <h2 class="text-center mb-5">Lo Que Nos Define</h2>
-        <p class="text-center text-muted mb-5">
-            Conoce los principios que guían nuestra labor, inspiran nuestro crecimiento y refuerzan nuestro compromiso con la excelencia.
+        <p class="text-center text-muted mb-5 fs-5 fst-italic" style="letter-spacing: 0.5px;">
+            Descubre los valores que nos impulsan, la visión que nos inspira y la misión que nos compromete a brindar excelencia en cada solución electrónica. Superamos expectativas, innovamos con pasión y construimos confianza en cada proyecto.
         </p>
-        <div class="row">
-
-            <!-- Misión -->
-            <div class="col-md-4 text-center mb-4">
-                <div class="card shadow-sm h-100">
-                    <div class="card-body">
-                        <h4 class="card-title text-primary">Misión</h4>
-                        <p class="card-text  lh-lg">
-                            Proveer soluciones electrónicas confiables y de alta calidad para aires acondicionados inverter, 
-                            garantizando la satisfacción de nuestros clientes a través de un servicio técnico especializado.
+        <div class="d-flex flex-row flex-wrap justify-content-center align-items-stretch gap-4">
+            <div class="d-flex justify-content-center mb-4 mt-5" data-aos="fade-up" data-aos-delay="100">
+                <div class="card shadow h-100 rounded-circle d-flex flex-column align-items-center justify-content-center" style="width: 340px; height: 340px; background: rgba(255,255,255,0.95); border: 6px solid #0d6efd;">
+                    <div class="card-body d-flex flex-column justify-content-center align-items-center text-center p-4">
+                        <h4 class="card-title text-primary mb-3"><i class="bi bi-bullseye"></i> Misión</h4>
+                        <p class="card-text lh-lg mb-0">
+                            Proveer soluciones electrónicas confiables y de alta calidad para aires acondicionados inverter, garantizando la satisfacción de nuestros clientes a través de un servicio técnico especializado.
                         </p>
                     </div>
                 </div>
             </div>
-
-            <!-- Visión -->
-            <div class="col-md-4 text-center mb-4">
-                <div class="card shadow-sm h-100">
-                    <div class="card-body">
-                        <h4 class="card-title text-success">Visión</h4>
-                        <p class="card-text lh-lg">
-                            Ser líderes en el mercado de reparación de tarjetas electrónicas para aires acondicionados inverter, 
-                            destacándonos por nuestra innovación, profesionalismo y compromiso con la excelencia.
+            <div class="d-flex justify-content-center mb-4 mt-0" data-aos="fade-up" data-aos-delay="300">
+                <div class="card shadow h-100 rounded-circle d-flex flex-column align-items-center justify-content-center" style="width: 340px; height: 340px; background: rgba(255,255,255,0.95); border: 6px solid #198754;">
+                    <div class="card-body d-flex flex-column justify-content-center align-items-center text-center p-4">
+                        <h4 class="card-title text-success mb-3"><i class="bi bi-eye"></i> Visión</h4>
+                        <p class="card-text lh-lg mb-0">
+                            Ser líderes en el mercado de reparación de tarjetas electrónicas para aires acondicionados inverter, destacándonos por nuestra innovación, profesionalismo y compromiso con la excelencia.
                         </p>
                     </div>
                 </div>
             </div>
-
-            <!-- Valores -->
-            <div class="col-md-4 text-center mb-4">
-                <div class="card shadow-sm h-100">
-                    <div class="card-body">
-                        <h4 class="card-title text-warning">Valores</h4>
-                        <ul class="list-unstyled text-justify lh-lg">
+            <div class="d-flex justify-content-center mb-4 mt-7" data-aos="fade-up" data-aos-delay="500">
+                <div class="card shadow h-100 rounded-circle d-flex flex-column align-items-center justify-content-center" style="width: 340px; height: 340px; background: rgba(255,255,255,0.95); border: 6px solid #ffc107;">
+                    <div class="card-body d-flex flex-column justify-content-center align-items-center text-center p-4">
+                        <h4 class="card-title text-warning mb-3"><i class="bi bi-star-fill"></i> Valores</h4>
+                        <ul class="list-unstyled lh-lg mb-0">
                             <li><i class="bi bi-check-circle-fill text-success"></i> Compromiso</li>
                             <li><i class="bi bi-check-circle-fill text-success"></i> Innovación</li>
                             <li><i class="bi bi-check-circle-fill text-success"></i> Calidad</li>
@@ -548,7 +597,7 @@
 
     <section id="contacto" class="py-5 bg-light">
     <div class="container">
-        <h2 class="text-center mb-5">Contáctanos</h2>
+    <h2 class="text-center mb-5">Contáctanos</h2>
         <div class="row g-4 align-items-stretch">
             <!-- Formulario de Contacto (sin tarjeta) -->
             <div class="col-lg-6">
@@ -653,27 +702,27 @@
     <div class="container">
         <h2 class="text-center mb-5 text-primary">Consejos Técnicos</h2>
         <div class="row g-4">
-            <div class="col-md-4">
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
                 <div class="card h-100 shadow-sm">
                     <div class="card-body">
                         <h5 class="card-title text-info"><i class="bi bi-lightbulb"></i> ¿Por qué hacer mantenimiento preventivo?</h5>
-                        <p class="card-text">El mantenimiento regular, evita fallas costosas y prolonga la vida útil de tu aire acondicionado. Limpia filtros cada mes, revisa conexiones eléctricas y estado de la tarjeta electronica cada 4 meses.</p>
+                        <p class="card-text">El mantenimiento periódico previene averías costosas y extiende la vida útil de tu aire acondicionado. Limpia los filtros mensualmente y revisa conexiones eléctricas y el estado de la tarjeta electrónica cada cuatro meses.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
                 <div class="card h-100 shadow-sm">
                     <div class="card-body">
                         <h5 class="card-title text-info"><i class="bi bi-tools"></i> Diagnóstico de tarjetas inverter</h5>
-                        <p class="card-text">Ante un error, revisa primero sensores y componentes externos antes de cambiar la tarjeta. Consulta los manuales en la sección Recursos.</p>
+                        <p class="card-text">Ante cualquier error, verifica primero sensores y componentes externos antes de reemplazar la tarjeta. Consulta los manuales disponibles en la sección Recursos.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4"data-aos="fade-up" data-aos-delay="700">
                 <div class="card h-100 shadow-sm">
                     <div class="card-body">
                         <h5 class="card-title text-info"><i class="bi bi-shield-check"></i> Seguridad primero</h5>
-                        <p class="card-text">Desconecta el equipo antes de manipularlo. Usa herramientas aisladas y sigue las recomendaciones del fabricante para evitar accidentes.</p>
+                        <p class="card-text">Prioriza tu seguridad: desconecta el equipo antes de manipularlo, utiliza herramientas aisladas y sigue siempre las recomendaciones del fabricante.</p>
                     </div>
                 </div>
             </div>
@@ -687,8 +736,8 @@
     <section id="noticias" class="py-5 bg-light">
         <div class="container">
             <h2 class="text-center mb-5 text-primary">Últimas Noticias sobre Tecnología Inverter</h2>
-            <p class="text-center text-muted mb-5">
-                Mantente al día con las últimas innovaciones y avances en tecnología inverter y tarjetas electrónicas para aires acondicionados.
+            <p class="text-center text-muted mb-5 fs-5 fst-italic" style="letter-spacing: 0.5px;">
+                Mantente informado sobre las últimas tendencias, innovaciones y avances en tecnología inverter y electrónica aplicada a climatización.
             </p>
             <div class="row g-4">
                 <!-- Noticia 1 -->
@@ -866,7 +915,7 @@
                         <span class="footer-label">Recursos</span>
                     </a>
                 </nav>
-                <p class="mt-3 mb-0">&copy; 2025 Todos los Derechos Reservados. Desarrollado por Rafael solucuiones electronica R.S.E</p>
+                <p class="mt-3 mb-0">&copy; 2025 Todos los derechos reservados. Desarrollado por Rafael Soluciones Electrónica R.S.E.</p>
                
                 <br>
                     <a href="https://maps.app.goo.gl/VwUhjC9KbW2UYQVP8" target="_blank" class="text-white text-decoration-none">
@@ -899,6 +948,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
    <script src="JS/index.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 900,
+    once: false
+  });
+</script>
 
     <!--script boton popover-->
         <script>
@@ -906,7 +962,39 @@
         const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
         const popoverList = [...popoverTriggerList].map(triggerEl => new bootstrap.Popover(triggerEl));
         });
-        </script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+        var pauseBtn = document.getElementById('pauseCarousel');
+        var playBtn = document.getElementById('playCarousel');
+        var carouselEl = document.getElementById('carouselTarjetas');
+            if (pauseBtn && playBtn && carouselEl) {
+                var carousel = bootstrap.Carousel.getOrCreateInstance(carouselEl);
+                pauseBtn.onclick = function() {
+                carousel.pause();
+            };
+                playBtn.onclick = function() {
+                    carousel.cycle();
+                };
+            }
+        });
+
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var modalSobreMi = document.getElementById('modalSobreMi');
+    if (modalSobreMi) {
+        modalSobreMi.addEventListener('shown.bs.modal', function () {
+            var img = modalSobreMi.querySelector('img[alt="Rafael Tavares"]');
+            if (img) {
+                img.classList.remove('animate__animated', 'animate__fadeInDown');
+                void img.offsetWidth; // Reflow para reiniciar animación
+                img.classList.add('animate__animated', 'animate__fadeInDown');
+            }
+        });
+    }
+});
+</script>
 
 <!-- Chat de WhatsApp Flotante  -->
         <a href="https://wa.me/18297470675" class="btn btn-success rounded-circle shadow-lg position-fixed" style="bottom: 30px; right: 30px; z-index: 1050;" target="_blank" aria-label="WhatsApp">

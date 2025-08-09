@@ -6,58 +6,136 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Calculadora de BTU</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel=" icon" href="img/calculadora.jpeg" type="image/jpg">
-
-
+  <link rel="icon" href="img/calculadora.jpeg" type="image/jpg">
+  <!-- Google Fonts para fuentes elegantes -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Lora:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <!-- Animate.css para animaciones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <style>
-    .card {
-      background-color: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
     body {
-      background-color: #000000;
+      background: linear-gradient(135deg, #232526 0%, #414345 100%);
+      font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+      color: #f8f9fa;
+    }
+    .card {
+      background-color: #fff;
+      border-radius: 18px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+      border: none;
+    }
+    .card-title {
+      font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1985a1;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 2px 8px #b2c7e6;
+    }
+    .form-label {
+      font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+      font-weight: 500;
+      color: #1985a1;
+      font-size: 1.1rem;
+    }
+    .form-control, .form-select {
+      font-family: 'Lora', 'Georgia', serif;
+      font-size: 1.08rem;
+      border-radius: 10px;
+      border: 1px solid #1985a1;
+    }
+    .btn-secondary {
+      font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      border-radius: 50px;
+      padding: 10px 32px;
+      background: linear-gradient(90deg, #1985a1 0%, #6dd5ed 100%);
+      border: none;
+      color: #fff;
+      box-shadow: 0 2px 8px #b2c7e6;
+      transition: background 0.2s;
+    }
+    .btn-secondary:hover {
+      background: linear-gradient(90deg, #0d6efd 0%, #6dd5ed 100%);
+      color: #fff;
+    }
+    #resultadoBTU {
+      font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #198754;
+      margin-top: 1.5rem;
+      text-shadow: 0 2px 8px #b2c7e6;
+    }
+    .info-text {
+      font-family: 'Lora', 'Georgia', serif;
+      font-size: 1.15rem;
+      color: #222;
+      background: #e3f2fd;
+      border-radius: 12px;
+      padding: 12px 18px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 8px #b2c7e6;
+    }
+    .card-header-custom {
+      background: linear-gradient(90deg, #1985a1 0%, #6dd5ed 100%);
+      border-top-left-radius: 18px;
+      border-top-right-radius: 18px;
+      padding: 1.5rem 1rem;
+      text-align: center;
+    }
+    .card-header-custom i {
+      font-size: 2.5rem;
+      color: #fff;
+      margin-bottom: 0.5rem;
+      animation: rotateGear 2.5s linear infinite;
+    }
+    @keyframes rotateGear {
+      0% { transform: rotate(0deg);}
+      100% { transform: rotate(360deg);}
     }
   </style>
-
-
 </head>
 
 <body>
-
 <div class="container py-5">
-  <div class="card shadow rounded-4">
+  <div class="card shadow rounded-4 animate__animated animate__fadeIn">
+    <div class="card-header-custom">
+      <i class="bi bi-gear-fill"></i>
+      <h3 class="card-title mb-0">Calculadora de Capacidad de tu Aire Ideal</h3>
+      <div class="info-text mt-3 mx-auto">
+        Ingresa los datos de tu habitación y obtén la capacidad recomendada en <span class="fw-bold text-primary">BTU</span> para tu aire acondicionado. <br>
+        <span class="text-success">¡Optimiza tu confort y consumo energético!</span>
+      </div>
+    </div>
     <div class="card-body">
-
-        <header class="bg-secondary py-5 mb-2"></header>
-
-        <div class="text-center">
-            <h3 class="card-title text-center ">Calculadora de Capacidad de tu aire ideal</h3>
-            <img src="img/vector  icono de aire acondicionado.jpeg" alt="vector" class="img-fluid" style="max-width: 150px;">
-        </div>
-
-      
-      <form id="btuForm">
+      <div class="text-center mb-3">
+        <img src="img/vector_icono_de_aire_acondicionado.jpeg " alt="vector" class="img-fluid animate__animated animate__zoomIn" style="max-width: 120px;">
+      </div>
+      <form id="btuForm" class="animate__animated animate__fadeInUp">
         <!-- Dimensiones de la habitación -->
         <div class="row mb-3">
-          <div class="col-md-6">
-            <label for="ancho" class="form-label">Ancho de la habitación (m):</label>
+          <div class="col-md-6 mb-3 mb-md-0">
+            <label for="ancho" class="form-label"><i class="bi bi-arrows-angle-expand"></i> Ancho de la habitación (m):</label>
             <input type="number" class="form-control" id="ancho" required step="0.1" min="1" placeholder="Ej: 4.5">
           </div>
           <div class="col-md-6">
-            <label for="largo" class="form-label">Largo de la habitación (m):</label>
+            <label for="largo" class="form-label"><i class="bi bi-arrows-angle-expand"></i> Largo de la habitación (m):</label>
             <input type="number" class="form-control" id="largo" required step="0.1" min="1" placeholder="Ej: 5.0">
           </div>
         </div>
 
         <!-- Factores adicionales -->
         <div class="row mb-3">
-          <div class="col-md-6">
-            <label for="personas" class="form-label">Cantidad de personas:</label>
+          <div class="col-md-6 mb-3 mb-md-0">
+            <label for="personas" class="form-label"><i class="bi bi-person"></i> Cantidad de personas:</label>
             <input type="number" class="form-control" id="personas" required step="1" min="1" placeholder="Ej: 2">
           </div>
           <div class="col-md-6">
-            <label for="exposicion" class="form-label">Exposición al sol:</label>
+            <label for="exposicion" class="form-label"><i class="bi bi-brightness-high"></i> Exposición al sol:</label>
             <select class="form-select" id="exposicion" required>
               <option value="1">Baja</option>
               <option value="1.2">Moderada</option>
@@ -68,7 +146,7 @@
 
         <!-- Botón de cálculo -->
         <div class="text-center">
-          <button type="submit" class="btn btn-secondary px-5">Calcular</button>
+          <button type="submit" class="btn btn-secondary px-5"><i class="bi bi-calculator"></i> Calcular</button>
         </div>
       </form>
 
@@ -78,7 +156,6 @@
       </div>
     </div>
   </div>
-
 </div>
 
 <script>
@@ -112,8 +189,8 @@
     });
 
     // Mostrar resultado redondeado
-    document.getElementById("resultadoBTU").innerText = 
-      `Capacidad recomendada: ${capacidadRecomendada.toLocaleString()} BTU`;
+    document.getElementById("resultadoBTU").innerHTML = 
+      `<span class="text-primary"><i class="bi bi-check-circle-fill"></i> Capacidad recomendada:</span> <span class="fw-bold">${capacidadRecomendada.toLocaleString()} BTU</span>`;
   });
 </script>
 

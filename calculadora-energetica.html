@@ -6,37 +6,139 @@
     <title>Calculadora de Consumo Energético</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel=" icon" href="img/calculadora.jpeg" type="image/jpg">
-    <!-- Estilos personalizados -->
+    <!-- Google Fonts para fuentes elegantes -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Lora:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <!-- Animate.css para animaciones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <style>
+        body {
+            background: linear-gradient(135deg, #232526 0%, #414345 100%);
+            font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+            color: #f8f9fa;
+        }
         .main-container {
             max-width: 1000px;
             margin: 0 auto;
-            background-color: #ffffff;
-            padding: 20px;
+            background-color: #fff;
+            padding: 32px 24px;
+            border-radius: 18px;
+            box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+        }
+        h2, h3, h4 {
+            font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        h2 {
+            font-size: 2.2rem;
+            color: #1985a1;
+            margin-bottom: 1.2rem;
+            text-shadow: 0 2px 8px #b2c7e6;
+        }
+        h3 {
+            font-size: 1.5rem;
+            color: #1985a1;
+        }
+        h4 {
+            font-size: 1.2rem;
+            color: #198754;
+        }
+        .form-label {
+            font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+            font-weight: 500;
+            color: #1985a1;
+            font-size: 1.08rem;
+        }
+        .form-control, .form-select {
+            font-family: 'Lora', 'Georgia', serif;
+            font-size: 1.08rem;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid #1985a1;
+        }
+        .btn-primary, .btn-success {
+            font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            padding: 10px 32px;
+            box-shadow: 0 2px 8px #b2c7e6;
+            border: none;
+            transition: background 0.2s;
+        }
+        .btn-primary {
+            background: linear-gradient(90deg, #1985a1 0%, #6dd5ed 100%);
+            color: #fff;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(90deg, #0d6efd 0%, #6dd5ed 100%);
+            color: #fff;
+        }
+        .btn-success {
+            background: linear-gradient(90deg, #198754 0%, #6dd5ed 100%);
+            color: #fff;
+        }
+        .btn-success:hover {
+            background: linear-gradient(90deg, #0d6efd 0%, #198754 100%);
+            color: #fff;
+        }
+        .result-label {
+            font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1985a1;
+        }
+        .result-value {
+            font-family: 'Lora', 'Georgia', serif;
+            font-size: 1.15rem;
+            color: #198754;
+        }
+        .text-info, .text-primary {
+            font-family: 'Lora', 'Georgia', serif;
+            font-size: 1.1rem;
+        }
+        .sugerencia {
+            font-family: 'Lora', 'Georgia', serif;
+            font-size: 1.08rem;
+            background: #e3f2fd;
+            border-radius: 12px;
+            padding: 10px 16px;
+            margin-top: 1rem;
+            box-shadow: 0 2px 8px #b2c7e6;
+        }
+        .img-fluid {
+            border-radius: 12px;
+            box-shadow: 0 2px 8px #b2c7e6;
+        }
+        .icon-animated {
+            animation: bounceIn 1.2s;
+        }
+        @keyframes bounceIn {
+            0% { transform: scale(0.7);}
+            60% { transform: scale(1.1);}
+            80% { transform: scale(0.95);}
+            100% { transform: scale(1);}
         }
     </style>
 </head>
-<body style="background-color: #000000;">
-
-
+<body>
     <!-- Contenedor principal ------------------------------------------------------------------------------------------------------>
-    <div class="main-container py-5 px-4">
+    <div class="main-container py-5 px-4 animate__animated animate__fadeIn">
         <!-- Título principal -->
         <div class="text-center">
-            <img src="img/distributed-energy-resources.png" alt="Energía" class="img-fluid mb-3" style="max-width: 250px;">
+            <img src="img/distributed-energy-resources.png" alt="Energía" class="img-fluid mb-3 icon-animated" style="max-width: 180px;">
         </div>
-        <h2 class="text-center text-primary">Calculadora de Consumo Energético de Aires Inverter</h2>
-        <p class="text-center text-info">Calcula el consumo de energía, costo y emisión de CO₂ de tu aire acondicionado inverter.</p>
+        <h2 class="text-center animate__animated animate__fadeInDown"><i class="bi bi-lightning-charge-fill"></i> Calculadora de Consumo Energético de Aires Inverter</h2>
+        <p class="text-center text-info animate__animated animate__fadeInUp">Calcula el consumo de energía, costo y emisión de CO₂ de tu aire acondicionado inverter.</p>
         <br>
 
         <!-- Sección: Calcular Consumo de un Equipo ------------------------------------------------------------------------------>
+
         <div class="row">
             <!-- Formulario de cálculo -->
-            <div class="col-md-6">
-                <h3>Calcular Consumo de un Equipo</h3>
+            <div class="col-md-6 animate__animated animate__fadeInLeft">
+                <h3><i class="bi bi-calculator"></i> Calcular Consumo de un Equipo</h3>
                 <div class="mb-3">
                     <label class="form-label"><strong>Capacidad del equipo (BTU):</strong></label>
                     <input type="number" id="potencia" class="form-control" placeholder="Ej: 12,000">
@@ -53,28 +155,28 @@
                     <label class="form-label"><strong>Eficiencia energética (SEER o EER):</strong></label>
                     <input type="number" id="eficiencia" class="form-control" placeholder="Ej: 16">
                 </div>
-                <button class="btn btn-primary w-50" onclick="calcularConsumo()">Calcular Consumo</button>
+                <button class="btn btn-primary w-100" onclick="calcularConsumo()"><i class="bi bi-lightning-charge"></i> Calcular Consumo</button>
             </div>
 
             <!-- Resultados del cálculo -------------------------------------------------------------------------------->
-            <div class="col-md-6">
-                <h3>Resultados:</h3>
-                <img src="img/Ahorro De Energía.jpeg" alt="Resultados" class="img-fluid mb-3" style="max-width: 100px;">
-                <p><strong>Consumo diario:</strong> <span id="consumoDiario">0</span> kWh</p>
-                <p><strong>Consumo mensual:</strong> <span id="consumoMensual">0</span> kWh</p>
-                <p><strong>Costo mensual:</strong> $<span id="costoMensual">0</span></p>
-                <p><strong>Emisión de CO₂:</strong> <span id="emisionCO2">0</span> kg/mes</p>
-                <h4 class="mt-3">Sugerencias de Ahorro</h4>
-                <p id="sugerenciaAhorro" class="text-success"></p>
+            <div class="col-md-6 animate__animated animate__fadeInRight">
+                <h3><i class="bi bi-bar-chart-line"></i> Resultados:</h3>
+                <img src="img/Ahorro De Energía.jpeg" alt="Resultados" class="img-fluid mb-3 icon-animated" style="max-width: 100px;">
+                <p class="result-label"><strong>Consumo diario:</strong> <span id="consumoDiario" class="result-value">0</span> kWh</p>
+                <p class="result-label"><strong>Consumo mensual:</strong> <span id="consumoMensual" class="result-value">0</span> kWh</p>
+                <p class="result-label"><strong>Costo mensual:</strong> $<span id="costoMensual" class="result-value">0</span></p>
+                <p class="result-label"><strong>Emisión de CO₂:</strong> <span id="emisionCO2" class="result-value">0</span> kg/mes</p>
+                <h4 class="mt-3"><i class="bi bi-lightbulb"></i> Sugerencias de Ahorro</h4>
+                <p id="sugerenciaAhorro" class="text-success sugerencia"></p>
             </div>
         </div>
 
         <!-- Sección: Comparar Consumo Entre Dos Equipos ----------------------------------------------------------------->
-        <h2 class="mt-4 text-primary">Comparar Consumo Entre Dos Equipos</h2>
+        <h2 class="mt-4 text-primary animate__animated animate__fadeInDown"><i class="bi bi-arrow-left-right"></i> Comparar Consumo Entre Dos Equipos</h2>
         <div class="row">
             <!-- Formulario de comparación -->
-            <div class="col-md-6">
-                <h4>Formulario de Comparación</h4>
+            <div class="col-md-6 animate__animated animate__fadeInLeft">
+                <h4><i class="bi bi-calculator"></i> Formulario de Comparación</h4>
                 <div class="mb-3">
                     <label class="form-label"><strong>Equipo 1 - Potencia (BTU):</strong></label>
                     <input type="number" id="potencia1" class="form-control" placeholder="Ej: 12,000">
@@ -91,15 +193,15 @@
                     <label class="form-label"><strong>Equipo 2 - Eficiencia (SEER/EER):</strong></label>
                     <input type="number" id="eficiencia2" class="form-control" placeholder="Ej: 16">
                 </div>
-                <button class="btn btn-success w-50" onclick="compararConsumo()">Comparar Consumo</button>
+                <button class="btn btn-success w-100" onclick="compararConsumo()"><i class="bi bi-arrow-left-right"></i> Comparar Consumo</button>
             </div>
 
             <!-- Resultados de la comparación -->
-            <div class="col-md-6">
-                <h4>Resultados de la Comparación</h4>
-                <img src="img/comparacion.jpeg" alt="Comparación" class="img-fluid mb-3" style="max-width: 100px;">
-                <p><strong>Resultado:</strong> <span id="resultadoComparacion" class="text-primary">N/A</span></p>
-                <p><strong>Ahorro estimado:</strong> <span id="ahorroEstimado" class="text-success">0</span> kWh/mes</p>
+            <div class="col-md-6 animate__animated animate__fadeInRight">
+                <h4><i class="bi bi-bar-chart-line"></i> Resultados de la Comparación</h4>
+                <img src="img/comparacion.jpeg" alt="Comparación" class="img-fluid mb-3 icon-animated" style="max-width: 100px;">
+                <p class="result-label"><strong>Resultado:</strong> <span id="resultadoComparacion" class="text-primary result-value">N/A</span></p>
+                <p class="result-label"><strong>Ahorro estimado:</strong> <span id="ahorroEstimado" class="text-success result-value">0</span> kWh/mes</p>
             </div>
         </div>
     </div>
@@ -107,6 +209,75 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
     <!-- Archivo JavaScript personalizado -->
-    <script src="JS/calculadora.js"></script>
+    <script>
+        function calcularConsumo() {
+            const potencia = parseFloat(document.getElementById("potencia").value);
+            const horas = parseFloat(document.getElementById("horas").value);
+            const tarifa = parseFloat(document.getElementById("tarifa").value);
+            const eficiencia = parseFloat(document.getElementById("eficiencia").value);
+
+            if (isNaN(potencia) || isNaN(horas) || isNaN(tarifa) || isNaN(eficiencia) || potencia <= 0 || horas <= 0 || tarifa <= 0 || eficiencia <= 0) {
+                alert("Por favor, ingresa valores válidos.");
+                return;
+            }
+
+            // Conversión de BTU a kWh: 1 kWh = 3412 BTU
+            const consumoDiario = ((potencia / eficiencia) * horas) / 3412;
+            const consumoMensual = consumoDiario * 30;
+            const costoMensual = consumoMensual * tarifa;
+            const emisionCO2 = consumoMensual * 0.45; // Factor promedio de RD
+
+            document.getElementById("consumoDiario").textContent = consumoDiario.toFixed(2);
+            document.getElementById("consumoMensual").textContent = consumoMensual.toFixed(2);
+            document.getElementById("costoMensual").textContent = costoMensual.toFixed(2);
+            document.getElementById("emisionCO2").textContent = emisionCO2.toFixed(2);
+
+            let sugerencia = "";
+            if (eficiencia >= 18) {
+                sugerencia = "¡Excelente! Tu equipo es muy eficiente y ahorrarás energía.";
+            } else if (eficiencia >= 15) {
+                sugerencia = "Buen nivel de eficiencia. Considera mantener filtros limpios y evitar fugas.";
+            } else {
+                sugerencia = "Tu equipo podría consumir más energía. Considera actualizar a uno más eficiente.";
+            }
+            document.getElementById("sugerenciaAhorro").textContent = sugerencia;
+        }
+
+        function compararConsumo() {
+            const potencia1 = parseFloat(document.getElementById("potencia1").value);
+            const eficiencia1 = parseFloat(document.getElementById("eficiencia1").value);
+            const potencia2 = parseFloat(document.getElementById("potencia2").value);
+            const eficiencia2 = parseFloat(document.getElementById("eficiencia2").value);
+
+            if (isNaN(potencia1) || isNaN(eficiencia1) || isNaN(potencia2) || isNaN(eficiencia2) ||
+                potencia1 <= 0 || eficiencia1 <= 0 || potencia2 <= 0 || eficiencia2 <= 0) {
+                alert("Por favor, ingresa valores válidos.");
+                return;
+            }
+
+            // Supongamos 8 horas diarias y tarifa promedio para comparación
+            const horas = 8;
+            const tarifa = 8.79;
+
+            const consumoMensual1 = ((potencia1 / eficiencia1) * horas) / 3412 * 30;
+            const consumoMensual2 = ((potencia2 / eficiencia2) * horas) / 3412 * 30;
+
+            let resultado = "";
+            let ahorro = 0;
+            if (consumoMensual1 < consumoMensual2) {
+                resultado = "El Equipo 1 es más eficiente.";
+                ahorro = consumoMensual2 - consumoMensual1;
+            } else if (consumoMensual2 < consumoMensual1) {
+                resultado = "El Equipo 2 es más eficiente.";
+                ahorro = consumoMensual1 - consumoMensual2;
+            } else {
+                resultado = "Ambos equipos tienen el mismo consumo.";
+                ahorro = 0;
+            }
+
+            document.getElementById("resultadoComparacion").textContent = resultado;
+            document.getElementById("ahorroEstimado").textContent = ahorro.toFixed(2);
+        }
+    </script>
 </body>
 </html>
