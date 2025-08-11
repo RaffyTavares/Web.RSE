@@ -356,6 +356,24 @@ footer {
     }
 }
 
+#servicios-carousel {
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+#servicios-carousel .col-12 {
+    min-width: 100%;
+}
+@media (min-width: 576px) {
+    #servicios-carousel .col-sm-6 {
+        min-width: 50%;
+    }
+}
+@media (min-width: 992px) {
+    #servicios-carousel .col-lg-4 {
+        min-width: 33.3333%;
+    }
+}
+
 
 
 

@@ -51,12 +51,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         try {
             // Configuración del servidor SMTP
             $mail->isSMTP();
-            $mail->Host = 'smtp.hostinger.com'; // Servidor SMTP de Gmail
+            $mail->Host = 'smtp.hostinger.com'; // Servidor SMTP de Gmail o hostinger
             $mail->SMTPAuth = true; // Habilitar autenticación SMTP
-            $mail->Username = 'info@rselectronicas.com'; // Tu correo Gmail
-            $mail->Password = '@Sebastian1992'; // Tu contraseña de Gmail
+            $mail->Username = 'info@rselectronicas.com'; // Tu correo Gmail o hostinger
+            $mail->Password = '@Sebastian1992'; // Tu contraseña de Gmail o hostinger
             $mail->SMTPSecure = 'ssl'; // Habilitar encriptación TLS
-            $mail->Port = 465; // Puerto SMTP de Gmail
+            $mail->Port = 465; // Puerto SMTP de Gmail o hostinger
 
             // Destinatarios
             $mail->setFrom('info@rselectronicas.com', 'R.S.E'); // Remitente

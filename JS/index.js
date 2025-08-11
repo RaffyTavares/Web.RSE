@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const carousel = document.getElementById('servicios-carousel');
     const btnLeft = document.getElementById('btn-left');
     const btnRight = document.getElementById('btn-right');
-    const card = carousel.querySelector('.col-12.col-sm-6.col-md-6.col-lg-3.text-center');
+    const card = carousel.querySelector('.col-12.col-sm-6.col-lg-4');
     const scrollAmount = card ? card.offsetWidth : 320;
 
     // Botón Izquierdo
