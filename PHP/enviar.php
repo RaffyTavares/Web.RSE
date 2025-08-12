@@ -1,11 +1,19 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+ini_set('log_errors', 1);
+ini_set('error_log', $_SERVER['DOCUMENT_ROOT'] . '/error_log');
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 // Cargar las clases de PHPMailer
-require __DIR__. '/PHPMailer-master/PHPMailer-master/src/Exception.php';
-require __DIR__.'/PHPMailer-master/PHPMailer-master/src/PHPMailer.php';
-require __DIR__.'/PHPMailer-master/PHPMailer-master/src/SMTP.php';
+require __DIR__ . '/PHPMailer-master/PHPMailer-master/src/PHPMailer.php';
+require __DIR__ . '/PHPMailer-master/PHPMailer-master/src/Exception.php';
+require __DIR__ . '/PHPMailer-master/PHPMailer-master/src/SMTP.php';
+
 
 // Configuración de la base de datos
 $host = '82.197.82.94';
@@ -58,6 +66,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $mail->setFrom('info@rselectronicas.com', 'R.S.E');
             $mail->addAddress('info@rselectronicas.com');
 
+            // Adjuntar imagen como archivo si existe y es válida
+            if (isset($_FILES['archivo']) && $_FILES['archivo']['error'] == UPLOAD_ERR_OK) {
+                error_log('Archivo recibido: ' . print_r($_FILES['archivo'], true));
+                $allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
+                if (in_array($_FILES['archivo']['type'], $allowedTypes)) {
+                    error_log('Tipo permitido, adjuntando: ' . $_FILES['archivo']['name']);
+                    $mail->addAttachment($_FILES['archivo']['tmp_name'], $_FILES['archivo']['name']);
+                } else {
+                    error_log('Tipo de archivo no permitido: ' . $_FILES['archivo']['type']);
+                }
+            }
+
+            // AHORA arma el cuerpo del correo
             $mail->isHTML(true);
             $mail->CharSet = 'UTF-8';
             $mail->Subject = 'Nuevo mensaje de R.S.E';
@@ -86,18 +107,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <p><span class='label'>Mensaje:</span></p>
                                 <p>$mensaje</p>
                             </div>
+                            <p style='margin-top:20px;'><strong>Imagen adjunta:</strong> Si el usuario adjuntó una imagen, la encontrarás como archivo adjunto en este correo.</p>
                         </div>
                     </body>
                 </html>
             ";
-
-            // Adjuntar imagen si existe y es válida
-            if (isset($_FILES['imagen']) && $_FILES['imagen']['error'] == UPLOAD_ERR_OK) {
-                $allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
-                if (in_array($_FILES['imagen']['type'], $allowedTypes)) {
-                    $mail->addAttachment($_FILES['imagen']['tmp_name'], $_FILES['imagen']['name']);
-                }
-            }
 
             $mail->send();
             echo '
@@ -117,7 +131,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     Mensaje enviado correctamente.
                 </div>
                 <br>
-                 <a href="index.html" style="
+                 <a href="https://rselectronicas.com/" style="
                     display: inline-block;
                     background: #007bff;
                     color: #fff;
