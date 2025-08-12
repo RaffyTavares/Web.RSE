@@ -11,7 +11,7 @@ require __DIR__.'/PHPMailer-master/PHPMailer-master/src/SMTP.php';
 $host = '82.197.82.94';
 $db   = 'u594713118_RSE_WEB';
 $user = 'u594713118_Rafael_Tavares';
-$pass = '@Sebastian1992'; // Asegúrate de que esta contraseña sea correcta
+$pass = '@Sebastian1992';
 $charset = 'utf8mb4';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
@@ -22,9 +22,7 @@ $options = [
 ];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Verifica si los campos están definidos en $_POST
     if (isset($_POST['nombre']) && isset($_POST['email']) && isset($_POST['mensaje'])) {
-        // Recuperar los datos del formulario
         $nombre = htmlspecialchars($_POST['nombre']);
         $email = htmlspecialchars($_POST['email']);
         $mensaje = htmlspecialchars($_POST['mensaje']);
@@ -35,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit;
         }
 
-          // 1. Guardar en la base de datos
+        // Guardar en la base de datos (sin imagen)
         try {
             $pdo = new PDO($dsn, $user, $pass, $options);
             $stmt = $pdo->prepare("INSERT INTO contacto (nombre, email, mensaje, fecha_envio) VALUES (?, ?, ?, NOW())");
@@ -49,89 +47,58 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail = new PHPMailer(true);
 
         try {
-            // Configuración del servidor SMTP
             $mail->isSMTP();
-            $mail->Host = 'smtp.hostinger.com'; // Servidor SMTP de Gmail o hostinger
-            $mail->SMTPAuth = true; // Habilitar autenticación SMTP
-            $mail->Username = 'info@rselectronicas.com'; // Tu correo Gmail o hostinger
-            $mail->Password = '@Sebastian1992'; // Tu contraseña de Gmail o hostinger
-            $mail->SMTPSecure = 'ssl'; // Habilitar encriptación TLS
-            $mail->Port = 465; // Puerto SMTP de Gmail o hostinger
+            $mail->Host = 'smtp.hostinger.com';
+            $mail->SMTPAuth = true;
+            $mail->Username = 'info@rselectronicas.com';
+            $mail->Password = '@Sebastian1992';
+            $mail->SMTPSecure = 'ssl';
+            $mail->Port = 465;
 
-            // Destinatarios
-            $mail->setFrom('info@rselectronicas.com', 'R.S.E'); // Remitente
-            $mail->addAddress('info@rselectronicas.com'); // Destinatario
+            $mail->setFrom('info@rselectronicas.com', 'R.S.E');
+            $mail->addAddress('info@rselectronicas.com');
 
-            // Contenido del correo
-            $mail->isHTML(true ); // Formato de texto plano
+            $mail->isHTML(true);
             $mail->CharSet = 'UTF-8';
-            $mail->Subject = 'Nuevo mensaje de R.S.E'; // Asunto del correo
+            $mail->Subject = 'Nuevo mensaje de R.S.E';
             $mail->Body = "
-                    <!DOCTYPE html>
-            <html lang='es'>
-                <head>
-                    <meta charset='UTF-8'>
-                    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-                    <title>Nuevo Mensaje de R.S.E</title>
-                    <style>
-                        body {
-                        font-family: Arial, sans-serif;
-                        background-color: #f4f4f4;
-                        color: #333;
-                        margin: 0;
-                        padding: 0;
-                        }
-
-                        .container {
-                        max-width: 600px;
-                        margin: 20px auto;
-                        padding: 20px;
-                        background-color: #fff;
-                        border-radius: 8px;
-                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                        }
-
-                        h1 {
-                        color: #007bff;
-                        font-size: 24px;
-                        margin-bottom: 20px;
-                        }
-
-                        p {
-                        font-size: 16px;
-                        line-height: 1.6;
-                        margin: 10px 0;
-                        }
-
-                        .label {
-                        font-weight: bold;
-                        color: #007bff;
-                        }
-
-                        .message {
-                        background-color: #f9f9f9;
-                        padding: 15px;
-                        border-left: 4px solid #007bff;
-                        margin-top: 20px;
-                        }
-                    </style>
-                </head>
-
-                <body>
-                    <div class='container'>
+                <!DOCTYPE html>
+                <html lang='es'>
+                    <head>
+                        <meta charset='UTF-8'>
+                        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                        <title>Nuevo Mensaje de R.S.E</title>
+                        <style>
+                            body { font-family: Arial, sans-serif; background-color: #f4f4f4; color: #333; margin: 0; padding: 0; }
+                            .container { max-width: 600px; margin: 20px auto; padding: 20px; background-color: #fff; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }
+                            h1 { color: #007bff; font-size: 24px; margin-bottom: 20px; }
+                            p { font-size: 16px; line-height: 1.6; margin: 10px 0; }
+                            .label { font-weight: bold; color: #007bff; }
+                            .message { background-color: #f9f9f9; padding: 15px; border-left: 4px solid #007bff; margin-top: 20px; }
+                        </style>
+                    </head>
+                    <body>
+                        <div class='container'>
                             <h1>Nuevo Mensaje de R.S.E</h1>
                             <p><span class='label'>Nombre:</span> $nombre</p>
                             <p><span class='label'>Email:</span> $email</p>
-                        <div class='message'>
-                            <p><span class='label'>Mensaje:</span></p>
-                            <p>$mensaje</p>
+                            <div class='message'>
+                                <p><span class='label'>Mensaje:</span></p>
+                                <p>$mensaje</p>
+                            </div>
                         </div>
-                    </div>
-                </body>
-            </html>
-                    ";
+                    </body>
+                </html>
+            ";
 
-            // Enviar el correo
+            // Adjuntar imagen si existe y es válida
+            if (isset($_FILES['imagen']) && $_FILES['imagen']['error'] == UPLOAD_ERR_OK) {
+                $allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
+                if (in_array($_FILES['imagen']['type'], $allowedTypes)) {
+                    $mail->addAttachment($_FILES['imagen']['tmp_name'], $_FILES['imagen']['name']);
+                }
+            }
+
             $mail->send();
             echo '
             <div style="text-align:center; margin: 2rem 0;">

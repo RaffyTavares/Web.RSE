@@ -539,74 +539,22 @@
 </section>
 
 
-<!-- Galería de trabajos realizados Section ---------------------------------------------->
-<section id="galeria" class="py-5 d-none" style="background: linear-gradient(135deg, #e0eafc 0%, #eaeff8 100%);">
+<!-- Galería de trabajos realizados Section ---------------------------------------------- -->
+<section id="galeria" class="py-5 d-none" style="background: linear-gradient(135deg, #181b20 0%, #c5d4f1 100%);">
     <div class="container">
-        <h2 class="text-center mb-3 fw-bold">Casos de Éxito</h2>
-        <p class="text-center text-muted mb-5 fs-5 fst-italic" style="letter-spacing: 0.5px;">
+        <h2 class="text-center mb-3 fw-bold animate__animated animate__fadeInDown">Casos de Éxito</h2>
+        <p class="text-center text-light mb-5 fs-5 fst-italic animate__animated animate__fadeIn" style="letter-spacing: 0.5px;">
             Descubre casos de éxito donde la experiencia y el conocimiento técnico marcan la diferencia en la reparación de tarjetas electrónicas inverter y de refrigeración.
         </p>
-        <div class="row g-4 justify-content-center">
-
-            <!-- Caso 1 -->
-            <div class="col-12 col-sm-6 col-lg-4 d-flex align-items-stretch">
-                <div class="card shadow-sm border-0 card-pequena h-100">
-                    <img src="/img/generica-moderna.jpg" class="card-img-top" alt="Reparación de circuito PFC quemado" style="height: 240px; object-fit: cover;">
-                    <div class="card-body">
-                        <h5 class="card-title text-primary">Falla de PFC en Tarjeta Midea</h5>
-                        <p class="card-text small">
-                            <strong>Problema:</strong> Equipo sin encender por pico de voltaje.<br>
-                            <strong>Solución:</strong> Reemplazo de componentes quemados en el circuito PFC. El contraste entre la pieza dañada y la nueva es evidente.
-                        </p>
-                    </div>
-                    <div class="card-footer text-muted small">
-                        <i class="bi bi-cpu"></i> Midea | <i class="bi bi-exclamation-triangle"></i> Error P0
-                    </div>
-                </div>
-            </div>
-
-            <!-- Caso 2 (Video) -->
-            <div class="col-12 col-sm-6 col-lg-4 d-flex align-items-stretch">
-                <div class="card shadow-sm border-0 card-pequena h-100">
-                    <div class="ratio ratio-16x9">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/xtk4NqM5qBY?si=p7EcSyzj_n1CCRCP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title text-primary">Prueba en Banco: Tarjeta LG</h5>
-                        <p class="card-text small">
-                            <strong>Problema:</strong> Error de comunicación (CH05).<br>
-                            <strong>Resultado:</strong> Tras la reparación, la tarjeta energiza y los LEDs de diagnóstico funcionan correctamente.
-                        </p>
-                    </div>
-                    <div class="card-footer text-muted small">
-                        <i class="bi bi-cpu"></i> LG | <i class="bi bi-check-circle"></i> Prueba Superada
-                    </div>
-                </div>
-            </div>
-
-            <!-- Caso 3 -->
-            <div class="col-12 col-sm-6 col-lg-4 d-flex align-items-stretch">
-                <div class="card shadow-sm border-0 card-pequena h-100">
-                    <img src="/img/Inverter_Samsung.JPG" class="card-img-top" alt="Corrosión en tarjeta electrónica" style="height: 240px; object-fit: cover;">
-                    <div class="card-body">
-                        <h5 class="card-title text-primary">Restauración de Pistas por Corrosión</h5>
-                        <p class="card-text small">
-                            <strong>Problema:</strong> Falla intermitente por humedad y corrosión.<br>
-                            <strong>Solución:</strong> Limpieza química, reconstrucción de pistas y barniz protector.
-                        </p>
-                    </div>
-                    <div class="card-footer text-muted small">
-                        <i class="bi bi-droplet-half"></i> Humedad | <i class="bi bi-tools"></i> Restauración
-                    </div>
-                </div>
-            </div>
-
-
+        <div id="galeria-paginada" class="row g-4 justify-content-center">
+            <!-- Aquí se mostrarán las tarjetas paginadas -->
         </div>
-        <div class="text-center mt-4">
-            <a href="#contacto" class="btn btn-outline-primary btn-sm px-4">
-                ¿Tienes un caso similar? ¡Contáctanos!
-            </a>
+        <div class="d-flex justify-content-center mt-4">
+            <nav>
+                <ul class="pagination" id="galeria-pagination">
+                    <!-- Botones de paginación generados por JS -->
+                </ul>
+            </nav>
         </div>
     </div>
 </section>
@@ -765,7 +713,7 @@
         <div class="row g-4 align-items-stretch">
             <!-- Formulario de Contacto -->
             <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-                <form action="PHP/enviar.php" method="POST" class="bg-white bg-opacity-75 p-4 rounded-4 shadow-sm animate__animated animate__fadeInLeft animate__faster">
+                <form action="PHP/enviar.php" method="POST" enctype="multipart/form-data" class="bg-white bg-opacity-75 p-4 rounded-4 shadow-sm animate__animated animate__fadeInLeft animate__faster">
                     <div class="mb-3">
                         <label for="nombre" class="form-label">Nombre</label>
                         <input type="text" class="form-control" id="nombre" name="nombre" required>
@@ -786,17 +734,17 @@
                         </label>
                         <textarea class="form-control" id="mensaje" name="mensaje" rows="5" required></textarea>
                     </div>
-                    <div class="mb-3 d-none">
+                    <div class="mb-3">
                         <label for="archivo" class="form-label">Adjuntar imagen (opcional)</label>
-                        <input type="file" class="form-control" id="archivo" name="archivo" accept="image/*">
+                        <input type="file" class="form-control" id="archivo" name="imagen" accept="image/*">
                     </div>
                     <div class="mb-3 d-flex justify-content-center gap-2">
                         <button type="submit" class="btn btn-primary w-50">Enviar Mensaje</button>
                         <button type="reset" class="btn btn-secondary w-50">Limpiar</button>
                     </div>
-                    <p class="text-muted mt-2 mb-0 text-center">
-                        ¿Quieres enviar una imagen? <a href="https://wa.me/18297470675" target="_blank">Hazlo por WhatsApp aquí</a>.
-                    </p>
+                    <div class="form-text text-center text-muted">
+                        Responderemos a tu mensaje en menos de 12 horas.
+                    </div>
                 </form>
             </div>
             <!-- Información de Contacto -->
@@ -1160,9 +1108,9 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 <!-- Chat de WhatsApp Flotante  -->
-        <a href="https://wa.me/18297470675" class="btn btn-success rounded-circle shadow-lg position-fixed" style="bottom: 30px; right: 30px; z-index: 1050;" target="_blank" aria-label="WhatsApp">
-            <i class="bi bi-whatsapp" style="font-size: 2rem;"></i>
-        </a>
+<a href="https://wa.me/18297470675?text=Hola%20Rafael%2C%20me%20gustaría%20recibir%20información%20profesional%20sobre%20el%20servicio%20de%20reparación%20de%20tarjetas%20electrónicas%20inverter.%20Gracias." class="btn btn-success rounded-circle shadow-lg position-fixed" style="bottom:30px; right:30px; z-index: 1050;" target="_blank" aria-label="WhatsApp">
+    <i class="bi bi-whatsapp" style="font-size: 2rem;"></i>
+</a>
 
 </body>
 </html>

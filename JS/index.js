@@ -159,6 +159,120 @@ document.addEventListener('DOMContentLoaded', function () {
     popoverTriggerList.forEach(popoverTriggerEl => {
         new bootstrap.Popover(popoverTriggerEl);
     });
+
+    // --- Galería paginada de trabajos realizados ---
+    // --- Galería de trabajos realizados con paginación ---
+    // Este bloque muestra los casos de éxito en la sección "galeria".
+    // La paginación es automática: muestra 2 tarjetas por página en escritorio/tablet y 1 en móvil.
+    // Puedes agregar más casos al array galeriaItems y la paginación se ajusta sola.
+
+    const galeriaItems = [
+        {
+            img: "/img/generica-moderna.jpg",
+            alt: "Reparación de circuito PFC quemado",
+            badge: '<span class="badge bg-danger mb-2"><i class="bi bi-exclamation-triangle"></i> Reparación</span>',
+            title: "Falla de PFC en Tarjeta Midea",
+            text: "<strong>Problema:</strong> Equipo sin encender por pico de voltaje.<br><strong>Solución:</strong> Reemplazo de componentes quemados en el circuito PFC. El contraste entre la pieza dañada y la nueva es evidente.",
+            footer: '<span><i class="bi bi-cpu"></i> Midea</span><span><i class="bi bi-exclamation-triangle"></i> Error P0</span>'
+        },
+        {
+            video: "https://www.youtube.com/embed/xtk4NqM5qBY?si=p7EcSyzj_n1CCRCP",
+            badge: '<span class="badge bg-success mb-2"><i class="bi bi-check-circle"></i> Prueba en Banco</span>',
+            title: "Prueba en Banco: Tarjeta LG",
+            text: "<strong>Problema:</strong> Error de comunicación (CH05).<br><strong>Resultado:</strong> Tras la reparación, la tarjeta energiza y los LEDs de diagnóstico funcionan correctamente.",
+            footer: '<span><i class="bi bi-cpu"></i> LG</span><span><i class="bi bi-check-circle"></i> Prueba Superada</span>'
+        },
+        {
+            img: "/img/Inverter_Samsung.JPG",
+            alt: "Corrosión en tarjeta electrónica",
+            badge: '<span class="badge bg-warning text-dark mb-2"><i class="bi bi-tools"></i> Restauración</span>',
+            title: "Restauración de Pistas por Corrosión",
+            text: "<strong>Problema:</strong> Falla intermitente por humedad y corrosión.<br><strong>Solución:</strong> Limpieza química, reconstrucción de pistas y barniz protector.",
+            footer: '<span><i class="bi bi-droplet-half"></i> Humedad</span><span><i class="bi bi-tools"></i> Restauración</span>'
+        },
+        {
+            img: "/img/protector-voltaje.jpeg",
+            alt: "Instalación de protector de voltaje",
+            badge: '<span class="badge bg-primary mb-2"><i class="bi bi-plug"></i> Instalación</span>',
+            title: "Protección contra Fluctuaciones",
+            text: "<strong>Problema:</strong> Daños recurrentes por picos de voltaje.<br><strong>Solución:</strong> Instalación de protector de voltaje certificado y asesoría sobre buenas prácticas eléctricas.",
+            footer: '<span><i class="bi bi-plug"></i> Instalación</span><span><i class="bi bi-shield-check"></i> Seguridad</span>'
+        }
+        // Puedes agregar más objetos aquí
+    ];
+
+    // getItemsPerPage: determina cuántas tarjetas mostrar por página según el ancho de pantalla.
+    function getItemsPerPage() {
+        if (window.innerWidth < 768) return 1; // móvil
+        return 2; // tablet y escritorio
+    }
+
+    let currentPage = 1;
+
+    // renderGaleria: muestra las tarjetas de la página actual en el contenedor 'galeria-paginada'.
+    function renderGaleria() {
+        const itemsPerPage = getItemsPerPage();
+        const galeriaContainer = document.getElementById('galeria-paginada');
+        if (!galeriaContainer) return;
+        galeriaContainer.innerHTML = '';
+        const start = (currentPage - 1) * itemsPerPage;
+        const end = start + itemsPerPage;
+        galeriaItems.slice(start, end).forEach(item => {
+            let cardHtml = `
+                <div class="col-12 col-lg-6 d-flex align-items-stretch" data-aos="zoom-in">
+                    <div class="card shadow-lg border-0 card-pequena h-100 animate__animated animate__fadeInUp">
+                        ${item.img ? `<img src="${item.img}" class="card-img-top" alt="${item.alt}" style="height: 240px; object-fit: cover;">` : `
+                        <div class="ratio ratio-16x9">
+                            <iframe src="${item.video}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>`}
+                        <div class="card-body">
+                            ${item.badge}
+                            <h5 class="card-title text-primary">${item.title}</h5>
+                            <p class="card-text small">${item.text}</p>
+                        </div>
+                        <div class="card-footer text-muted small d-flex justify-content-between align-items-center">
+                            ${item.footer}
+                        </div>
+                    </div>
+                </div>
+            `;
+            galeriaContainer.insertAdjacentHTML('beforeend', cardHtml);
+        });
+        renderPagination();
+    }
+
+    // renderPagination: genera los botones de paginación y gestiona el cambio de página.
+    function renderPagination() {
+        const itemsPerPage = getItemsPerPage();
+        const totalPages = Math.ceil(galeriaItems.length / itemsPerPage);
+        const pagination = document.getElementById('galeria-pagination');
+        if (!pagination) return;
+        pagination.innerHTML = '';
+        for (let i = 1; i <= totalPages; i++) {
+            pagination.innerHTML += `
+                <li class="page-item ${i === currentPage ? 'active' : ''}">
+                    <button class="page-link" data-page="${i}">${i}</button>
+                </li>
+            `;
+        }
+        // Eventos de paginación: al hacer clic en un botón, cambia la página y vuelve a renderizar.
+        pagination.querySelectorAll('button.page-link').forEach(btn => {
+            btn.onclick = function () {
+                currentPage = parseInt(this.dataset.page);
+                renderGaleria();
+                window.scrollTo({ top: document.getElementById('galeria').offsetTop - 80, behavior: 'smooth' });
+            };
+        });
+    }
+
+    // Re-render al cambiar tamaño de pantalla
+    window.addEventListener('resize', function () {
+        currentPage = 1;
+        renderGaleria();
+    });
+
+    // Inicializa la galería paginada al cargar la página.
+    renderGaleria();
 });
 
 
