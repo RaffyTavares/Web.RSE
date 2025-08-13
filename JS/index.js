@@ -53,78 +53,146 @@ document.addEventListener('DOMContentLoaded', function () {
     const carousel = document.getElementById('servicios-carousel');
     const btnLeft = document.getElementById('btn-left');
     const btnRight = document.getElementById('btn-right');
-    const card = carousel.querySelector('.col-12.col-sm-6.col-lg-4');
-    const scrollAmount = card ? card.offsetWidth : 320;
-
-    // Botón Izquierdo
-    btnLeft.addEventListener('click', () => {
-        carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    const serviceCards = document.querySelectorAll('.service-card');
+    
+    // Número de tarjetas a mostrar según el ancho de pantalla
+    function getVisibleCards() {
+        if (window.innerWidth < 576) return 1;
+        if (window.innerWidth < 992) return 2;
+        return 3;
+    }
+    
+    // Calcular el ancho de desplazamiento
+    function calculateScrollWidth() {
+        const visibleCards = getVisibleCards();
+        return carousel.scrollWidth / (serviceCards.length / visibleCards);
+    }
+    
+    // Configurar los botones de navegación
+    btnLeft.addEventListener('click', function() {
+        carousel.scrollBy({left: -calculateScrollWidth(), behavior: 'smooth'});
     });
-
-    // Botón Derecho
-    btnRight.addEventListener('click', () => {
-        carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    
+    btnRight.addEventListener('click', function() {
+        carousel.scrollBy({left: calculateScrollWidth(), behavior: 'smooth'});
     });
-
-    // --- Soporte para arrastrar con el mouse ---
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-
-    carousel.addEventListener('mousedown', (e) => {
-        isDown = true;
-        carousel.classList.add('dragging');
-        startX = e.pageX - carousel.offsetLeft;
-        scrollLeft = carousel.scrollLeft;
-        e.preventDefault();
-    });
-
-    carousel.addEventListener('mouseleave', () => {
-        isDown = false;
-        carousel.classList.remove('dragging');
-    });
-
-    carousel.addEventListener('mouseup', () => {
-        isDown = false;
-        carousel.classList.remove('dragging');
-    });
-
-    carousel.addEventListener('mousemove', (e) => {
-        if (!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - carousel.offsetLeft;
-        const walk = (x - startX) * 1.2; // Sensibilidad
-        carousel.scrollLeft = scrollLeft - walk;
-    });
-
-    // --- Soporte para pantallas táctiles ---
-    let touchStartX = 0;
-    let touchScrollLeft = 0;
-
-    carousel.addEventListener('touchstart', (e) => {
-        touchStartX = e.touches[0].pageX;
-        touchScrollLeft = carousel.scrollLeft;
-    });
-
-    carousel.addEventListener('touchmove', (e) => {
-        const x = e.touches[0].pageX;
-        const walk = (x - touchStartX) * 1.2;
-        carousel.scrollLeft = touchScrollLeft - walk;
-    });
-
-     // --- Soporte para scroll horizontal con la rueda del mouse ---
-    carousel.addEventListener('wheel', (e) => {
-    // Solo mover si el scroll es horizontal (deltaX)
-    if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
-        e.preventDefault();
-        const direction = e.deltaX > 0 ? 1 : -1;
-        carousel.scrollBy({
-            left: scrollAmount * direction * 8, // Multiplicador para mayor velocidad
-            behavior: 'smooth'
+    
+    // Crear paginación
+    const paginationContainer = document.querySelector('.service-pagination');
+    const numPages = Math.ceil(serviceCards.length / getVisibleCards());
+    
+    for (let i = 0; i < numPages; i++) {
+        const dot = document.createElement('span');
+        dot.classList.add('pagination-dot');
+        dot.style.width = '12px';
+        dot.style.height = '12px';
+        dot.style.borderRadius = '50%';
+        dot.style.backgroundColor = i === 0 ? '#0dcaf0' : '#ffffff';
+        dot.style.cursor = 'pointer';
+        dot.style.transition = 'all 0.3s ease';
+        dot.dataset.page = i;
+        
+        dot.addEventListener('click', function() {
+            const page = parseInt(this.dataset.page);
+            const scrollAmount = calculateScrollWidth() * page;
+            carousel.scrollTo({left: scrollAmount, behavior: 'smooth'});
+            
+            // Actualizar dots
+            document.querySelectorAll('.pagination-dot').forEach(d => {
+                d.style.backgroundColor = '#ffffff';
+            });
+            this.style.backgroundColor = '#0dcaf0';
         });
-        }
+        
+        paginationContainer.appendChild(dot);
+    }
+    
+    // Sistema de filtrado
+    const filterButtons = document.querySelectorAll('.service-filter');
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Activar botón seleccionado
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            const filter = this.dataset.filter;
+            
+            // Mostrar/ocultar tarjetas según el filtro
+            serviceCards.forEach(card => {
+                if (filter === 'all' || card.classList.contains(filter)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            // Resetear posición del carrusel
+            carousel.scrollTo({left: 0, behavior: 'smooth'});
+            
+            // Actualizar paginación
+            updatePagination();
+        });
     });
+    
+    // Efecto hover en las tarjetas
+    serviceCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            const overlay = this.querySelector('.overlay');
+            const img = this.querySelector('.card-img-top');
+            if (overlay) overlay.style.opacity = '1';
+            if (img) img.style.transform = 'scale(1.05)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            const overlay = this.querySelector('.overlay');
+            const img = this.querySelector('.card-img-top');
+            if (overlay) overlay.style.opacity = '0';
+            if (img) img.style.transform = 'scale(1)';
+        });
+    });
+    
+    // Actualizar paginación al cambiar tamaño de ventana
+    function updatePagination() {
+        const visibleCards = getVisibleCards();
+        const filteredCards = Array.from(serviceCards).filter(card => 
+            card.style.display !== 'none'
+        );
+        
+        const numPages = Math.ceil(filteredCards.length / visibleCards);
+        paginationContainer.innerHTML = '';
+        
+        for (let i = 0; i < numPages; i++) {
+            const dot = document.createElement('span');
+            dot.classList.add('pagination-dot');
+            dot.style.width = '12px';
+            dot.style.height = '12px';
+            dot.style.borderRadius = '50%';
+            dot.style.backgroundColor = i === 0 ? '#0dcaf0' : '#ffffff';
+            dot.style.cursor = 'pointer';
+            dot.style.transition = 'all 0.3s ease';
+            dot.dataset.page = i;
+            
+            dot.addEventListener('click', function() {
+                const page = parseInt(this.dataset.page);
+                const scrollAmount = calculateScrollWidth() * page;
+                carousel.scrollTo({left: scrollAmount, behavior: 'smooth'});
+                
+                // Actualizar dots
+                document.querySelectorAll('.pagination-dot').forEach(d => {
+                    d.style.backgroundColor = '#ffffff';
+                });
+                this.style.backgroundColor = '#0dcaf0';
+            });
+            
+            paginationContainer.appendChild(dot);
+        }
+    }
+    
+    window.addEventListener('resize', updatePagination);
+});
 
+document.addEventListener('DOMContentLoaded', function () {
     // --- Rotación de imágenes en la sección "Nosotros" con efecto elegante (fade + slide) ---
     const imagenes = [
         'img/fachada.RSE.jpg',
@@ -274,6 +342,88 @@ document.addEventListener('DOMContentLoaded', function () {
     // Inicializa la galería paginada al cargar la página.
     renderGaleria();
 });
+
+// Detecta la sección visible y aplica la clase active al enlace correspondiente
+function highlightActiveSection() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    const dropdownItems = document.querySelectorAll('.dropdown-menu .dropdown-item');
+    
+    // Agregar una clase .active-link para mejor visibilidad
+    const activeStyle = document.createElement('style');
+    activeStyle.textContent = `
+        .navbar-nav .nav-link.active {
+            color: #fff !important;
+            font-weight: bold;
+            position: relative;
+        }
+        .navbar-nav .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 20%;
+            width: 60%;
+            height: 2px;
+            background-color: #0dcaf0; /* Color info de Bootstrap */
+        }
+        .dropdown-menu .dropdown-item.active {
+            background-color: #6c757d;
+            color: white;
+            font-weight: bold;
+        }
+    `;
+    document.head.appendChild(activeStyle);
+    
+    function checkScroll() {
+        const scrollPosition = window.scrollY + 100; // +100 para compensar la altura del navbar
+        
+        // Encontrar la sección visible
+        let currentSection = null;
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionBottom = sectionTop + section.offsetHeight;
+            
+            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                currentSection = section.getAttribute('id');
+            }
+        });
+        
+        // Actualizar clases active en enlaces principales
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            const href = link.getAttribute('href');
+            if (href && href === `#${currentSection}`) {
+                link.classList.add('active');
+            }
+        });
+        
+        // Actualizar clases active en dropdown items
+        dropdownItems.forEach(item => {
+            item.classList.remove('active');
+            const href = item.getAttribute('href');
+            if (href && href.startsWith('#') && href === `#${currentSection}`) {
+                item.classList.add('active');
+                // También activar el botón dropdown cuando un elemento del menú está activo
+                const dropdownToggle = document.querySelector('.dropdown-toggle');
+                if (dropdownToggle) {
+                    dropdownToggle.classList.add('active');
+                }
+            }
+        });
+    }
+    
+    // Verificar sección activa al cargar y al hacer scroll
+    window.addEventListener('scroll', checkScroll);
+    window.addEventListener('resize', checkScroll);
+    
+    // Comprobar estado inicial después de cargar completamente
+    window.addEventListener('load', checkScroll);
+    checkScroll();
+}
+
+// Ejecutar cuando el DOM esté cargado
+document.addEventListener('DOMContentLoaded', highlightActiveSection);
 
 
 

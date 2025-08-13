@@ -374,6 +374,34 @@ footer {
     }
 }
 
+/* Estilos para la sección de servicios */
+.hover-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2) !important;
+}
+
+.service-filter.active {
+    background-color: #0dcaf0;
+    color: #fff;
+    border-color: #0dcaf0;
+}
+
+.pagination-dot {
+    display: inline-block;
+    margin: 0 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.pagination-dot:hover {
+    transform: scale(1.2);
+}
+
+.service-badge {
+    position: relative;
+    z-index: 1;
+    margin-top: -30px;
+}
+
 
 
 
