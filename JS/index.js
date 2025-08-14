@@ -1,74 +1,124 @@
+/**
+ * Script principal para Rafael Soluciones Electrónicas (RSE)
+ * 
+ * Este archivo contiene todas las funcionalidades JavaScript para la página web,
+ * organizadas por secciones funcionales.
+ * 
+ * @author: Rafael Tavares
+ * @version: 1.0.0
+ * @lastUpdate: 2023-08
+ */
+
+// =============================================================================
+// CONFIGURACIÓN GLOBAL Y PROTECCIÓN DEL SITIO
+// =============================================================================
+
+/**
+ * Deshabilita el menú contextual (clic derecho) en toda la página
+ */
 document.oncontextmenu = e => {
     alert('Clic derecho deshabilitado en esta página.');
     return false;
 };
 
-// --- FORMULARIO DE CONTACTO ---
-const contactForm = document.getElementById('contactForm') || document.querySelector('form');
-if (contactForm) {
-    contactForm.addEventListener('submit', function (event) {
-        const nombre = document.getElementById('nombre').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const mensaje = document.getElementById('mensaje').value.trim();
+// =============================================================================
+// FORMULARIO DE CONTACTO
+// =============================================================================
 
-        if (!nombre || !email || !mensaje) {
-            alert('Todos los campos son obligatorios.');
-            event.preventDefault();
-            return;
-        }
+/**
+ * Gestiona el envío del formulario de contacto
+ * - Valida que todos los campos estén completos
+ * - Muestra un mensaje de éxito mediante toast
+ * - Limpia el formulario después del envío
+ */
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contactForm') || document.querySelector('form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function (event) {
+            const nombre = document.getElementById('nombre').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const mensaje = document.getElementById('mensaje').value.trim();
 
-        // Mostrar el toast de éxito 
-        const successToastEl = document.getElementById('successToast');
-        if (successToastEl) {
-            const successToast = new bootstrap.Toast(successToastEl, {
-                autohide: true,
-                delay: 3000
-            });
-            successToast.show();
-        }
+            // Validación básica de campos
+            if (!nombre || !email || !mensaje) {
+                alert('Todos los campos son obligatorios.');
+                event.preventDefault();
+                return;
+            }
 
-        // Limpiar el formulario después de enviar (espera breve para no interferir con el envío)
-        setTimeout(() => contactForm.reset(), 100);
-    });
-}
+            // Mostrar toast de éxito
+            const successToastEl = document.getElementById('successToast');
+            if (successToastEl) {
+                const successToast = new bootstrap.Toast(successToastEl, {
+                    autohide: true,
+                    delay: 3000
+                });
+                successToast.show();
+            }
 
-// --- SCROLL SUAVE AL FORMULARIO DE CONTACTO ---
-const contactoLink = document.querySelector('a[href="#contacto"]');
-if (contactoLink) {
-    contactoLink.addEventListener('click', function (e) {
-        e.preventDefault();
-        const form = document.querySelector('#contacto form');
-        if (form) {
-            form.scrollIntoView({ behavior: 'smooth' });
-            form.classList.remove('fadeInContacto');
-            void form.offsetWidth;
-            form.classList.add('fadeInContacto');
-        }
-    });
-}
+            // Limpiar el formulario después de enviar
+            setTimeout(() => contactForm.reset(), 100);
+        });
+    }
 
+    // Animación al hacer clic en el enlace de contacto
+    const contactoLink = document.querySelector('a[href="#contacto"]');
+    if (contactoLink) {
+        contactoLink.addEventListener('click', function (e) {
+            e.preventDefault();
+            const form = document.querySelector('#contacto form');
+            if (form) {
+                form.scrollIntoView({ behavior: 'smooth' });
+                form.classList.remove('fadeInContacto');
+                void form.offsetWidth; // Trigger reflow para reiniciar la animación
+                form.classList.add('fadeInContacto');
+            }
+        });
+    }
+});
 
+// =============================================================================
+// SECCIÓN DE SERVICIOS - CARRUSEL Y FILTROS
+// =============================================================================
+
+/**
+ * Gestiona el carrusel de servicios con:
+ * - Navegación mediante botones
+ * - Paginación visual con puntos
+ * - Sistema de filtrado por categorías
+ * - Efectos visuales en hover
+ */
 document.addEventListener('DOMContentLoaded', function () {
-    // --- Carrusel de servicios ---
+    // Referencias a elementos del DOM
     const carousel = document.getElementById('servicios-carousel');
     const btnLeft = document.getElementById('btn-left');
     const btnRight = document.getElementById('btn-right');
     const serviceCards = document.querySelectorAll('.service-card');
+    const paginationContainer = document.querySelector('.service-pagination');
     
-    // Número de tarjetas a mostrar según el ancho de pantalla
+    // Si no existen los elementos, salir de la función
+    if (!carousel || !btnLeft || !btnRight || !paginationContainer) return;
+
+    /**
+     * Determina cuántas tarjetas mostrar según el ancho de pantalla
+     * @returns {number} Número de tarjetas a mostrar
+     */
     function getVisibleCards() {
-        if (window.innerWidth < 576) return 1;
-        if (window.innerWidth < 992) return 2;
-        return 3;
+        if (window.innerWidth < 576) return 1; // móvil
+        if (window.innerWidth < 992) return 2; // tablet
+        return 3; // escritorio
     }
     
-    // Calcular el ancho de desplazamiento
+    /**
+     * Calcula el ancho de desplazamiento para el scroll del carrusel
+     * @returns {number} Ancho de desplazamiento en píxeles
+     */
     function calculateScrollWidth() {
         const visibleCards = getVisibleCards();
         return carousel.scrollWidth / (serviceCards.length / visibleCards);
     }
     
-    // Configurar los botones de navegación
+    // Configuración de botones de navegación
     btnLeft.addEventListener('click', function() {
         carousel.scrollBy({left: -calculateScrollWidth(), behavior: 'smooth'});
     });
@@ -77,37 +127,40 @@ document.addEventListener('DOMContentLoaded', function () {
         carousel.scrollBy({left: calculateScrollWidth(), behavior: 'smooth'});
     });
     
-    // Crear paginación
-    const paginationContainer = document.querySelector('.service-pagination');
-    const numPages = Math.ceil(serviceCards.length / getVisibleCards());
-    
-    for (let i = 0; i < numPages; i++) {
-        const dot = document.createElement('span');
-        dot.classList.add('pagination-dot');
-        dot.style.width = '12px';
-        dot.style.height = '12px';
-        dot.style.borderRadius = '50%';
-        dot.style.backgroundColor = i === 0 ? '#0dcaf0' : '#ffffff';
-        dot.style.cursor = 'pointer';
-        dot.style.transition = 'all 0.3s ease';
-        dot.dataset.page = i;
+    // Crear indicadores de paginación
+    function createPaginationDots() {
+        const numPages = Math.ceil(serviceCards.length / getVisibleCards());
         
-        dot.addEventListener('click', function() {
-            const page = parseInt(this.dataset.page);
-            const scrollAmount = calculateScrollWidth() * page;
-            carousel.scrollTo({left: scrollAmount, behavior: 'smooth'});
+        for (let i = 0; i < numPages; i++) {
+            const dot = document.createElement('span');
+            dot.classList.add('pagination-dot');
+            dot.style.width = '12px';
+            dot.style.height = '12px';
+            dot.style.borderRadius = '50%';
+            dot.style.backgroundColor = i === 0 ? '#0dcaf0' : '#ffffff';
+            dot.style.cursor = 'pointer';
+            dot.style.transition = 'all 0.3s ease';
+            dot.dataset.page = i;
             
-            // Actualizar dots
-            document.querySelectorAll('.pagination-dot').forEach(d => {
-                d.style.backgroundColor = '#ffffff';
+            dot.addEventListener('click', function() {
+                const page = parseInt(this.dataset.page);
+                const scrollAmount = calculateScrollWidth() * page;
+                carousel.scrollTo({left: scrollAmount, behavior: 'smooth'});
+                
+                // Actualizar dots
+                document.querySelectorAll('.pagination-dot').forEach(d => {
+                    d.style.backgroundColor = '#ffffff';
+                });
+                this.style.backgroundColor = '#0dcaf0';
             });
-            this.style.backgroundColor = '#0dcaf0';
-        });
-        
-        paginationContainer.appendChild(dot);
+            
+            paginationContainer.appendChild(dot);
+        }
     }
     
-    // Sistema de filtrado
+    createPaginationDots();
+    
+    // Sistema de filtrado por categorías
     const filterButtons = document.querySelectorAll('.service-filter');
     
     filterButtons.forEach(button => {
@@ -135,7 +188,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
     
-    // Efecto hover en las tarjetas
+    // Efectos hover en las tarjetas
     serviceCards.forEach(card => {
         card.addEventListener('mouseenter', function() {
             const overlay = this.querySelector('.overlay');
@@ -152,7 +205,9 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
     
-    // Actualizar paginación al cambiar tamaño de ventana
+    /**
+     * Actualiza los indicadores de paginación al filtrar o cambiar el tamaño de ventana
+     */
     function updatePagination() {
         const visibleCards = getVisibleCards();
         const filteredCards = Array.from(serviceCards).filter(card => 
@@ -189,31 +244,47 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
     
+    // Actualizar paginación al cambiar tamaño de pantalla
     window.addEventListener('resize', updatePagination);
 });
 
+// =============================================================================
+// SECCIÓN NOSOTROS - ROTACIÓN DE IMÁGENES
+// =============================================================================
+
+/**
+ * Gestiona la rotación automática de imágenes en la sección "Nosotros"
+ * con efectos de transición elegantes
+ */
 document.addEventListener('DOMContentLoaded', function () {
-    // --- Rotación de imágenes en la sección "Nosotros" con efecto elegante (fade + slide) ---
     const imagenes = [
         'img/fachada.RSE.jpg',
         'img/taller1.JPG',
-        'img/logo1.png',
-        // Agrega más rutas si lo deseas
+        'img/logo1.png'
+        // Más imágenes pueden agregarse aquí
     ];
     let idx = 0;
     const imgElement = document.getElementById('nosotros-img');
+    
     if (imgElement) {
         imgElement.style.transition = 'opacity 0.7s, transform 0.7s';
+        
+        // Configurar rotación de imágenes cada 5 segundos
         setInterval(() => {
-            // Efecto: desvanecer y deslizar a la izquierda
+            // Fase 1: Desvanecer y deslizar a la izquierda
             imgElement.style.opacity = 0;
             imgElement.style.transform = 'translateX(-30px) scale(0.98)';
+            
+            // Fase 2: Cambiar la imagen
             setTimeout(() => {
                 idx = (idx + 1) % imagenes.length;
                 imgElement.src = imagenes[idx];
+                
+                // Fase 3: Preparar para entrada desde la derecha
                 imgElement.onload = () => {
-                    // Efecto: aparecer y deslizar desde la derecha
                     imgElement.style.transform = 'translateX(80px) scale(0.58)';
+                    
+                    // Fase 4: Aparecer y centrar
                     setTimeout(() => {
                         imgElement.style.opacity = 1;
                         imgElement.style.transform = 'translateX(0) scale(1)';
@@ -223,17 +294,31 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 5000);
     }
 
+    // Inicializar popovers de Bootstrap
     const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
     popoverTriggerList.forEach(popoverTriggerEl => {
         new bootstrap.Popover(popoverTriggerEl);
     });
 
-    // --- Galería paginada de trabajos realizados ---
-    // --- Galería de trabajos realizados con paginación ---
-    // Este bloque muestra los casos de éxito en la sección "galeria".
-    // La paginación es automática: muestra 2 tarjetas por página en escritorio/tablet y 1 en móvil.
-    // Puedes agregar más casos al array galeriaItems y la paginación se ajusta sola.
+    const popoverList = [...popoverTriggerList].map(triggerEl => new bootstrap.Popover(triggerEl, {
+        placement: 'top', // Posición del popover
+        html: true, // Permitir contenido HTML
+        container: 'body', // Asegura que el popover no se corte
+    }));
+});
 
+// =============================================================================
+// GALERÍA DE TRABAJOS REALIZADOS CON PAGINACIÓN
+// =============================================================================
+
+/**
+ * Implementa una galería paginada para la sección "Casos de Éxito"
+ * - Muestra 2 tarjetas por página en escritorio/tablet y 1 en móvil
+ * - Permite navegación mediante controles de paginación
+ * - Se adapta automáticamente a diferentes tamaños de pantalla
+ */
+document.addEventListener('DOMContentLoaded', function () {
+    // Datos de los trabajos realizados
     const galeriaItems = [
         {
             img: "/img/generica-moderna.jpg",
@@ -266,10 +351,13 @@ document.addEventListener('DOMContentLoaded', function () {
             text: "<strong>Problema:</strong> Daños recurrentes por picos de voltaje.<br><strong>Solución:</strong> Instalación de protector de voltaje certificado y asesoría sobre buenas prácticas eléctricas.",
             footer: '<span><i class="bi bi-plug"></i> Instalación</span><span><i class="bi bi-shield-check"></i> Seguridad</span>'
         }
-        // Puedes agregar más objetos aquí
+        // Puedes agregar más casos aquí y la paginación se ajustará automáticamente
     ];
 
-    // getItemsPerPage: determina cuántas tarjetas mostrar por página según el ancho de pantalla.
+    /**
+     * Determina cuántas tarjetas mostrar por página según el ancho de pantalla
+     * @returns {number} Número de tarjetas a mostrar
+     */
     function getItemsPerPage() {
         if (window.innerWidth < 768) return 1; // móvil
         return 2; // tablet y escritorio
@@ -277,14 +365,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let currentPage = 1;
 
-    // renderGaleria: muestra las tarjetas de la página actual en el contenedor 'galeria-paginada'.
+    /**
+     * Genera y muestra las tarjetas de la página actual
+     */
     function renderGaleria() {
-        const itemsPerPage = getItemsPerPage();
         const galeriaContainer = document.getElementById('galeria-paginada');
         if (!galeriaContainer) return;
+        
+        const itemsPerPage = getItemsPerPage();
         galeriaContainer.innerHTML = '';
         const start = (currentPage - 1) * itemsPerPage;
         const end = start + itemsPerPage;
+        
+        // Crear tarjetas para la página actual
         galeriaItems.slice(start, end).forEach(item => {
             let cardHtml = `
                 <div class="col-12 col-lg-6 d-flex align-items-stretch" data-aos="zoom-in">
@@ -306,16 +399,22 @@ document.addEventListener('DOMContentLoaded', function () {
             `;
             galeriaContainer.insertAdjacentHTML('beforeend', cardHtml);
         });
+        
         renderPagination();
     }
 
-    // renderPagination: genera los botones de paginación y gestiona el cambio de página.
+    /**
+     * Genera los controles de paginación
+     */
     function renderPagination() {
-        const itemsPerPage = getItemsPerPage();
-        const totalPages = Math.ceil(galeriaItems.length / itemsPerPage);
         const pagination = document.getElementById('galeria-pagination');
         if (!pagination) return;
+        
+        const itemsPerPage = getItemsPerPage();
+        const totalPages = Math.ceil(galeriaItems.length / itemsPerPage);
         pagination.innerHTML = '';
+        
+        // Crear botones de paginación
         for (let i = 1; i <= totalPages; i++) {
             pagination.innerHTML += `
                 <li class="page-item ${i === currentPage ? 'active' : ''}">
@@ -323,7 +422,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 </li>
             `;
         }
-        // Eventos de paginación: al hacer clic en un botón, cambia la página y vuelve a renderizar.
+        
+        // Añadir eventos a los botones de paginación
         pagination.querySelectorAll('button.page-link').forEach(btn => {
             btn.onclick = function () {
                 currentPage = parseInt(this.dataset.page);
@@ -333,23 +433,31 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Re-render al cambiar tamaño de pantalla
+    // Reiniciar la paginación al cambiar el tamaño de pantalla
     window.addEventListener('resize', function () {
         currentPage = 1;
         renderGaleria();
     });
 
-    // Inicializa la galería paginada al cargar la página.
+    // Inicializar la galería
     renderGaleria();
 });
 
-// Detecta la sección visible y aplica la clase active al enlace correspondiente
+// =============================================================================
+// NAVEGACIÓN - RESALTADO DE SECCIÓN ACTIVA
+// =============================================================================
+
+/**
+ * Resalta la sección activa en la navegación mientras el usuario hace scroll
+ * - Funciona con enlaces estándar y dropdown menu
+ * - Añade estilos visuales a los elementos activos
+ */
 function highlightActiveSection() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
     const dropdownItems = document.querySelectorAll('.dropdown-menu .dropdown-item');
     
-    // Agregar una clase .active-link para mejor visibilidad
+    // Añadir estilos para los elementos activos
     const activeStyle = document.createElement('style');
     activeStyle.textContent = `
         .navbar-nav .nav-link.active {
@@ -374,12 +482,14 @@ function highlightActiveSection() {
     `;
     document.head.appendChild(activeStyle);
     
+    /**
+     * Verifica qué sección está visible y actualiza los estilos de navegación
+     */
     function checkScroll() {
-        const scrollPosition = window.scrollY + 100; // +100 para compensar la altura del navbar
-        
-        // Encontrar la sección visible
+        const scrollPosition = window.scrollY + 100; // Compensar altura del navbar
         let currentSection = null;
         
+        // Determinar qué sección está actualmente en la vista
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionBottom = sectionTop + section.offsetHeight;
@@ -389,7 +499,7 @@ function highlightActiveSection() {
             }
         });
         
-        // Actualizar clases active en enlaces principales
+        // Actualizar estado activo en enlaces principales
         navLinks.forEach(link => {
             link.classList.remove('active');
             const href = link.getAttribute('href');
@@ -398,13 +508,13 @@ function highlightActiveSection() {
             }
         });
         
-        // Actualizar clases active en dropdown items
+        // Actualizar estado activo en elementos del dropdown
         dropdownItems.forEach(item => {
             item.classList.remove('active');
             const href = item.getAttribute('href');
             if (href && href.startsWith('#') && href === `#${currentSection}`) {
                 item.classList.add('active');
-                // También activar el botón dropdown cuando un elemento del menú está activo
+                // Activar también el botón dropdown
                 const dropdownToggle = document.querySelector('.dropdown-toggle');
                 if (dropdownToggle) {
                     dropdownToggle.classList.add('active');
@@ -413,17 +523,38 @@ function highlightActiveSection() {
         });
     }
     
-    // Verificar sección activa al cargar y al hacer scroll
+    // Escuchar eventos para actualizar la sección activa
     window.addEventListener('scroll', checkScroll);
     window.addEventListener('resize', checkScroll);
-    
-    // Comprobar estado inicial después de cargar completamente
     window.addEventListener('load', checkScroll);
+    
+    // Verificar estado inicial
     checkScroll();
 }
 
-// Ejecutar cuando el DOM esté cargado
+// Inicializar el resaltado de sección activa cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', highlightActiveSection);
+
+// =============================================================================
+// EFECTO FLIP DE TARJETAS
+// =============================================================================
+
+/**
+ * Script para manejar el efecto flip de tarjetas
+ */
+document.addEventListener('DOMContentLoaded', function () {
+    const flipButtons = document.querySelectorAll('.flip-button');
+
+    flipButtons.forEach(button => {
+        button.addEventListener('click', function (e) {
+            e.preventDefault();
+            const flipCard = this.closest('.flip-card');
+            if (flipCard) {
+                flipCard.classList.toggle('flipped'); // Alterna la clase 'flipped'
+            }
+        });
+    });
+});
 
 
 

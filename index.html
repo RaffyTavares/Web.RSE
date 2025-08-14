@@ -17,6 +17,13 @@
     <link href="CSS/efectos.css"  rel="stylesheet">
     <link href="CSS/index.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="img/logo1.png">
+
+    <style>
+    .flip-card-back {
+        background-color: #f8f9fa !important; /* Asegura un fondo visible */
+        color: #000 !important; /* Asegura que el texto sea visible */
+    }
+</style>
 </head>
 <body>
     <!-- Navbar ------------------------------------------------------------------------------------------------------------------->
@@ -98,7 +105,7 @@
     <div class="container d-flex flex-column">
         <!-- Encabezado de sección mejorado -->
         <div class="text-center mb-5">
-            <h2 class="text-light fw-bold display-5 mb-2 animate__animated animate__fadeInDown">Servicios Especializados</h2>
+            <h2 class="text-light fw-bold display-5 mb-2"  data-aos="fade-down" data-aos-duration="120" data-aos-delay="400">Servicios Especializados</h2>
             <div class="d-flex justify-content-center">
                 <div class="border-bottom border-info border-2 w-25 mb-3"></div>
             </div>
@@ -128,12 +135,12 @@
         <!-- Contenedor del carrusel mejorado -->
         <div id="servicios-carousel" class="row flex-nowrap overflow-hidden" style="scroll-behavior: smooth;">
             <!-- Servicio 1 -->
-            <div class="col-12 col-sm-6 col-lg-4 text-center service-card reparacion">
+            <div class="col-12 col-sm-6 col-lg-4 text-center service-card reparacion" data-aos="fade-up" data-aos-delay="200">
                 <div class="card mb-4 shadow hover-card" style="border-radius: 20px; background-color: rgba(0, 0, 0, 0.2); transition: all 0.3s ease;">
                     <div class="card-img-container position-relative overflow-hidden" style="border-radius: 20px 20px 0 0;">
                         <img src="img/reparacion.JPG" class="img-shadow card-img-top" alt="Reparación de Tarjetas" data-bs-toggle="modal" data-bs-target="#modalServicio1" style="height: 200px; object-fit: cover; transform: scale(1); transition: transform 0.5s ease;">
                         <div class="overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style="background: rgba(0,0,0,0.4); opacity: 0; transition: opacity 0.3s ease;">
-                            <button class="btn btn-primary rounded-pill px-4">Ver detalles</button>
+                            <button class="btn btn-primary rounded-pill px-4"  data-bs-toggle="modal" data-bs-target="#modalServicio1">Ver detalles</button>
                         </div>
                     </div>
                     <div class="card-body">
@@ -145,12 +152,12 @@
                 </div>
             </div>
             <!-- Servicio 2 -->
-            <div class="col-12 col-sm-6 col-lg-4 text-center service-card instalacion">
+            <div class="col-12 col-sm-6 col-lg-4 text-center service-card instalacion" data-aos="fade-up" data-aos-delay="200">
                 <div class="card mb-4 shadow hover-card" style="border-radius: 20px; background-color: rgba(0, 0, 0, 0.2); transition: all 0.3s ease;">
                     <div class="card-img-container position-relative overflow-hidden" style="border-radius: 20px 20px 0 0;">
                         <img src="img/mantenimiento.jpg" class="img-shadow card-img-top" alt="Mantenimiento Preventivo" data-bs-toggle="modal" data-bs-target="#modalServicio2" style="height: 200px; object-fit: cover; transform: scale(1); transition: transform 0.5s ease;">
                         <div class="overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style="background: rgba(0,0,0,0.4); opacity: 0; transition: opacity 0.3s ease;">
-                            <button class="btn btn-primary rounded-pill px-4">Ver detalles</button>
+                            <button class="btn btn-primary rounded-pill px-4" data-bs-toggle="modal" data-bs-target="#modalServicio2">Ver detalles</button>
                         </div>
                     </div>
                     <div class="card-body">
@@ -162,12 +169,12 @@
                 </div>
             </div>
             <!-- Servicio 3 -->
-            <div class="col-12 col-sm-6 col-lg-4 text-center service-card asesoria">
+            <div class="col-12 col-sm-6 col-lg-4 text-center service-card asesoria" data-aos="fade-up" data-aos-delay="200">
                 <div class="card mb-4 shadow hover-card" style="border-radius: 20px; background-color: rgba(0, 0, 0, 0.2); transition: all 0.3s ease;">
                     <div class="card-img-container position-relative overflow-hidden" style="border-radius: 20px 20px 0 0;">
                         <img src="img/componentes electrónicos.jpg" class="img-shadow card-img-top" alt="Venta de Componentes" data-bs-toggle="modal" data-bs-target="#modalServicio3" style="height: 200px; object-fit: cover; transform: scale(1); transition: transform 0.5s ease;">
                         <div class="overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style="background: rgba(0,0,0,0.4); opacity: 0; transition: opacity 0.3s ease;">
-                            <button class="btn btn-primary rounded-pill px-4">Ver detalles</button>
+                            <button class="btn btn-primary rounded-pill px-4" data-bs-toggle="modal" data-bs-target="#modalServicio3">Ver detalles</button>
                         </div>
                     </div>
                     <div class="card-body">
@@ -179,12 +186,12 @@
                 </div>
             </div>
             <!-- Servicio 4 -->
-            <div class="col-12 col-sm-6 col-lg-4 text-center service-card reparacion">
+            <div class="col-12 col-sm-6 col-lg-4 text-center service-card reparacion" data-aos="fade-up" data-aos-delay="200">
                 <div class="card mb-4 shadow hover-card" style="border-radius: 20px; background-color: rgba(0, 0, 0, 0.2); transition: all 0.3s ease;">
                     <div class="card-img-container position-relative overflow-hidden" style="border-radius: 20px 20px 0 0;">
                         <img src="img/Inverter_Samsung.JPG" class="img-shadow card-img-top" alt="Servicio Adicional"  data-bs-toggle="modal" data-bs-target="#modalServicio4" style="height: 200px; object-fit: cover; transform: scale(1); transition: transform 0.5s ease;">
                         <div class="overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style="background: rgba(0,0,0,0.4); opacity: 0; transition: opacity 0.3s ease;">
-                            <button class="btn btn-primary rounded-pill px-4">Ver detalles</button>
+                            <button class="btn btn-primary rounded-pill px-4"  data-bs-toggle="modal" data-bs-target="#modalServicio4">Ver detalles</button>
                         </div>
                     </div>
                     <div class="card-body">
@@ -196,12 +203,12 @@
                 </div>
             </div>
             <!-- Servicio 5 -->
-            <div class="col-12 col-sm-6 col-lg-4 text-center service-card instalacion">
+            <div class="col-12 col-sm-6 col-lg-4 text-center service-card instalacion" data-aos="fade-up" data-aos-delay="200">
                 <div class="card mb-4 shadow hover-card" style="border-radius: 20px; background-color: rgba(0, 0, 0, 0.2); transition: all 0.3s ease;">
                     <div class="card-img-container position-relative overflow-hidden" style="border-radius: 20px 20px 0 0;">
                         <img src="img/protector-voltaje.jpeg" class="img-shadow card-img-top" alt="Venta e Instalación de Protectores de Voltaje" data-bs-toggle="modal" data-bs-target="#modalServicio5" style="height: 200px; object-fit: cover; transform: scale(1); transition: transform 0.5s ease;">
                         <div class="overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style="background: rgba(0,0,0,0.4); opacity: 0; transition: opacity 0.3s ease;">
-                            <button class="btn btn-primary rounded-pill px-4">Ver detalles</button>
+                            <button class="btn btn-primary rounded-pill px-4" data-bs-toggle="modal" data-bs-target="#modalServicio5">Ver detalles</button>
                         </div>
                     </div>
                     <div class="card-body">
@@ -213,12 +220,12 @@
                 </div>
             </div>
             <!-- Servicio 6 -->
-            <div class="col-12 col-sm-6 col-lg-4 text-center service-card instalacion">
+            <div class="col-12 col-sm-6 col-lg-4 text-center service-card instalacion" data-aos="fade-up" data-aos-delay="200">
                 <div class="card mb-4 shadow hover-card" style="border-radius: 20px; background-color: rgba(0, 0, 0, 0.2); transition: all 0.3s ease;">
                     <div class="card-img-container position-relative overflow-hidden" style="border-radius: 20px 20px 0 0;">
                         <img src="img/monitoreo-inteligente.jpeg" class="img-shadow card-img-top" alt="Instalación de Sistemas de Monitoreo Inteligente" data-bs-toggle="modal" data-bs-target="#modalServicio6" style="height: 200px; object-fit: cover; transform: scale(1); transition: transform 0.5s ease;">
                         <div class="overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style="background: rgba(0,0,0,0.4); opacity: 0; transition: opacity 0.3s ease;">
-                            <button class="btn btn-primary rounded-pill px-4">Ver detalles</button>
+                            <button class="btn btn-primary rounded-pill px-4" data-bs-toggle="modal" data-bs-target="#modalServicio6">Ver detalles</button>
                         </div>
                     </div>
                     <div class="card-body">
@@ -230,12 +237,12 @@
                 </div>
             </div>
             <!-- Servicio 7 -->
-            <div class="col-12 col-sm-6 col-lg-4 text-center service-card reparacion">
+            <div class="col-12 col-sm-6 col-lg-4 text-center service-card reparacion" data-aos="fade-up" data-aos-delay="200">
                 <div class="card mb-4 shadow hover-card" style="border-radius: 20px; background-color: rgba(0, 0, 0, 0.2); transition: all 0.3s ease;">
                     <div class="card-img-container position-relative overflow-hidden" style="border-radius: 20px 20px 0 0;">
                         <img src="img/urgencia-electronica.png" class="img-shadow card-img-top" alt="Servicio de Urgencias y Atención Rápida" data-bs-toggle="modal" data-bs-target="#modalServicio7" style="height: 200px; object-fit: cover; transform: scale(1); transition: transform 0.5s ease;">
                         <div class="overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style="background: rgba(0,0,0,0.4); opacity: 0; transition: opacity 0.3s ease;">
-                            <button class="btn btn-primary rounded-pill px-4">Ver detalles</button>
+                            <button class="btn btn-primary rounded-pill px-4" data-bs-toggle="modal" data-bs-target="#modalServicio7">Ver detalles</button>
                         </div>
                     </div>
                     <div class="card-body">
@@ -247,12 +254,12 @@
                 </div>
             </div>
             <!-- Servicio 8 -->
-            <div class="col-12 col-sm-6 col-lg-4 text-center service-card asesoria">
+            <div class="col-12 col-sm-6 col-lg-4 text-center service-card asesoria" data-aos="fade-up" data-aos-delay="200">
                 <div class="card mb-4 shadow hover-card" style="border-radius: 20px; background-color: rgba(0, 0, 0, 0.2); transition: all 0.3s ease;">
                     <div class="card-img-container position-relative overflow-hidden" style="border-radius: 20px 20px 0 0;">
                         <img src="img/capacitacion-electronica.jpeg" class="img-shadow card-img-top" alt="Asesoría Técnica y Capacitación" data-bs-toggle="modal" data-bs-target="#modalServicio8" style="height: 200px; object-fit: cover; transform: scale(1); transition: transform 0.5s ease;">
                         <div class="overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style="background: rgba(0,0,0,0.4); opacity: 0; transition: opacity 0.3s ease;">
-                            <button class="btn btn-primary rounded-pill px-4">Ver detalles</button>
+                            <button class="btn btn-primary rounded-pill px-4" data-bs-toggle="modal" data-bs-target="#modalServicio8">Ver detalles</button>
                         </div>
                     </div>
                     <div class="card-body">
@@ -778,7 +785,10 @@
 
     <section id="contacto" class="py-5 bg-light">
     <div class="container">
-        <h2 class="text-center mb-5" data-aos="fade-down" data-aos-delay="200">Contáctanos</h2>
+        <h2 class="text-center mb-3" data-aos="fade-down" data-aos-delay="200">Contáctanos</h2>
+            <div class="d-flex justify-content-center" data-aos="fade-left" data-aos-delay="700">
+                <div class="border-bottom border-info border-2 w-25 mb-4"></div>
+            </div>
         <div class="row g-4 align-items-stretch">
             <!-- Formulario de Contacto -->
             <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
@@ -880,29 +890,59 @@
 <!-- Blog o Consejos Técnicos ---------------------------------------------------------------------------------------->
 <section id="blog" class="py-5 bg-white">
     <div class="container">
-        <h2 class="text-center mb-5 text-primary">Consejos Técnicos</h2>
+        <h2 class="text-center mb-3 text-primary">Consejos Técnicos</h2>
+        <div class="d-flex justify-content-center">
+            <div class="border-bottom border-info border-2 w-25 mb-3"></div>
+        </div>
+        <p class="text-center text-muted mb-5 fs-5 fst-italic" style="max-width: 800px; margin: 0 auto;">
+            Aprovecha estos consejos profesionales para optimizar el funcionamiento de tus equipos y prevenir fallas costosas en tus sistemas de climatización.
+        </p>
         <div class="row g-4">
-            <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
+            <!-- Tarjeta 1 -->
+            <div class="col-md-4">
                 <div class="card h-100 shadow-sm">
-                    <div class="card-body">
+                    <div class="card-body d-flex flex-column">
                         <h5 class="card-title text-info"><i class="bi bi-lightbulb"></i> ¿Por qué hacer mantenimiento preventivo?</h5>
-                        <p class="card-text">El mantenimiento periódico previene averías costosas y extiende la vida útil de tu aire acondicionado. Limpia los filtros mensualmente y revisa conexiones eléctricas y el estado de la tarjeta electrónica cada cuatro meses.</p>
+                        <p class="card-text">El mantenimiento periódico previene averías costosas y extiende la vida útil de tu aire acondicionado.</p>
+                        <button class="btn btn-outline-info mt-auto mx-auto" 
+                                data-bs-toggle="popover" 
+                                data-bs-trigger="focus" 
+                                title="Mantenimiento Preventivo"
+                                data-bs-content="El mantenimiento incluye limpieza de filtros, revisión de conexiones eléctricas y ajustes periódicos para evitar fallas inesperadas.">
+                            <i class="bi bi-arrow-right-circle"></i> Leer más
+                        </button>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
+            <!-- Tarjeta 2 -->
+            <div class="col-md-4">
                 <div class="card h-100 shadow-sm">
-                    <div class="card-body">
+                    <div class="card-body d-flex flex-column">
                         <h5 class="card-title text-info"><i class="bi bi-tools"></i> Diagnóstico de tarjetas inverter</h5>
-                        <p class="card-text">Ante cualquier error, verifica primero sensores y componentes externos antes de reemplazar la tarjeta. Consulta los manuales disponibles en la sección Recursos.</p>
+                        <p class="card-text">Ante cualquier error, verifica primero sensores y componentes externos antes de reemplazar la tarjeta.</p>
+                        <button class="btn btn-outline-info mt-auto mx-auto" 
+                                data-bs-toggle="popover" 
+                                data-bs-trigger="focus"
+                                title="Diagnóstico de Tarjetas Inverter" 
+                                data-bs-content="Un diagnóstico adecuado incluye verificar códigos de error, revisar sensores y comprobar el estado de los componentes electrónicos.">
+                            <i class="bi bi-arrow-right-circle"></i> Leer más
+                        </button>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4"data-aos="fade-up" data-aos-delay="700">
+            <!-- Tarjeta 3 -->
+            <div class="col-md-4">
                 <div class="card h-100 shadow-sm">
-                    <div class="card-body">
+                    <div class="card-body d-flex flex-column">
                         <h5 class="card-title text-info"><i class="bi bi-shield-check"></i> Seguridad primero</h5>
-                        <p class="card-text">Prioriza tu seguridad: desconecta el equipo antes de manipularlo, utiliza herramientas aisladas y sigue siempre las recomendaciones del fabricante.</p>
+                        <p class="card-text">Prioriza tu seguridad: desconecta el equipo antes de manipularlo, utiliza herramientas aisladas y sigue las recomendaciones del fabricante.</p>
+                        <button class="btn btn-outline-info mt-auto mx-auto" 
+                                data-bs-toggle="popover" 
+                                data-bs-trigger="focus"
+                                title="Seguridad en Reparaciones" 
+                                data-bs-content="Siempre desconecta el equipo antes de trabajar en él. Usa guantes aislantes y herramientas adecuadas para evitar accidentes.">
+                            <i class="bi bi-arrow-right-circle"></i> Leer más
+                        </button>
                     </div>
                 </div>
             </div>
@@ -916,6 +956,9 @@
     <section id="noticias" class="py-5 bg-light">
         <div class="container">
             <h2 class="text-center mb-5 text-primary">Últimas Noticias sobre Tecnología Inverter</h2>
+            <div class="d-flex justify-content-center">
+                <div class="border-bottom border-info border-2 w-25 mb-4"></div>
+            </div>
             <p class="text-center text-muted mb-5 fs-5 fst-italic" style="letter-spacing: 0.5px;">
                 Mantente informado sobre las últimas tendencias, innovaciones y avances en tecnología inverter y electrónica aplicada a climatización.
             </p>
@@ -1160,6 +1203,8 @@
         const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
         const popoverList = [...popoverTriggerList].map(triggerEl => new bootstrap.Popover(triggerEl));
         });
+
+        // pausar y reanudar Carrusel de Tarjetas Electrónicas con Errores Comunes  
 
         document.addEventListener('DOMContentLoaded', function () {
         var pauseBtn = document.getElementById('pauseCarousel');

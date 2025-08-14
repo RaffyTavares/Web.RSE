@@ -1,30 +1,46 @@
-/* Estilos personalizados */
+/**
+ * ESTILOS PARA RAFAEL SOLUCIONES ELECTRÓNICAS (RSE)
+ * ----------------------------------------------
+ * Hoja de estilos principal para el sitio web de RSE.
+ * Contiene estilos personalizados para todas las secciones principales.
+ * Organizado por componentes y con adaptación responsive.
+ * 
+ * @version: 1.0.0
+ * @lastUpdate: 2023-08
+ */
 
- body, .navbar, .footer-label, .card-title, .card-text, .accordion-button, .accordion-body, .form-label, .btn, .lead, h1, h2, h3, h4, h5, h6, p, ul, li, .modal-title {
-        font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif !important;
-    }
-    .fst-italic, .lead, .card-text.fst-italic, .text-muted, .modal-body p, .faq .accordion-body {
-        font-family: 'Lora', 'Georgia', serif !important;
-    }
+/* =============================================================================
+   1. ESTILOS BÁSICOS Y TIPOGRAFÍA
+   ============================================================================= */
 
-    
+/* Tipografía principal para elementos de UI */
+body, .navbar, .footer-label, .card-title, .card-text, .accordion-button, 
+.accordion-body, .form-label, .btn, .lead, h1, h2, h3, h4, h5, h6, 
+p, ul, li, .modal-title {
+    font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif !important;
+}
+
+/* Tipografía secundaria para textos estilizados */
+.fst-italic, .lead, .card-text.fst-italic, .text-muted, 
+.modal-body p, .faq .accordion-body {
+    font-family: 'Lora', 'Georgia', serif !important;
+}
+
+/* Estructura básica y ajustes generales */
 body {
-    font-family: 'Arial', sans-serif;
     padding-top: 56px; /* Ajuste para el navbar fijo */
 }
 
-.navbar-brand img {
-    margin-right: 10px;
+/* Alineación de texto justificada */
+.text-justify {
+    text-align: justify;
 }
 
-.card {
-    transition: transform 0.3s;
-}
+/* =============================================================================
+   2. COLORES Y FONDO
+   ============================================================================= */
 
-.card:hover {
-    transform: scale(1.05);
-}
-
+/* Colores principales */
 .bg-primary {
     background-color: #566270 !important;
 }
@@ -33,24 +49,31 @@ body {
     background-color: #343a40 !important;
 }
 
-footer {
-    background-color: #343a40;
-    color: white;
+/* =============================================================================
+   3. NAVEGACIÓN (NAVBAR)
+   ============================================================================= */
+
+/* Ajuste de logo */
+.navbar-brand img {
+    margin-right: 10px;
 }
 
-/* Estilos para el header con imagen de fondo translúcida */
+/* =============================================================================
+   4. ENCABEZADO (HEADER)
+   ============================================================================= */
+
+/* Estructura principal del encabezado */
 #inicio {
     position: relative;
-    background-image: url('');
     background-size: cover;
     background-position: center;
     color: white;
     text-align: center;
     padding: 5rem 0;
     scroll-margin-top: 70px;
-   
 }
 
+/* Estilos para el texto del encabezado */
 #inicio h5 {
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -64,7 +87,7 @@ footer {
     color: #f8f9fa;
 }
 
-
+/* Capa de superposición para mejorar legibilidad del texto */
 #inicio::before {
     content: '';
     position: absolute;
@@ -72,36 +95,61 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Capa de color translúcido */
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
 
+/* Posicionamiento del contenido sobre la capa */
 #inicio .container {
     position: relative;
     z-index: 2;
 }
 
-.text-justify {
-    text-align: justify;
-  }
-  
-/* Estilos para la sección de Servicios */
+/* =============================================================================
+   5. SECCIÓN DE SERVICIOS
+   ============================================================================= */
+
+/* Estructura base de la sección */
 #servicios {
     background-color: #343a40;
     padding: 2rem 0;
-   
 }
 
+/* Título de la sección */
 #servicios h2 {
     color: #f8f9fa;
     margin-bottom: 3rem;
     text-align: center;
 }
 
+/* Configuración del carrusel */
+#servicios-carousel {
+    color: #000;
+    display: flex;
+    gap: 2rem; /* Espaciado entre tarjetas */
+    overflow-x: auto; /* Permite el desplazamiento horizontal */
+    scroll-behavior: smooth; /* Desplazamiento suave */
+    padding-left: 1rem;
+    padding-right: 1rem;
+    scroll-padding-left: 1rem;
+    scroll-padding-right: 0.5rem;
+    overflow-x: auto;
+}
+
+/* Ocultar barra de desplazamiento */
+#servicios-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+/* Estilos para tarjetas de servicios */
 #servicios-carousel .card {
     margin: 0 0.3rem;
     flex-shrink: 0;
     width: 400px;
+    width: 300px;
+    flex-shrink: 0;
+    transform: scale(1.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 #servicios-carousel .card img {
@@ -109,11 +157,19 @@ footer {
     object-fit: cover;
 }
 
+/* Efecto hover en tarjetas */
+#servicios-carousel .card:hover {
+    transform: scale(1.0);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Estado al arrastrar el carrusel */
 #servicios-carousel.dragging {
     cursor: grabbing;
     user-select: none;
 }
-/* Botones de navegación carrusel */
+
+/* Navegación del carrusel */
 #btn-left, #btn-right {
     width: 50px;
     height: 50px;
@@ -122,10 +178,6 @@ footer {
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-
-#btn-left, #btn-right {
     background-color: #eff1f4;
     border: none;
     color: #2a2f33;
@@ -137,48 +189,18 @@ footer {
     background-color: #485e74;
 }
 
+/* Ajustar el contenedor del título y los botones */
+#servicios .d-flex {
+    gap: 1rem;
+}
+
+/* Configuración específica del carrusel */
 #servicios-carousel > .col-md-4 {
     margin-left: 0;
     margin-right: 0;
 }
 
-  /* Estilo para el carrusel */
-#servicios-carousel {
-    color: #000;
-    display: flex;
-    gap: 2rem; /* Espaciado entre tarjetas */
-    overflow-x: auto; /* Permite el desplazamiento horizontal */
-    scroll-behavior: smooth; /* Desplazamiento suave */
-    padding-left: 1rem;
-    padding-right: 1rem;
-    scroll-padding-left: 1rem; /* Para scroll suave */
-    scroll-padding-right: 0.5rem;
-}
-
-/* Ajustar el contenedor del título y los botones */
-#servicios .d-flex {
-    gap: 1rem; /* Espaciado entre los botones y el título */
-}
-
-#servicios-carousel::-webkit-scrollbar {
-    display: none; /* Oculta la barra de desplazamiento */
-}
-
-
- /* Aumentar el tamaño de las tarjetas */
-#servicios-carousel .card {
-    width: 300px;
-    flex-shrink: 0; /* Evita que las tarjetas se reduzcan */
-    transform: scale(1.1); /* Escala ligeramente las tarjetas */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación suave */
-}
-
-/* Efecto hover para destacar aún más */
-#servicios-carousel .card:hover {
-    transform: scale(1.0); /* Aumenta el tamaño al pasar el mouse */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Agrega una sombra más pronunciada */
-}
-
+/* Estilo para imágenes en modales */
 .img-modal {
     width: 100%;
     height: auto;
@@ -186,36 +208,92 @@ footer {
     transition: transform 0.3s ease;
 }
 
-/* Galeria de trabajos realizados */
+/* Efectos específicos para tarjetas */
+.hover-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2) !important;
+}
+
+/* Estilos para los filtros de servicios */
+.service-filter.active {
+    background-color: #0dcaf0;
+    color: #fff;
+    border-color: #0dcaf0;
+}
+
+/* Estilos para la paginación */
+.pagination-dot {
+    display: inline-block;
+    margin: 0 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.pagination-dot:hover {
+    transform: scale(1.2);
+}
+
+/* Estilos para las etiquetas de servicios */
+.service-badge {
+    position: relative;
+    z-index: 1;
+    margin-top: -30px;
+}
+
+/* =============================================================================
+   6. GALERÍA DE TRABAJOS
+   ============================================================================= */
+
+/* Tarjetas para la galería */
 .card-pequena {
     width: 26rem;
     min-height: 26rem;
     margin-left: auto;
     margin-right: auto;
 }
-@media (max-width: 775.98px) {
-    .card-pequena {
-        width: 100%;
-    }
+
+/* Transición para tarjetas normales (no flip) */
+.card:not(.flip-card-front):not(.flip-card-back) {
+    transition: transform 0.3s;
 }
 
+/* Efecto hover solo para tarjetas normales */
+.card:not(.flip-card-front):not(.flip-card-back):hover {
+    transform: scale(1.05);
+}
 
-/* Estilos para la sección de Contacto */
+/* Garantizar que las tarjetas flip NO tengan transformación en hover */
+.flip-card .card {
+    transform: none;
+}
+
+.flip-card .card:hover {
+    transform: none !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* =============================================================================
+   7. SECCIÓN DE CONTACTO
+   ============================================================================= */
+
+/* Estructura básica */
 #contacto {
     padding: 60px 0;
 }
 
+/* Estilos del título */
 #contacto h2 {
     color: #007bff;
     margin-bottom: 30px;
 }
 
+/* Campos del formulario */
 #contacto .form-control {
     border-radius: 5px;
     border: 1px solid #ddd;
     padding: 10px;
 }
 
+/* Botón de envío */
 #contacto .btn-primary {
     background-color: #007bff;
     border: none;
@@ -227,6 +305,7 @@ footer {
     background-color: #0056b3;
 }
 
+/* Enlaces de redes sociales */
 #contacto .social-media a {
     text-decoration: none;
     transition: color 0.3s ease;
@@ -236,68 +315,10 @@ footer {
     color: #007bff !important;
 }
 
+/* Texto descriptivo */
 #contacto .lead {
     font-size: 1.25rem;
     color: #333;
-}
-
-[data-bs-toggle="popover"] {
-  cursor: help;
-  
-}
-
-
-.footer-label {
-    display: none;
-    margin-left: 6px;
-    vertical-align: middle;
-    transition: opacity 0.2s;
-}
-.footer-icon:hover .footer-label,
-.footer-icon:focus .footer-label {
-    display: inline;
-    opacity: 1;
-}
-.footer-icon i {
-    font-size: 1.3rem;
-    vertical-align: middle;
-}
-
-
-/* Estilos para el toast */
-.toast {
-    background-color: #46d467; /* Color de fondo */
-    color: white; /* Color del texto */
-    border-radius: 5px; /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
-}
-
-.toast-header {
-    background-color: #218838; /* Color de fondo del encabezado */
-    color: white; /* Color del texto del encabezado */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Borde inferior */
-}
-
-.toast-body {
-    padding: 1rem; /* Espaciado interno */
-}
-
-
-/*ajustes generales para pantallas pequeñas---------------------------------------------------------------------*/
-
-/* Ajustar el tamaño del logo en pantallas pequeñas */
-@media (max-width: 576px) {
-    .navbar-brand img {
-        width: 100px;
-        height: auto;
-    }
-}
-
-/* Centrar el contenido del footer en pantallas pequeñas */
-@media (max-width: 576px) {
-    footer .text-md-start, footer .text-md-end {
-        text-align: center !important;
-    }
 }
 
 /* Espaciado adicional entre íconos de redes sociales */
@@ -306,40 +327,128 @@ footer {
     display: inline-block;
 }
 
+/* =============================================================================
+   8. FOOTER
+   ============================================================================= */
 
+/* Estilo principal */
+footer {
+    background-color: #343a40;
+    color: white;
+}
 
- /* Ajustes del texto del header para pantallas pequeñas */
- @media (max-width: 500px) {
-    
+/* Etiquetas del footer */
+.footer-label {
+    display: none;
+    margin-left: 6px;
+    vertical-align: middle;
+    transition: opacity 0.2s;
+}
+
+.footer-icon:hover .footer-label,
+.footer-icon:focus .footer-label {
+    display: inline;
+    opacity: 1;
+}
+
+.footer-icon i {
+    font-size: 1.3rem;
+    vertical-align: middle;
+}
+
+/* =============================================================================
+   9. COMPONENTES Y UTILIDADES
+   ============================================================================= */
+
+/* Cursor para elementos con popover */
+[data-bs-toggle="popover"] {
+    cursor: help;
+}
+
+/* Estilo para el toast de notificación */
+.toast {
+    background-color: #46d467;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.toast-header {
+    background-color: #218838;
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.toast-body {
+    padding: 1rem;
+}
+
+/* Estilo para el popover */
+.popover {
+    background-color: #f8f9fa; /* Fondo claro */
+    border: 1px solid #dee2e6; /* Borde sutil */
+    border-radius: 0.5rem; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    max-width: 300px; /* Ancho máximo */
+}
+
+.popover-header  {
+    background-color: #0d6efd; /* Fondo azul */
+    color: #fff; /* Texto blanco */
+    font-weight: bold;
+    border-bottom: 1px solid #dee2e6;
+    border-radius: 0.5rem 0.5rem 0 0;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.popover-body {
+    color: #212529; /* Texto oscuro */
+    font-size: 0.9rem;
+    line-height: 1.5;
+    padding: 1rem; /* Espaciado interno */
+}
+
+/* =============================================================================
+   10. MEDIA QUERIES - DISEÑO RESPONSIVE
+   ============================================================================= */
+
+/* PANTALLAS EXTRA PEQUEÑAS (móviles) */
+@media (max-width: 500px) {
+    /* Ajustes específicos del header */
     #inicio {
-        padding-top: 54px; /* o lo que mide tu navbar */
+        padding-top: 54px;
     }
     
     #inicio h3 {
-        font-size: 1.1rem; /* Reducir el tamaño del texto */
+        font-size: 1.1rem;
     }
+    
     #inicio p {
-        font-size: 1rem; /* Reducir el tamaño del párrafo */
+        font-size: 1rem;
     }
+    
     #inicio .btn {
-        font-size: 0.9rem; /* Reducir el tamaño del botón */
-        padding: 0.3rem 1rem; /* Ajustar el padding del botón */
+        font-size: 0.9rem;
+        padding: 0.3rem 1rem;
     }
 }
 
-    @media (max-width: 1000px) {
-    #servicios-carousel {
-        width: 100%;
-        gap: 1rem;
-    }
-    #servicios-carousel .card {
-        width: 90vw;
-        max-width: 300px;
-    }
-}
-
-/* Carrusel de servicios: solo una tarjeta visible en móviles */
+/* PANTALLAS PEQUEÑAS (hasta 576px) */
 @media (max-width: 576px) {
+    /* Ajustar el tamaño del logo */
+    .navbar-brand img {
+        width: 100px;
+        height: auto;
+    }
+    
+    /* Centrar el contenido del footer */
+    footer .text-md-start, 
+    footer .text-md-end {
+        text-align: center !important;
+    }
+    
+    /* Carrusel: una tarjeta por vista */
     #servicios-carousel > .col-12,
     #servicios-carousel > .col-sm-6,
     #servicios-carousel > .col-md-6,
@@ -348,58 +457,96 @@ footer {
         max-width: 100vw !important;
         flex: 0 0 100vw !important;
     }
+    
     #servicios-carousel {
         scroll-snap-type: x mandatory;
     }
+    
     #servicios-carousel > div {
         scroll-snap-align: start;
     }
 }
 
-#servicios-carousel {
-    overflow-x: auto;
-    scroll-behavior: smooth;
+/* PANTALLAS MEDIANAS (hasta 775.98px) */
+@media (max-width: 775.98px) {
+    .card-pequena {
+        width: 100%;
+    }
 }
+
+/* PANTALLAS GRANDES (hasta 1000px) */
+@media (max-width: 1000px) {
+    #servicios-carousel {
+        width: 100%;
+        gap: 1rem;
+    }
+    
+    #servicios-carousel .card {
+        width: 90vw;
+        max-width: 300px;
+    }
+}
+
+/* CONFIGURACIÓN RESPONSIVA DEL CARRUSEL DE SERVICIOS */
 #servicios-carousel .col-12 {
     min-width: 100%;
 }
+
 @media (min-width: 576px) {
     #servicios-carousel .col-sm-6 {
         min-width: 50%;
     }
 }
+
 @media (min-width: 992px) {
     #servicios-carousel .col-lg-4 {
         min-width: 33.3333%;
     }
 }
 
-/* Estilos para la sección de servicios */
-.hover-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2) !important;
+/* =============================================================================
+   11. TARJETAS FLIP
+   ============================================================================= */
+
+/* Estilos para tarjetas flip */
+.flip-card {
+    perspective: 1000px; /* Necesario para el efecto 3D */
+    height: 100%;
+    min-height: 350px;
 }
 
-.service-filter.active {
-    background-color: #0dcaf0;
-    color: #fff;
-    border-color: #0dcaf0;
-}
-
-.pagination-dot {
-    display: inline-block;
-    margin: 0 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-.pagination-dot:hover {
-    transform: scale(1.2);
-}
-
-.service-badge {
+.flip-card-inner {
     position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s ease-in-out;
+    transform-style: preserve-3d; /* Asegura el efecto 3D */
+}
+
+.flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg); /* Voltea la tarjeta */
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Oculta la cara trasera cuando no está activa */
+    -webkit-backface-visibility: hidden; /* Compatibilidad con Safari */
+    border-radius: 0.375rem;
+    overflow: hidden;
+}
+
+.flip-card-front {
+    background-color: #fff; /* Fondo de la cara frontal */
+    z-index: 2;
+    transform: rotateY(0deg); /* Asegura que la cara frontal esté visible inicialmente */
+}
+
+.flip-card-back {
+    background-color: #f8f9fa; /* Fondo de la cara trasera */
+    transform: rotateY(180deg); /* Voltea la cara trasera */
     z-index: 1;
-    margin-top: -30px;
 }
 
 
