@@ -29,6 +29,32 @@ p, ul, li, .modal-title {
 /* Estructura básica y ajustes generales */
 body {
     padding-top: 56px; /* Ajuste para el navbar fijo */
+    overflow-x: hidden;
+}
+
+/* Asegurar que las imágenes y otros elementos no excedan el ancho de la pantalla */
+img, iframe, .container, .row {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Solución para elementos que causan desbordamiento */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+/* Asegurar que las filas no excedan el ancho */
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Asegurar que las tarjetas y otros elementos no se desborden */
+.card, .container, .row {
+    max-width: 100%;
+    overflow: hidden;
 }
 
 /* Alineación de texto justificada */
