@@ -95,3 +95,97 @@ html, body {
     max-width: 100%;
     overflow: hidden;
 }
+
+/* ===== Fix overflow horizontal en móviles ===== */
+
+/* Quitar ancho fijo en tarjetas del carrusel */
+#servicios-carousel .card {
+    width: 100%;
+    max-width: 300px;
+}
+
+/* Corregir el ancho de columnas en el carrusel */
+#servicios-carousel > .col-12,
+#servicios-carousel > .col-sm-6,
+#servicios-carousel > .col-md-6,
+#servicios-carousel > .col-lg-3 {
+    min-width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+}
+
+/* Evitar que paddings + gaps sumen scroll extra */
+#servicios-carousel {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    gap: 1rem; /* mantener espacio entre tarjetas */
+}
+
+/* Seguridad extra */
+html, body {
+    overflow-x: hidden !important;
+}
+
+
+/* En móviles: 1 tarjeta por fila */
+@media (max-width: 767px) {
+  #servicios-carousel > .col-12,
+  #servicios-carousel > .col-sm-6,
+  #servicios-carousel > .col-md-6,
+  #servicios-carousel > .col-lg-3 {
+      min-width: 100% !important;
+      max-width: 100% !important;
+      flex: 0 0 100% !important;
+  }
+}
+
+/* En tablets: 2 tarjetas por fila */
+@media (min-width: 768px) and (max-width: 991px) {
+  #servicios-carousel > .col-12,
+  #servicios-carousel > .col-sm-6,
+  #servicios-carousel > .col-md-6,
+  #servicios-carousel > .col-lg-3 {
+      min-width: 50% !important;
+      max-width: 50% !important;
+      flex: 0 0 50% !important;
+  }
+}
+
+/* En escritorio: 3 o 4 tarjetas por fila */
+@media (min-width: 992px) {
+  #servicios-carousel > .col-12,
+  #servicios-carousel > .col-sm-6,
+  #servicios-carousel > .col-md-6,
+  #servicios-carousel > .col-lg-3 {
+      min-width: 25% !important;
+      max-width: 25% !important;
+      flex: 0 0 25% !important;
+  }
+}
+
+.search-highlight {
+    animation: highlight-pulse 2s ease-in-out;
+}
+
+@keyframes highlight-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(13, 202, 240, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(13, 202, 240, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(13, 202, 240, 0); }
+}
+
+#noResultsMessage {
+    font-size: 1.2rem;
+    font-weight: bold;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

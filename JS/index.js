@@ -543,18 +543,9 @@ document.addEventListener('DOMContentLoaded', highlightActiveSection);
  * Script para manejar el efecto flip de tarjetas
  */
 document.addEventListener('DOMContentLoaded', function () {
-    const flipButtons = document.querySelectorAll('.flip-button');
-
-    flipButtons.forEach(button => {
-        button.addEventListener('click', function (e) {
-            e.preventDefault();
-            const flipCard = this.closest('.flip-card');
-            if (flipCard) {
-                flipCard.classList.toggle('flipped'); // Alterna la clase 'flipped'
-            }
-        });
-    });
+    // Flip card functionality has been removed
 });
+
 
 
 

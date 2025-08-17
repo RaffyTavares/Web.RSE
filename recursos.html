@@ -56,6 +56,18 @@
             <strong>Aquí encontrarás documentación, videos y guías para ayudarte a diagnosticar fallas en tus equipos.</strong>
         </p>
 
+        <!-- Barra de búsqueda -->
+        <div class="row mb-4" data-aos="fade-up">
+            <div class="col-md-6 mx-auto">
+                <div class="input-group">
+                    <input type="text" id="searchResources" class="form-control" placeholder="Buscar recursos...">
+                    <button class="btn btn-info" type="button" id="searchButton">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
         <!-- Documentos PDF -->
         <div class="row mb-4" data-aos="fade-right" data-aos-delay="200">
             <div class="col-md-12">
@@ -65,23 +77,139 @@
                 <div class="alert alert-warning shadow-sm" role="alert" style="font-family: 'Lora', 'Georgia', serif; font-size: 1.1rem;">
                     <strong>¡Importante!</strong> Los códigos de errores se verifican por tarjeta, no por marca de aire. Muchas marcas usan el mismo código, así que verifica por tarjeta. <strong>Nota:</strong> Algunos equipos traen el código de error en la tapa de la tarjeta del condensador (Samsung, Lennox, Ciac, entre otros).
                 </div>
-                <div class="list-group list-group-flush">
-                    <a href="docs/A-A-Inverter.pdf" class="list-group-item list-group-item-action d-flex align-items-center gap-2" target="_blank" style="font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; font-size: 1.1rem;">
-                        <i class="bi bi-file-earmark-pdf-fill text-danger fs-4"></i>
-                        <span>La tecnología inverter en aires acondicionados: Innovación y eficiencia energética</span>
-                    </a>
-                    <a href="docs/codigo erorres inverter!! .pdf" class="list-group-item list-group-item-action d-flex align-items-center gap-2" target="_blank" style="font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; font-size: 1.1rem;">
-                        <i class="bi bi-file-earmark-pdf-fill text-danger fs-4"></i>
-                        <span>Guía de Diagnóstico Básico para diferentes marcas de aires acondicionados</span>
-                    </a>
-                    <a href="docs/errores-inverter-domestico-panasonic.pdf" class="list-group-item list-group-item-action d-flex align-items-center gap-2" target="_blank" style="font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; font-size: 1.1rem;">
-                        <i class="bi bi-file-earmark-pdf-fill text-danger fs-4"></i>
-                        <span>Manual de fallas y resolución para aires acondicionados inverter Panasonic</span>
-                    </a>
-                    <a href="docs/Codigos-errores-LG.pdf" class="list-group-item list-group-item-action d-flex align-items-center gap-2" target="_blank" style="font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; font-size: 1.1rem;">
-                        <i class="bi bi-file-earmark-pdf-fill text-danger fs-4"></i>
-                        <span>Manual de fallas y resolución para aires acondicionados inverter LG</span>
-                    </a>
+                <div class="mb-3">
+                    <ul class="nav nav-pills" id="documentTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="all-tab" data-bs-toggle="pill" data-bs-target="#all-docs" type="button" role="tab" aria-controls="all-docs" aria-selected="true">Todos</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="manual-tab" data-bs-toggle="pill" data-bs-target="#manual-docs" type="button" role="tab" aria-controls="manual-docs" aria-selected="false">Manuales</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="guide-tab" data-bs-toggle="pill" data-bs-target="#guide-docs" type="button" role="tab" aria-controls="guide-docs" aria-selected="false">Guías</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-content" id="documentTabsContent">
+                    <!-- Tab para Todos los documentos -->
+                    <div class="tab-pane fade show active" id="all-docs" role="tabpanel" aria-labelledby="all-tab">
+                        <div class="card shadow-sm border-0 rounded-4">
+                            <div class="card-body" style="max-height: 250px; overflow-y: auto;">
+                                <div class="list-group list-group-flush">
+                                    <a href="docs/A-A-Inverter.pdf" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" target="_blank" data-category="guia" style="font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; font-size: 1.1rem;">
+                                        <div class="d-flex align-items-center gap-2">
+                                            <i class="bi bi-file-earmark-pdf-fill text-danger fs-4"></i>
+                                            <span>La tecnología inverter en aires acondicionados: Innovación y eficiencia energética</span>
+                                        </div>
+                                        <button class="btn btn-sm btn-outline-secondary bookmark-btn" data-resource-id="doc1" title="Guardar como favorito">
+                                            <i class="bi bi-bookmark"></i>
+                                        </button>
+                                    </a>
+                                    <a href="docs/codigo erorres inverter!! .pdf" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" target="_blank" data-category="guia" style="font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; font-size: 1.1rem;">
+                                        <div class="d-flex align-items-center gap-2">
+                                            <i class="bi bi-file-earmark-pdf-fill text-danger fs-4"></i>
+                                            <span>Guía de Diagnóstico Básico para diferentes marcas de aires acondicionados</span>
+                                        </div>
+                                        <button class="btn btn-sm btn-outline-secondary bookmark-btn" data-resource-id="doc2" title="Guardar como favorito">
+                                            <i class="bi bi-bookmark"></i>
+                                        </button>
+                                    </a>
+                                    <a href="docs/errores-inverter-domestico-panasonic.pdf" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" target="_blank" data-category="manual" style="font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; font-size: 1.1rem;">
+                                        <div class="d-flex align-items-center gap-2">
+                                            <i class="bi bi-file-earmark-pdf-fill text-danger fs-4"></i>
+                                            <span>Manual de fallas y resolución para aires acondicionados inverter Panasonic</span>
+                                        </div>
+                                        <button class="btn btn-sm btn-outline-secondary bookmark-btn" data-resource-id="doc3" title="Guardar como favorito">
+                                            <i class="bi bi-bookmark"></i>
+                                        </button>
+                                    </a>
+                                    <a href="docs/Codigos-errores-LG.pdf" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" target="_blank" data-category="manual" style="font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; font-size: 1.1rem;">
+                                        <div class="d-flex align-items-center gap-2">
+                                            <i class="bi bi-file-earmark-pdf-fill text-danger fs-4"></i>
+                                            <span>Manual de fallas y resolución para aires acondicionados inverter LG</span>
+                                        </div>
+                                        <button class="btn btn-sm btn-outline-secondary bookmark-btn" data-resource-id="doc4" title="Guardar como favorito">
+                                            <i class="bi bi-bookmark"></i>
+                                        </button>
+                                    </a>
+                                    <a href="docs/Guia-reparacion-airesinverter-royal.pdf" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" target="_blank" data-category="guia" style="font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; font-size: 1.1rem;">
+                                        <div class="d-flex align-items-center gap-2">
+                                            <i class="bi bi-file-earmark-pdf-fill text-danger fs-4"></i>
+                                            <span>Guía de reparación de aires inverter Royal</span>
+                                        </div>
+                                        <button class="btn btn-sm btn-outline-secondary bookmark-btn" data-resource-id="doc5" title="Guardar como favorito">
+                                            <i class="bi bi-bookmark"></i>
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tab para Manuales -->
+                    <div class="tab-pane fade" id="manual-docs" role="tabpanel" aria-labelledby="manual-tab">
+                        <div class="card shadow-sm border-0 rounded-4">
+                            <div class="card-body" style="max-height: 400px; overflow-y: auto;">
+                                <div class="list-group list-group-flush">
+                                    <a href="docs/errores-inverter-domestico-panasonic.pdf" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" target="_blank" data-category="manual" style="font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; font-size: 1.1rem;">
+                                        <div class="d-flex align-items-center gap-2">
+                                            <i class="bi bi-file-earmark-pdf-fill text-danger fs-4"></i>
+                                            <span>Manual de fallas y resolución para aires acondicionados inverter Panasonic</span>
+                                        </div>
+                                        <button class="btn btn-sm btn-outline-secondary bookmark-btn" data-resource-id="doc3" title="Guardar como favorito">
+                                            <i class="bi bi-bookmark"></i>
+                                        </button>
+                                    </a>
+                                    <a href="docs/Codigos-errores-LG.pdf" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" target="_blank" data-category="manual" style="font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; font-size: 1.1rem;">
+                                        <div class="d-flex align-items-center gap-2">
+                                            <i class="bi bi-file-earmark-pdf-fill text-danger fs-4"></i>
+                                            <span>Manual de fallas y resolución para aires acondicionados inverter LG</span>
+                                        </div>
+                                        <button class="btn btn-sm btn-outline-secondary bookmark-btn" data-resource-id="doc4" title="Guardar como favorito">
+                                            <i class="bi bi-bookmark"></i>
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tab para Guías -->
+                    <div class="tab-pane fade" id="guide-docs" role="tabpanel" aria-labelledby="guide-tab">
+                        <div class="card shadow-sm border-0 rounded-4">
+                            <div class="card-body" style="max-height: 400px; overflow-y: auto;">
+                                <div class="list-group list-group-flush">
+                                    <a href="docs/A-A-Inverter.pdf" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" target="_blank" data-category="guia" style="font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; font-size: 1.1rem;">
+                                        <div class="d-flex align-items-center gap-2">
+                                            <i class="bi bi-file-earmark-pdf-fill text-danger fs-4"></i>
+                                            <span>La tecnología inverter en aires acondicionados: Innovación y eficiencia energética</span>
+                                        </div>
+                                        <button class="btn btn-sm btn-outline-secondary bookmark-btn" data-resource-id="doc1" title="Guardar como favorito">
+                                            <i class="bi bi-bookmark"></i>
+                                        </button>
+                                    </a>
+                                    <a href="docs/codigo erorres inverter!! .pdf" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" target="_blank" data-category="guia" style="font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; font-size: 1.1rem;">
+                                        <div class="d-flex align-items-center gap-2">
+                                            <i class="bi bi-file-earmark-pdf-fill text-danger fs-4"></i>
+                                            <span>Guía de Diagnóstico Básico para diferentes marcas de aires acondicionados</span>
+                                        </div>
+                                        <button class="btn btn-sm btn-outline-secondary bookmark-btn" data-resource-id="doc2" title="Guardar como favorito">
+                                            <i class="bi bi-bookmark"></i>
+                                        </button>
+                                    </a>
+                                    <a href="docs/Guia-reparacion-airesinverter-royal.pdf" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" target="_blank" data-category="guia" style="font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; font-size: 1.1rem;">
+                                        <div class="d-flex align-items-center gap-2">
+                                            <i class="bi bi-file-earmark-pdf-fill text-danger fs-4"></i>
+                                            <span>Guía de reparación de aires inverter Royal</span>
+                                        </div>
+                                        <button class="btn btn-sm btn-outline-secondary bookmark-btn" data-resource-id="doc5" title="Guardar como favorito">
+                                            <i class="bi bi-bookmark"></i>
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -92,11 +220,20 @@
                 <h2 class="text-center text-info mb-5" style="font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; font-size: 2.2rem; letter-spacing: 1px;">
                     <i class="bi bi-play-circle"></i> Videos Tutoriales
                 </h2>
+                <div class="mb-4 text-center">
+                    <div class="btn-group" role="group" aria-label="Filtro de videos">
+                        <button type="button" class="btn btn-outline-info active" data-filter="all">Todos</button>
+                        <button type="button" class="btn btn-outline-info" data-filter="diagnostico">Diagnóstico</button>
+                        <button type="button" class="btn btn-outline-info" data-filter="componentes">Componentes</button>
+                        <button type="button" class="btn btn-outline-info" data-filter="comparativa">Comparativas</button>
+                    </div>
+                </div>
                 <div class="d-flex justify-content-end mb-0">
                     <div>
                         <button id="prevVideo" class="btn btn-outline-info me-1" type="button">
                             <i class="bi bi-chevron-left"></i>
                         </button>
+                        <span id="carouselPosition" class="badge bg-info mx-2">1/2</span>
                         <button id="nextVideo" class="btn btn-outline-info" type="button">
                             <i class="bi bi-chevron-right"></i>
                         </button>
@@ -106,14 +243,19 @@
                     <strong>Estos videos te ayudarán a entender mejor el diagnóstico y reparación de equipos inverter.</strong>
                 </p>
                 <div class="row justify-content-center" id="videoCarousel">
-                    <div class="col-md-4 video-item" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="col-lg-4 col-md-6 video-item" data-aos="zoom-in" data-aos-delay="200" data-category="diagnostico">
                         <div class="card mb-4 border-0 shadow-lg rounded-4">
                             <div class="card-body">
                                 <h5 class="card-title text-info" style="font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; font-size: 1.3rem;">
                                     <i class="bi bi-cpu"></i> Revisión básica de una tarjeta inverter
                                 </h5>
                                 <div class="ratio ratio-16x9">
-                                    <iframe src="https://www.youtube.com/embed/4FnlDX6D_8g?si=V7XEJnw-GoPUIFiH" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+                                    <iframe src="https://www.youtube.com/embed/4FnlDX6D_8g?si=V7XEJnw-GoPUIFiH" 
+                                        title="Revisión básica de una tarjeta inverter" 
+                                        frameborder="0" 
+                                        allowfullscreen
+                                        aria-label="Video tutorial sobre revisión básica de tarjeta inverter">
+                                    </iframe>
                                 </div>
                                 <p class="card-text mt-3" style="font-family: 'Lora', 'Georgia', serif; font-size: 1.05rem;">
                                     <strong>Cómo verificar la tarjeta inverter de un aire acondicionado para determinar su estado.</strong>
@@ -121,14 +263,19 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 video-item" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="col-lg-4 col-md-6 video-item" data-aos="zoom-in" data-aos-delay="200" data-category="componentes">
                         <div class="card mb-4 border-0 shadow-lg rounded-4">
                             <div class="card-body">
                                 <h5 class="card-title text-info" style="font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; font-size: 1.3rem;">
                                     <i class="bi bi-box"></i> Módulo IPM
                                 </h5>
                                 <div class="ratio ratio-16x9">
-                                    <iframe src="https://www.youtube.com/embed/TWanWvTUiWY?si=Jx7s99yUCfRR93sC" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+                                    <iframe src="https://www.youtube.com/embed/TWanWvTUiWY?si=Jx7s99yUCfRR93sC" 
+                                        title="Módulo IPM en aires acondicionados" 
+                                        frameborder="0" 
+                                        allowfullscreen
+                                        aria-label="Video explicativo sobre el módulo IPM en equipos de aire acondicionado">
+                                    </iframe>
                                 </div>
                                 <p class="card-text mt-3" style="font-family: 'Lora', 'Georgia', serif; font-size: 1.05rem;">
                                     <strong>Funcionamiento del módulo IPM, encargado de controlar el compresor.</strong>
@@ -136,14 +283,19 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 video-item" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="col-lg-4 col-md-6 video-item" data-aos="zoom-in" data-aos-delay="200" data-category="comparativa">
                         <div class="card mb-4 border-0 shadow-lg rounded-4">
                             <div class="card-body">
                                 <h5 class="card-title text-info" style="font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; font-size: 1.3rem;">
                                     <i class="bi bi-arrow-repeat"></i> Inverter vs Convencional
                                 </h5>
                                 <div class="ratio ratio-16x9">
-                                    <iframe src="https://www.youtube.com/embed/0TSFpCY0wxs?si=Fe2fu3e8vY3asco0" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+                                    <iframe src="https://www.youtube.com/embed/0TSFpCY0wxs?si=Fe2fu3e8vY3asco0" 
+                                        title="Comparación entre aires acondicionados inverter y convencionales" 
+                                        frameborder="0" 
+                                        allowfullscreen
+                                        aria-label="Video comparativo entre sistemas de aire acondicionado inverter y convencional">
+                                    </iframe>
                                 </div>
                                 <p class="card-text mt-3" style="font-family: 'Lora', 'Georgia', serif; font-size: 1.05rem;">
                                     <strong>Diferencias, ventajas y desventajas entre aire acondicionado inverter y convencional.</strong>
@@ -151,14 +303,19 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 video-item" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="col-lg-4 col-md-6 video-item" data-aos="zoom-in" data-aos-delay="200" data-category="componentes">
                         <div class="card mb-4 border-0 shadow-lg rounded-4">
                             <div class="card-body">
                                 <h5 class="card-title text-info" style="font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; font-size: 1.3rem;">
                                     <i class="bi bi-fan"></i> Motores BLDC
                                 </h5>
                                 <div class="ratio ratio-16x9">
-                                    <iframe src="https://www.youtube.com/embed/MPlZQfKKxoM?si=nk7pj7Dql_XNdlRf" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+                                    <iframe src="https://www.youtube.com/embed/MPlZQfKKxoM?si=nk7pj7Dql_XNdlRf" 
+                                        title="Motores BLDC en equipos de aire acondicionado" 
+                                        frameborder="0" 
+                                        allowfullscreen
+                                        aria-label="Video explicativo sobre los motores BLDC utilizados en compresores y ventiladores">
+                                    </iframe>
                                 </div>
                                 <p class="card-text mt-3" style="font-family: 'Lora', 'Georgia', serif; font-size: 1.05rem;">
                                     <strong>Funcionamiento de los motores BLDC en compresores y ventiladores.</strong>
@@ -176,7 +333,7 @@
                 <h3 class="text-center text-info mb-5" style="font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; font-size: 2rem;">
                     <i class="bi bi-link-45deg"></i> Enlaces Útiles
                 </h3>
-                <h4 class="mb-3" style="font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; font-size: 1.3rem;">Guías</h4>
+                <h4 class="mb-3" style="font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; font-size: 1.3rem;">Herramientas</h4>
                 <div class="list-group list-group-flush">
                     <a href="guia-reparacion.html" class="list-group-item list-group-item-action d-flex align-items-center gap-2" target="_blank" style="font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; font-size: 1.1rem;">
                         <i class="bi bi-tools text-info fs-4"></i>
@@ -352,73 +509,17 @@
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 <!-- AOS JS debe ir antes de la inicialización -->
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    const videoItems = Array.from(document.querySelectorAll('#videoCarousel .video-item'));
-    let start = 0;
 
-    function getVisible() {
-        if (window.innerWidth < 768) return 1; // 1 video en móvil
-        if (window.innerWidth < 992) return 2; // 2 en tablet
-        return 3; // 3 en desktop
-    }
+<!-- boton back to top -->
+<button id="backToTop" class="btn btn-info rounded-circle shadow position-fixed" 
+    style="bottom: 90px; left: 30px; z-index: 1050; display: none;">
+    <i class="bi bi-arrow-up"></i>
+</button>
 
-    function updateVideos() {
-        const visible = getVisible();
-        videoItems.forEach((item, idx) => {
-            item.classList.remove('active');
-            item.style.display = 'none';
-        });
-        for (let i = start; i < start + visible && i < videoItems.length; i++) {
-            videoItems[i].classList.add('active');
-            videoItems[i].style.display = 'block';
-            // Forzar animación AOS
-            videoItems[i].classList.remove('aos-animate');
-            setTimeout(() => {
-                videoItems[i].classList.add('aos-animate');
-            }, 50);
-        }
-        // Ajusta el inicio si te pasas del final
-        if (start > videoItems.length - visible) {
-            start = Math.max(0, videoItems.length - visible);
-        }
-    }
-
-    document.getElementById('prevVideo').addEventListener('click', function () {
-        if (start > 0) {
-            start--;
-            updateVideos();
-        }
-    });
-
-    document.getElementById('nextVideo').addEventListener('click', function () {
-        const visible = getVisible();
-        if (start < videoItems.length - visible) {
-            start++;
-            updateVideos();
-        }
-    });
-
-    window.addEventListener('resize', function () {
-        updateVideos();
-    });
-
-    updateVideos();
-
-    // Popover Bootstrap
-    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-        return new bootstrap.Popover(popoverTriggerEl)
-    });
-
-    // Inicializa AOS después de cargar la librería
-    AOS.init({
-        duration: 900,
-        once: false
-    });
-});
-</script>
+<!-- Script personalizado para la página recursos -->
+<script src="JS/recursos.js"></script>
 </body>
 </html>
