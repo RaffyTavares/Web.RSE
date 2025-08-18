@@ -27,6 +27,26 @@ document.addEventListener('DOMContentLoaded', function () {
         duration: 900,
         once: false
     });
+    
+    // Sincronizar el select con los botones de filtro
+    const videoFilterSelect = document.querySelector('.video-filter-select');
+    if(videoFilterSelect) {
+        videoFilterSelect.addEventListener('change', function() {
+            const selectedFilter = this.value;
+            
+            // Filtrar los videos
+            filterVideos(selectedFilter);
+            
+            // Actualizar el estado activo de los botones (para cuando se cambie de tamaño)
+            document.querySelectorAll('.btn-group[aria-label="Filtro de videos"] button').forEach(btn => {
+                if(btn.getAttribute('data-filter') === selectedFilter) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        });
+    }
 });
 
 /**
@@ -304,3 +324,32 @@ function addSearchHighlightStyle() {
 
 // Llamar a la función para agregar el estilo de resaltado
 addSearchHighlightStyle();
+
+// Función de filtrado (asegúrate de que esta sea compatible con tu código actual)
+function filterVideos(filter) {
+    const items = document.querySelectorAll('.video-item');
+    let hasVisibleItems = false;
+    
+    items.forEach(item => {
+        if(filter === 'all' || item.getAttribute('data-category') === filter) {
+            item.style.display = '';
+            item.classList.remove('d-none');
+            hasVisibleItems = true;
+        } else {
+            item.style.display = 'none';
+            item.classList.add('d-none');
+        }
+    });
+    
+    // Reset carousel position and update
+    if (typeof window.start !== 'undefined') {
+        window.start = 0;
+    }
+    
+    // Reiniciar contador y actualizar carrusel si existe
+    if (typeof initVideoCarousel === 'function') {
+        setTimeout(() => {
+            initVideoCarousel();
+        }, 100);
+    }
+}

@@ -221,12 +221,20 @@
                     <i class="bi bi-play-circle"></i> Videos Tutoriales
                 </h2>
                 <div class="mb-4 text-center">
-                    <div class="btn-group" role="group" aria-label="Filtro de videos">
+                    <div class="btn-group d-none d-md-inline-flex" role="group" aria-label="Filtro de videos">
                         <button type="button" class="btn btn-outline-info active" data-filter="all">Todos</button>
                         <button type="button" class="btn btn-outline-info" data-filter="diagnostico">Diagnóstico</button>
                         <button type="button" class="btn btn-outline-info" data-filter="componentes">Componentes</button>
                         <button type="button" class="btn btn-outline-info" data-filter="comparativa">Comparativas</button>
                     </div>
+                    
+                    <!-- Versión móvil (select) -->
+                    <select class="form-select d-md-none mx-auto video-filter-select" style="max-width: 200px;">
+                        <option value="all" selected>Todos</option>
+                        <option value="diagnostico">Diagnóstico</option>
+                        <option value="componentes">Componentes</option>
+                        <option value="comparativa">Comparativas</option>
+                    </select>
                 </div>
                 <div class="d-flex justify-content-end mb-0">
                     <div>
