@@ -15,33 +15,17 @@
     <div class="terminal" role="region" aria-label="Terminal de efemérides">
         <header>
             <h1 class="visually-hidden">Tecno History</h1>
-            <span aria-label="Versión de la aplicación">&gt;_ Tecno-history v0.1.0</span>
+            <span class="app-version" aria-label="Versión de la aplicación">&gt;_ Tecno-history v0.1.0</span>
             <span id="clock" aria-live="polite"></span>
         </header>
 
         <main id="terminal-body" tabindex="0" aria-label="Contenido principal">
+            <h2 class="visually-hidden">Efemérides del mundo del código</h2>
             <!-- Aquí se mostrarán las efemérides -->
         </main>
 
-        <div style="text-align:center; margin: 2rem 0;">
-            <a href="../index.html" class="btn-volver-inicio" 
-
-                style="
-                display: inline-block;
-                background: #222;
-                color: #fff;
-                padding: 0.75rem 2rem;
-                border-radius: 2rem;
-                text-decoration: none;
-                font-family: 'Fira Code', monospace;
-                font-size: 1.1rem;
-                box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-                transition: background 0.2s, color 0.2s;
-                "   
-                onmouseover="this.style.background='#444';" 
-                onmouseout="this.style.background='#222';">
-                ← Volver al inicio
-            </a>
+        <div class="volver-inicio-container">
+            <a href="../index.html" class="btn-volver-inicio">← Volver al inicio</a>
         </div>
 
         <footer>
