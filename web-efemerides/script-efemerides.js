@@ -7,38 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Base de datos de eventos históricos ---------------------------------------------------------
     const efemerides = {
-        '24-07': {
-    fecha: '24 de julio de 2005',
-    texto: 'Se lanza al mercado el videojuego "The Sims 2: Nightlife", una de las expansiones más populares que introdujo interacciones sociales más profundas en la simulación.'
-},
-'25-07': {
-    fecha: '25 de julio de 1978',
-    texto: 'Nace Louise Brown, la primera persona concebida mediante fertilización in vitro, marcando un hito en la biotecnología y la medicina reproductiva.'
-},
-'26-07': {
-    fecha: '26 de julio de 2000',
-    texto: 'Llega al mercado el primer teléfono móvil con cámara integrada en Europa, el Sharp J-SH04, abriendo el camino a la fotografía móvil.'
-},
-'27-07': {
-    fecha: '27 de julio de 1993',
-    texto: 'Microsoft lanza Windows NT 3.1, su primer sistema operativo de 32 bits diseñado para entornos empresariales y servidores.'
-},
-'28-07': {
-    fecha: '28 de julio de 2005',
-    texto: 'Se lanza Google Earth como aplicación independiente, permitiendo a millones de usuarios explorar el mundo a través de imágenes satelitales interactivas.'
-},
-'29-07': {
-    fecha: '29 de julio de 2015',
-    texto: 'Microsoft lanza oficialmente Windows 10, combinando características de Windows 7 y 8 y presentando a Cortana y el navegador Edge.'
-},
-'30-07': {
-    fecha: '30 de julio de 2010',
-    texto: 'Se estrena en cines "The Social Network", película que narra la creación de Facebook y genera debate sobre el impacto social de las redes.'
-},
-'31-07': {
-    fecha: '31 de julio de 1991',
-    texto: 'Se publica el primer archivo de código del kernel Linux por Linus Torvalds en un grupo de noticias, iniciando uno de los proyectos de código abierto más influyentes del mundo.'
-},
+  
 '01-08': {
     fecha: '1 de agosto de 1902',
     texto: 'Willis Carrier patenta el primer sistema moderno de aire acondicionado, revolucionando la climatización y la industria moderna.'
