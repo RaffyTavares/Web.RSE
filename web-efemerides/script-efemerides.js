@@ -162,8 +162,128 @@ document.addEventListener('DOMContentLoaded', () => {
 '31-08': {
     fecha: '31 de agosto de 2020',
     texto: 'Se lanza una plataforma digital para el monitoreo y control remoto de sistemas de climatización inverter en edificios inteligentes.'
-}       
+},      
 
+'01-09': {
+    fecha: '1 de septiembre de 1902',
+    texto: 'Se instala en Nueva York el primer sistema de aire acondicionado diseñado por Willis Carrier, considerado el inicio de la climatización moderna.'
+},
+'02-09': {
+    fecha: '2 de septiembre de 1965',
+    texto: 'Comienza la producción en serie de aires acondicionados residenciales más compactos, facilitando su uso doméstico.'
+},
+'03-09': {
+    fecha: '3 de septiembre de 1982',
+    texto: 'Se populariza el uso de controles remotos en sistemas de aire acondicionado, mejorando la comodidad de los usuarios.'
+},
+'04-09': {
+    fecha: '4 de septiembre de 1990',
+    texto: 'Se introducen compresores más silenciosos para equipos de climatización, marcando un avance en confort acústico.'
+},
+'05-09': {
+    fecha: '5 de septiembre de 1998',
+    texto: 'Llega al mercado uno de los primeros sistemas inverter residenciales, revolucionando el consumo energético en climatización.'
+},
+'06-09': {
+    fecha: '6 de septiembre de 2001',
+    texto: 'Se presenta la primera generación de aires acondicionados inverter con capacidad de autodiagnóstico electrónico.'
+},
+'07-09': {
+    fecha: '7 de septiembre de 2003',
+    texto: 'Se implementa la tecnología de filtros de aire avanzados en sistemas de climatización, mejorando la calidad del aire interior.'
+},
+'08-09': {
+    fecha: '8 de septiembre de 2005',
+    texto: 'Un fabricante internacional lanza un modelo inverter con compresor de velocidad variable, optimizando la eficiencia.'
+},
+'09-09': {
+    fecha: '9 de septiembre de 2007',
+    texto: 'Se introduce en el mercado un aire acondicionado inverter con control WiFi, permitiendo gestión remota.'
+},
+'10-09': {
+    fecha: '10 de septiembre de 2010',
+    texto: 'Un fabricante líder presenta compresores BLDC para equipos inverter, aumentando la eficiencia energética.'
+},
+'11-09': {
+    fecha: '11 de septiembre de 2011',
+    texto: 'Se comienzan a usar refrigerantes más ecológicos como R-410A en equipos inverter.'
+},
+'12-09': {
+    fecha: '12 de septiembre de 2013',
+    texto: 'Se lanza un sistema inverter diseñado especialmente para climas tropicales, con mayor resistencia a la humedad.'
+},
+'13-09': {
+    fecha: '13 de septiembre de 2014',
+    texto: 'Aparecen los primeros modelos inverter con sensores de presencia para optimizar el consumo energético.'
+},
+'14-09': {
+    fecha: '14 de septiembre de 2015',
+    texto: 'Se introduce un sistema de climatización inverter multisplit para edificios residenciales.'
+},
+'15-09': {
+    fecha: '15 de septiembre de 2005',
+    texto: 'Se lanza el primer sistema VRF inverter en América Latina, abriendo paso a edificios con climatización flexible.'
+},
+'16-09': {
+    fecha: '16 de septiembre de 2016',
+    texto: 'Se desarrollan algoritmos inteligentes para la gestión de velocidad en compresores inverter.'
+},
+'17-09': {
+    fecha: '17 de septiembre de 2017',
+    texto: 'Se incorporan tecnologías de autolimpieza en evaporadores de aires inverter.'
+},
+'18-09': {
+    fecha: '18 de septiembre de 2018',
+    texto: 'Se crean sistemas inverter híbridos que funcionan con energía solar y eléctrica.'
+},
+'19-09': {
+    fecha: '19 de septiembre de 2019',
+    texto: 'Un informe mundial confirma que los sistemas inverter reducen hasta un 40% el consumo eléctrico frente a los convencionales.'
+},
+'20-09': {
+    fecha: '20 de septiembre de 2017',
+    texto: 'Se publica un estudio internacional sobre la eficiencia de los aires acondicionados inverter en climas cálidos.'
+},
+'21-09': {
+    fecha: '21 de septiembre de 2020',
+    texto: 'Se implementan plataformas de monitoreo remoto para sistemas inverter en edificios inteligentes.'
+},
+'22-09': {
+    fecha: '22 de septiembre de 2021',
+    texto: 'Se presenta un prototipo de aire acondicionado inverter con refrigerante ecológico R-32.'
+},
+'23-09': {
+    fecha: '23 de septiembre de 2021',
+    texto: 'Se mejora la durabilidad de tarjetas electrónicas para equipos inverter con recubrimientos especiales.'
+},
+'24-09': {
+    fecha: '24 de septiembre de 2022',
+    texto: 'Se integran sistemas inverter con inteligencia artificial para predecir patrones de uso.'
+},
+'25-09': {
+    fecha: '25 de septiembre de 2021',
+    texto: 'Se desarrolla una plataforma IoT que permite monitoreo en tiempo real de sistemas inverter en la nube.'
+},
+'26-09': {
+    fecha: '26 de septiembre de 2022',
+    texto: 'Se lanza un aire acondicionado inverter con compatibilidad con asistentes virtuales de voz.'
+},
+'27-09': {
+    fecha: '27 de septiembre de 2022',
+    texto: 'Se introducen compresores inverter más compactos para equipos portátiles de climatización.'
+},
+'28-09': {
+    fecha: '28 de septiembre de 2023',
+    texto: 'Se anuncian avances en refrigerantes de bajo impacto ambiental para sistemas inverter.'
+},
+'29-09': {
+    fecha: '29 de septiembre de 2023',
+    texto: 'Se crean sistemas inverter con baterías integradas para seguir funcionando en apagones.'
+},
+'30-09': {
+    fecha: '30 de septiembre de 2023',
+    texto: 'Se presenta un prototipo de aire acondicionado inverter con refrigerante ecológico R-290.'
+}
         // Agrega más fechas aquí en formato 'DD-MM'
     };
 
