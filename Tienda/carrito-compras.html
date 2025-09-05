@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venta de Tarjetas - RSElectronicas</title>
+    <link rel="stylesheet" href="css-carrito.css">
+    <link rel="icon" href="../img/logo.png" type="image/png">
+    <meta name="description" content="Compra tarjetas electrónicas para aire acondicionado inverter. Envío rápido y seguro.">
+    <meta name="keywords" content="tarjetas aire acondicionado, tarjetas inverter, venta tarjetas electrónicas, RSElectronicas">
+    <meta name="author" content="RSElectronicas">
+    <meta property="og:title" content="Venta de Tarjetas - RSElectronicas">
+    <meta property="og:description" content="Compra tarjetas electrónicas para aire acondicionado inverter. Envío rápido y seguro.">
+    <meta property="og:image" content="../img/logo.png">
+    <meta property="og:url" content="https://www.rselectronicas.com/Tienda/carrito-compras.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Venta de Tarjetas - RSElectronicas">
+    <meta name="twitter:description" content="Compra tarjetas electrónicas para aire acondicionado inverter. Envío rápido y seguro.">
+    <meta name="twitter:image" content="../img/logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.>0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="overlay" id="overlay"></div>
+    
+    <header>
+        <div class="container header-content">
+            <div class="logo">RSE</div>
+            <div class="cart-icon" id="cartIcon">
+                🛒 <span class="cart-count" id="cartCount">0</span>
+            </div>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>Tarjetas para Aire Acondicionado Inverter</h1>
+            <p>Encuentra la tarjeta de reemplazo perfecta para tu equipo de aire acondicionado. Todas nuestras tarjetas son probadas y garantizadas.</p>
+        </div>
+    </section>
+    
+    <main class="container">
+        <section class="filter-section">
+            <h2 class="filter-title">Filtrar Productos</h2>
+            <div class="filter-options">
+                <div class="filter-group">
+                    <label for="brand-filter">Marca</label>
+                    <select id="brand-filter">
+                        <option value="all">Todas las marcas</option>
+                        <option value="samsung">Samsung</option>
+                        <option value="lg">LG</option>
+                        <option value="midea">Midea</option>
+                        <option value="carrier">Carrier</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="type-filter">Tipo de tarjeta</label>
+                    <select id="type-filter">
+                        <option value="all">Todos los tipos</option>
+                        <option value="power">Tarjeta de potencia</option>
+                        <option value="control">Tarjeta de control</option>
+                        <option value="display">Tarjeta de display</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="price-filter">Rango de precio</label>
+                    <select id="price-filter">
+                        <option value="all">Todos los precios</option>
+                        <option value="0-50">Hasta $50</option>
+                        <option value="50-100">$50 - $100</option>
+                        <option value="100-150">$100 - $150</option>
+                        <option value="150+">Más de $150</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+        
+        <div class="products-grid" id="productsGrid">
+            <!-- Productos generados dinámicamente con JavaScript -->
+        </div>
+    </main>
+    
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-header">
+            <h2>Tu Carrito</h2>
+            <button class="close-cart" id="closeCart">×</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Elementos del carrito generados dinámicamente -->
+        </div>
+
+        <!-- === AÑADIR ESTE NUEVO BLOQUE DE FORMULARIO === -->
+        <div id="customer-details-form" style="display: none; margin-top: 20px;">
+            <h4>Completa tus datos para continuar</h4>
+            <div class="form-group" style="margin-bottom: 10px;">
+                <label for="customer-name" style="display: block; margin-bottom: 5px;">Nombre Completo</label>
+                <input type="text" id="customer-name" required style="width: 100%; padding: 8px;">
+            </div>
+            <div class="form-group" style="margin-bottom: 10px;">
+                <label for="customer-email" style="display: block; margin-bottom: 5px;">Correo Electrónico</label>
+                <input type="email" id="customer-email" required style="width: 100%; padding: 8px;">
+            </div>
+            <div class="form-group" style="margin-bottom: 10px;">
+                <label for="customer-address" style="display: block; margin-bottom: 5px;">Dirección de Envío</label>
+                <textarea id="customer-address" required style="width: 100%; padding: 8px; min-height: 60px;"></textarea>
+            </div>
+            <button class="btn" id="continueToPaymentBtn" style="width: 100%; background-color: var(--accent);">Continuar al Pago</button>
+        </div>
+        <!-- === FIN DEL BLOQUE AÑADIDO === -->
+
+        <div class="cart-total" id="cartTotal">Total: $0.00</div>
+        <button class="btn checkout-btn" id="checkoutBtn">Proceder al Pago</button>
+        <div id="paypal-button-container" style="margin-top: 10px; display: none;"></div>
+        <!-- BOTÓN DE SIMULACIÓN -->
+        <button class="btn" id="simulatePaymentBtn" style="width: 100%; margin-top: 10px; background-color: #17a2b8; display: none;">Simular Pago Exitoso</button>
+    </div>
+    
+    <form id="order-form" action="https://formspree.io/f/TU_ID_DE_FORMULARIO" method="POST" style="display:none;">
+        <input type="text" name="cliente_nombre" id="form-cliente-nombre">
+        <input type="email" name="cliente_email" id="form-cliente-email">
+        <input type="text" name="paypal_id" id="form-paypal-id">
+        <textarea name="pedido_resumen" id="form-pedido-resumen"></textarea>
+        <textarea name="direccion_envio" id="form-direccion-envio"></textarea>
+    </form>
+    
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3>RSElectronicas</h3>
+                <p>Especialistas en reparación y venta de tarjetas electrónicas para aire acondicionado inverter.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Productos</a></li>
+                    <li><a href="#">Servicios de Reparación</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <ul>
+                    <li>📞 (123) 456-7890</li>
+                    <li>✉️ info@rselectronicas.com</li>
+                    <li>🏠 Dirección: Calle Ejemplo 123, Ciudad</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+        <!-- Reemplaza "YOUR_CLIENT_ID" con tu Client ID de PayPal -->
+    <script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID&currency=USD"></script>
+
+    <script src="script-carrito.js"></script>
+</body>
+</html>
