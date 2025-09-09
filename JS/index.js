@@ -456,6 +456,7 @@ function highlightActiveSection() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
     const dropdownItems = document.querySelectorAll('.dropdown-menu .dropdown-item');
+    const dropdownToggles = document.querySelectorAll('.navbar-nav .dropdown-toggle');
     
     // Añadir estilos para los elementos activos
     const activeStyle = document.createElement('style');
@@ -488,36 +489,38 @@ function highlightActiveSection() {
     function checkScroll() {
         const scrollPosition = window.scrollY + 100; // Compensar altura del navbar
         let currentSection = null;
-        
         // Determinar qué sección está actualmente en la vista
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionBottom = sectionTop + section.offsetHeight;
-            
             if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
                 currentSection = section.getAttribute('id');
             }
         });
-        
-        // Actualizar estado activo en enlaces principales
+
+        // Limpiar todos los activos
+        navLinks.forEach(link => link.classList.remove('active'));
+        dropdownItems.forEach(item => item.classList.remove('active'));
+        dropdownToggles.forEach(toggle => toggle.classList.remove('active'));
+
+        // Marcar activo el enlace principal si corresponde
         navLinks.forEach(link => {
-            link.classList.remove('active');
             const href = link.getAttribute('href');
             if (href && href === `#${currentSection}`) {
                 link.classList.add('active');
             }
         });
-        
-        // Actualizar estado activo en elementos del dropdown
+
+        // Marcar activo el dropdown-item y su toggle correspondiente
         dropdownItems.forEach(item => {
-            item.classList.remove('active');
             const href = item.getAttribute('href');
             if (href && href.startsWith('#') && href === `#${currentSection}`) {
                 item.classList.add('active');
-                // Activar también el botón dropdown
-                const dropdownToggle = document.querySelector('.dropdown-toggle');
-                if (dropdownToggle) {
-                    dropdownToggle.classList.add('active');
+                // Buscar el toggle relacionado
+                const parentDropdown = item.closest('.dropdown');
+                if (parentDropdown) {
+                    const toggle = parentDropdown.querySelector('.dropdown-toggle');
+                    if (toggle) toggle.classList.add('active');
                 }
             }
         });

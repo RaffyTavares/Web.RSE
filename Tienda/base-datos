@@ -1,3 +1,10 @@
+-- Insertar más productos de ejemplo
+INSERT INTO products (name, description, price, image, brand, type, compatible, stock) VALUES
+('Tarjeta de Potencia LG Inverter', 'Tarjeta de potencia para modelos LG inverter de 12,000 a 24,000 BTU.', 75.50, 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80', 'lg', 'power', 'LG Dual Cool, Art Cool', 8),
+('Tarjeta Display Midea Inverter', 'Tarjeta de display y control para aires acondicionados Midea inverter.', 45.00, 'https://images.unsplash.com/photo-1593105544552-8614e8746f0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80', 'midea', 'display', 'Midea MSMA series', 15),
+('Tarjeta Control Carrier Inverter', 'Tarjeta de control principal para equipos Carrier inverter de 18,000 BTU.', 110.00, 'https://images.unsplash.com/photo-1560717789-0ac7c58ac90a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80', 'carrier', 'control', 'Carrier 38MGR, 40MGR', 7),
+('Tarjeta Potencia Samsung Inverter', 'Tarjeta de potencia para modelos Samsung inverter de alta eficiencia.', 95.00, 'https://images.unsplash.com/photo-1510551317070-0be1a79eec7f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80', 'samsung', 'power', 'Samsung Wind-Free series', 12),
+('Tarjeta Control LG Inverter', 'Tarjeta de control principal para equipos LG inverter dual inverter.', 120.00, 'https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80', 'lg', 'control', 'LG Dual Inverter', 5);
 CREATE TABLE products (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
@@ -9,4 +16,20 @@ CREATE TABLE products (
     compatible VARCHAR(255),
     stock INT NOT NULL DEFAULT 0
 );
+
+-- Insertar producto de ejemplo
+INSERT INTO products (name, description, price, image, brand, type, compatible, stock)
+VALUES (
+    'Tarjeta Principal Samsung Inverter',
+    'Tarjeta principal compatible con aires acondicionados Samsung inverter serie AR/MV.',
+    89.99,
+    'https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+    'samsung',
+    'control',
+    'Samsung AR12, AR18, AR24',
+    1
+);
+
+
+
 

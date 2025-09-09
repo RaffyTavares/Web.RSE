@@ -28,7 +28,7 @@
         }
         
         header {
-            background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+            background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 150%);
             color: white;
             box-shadow: 0 2px 10px rgba(0,0,0,0.08);
             padding: 15px 0;
@@ -53,6 +53,12 @@
         .cart-icon {
             position: relative;
             cursor: pointer;
+            margin-left: 10px;
+            margin-right: 10px;
+            padding: 10px;
+            border-radius: 50%;
+            background-color: var(--light);
+            
         }
         
         .cart-count {
@@ -71,7 +77,7 @@
         }
         
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/img/tecnologia-gris.jpg');
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/tecnologia-gris.jpg');
             background-size: cover;
             background-position: center;
             color: white;
@@ -142,7 +148,7 @@
             margin-bottom: 15px;
         }
         
-        .btn, .btn-add-cart, .checkout-btn {
+        .btn, .btn-add-cart, .checkout-btn, .btn-add-cart:disabled, .btn-add-cart[disabled], .checkout-btn:disabled, .checkout-btn[disabled] {
             font-family: 'Roboto', Arial, sans-serif;
             font-weight: 700;
             border-radius: 25px;
@@ -151,25 +157,31 @@
             transition: background 0.2s, box-shadow 0.2s;
             display: inline-block;
             padding: 10px 20px;
-            background-color: var(--primary);
-            color: white;
             border: none;
             cursor: pointer;
             text-decoration: none;
+            background-color: var(--accent);
+            color: #fff;
         }
         
         .btn:hover, .btn-add-cart:hover, .checkout-btn:hover {
             box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+            background-color: #e05a00;
+            color: #fff;
         }
         
         .btn-add-cart {
             background-color: var(--accent);
+            color: #fff;
             width: 100%;
             text-align: center;
         }
-        
-        .btn-add-cart:hover {
-            background-color: #e05a00;
+        .btn-add-cart:disabled,
+        .btn-add-cart[disabled] {
+            background-color: #ccc !important;
+            color: #888 !important;
+            cursor: not-allowed;
+            opacity: 1;
         }
         
         .cart-modal {
@@ -216,8 +228,8 @@
         }
         
         .cart-item-image {
-            width: 60px;
-            height: 60px;
+            width: 80px;
+            height: 80px;
             object-fit: cover;
             margin-right: 15px;
         }
@@ -275,13 +287,23 @@
         }
         
         .checkout-btn {
-            background-color: var(--success);
+            background-color: var(--success) !important;
+            color: #fff !important;
             width: 100%;
             padding: 12px;
             text-align: center;
+            border: none !important;
         }
-        
+        .checkout-btn:disabled,
+        .checkout-btn[disabled] {
+            background-color: #ccc !important;
+            color: #888 !important;
+            cursor: not-allowed;
+            opacity: 1;
+        }
         .checkout-btn:hover {
+            background-color: #218838;
+            color: #fff;
             background-color: #218838;
         }
         

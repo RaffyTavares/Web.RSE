@@ -69,27 +69,30 @@
 
 // Variables globales
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
-const cartModal = document.getElementById('cartModal');
-const overlay = document.getElementById('overlay');
-const cartCount = document.getElementById('cartCount');
-const cartItems = document.getElementById('cartItems');
-const cartTotal = document.getElementById('cartTotal');
-const productsGrid = document.getElementById('productsGrid');
-const brandFilter = document.getElementById('brand-filter');
-const typeFilter = document.getElementById('type-filter');
-const priceFilter = document.getElementById('price-filter');
+let cartModal, overlay, cartCount, cartItems, cartTotal, productsGrid, brandFilter, typeFilter, priceFilter;
 
 // Inicializar la tienda
 function initStore() {
+    // Obtener elementos del DOM aquí para asegurar que existen
+    cartModal = document.getElementById('cartModal');
+    overlay = document.getElementById('overlay');
+    cartCount = document.getElementById('cartCount');
+    cartItems = document.getElementById('cartItems');
+    cartTotal = document.getElementById('cartTotal');
+    productsGrid = document.getElementById('productsGrid');
+    brandFilter = document.getElementById('brand-filter');
+    typeFilter = document.getElementById('type-filter');
+    priceFilter = document.getElementById('price-filter');
+
     renderProducts(); // Carga inicial de todos los productos
     updateCartCount();
-    
+
     // Event listeners
     document.getElementById('cartIcon').addEventListener('click', openCart);
     document.getElementById('closeCart').addEventListener('click', closeCart);
     document.getElementById('checkoutBtn').addEventListener('click', checkout);
     overlay.addEventListener('click', closeCart);
-    
+
     // Filtros
     brandFilter.addEventListener('change', filterProducts);
     typeFilter.addEventListener('change', filterProducts);
@@ -104,6 +107,8 @@ async function renderProducts(queryParams = '') { // La función ahora es asínc
         // Petición a tu API PHP
         const response = await fetch(`api/get_products.php?${queryParams}`);
         const productsArray = await response.json();
+        // Guardar productos en variable global para acceso en updateQuantity
+        window.products = productsArray;
 
         productsGrid.innerHTML = '';
         
@@ -111,7 +116,7 @@ async function renderProducts(queryParams = '') { // La función ahora es asínc
             productsGrid.innerHTML = '<p class="no-products">No se encontraron productos.</p>';
             return;
         }
-        
+
         productsArray.forEach(product => {
             const productElement = document.createElement('div');
             productElement.classList.add('product-card');
@@ -122,7 +127,7 @@ async function renderProducts(queryParams = '') { // La función ahora es asínc
                     <p class="product-description">${product.description}</p>
                     <p class="product-compatible"><strong>Compatibilidad:</strong> ${product.compatible}</p>
                     <div class="product-price">$${parseFloat(product.price).toFixed(2)}</div>
-                    <button class="btn btn-add-cart" data-id="${product.id}">Añadir al Carrito</button>
+                    <button class=" btn-add-cart" data-id="${product.id}">Añadir al Carrito</button>
                 </div>
             `;
             productsGrid.appendChild(productElement);
@@ -169,10 +174,7 @@ function filterProducts() {
 }
 
 // Renderizar productos al cargar la página
-document.addEventListener('DOMContentLoaded', () => {
-    initStore();
-    renderProducts(); // Asegúrate de que esto esté aquí
-});
+document.addEventListener('DOMContentLoaded', initStore);
 
 // Añadir producto al carrito (modificado para recibir el objeto producto)
 function addToCart(product) {
@@ -192,7 +194,7 @@ function addToCart(product) {
         cart.push({
             id: product.id,
             name: product.name,
-            price: product.price,
+            price: Number(product.price), // Asegura que el precio sea un número
             image: product.image,
             quantity: 1
         });
@@ -262,7 +264,9 @@ function renderCartItems() {
     let total = 0;
     
     cart.forEach(item => {
-        const itemTotal = item.price * item.quantity;
+        // Forzar conversión a número por si acaso
+        const priceNum = Number(item.price);
+        const itemTotal = priceNum * item.quantity;
         total += itemTotal;
         
         const cartItemElement = document.createElement('div');
@@ -271,7 +275,7 @@ function renderCartItems() {
             <img src="${item.image}" alt="${item.name}" class="cart-item-image">
             <div class="cart-item-details">
                 <div class="cart-item-title">${item.name}</div>
-                <div class="cart-item-price">$${item.price.toFixed(2)} x ${item.quantity} = $${itemTotal.toFixed(2)}</div>
+                <div class="cart-item-price">$${priceNum.toFixed(2)} x ${item.quantity} = $${itemTotal.toFixed(2)}</div>
                 <div class="cart-item-quantity">
                     <button class="quantity-btn decrease-btn" data-id="${item.id}">-</button>
                     <input type="number" class="quantity-input" value="${item.quantity}" min="1" data-id="${item.id}">

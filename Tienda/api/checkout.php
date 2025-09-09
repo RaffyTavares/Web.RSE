@@ -2,9 +2,9 @@
 // api/checkout.php
 
 $host = 'localhost';
-$db   = 'nombre_de_tu_db';
-$user = 'tu_usuario_db';
-$pass = 'tu_contraseña_db';
+$db   = 'tienda_online_rse';
+$user = 'root';
+$pass = '';
 $charset = 'utf8mb4';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
