@@ -544,16 +544,6 @@ footer {
     max-width: 300px;
 }
 
-/* Corregir el ancho de columnas en el carrusel */
-#servicios-carousel > .col-12,
-#servicios-carousel > .col-sm-6,
-#servicios-carousel > .col-md-6,
-#servicios-carousel > .col-lg-3 {
-    min-width: 100% !important;
-    max-width: 100% !important;
-    flex: 0 0 100% !important;
-}
-
 /* Evitar que paddings + gaps sumen scroll extra */
 #servicios-carousel {
     padding-left: 0 !important;
@@ -583,10 +573,7 @@ html, body {
 
 /* En tablets: 2 tarjetas por fila */
 @media (min-width: 768px) and (max-width: 991px) {
-  #servicios-carousel > .col-12,
-  #servicios-carousel > .col-sm-6,
-  #servicios-carousel > .col-md-6,
-  #servicios-carousel > .col-lg-3 {
+  #servicios-carousel > div[class*="col-"] {
       min-width: 50% !important;
       max-width: 50% !important;
       flex: 0 0 50% !important;
@@ -595,15 +582,109 @@ html, body {
 
 /* En escritorio: 3 o 4 tarjetas por fila */
 @media (min-width: 992px) {
-  #servicios-carousel > .col-12,
-  #servicios-carousel > .col-sm-6,
-  #servicios-carousel > .col-md-6,
-  #servicios-carousel > .col-lg-3 {
+  #servicios-carousel > div[class*="col-"] {
       min-width: 25% !important;
       max-width: 25% !important;
       flex: 0 0 25% !important;
   }
 }
+
+/*  TODAS LAS REGLAS DEL HAMBURGER  */
+@media (max-width: 991.98px) {
+    .custom-toggler {
+        display: flex;
+        width: 48px;
+        height: 48px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: transparent;
+        position: relative;
+        z-index: 1100;
+    }
+
+    .toggler-bar {
+        display: block;
+        width: 28px;
+        height: 4px;
+        margin: 4px 0;
+        background: #fff;
+        border-radius: 2px;
+        transition: all 0.3s cubic-bezier(.4,2,.6,1);
+        position: relative;
+    }
+
+    /* Estado abierto (cuando el menú está expandido) */
+    .custom-toggler[aria-expanded="true"] .toggler-bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .custom-toggler[aria-expanded="true"] .toggler-bar:nth-child(2) {
+        opacity: 0;
+    }
+    .custom-toggler[aria-expanded="true"] .toggler-bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+
+/* Visibilidad del menú en escritorio */
+@media (min-width: 992px) {
+    /* Esto hace que los ítems del menú sean SIEMPRE visibles en escritorio */
+    .menu-fade, 
+    .navbar-collapse .menu-fade {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        transition: none !important; /* Elimina la transición en escritorio */
+    }
+    
+    /* Forzar la visualización del menú en escritorio */
+    .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto;
+    }
+    
+    /* Asegurar que los elementos del navbar se muestren correctamente */
+    .navbar-nav {
+        display: flex !important;
+        flex-direction: row;
+    }
+}
+
+/* Efecto de cascada en los ítems del menú - SOLO EN MÓVIL */
+@media (max-width: 991.98px) {
+    .menu-fade {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s cubic-bezier(.4,2,.6,1), transform 0.5s cubic-bezier(.4,2,.6,1);
+    }
+
+    .show .menu-fade {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Cascada: cada ítem con un pequeño delay */
+    .menu-fade:nth-child(1) { transition-delay: 0.1s; }
+    .menu-fade:nth-child(2) { transition-delay: 0.2s; }
+    .menu-fade:nth-child(3) { transition-delay: 0.3s; }
+    .menu-fade:nth-child(4) { transition-delay: 0.4s; }
+    .menu-fade:nth-child(5) { transition-delay: 0.5s; }
+    .menu-fade:nth-child(6) { transition-delay: 0.6s; }
+}
+
+/* Ajustar scroll para que las secciones no queden debajo del navbar */
+section[id],
+div[id="inicio"],
+div[id="servicios"],
+div[id="nosotros"],
+div[id="proyectos"],
+div[id="blog"],
+div[id="contacto"] {
+    scroll-margin-top: 80px; /* Ajusta esto según la altura de tu navbar */
+}
+
+
+
 
 
 

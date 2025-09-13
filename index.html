@@ -22,24 +22,30 @@
     <!-- Navbar ------------------------------------------------------------------------------------------------------------------->
         <nav class="navbar navbar-expand-lg navbar-dark bg-secondary bg-opacity-75 shadow-sm fixed-top" style="backdrop-filter: blur(5px); transition: all 0.3s ease;">
         <div class="container">
+            <!-- Logo y nombre de la marca -->
             <a class="navbar-brand d-flex align-items-center gap-2" href="#inicio">
                 <img src="img/logo1.png" alt="Logo de Rafael Soluciones Electrónica" style="width: 48px; height: auto;">
                 <span class="fw-bold text-info">RSE</span>
             </a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            <!-- Botón de menú hamburguesa -->
+            <button class="navbar-toggler border-0 custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span class="toggler-bar"></span>
+                <span class="toggler-bar"></span>
+                <span class="toggler-bar"></span>
             </button>
+        
+
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav align-items-lg-center gap-lg-2">
-    
+
                     <!-- INICIO -->
-                    <li class="nav-item">
+                    <li class="nav-item menu-fade">
                         <a class="nav-link" href="#inicio"><i class="bi bi-house"></i> <span>Inicio</span></a>
                     </li>
     
                     <!-- SERVICIOS con submenú -->
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown menu-fade">
                         <a class="nav-link dropdown-toggle" href="#" id="serviciosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="bi bi-tools"></i> <span>Soluciones</span>
                         </a>
@@ -47,12 +53,12 @@
                             <li><a class="dropdown-item" href="#servicios"><i class="bi bi-tools"></i> servicios</a></li>
                             <li><a class="dropdown-item" href="#proceso-trabajo"><i class="bi bi-diagram-3"></i> Proceso de Trabajo</a></li>
                             <li><a class="dropdown-item" href="#tarjetas-carrusel"><i class="bi bi-exclamation-triangle"></i> Errores comunes</a></li>
-                            <li><a class="dropdown-item" href="mensaje-provicional.html"><i class="bi bi-check-square"></i> Trabajos Realizados</a></li>
+                            <li><a class="dropdown-item d-none" href="mensaje-provicional.html"><i class="bi bi-check-square"></i> Trabajos Realizados</a></li>
                         </ul>
                     </li>
     
                     <!-- NOSOTROS con submenú -->
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown menu-fade">
                         <a class="nav-link dropdown-toggle" href="#" id="nosotrosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="bi bi-building-fill-gear"></i> <span>Sobre Nosotros</span>
                         </a>
@@ -63,7 +69,7 @@
                     </li>
     
                     <!-- BLOG con submenú -->
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown menu-fade">
                         <a class="nav-link dropdown-toggle" href="#" id="blogDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="bi bi-journal-text"></i> <span>Consejos Técnicos</span>
                         </a>
@@ -75,12 +81,12 @@
                     </li>
     
                     <!-- CONTACTO -->
-                    <li class="nav-item">
+                    <li class="nav-item menu-fade">
                         <a class="nav-link" href="#contacto"><i class="bi bi-person-lines-fill"></i> <span>Contacto</span></a>
                     </li>
     
                     <!-- TIENDA -->
-                    <li class="nav-item ms-lg-2">
+                    <li class="nav-item ms-lg-2 menu-fade ">
                         <a class="btn btn-warning fw-bold px-3 py-2 d-flex align-items-center gap-2 shadow-sm"
                            href="mensaje-provicional.html"  style="font-size: 1rem;">
                             <i class="bi bi-cart3"></i> Tienda
@@ -96,11 +102,12 @@
         background: linear-gradient(135deg, rgba(222, 201, 201, 0.85) 0%, rgba(49, 43, 31, 0.85) 100%), 
         url('img/Hombre-técnico.jpg') center center/cover no-repeat;
         background-blend-mode: overlay;
-    " >
+    " > 
+        <!--Icono de engranage giratorio-->
         <div class="container">
             <div class="d-flex justify-content-center align-items-center gap-3 mb-2">
             <i class="bi bi-gear-fill text-info animate__animated animate__rotateIn animate__infinite animate__slower" style="font-size: 3rem;"></i>
-            <!-- Puedes cambiar el icono por otro de Bootstrap Icons si lo prefieres -->
+           
         </div>
             <h5 class="fade-in display-5 fw-bold text-uppercase py-3" style="letter-spacing: 2px;">
                 Innovación y Excelencia en Soluciones Electrónicas Inverter
@@ -880,68 +887,276 @@
 
 
 
-<!-- Blog o Consejos Técnicos ---------------------------------------------------------------------------------------->
-<section id="blog" class="py-5 bg-white">
+<!-- Blog o Consejos Técnicos (Sección Modernizada) -->
+<section id="blog" class="py-5 bg-light">
     <div class="container">
-        <h2 class="text-center mb-3 text-primary">Consejos Técnicos</h2>
-        <div class="d-flex justify-content-center">
-            <div class="border-bottom border-info border-2 w-25 mb-3"></div>
+        <!-- Encabezado mejorado -->
+        <div class="text-center mb-5" data-aos="fade-down">
+            <h2 class="display-5 fw-bold text-primary">Consejos Técnicos</h2>
+            <div class="d-flex justify-content-center">
+                <div class="border-bottom border-info border-3 w-25 mb-3"></div>
+            </div>
+            <p class="text-muted mb-0 fs-5 fst-italic" style="max-width: 800px; margin: 0 auto;">
+                Conocimiento especializado para optimizar tus equipos y prevenir fallas costosas
+            </p>
         </div>
-        <p class="text-center text-muted mb-5 fs-5 fst-italic" style="max-width: 800px; margin: 0 auto;">
-            Aprovecha estos consejos profesionales para optimizar el funcionamiento de tus equipos y prevenir fallas costosas en tus sistemas de climatización.
-        </p>
+        
+        <!-- Filtro de categorías -->
+        <div class="d-flex justify-content-center flex-wrap gap-2 mb-5" data-aos="fade-up">
+            <button class="btn btn-outline-primary active px-4 rounded-pill tip-filter" data-filter="all">Todos</button>
+            <button class="btn btn-outline-primary px-4 rounded-pill tip-filter" data-filter="mantenimiento">Mantenimiento</button>
+            <button class="btn btn-outline-primary px-4 rounded-pill tip-filter" data-filter="diagnostico">Diagnóstico</button>
+            <button class="btn btn-outline-primary px-4 rounded-pill tip-filter" data-filter="seguridad">Seguridad</button>
+        </div>
+        
+        <!-- Tarjetas de consejos (versión moderna) -->
         <div class="row g-4">
-            <!-- Tarjeta 1 -->
-            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title text-info"><i class="bi bi-lightbulb"></i> ¿Por qué hacer mantenimiento preventivo?</h5>
-                        <p class="card-text">El mantenimiento periódico previene averías costosas y extiende la vida útil de tu aire acondicionado.</p>
-                        <button class="btn btn-outline-info mt-auto mx-auto" 
-                                data-bs-toggle="popover" 
-                                data-bs-trigger="click" 
-                                title="Mantenimiento Preventivo"
-                                data-bs-content="El mantenimiento incluye limpieza de filtros, revisión de conexiones eléctricas y ajustes periódicos para evitar fallas inesperadas.">
-                            <i class="bi bi-arrow-right-circle"></i> Leer más
-                        </button>
+            <!-- Tarjeta 1: Mantenimiento -->
+            <div class="col-md-6 col-lg-4 tip-card mantenimiento" data-aos="fade-up" data-aos-delay="100">
+                <div class="card h-100 shadow-lg rounded-4 border-0 overflow-hidden hover-card">
+                    <div class="card-img-overlay-container position-relative">
+                        <img src="img/mantenimiento.jpg" class="card-img-top" alt="Mantenimiento Preventivo" style="height: 200px; object-fit: cover;">
+                        <div class="overlay-gradient position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.7));"></div>
+                        <div class="card-img-overlay d-flex flex-column justify-content-end">
+                            <span class="badge bg-primary rounded-pill align-self-start px-3 py-2 mb-2">Mantenimiento</span>
+                            <h5 class="card-title text-white fw-bold">Mantenimiento Preventivo</h5>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="rounded-circle bg-primary p-2 me-3">
+                                <i class="bi bi-tools text-white"></i>
+                            </div>
+                            <h5 class="card-subtitle mb-0">¿Por qué es fundamental?</h5>
+                        </div>
+                        <p class="card-text">El mantenimiento periódico previene averías costosas y extiende la vida útil de tu aire acondicionado hasta un 40%.</p>
+                        <hr>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <button class="btn btn-link text-primary p-0 tip-expand" data-bs-toggle="modal" data-bs-target="#tipModal1">
+                                Leer más <i class="bi bi-arrow-right-circle ms-1"></i>
+                            </button>
+                            <span class="text-muted small"><i class="bi bi-clock me-1"></i> Hace 2 semanas</span>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- Tarjeta 2 -->
-            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title text-info"><i class="bi bi-tools"></i> Diagnóstico de tarjetas inverter</h5>
-                        <p class="card-text">Ante cualquier error, verifica primero sensores y componentes externos, antes de reemplazar la tarjeta.</p>
-                        <button class="btn btn-outline-info mt-auto mx-auto" 
-                                data-bs-toggle="popover" 
-                                data-bs-trigger="click"
-                                title="Diagnóstico de Tarjetas Inverter" 
-                                data-bs-content="Un diagnóstico adecuado incluye verificar códigos de error y saber exactamente el significado, revisar sensores, reactor, nivel de voltaje y comprobar el estado de los componentes electrónicos.">
-                            <i class="bi bi-arrow-right-circle"></i> Leer más
-                        </button>
+            
+            <!-- Tarjeta 2: Diagnóstico -->
+            <div class="col-md-6 col-lg-4 tip-card diagnostico" data-aos="fade-up" data-aos-delay="200">
+                <div class="card h-100 shadow-lg rounded-4 border-0 overflow-hidden hover-card">
+                    <div class="card-img-overlay-container position-relative">
+                        <img src="img/diagnostico-tarjeta.jpg" class="card-img-top" alt="Diagnóstico de Tarjetas" style="height: 200px; object-fit: cover;">
+                        <div class="overlay-gradient position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.7));"></div>
+                        <div class="card-img-overlay d-flex flex-column justify-content-end">
+                            <span class="badge bg-success rounded-pill align-self-start px-3 py-2 mb-2">Diagnóstico</span>
+                            <h5 class="card-title text-white fw-bold">Diagnóstico de Tarjetas Inverter</h5>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="rounded-circle bg-success p-2 me-3">
+                                <i class="bi bi-cpu text-white"></i>
+                            </div>
+                            <h5 class="card-subtitle mb-0">Método profesional</h5>
+                        </div>
+                        <p class="card-text">Aprende a interpretar códigos de error y verificar componentes clave antes de reemplazar toda la tarjeta.</p>
+                        <hr>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <button class="btn btn-link text-success p-0 tip-expand" data-bs-toggle="modal" data-bs-target="#tipModal2">
+                                Leer más <i class="bi bi-arrow-right-circle ms-1"></i>
+                            </button>
+                            <span class="text-muted small"><i class="bi bi-clock me-1"></i> Hace 1 mes</span>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- Tarjeta 3 -->
-            <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title text-info"><i class="bi bi-shield-check"></i> Seguridad primero</h5>
-                        <p class="card-text">Prioriza tu seguridad: desconecta el equipo antes de manipularlo, utiliza herramientas aisladas y sigue las recomendaciones del fabricante.</p>
-                        <button class="btn btn-outline-info mt-auto mx-auto" 
-                                data-bs-toggle="popover" 
-                                data-bs-trigger="click"
-                                title="Seguridad en Reparaciones" 
-                                data-bs-content="Es vital desconectar el equipo antes de trabajar en él. esto evita accidentes tanto fisicos como materiales.">
-                            <i class="bi bi-arrow-right-circle"></i> Leer más
-                        </button>
+            
+            <!-- Tarjeta 3: Seguridad -->
+            <div class="col-md-6 col-lg-4 tip-card seguridad" data-aos="fade-up" data-aos-delay="300">
+                <div class="card h-100 shadow-lg rounded-4 border-0 overflow-hidden hover-card">
+                    <div class="card-img-overlay-container position-relative">
+                        <img src="img/seguridad-electronica.jpg" class="card-img-top" alt="Seguridad en Reparaciones" style="height: 200px; object-fit: cover;">
+                        <div class="overlay-gradient position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.7));"></div>
+                        <div class="card-img-overlay d-flex flex-column justify-content-end">
+                            <span class="badge bg-danger rounded-pill align-self-start px-3 py-2 mb-2">Seguridad</span>
+                            <h5 class="card-title text-white fw-bold">Seguridad en Reparaciones</h5>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="rounded-circle bg-danger p-2 me-3">
+                                <i class="bi bi-shield-check text-white"></i>
+                            </div>
+                            <h5 class="card-subtitle mb-0">Protocolos esenciales</h5>
+                        </div>
+                        <p class="card-text">Prioriza tu seguridad: desconecta el equipo, utiliza herramientas aisladas y sigue los protocolos profesionales.</p>
+                        <hr>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <button class="btn btn-link text-danger p-0 tip-expand" data-bs-toggle="modal" data-bs-target="#tipModal3">
+                                Leer más <i class="bi bi-arrow-right-circle ms-1"></i>
+                            </button>
+                            <span class="text-muted small"><i class="bi bi-clock me-1"></i> Hace 3 semanas</span>
+                        </div>
                     </div>
                 </div>
             </div>
+            
+            <!-- Tarjeta 4: Mantenimiento -->
+            <div class="col-md-6 col-lg-4 tip-card mantenimiento" data-aos="fade-up" data-aos-delay="100">
+                <div class="card h-100 shadow-lg rounded-4 border-0 overflow-hidden hover-card">
+                    <div class="card-img-overlay-container position-relative">
+                        <img src="img/limpieza-filtros.jpg" class="card-img-top" alt="Limpieza de Filtros" style="height: 200px; object-fit: cover;">
+                        <div class="overlay-gradient position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.7));"></div>
+                        <div class="card-img-overlay d-flex flex-column justify-content-end">
+                            <span class="badge bg-primary rounded-pill align-self-start px-3 py-2 mb-2">Mantenimiento</span>
+                            <h5 class="card-title text-white fw-bold">Limpieza de Filtros</h5>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="rounded-circle bg-primary p-2 me-3">
+                                <i class="bi bi-fan text-white"></i>
+                            </div>
+                            <h5 class="card-subtitle mb-0">Eficiencia garantizada</h5>
+                        </div>
+                        <p class="card-text">Limpiar los filtros mensualmente puede reducir el consumo energético hasta un 15% y mejorar la calidad del aire.</p>
+                        <hr>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <button class="btn btn-link text-primary p-0 tip-expand" data-bs-toggle="modal" data-bs-target="#tipModal4">
+                                Leer más <i class="bi bi-arrow-right-circle ms-1"></i>
+                            </button>
+                            <span class="text-muted small"><i class="bi bi-clock me-1"></i> Hace 1 semana</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tarjeta 5: Diagnóstico -->
+            <div class="col-md-6 col-lg-4 tip-card diagnostico" data-aos="fade-up" data-aos-delay="200">
+                <div class="card h-100 shadow-lg rounded-4 border-0 overflow-hidden hover-card">
+                    <div class="card-img-overlay-container position-relative">
+                        <img src="img/codigos-error.jpg" class="card-img-top" alt="Códigos de Error" style="height: 200px; object-fit: cover;">
+                        <div class="overlay-gradient position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.7));"></div>
+                        <div class="card-img-overlay d-flex flex-column justify-content-end">
+                            <span class="badge bg-success rounded-pill align-self-start px-3 py-2 mb-2">Diagnóstico</span>
+                            <h5 class="card-title text-white fw-bold">Interpretación de Códigos</h5>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="rounded-circle bg-success p-2 me-3">
+                                <i class="bi bi-qr-code text-white"></i>
+                            </div>
+                            <h5 class="card-subtitle mb-0">Decodificando errores</h5>
+                        </div>
+                        <p class="card-text">Aprende a interpretar los códigos de error más comunes en equipos inverter para diagnósticos precisos.</p>
+                        <hr>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <button class="btn btn-link text-success p-0 tip-expand" data-bs-toggle="modal" data-bs-target="#tipModal5">
+                                Leer más <i class="bi bi-arrow-right-circle ms-1"></i>
+                            </button>
+                            <span class="text-muted small"><i class="bi bi-clock me-1"></i> Hace 2 meses</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tarjeta 6: Seguridad -->
+            <div class="col-md-6 col-lg-4 tip-card seguridad" data-aos="fade-up" data-aos-delay="300">
+                <div class="card h-100 shadow-lg rounded-4 border-0 overflow-hidden hover-card">
+                    <div class="card-img-overlay-container position-relative">
+                        <img src="img/proteccion-electrica.jpg" class="card-img-top" alt="Protección Eléctrica" style="height: 200px; object-fit: cover;">
+                        <div class="overlay-gradient position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.7));"></div>
+                        <div class="card-img-overlay d-flex flex-column justify-content-end">
+                            <span class="badge bg-danger rounded-pill align-self-start px-3 py-2 mb-2">Seguridad</span>
+                            <h5 class="card-title text-white fw-bold">Protección Contra Sobretensiones</h5>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="rounded-circle bg-danger p-2 me-3">
+                                <i class="bi bi-lightning-charge text-white"></i>
+                            </div>
+                            <h5 class="card-subtitle mb-0">Prevención esencial</h5>
+                        </div>
+                        <p class="card-text">Instala protectores de voltaje adecuados para evitar daños en la electrónica de tus equipos inverter.</p>
+                        <hr>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <button class="btn btn-link text-danger p-0 tip-expand" data-bs-toggle="modal" data-bs-target="#tipModal6">
+                                Leer más <i class="bi bi-arrow-right-circle ms-1"></i>
+                            </button>
+                            <span class="text-muted small"><i class="bi bi-clock me-1"></i> Hace 1 mes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Botón "Ver más consejos" -->
+        <div class="text-center mt-5" data-aos="fade-up">
+            <a href="consejos-tecnicos.html" class="btn btn-outline-primary btn-lg px-4 rounded-pill">
+                <i class="bi bi-book me-2"></i> Ver biblioteca completa de consejos
+            </a>
         </div>
     </div>
 </section>
+
+<!-- Modales para los consejos técnicos -->
+<!-- Modal Consejo 1 -->
+<div class="modal fade" id="tipModal1" tabindex="-1" aria-labelledby="tipModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content rounded-4 border-0 shadow">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="tipModal1Label"><i class="bi bi-tools me-2"></i>Mantenimiento Preventivo</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-4">
+                <div class="row">
+                    <div class="col-md-5 mb-3 mb-md-0">
+                        <img src="img/mantenimiento.jpg" class="img-fluid rounded-3 shadow-sm" alt="Mantenimiento Preventivo">
+                    </div>
+                    <div class="col-md-7">
+                        <h4 class="mb-3 text-primary">¿Por qué es fundamental?</h4>
+                        <p>El mantenimiento preventivo regular es crucial para:</p>
+                        <ul class="list-group list-group-flush mb-3">
+                            <li class="list-group-item bg-transparent"><i class="bi bi-check-circle-fill text-success me-2"></i> Extender la vida útil del equipo hasta un 40%</li>
+                            <li class="list-group-item bg-transparent"><i class="bi bi-check-circle-fill text-success me-2"></i> Reducir consumo energético hasta un 25%</li>
+                            <li class="list-group-item bg-transparent"><i class="bi bi-check-circle-fill text-success me-2"></i> Prevenir fallas costosas en componentes críticos</li>
+                            <li class="list-group-item bg-transparent"><i class="bi bi-check-circle-fill text-success me-2"></i> Mejorar la calidad del aire interior</li>
+                        </ul>
+                        <div class="alert alert-primary p-3">
+                            <strong><i class="bi bi-info-circle me-2"></i>Recomendación profesional:</strong> Programa mantenimiento cada 3 meses para uso residencial y mensual para uso comercial.
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <h5 class="mb-3">Pasos básicos del mantenimiento preventivo</h5>
+                <div class="row">
+                    <div class="col-md-6">
+                        <ol>
+                            <li class="mb-2">Limpieza o reemplazo de filtros de aire</li>
+                            <li class="mb-2">Revisión de sensores y termostatos</li>
+                            <li class="mb-2">Limpieza de bobinas y aspas del ventilador</li>
+                            <li class="mb-2">Verificación de niveles de refrigerante</li>
+                        </ol>
+                    </div>
+                    <div class="col-md-6">
+                        <ol start="5">
+                            <li class="mb-2">Comprobación de conexiones eléctricas</li>
+                            <li class="mb-2">Revisión del drenaje de condensados</li>
+                            <li class="mb-2">Inspección de la tarjeta electrónica</li>
+                            <li class="mb-2">Verificación de presiones del sistema</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Cerrar</button>
+                <a href="#contacto" class="btn btn-primary">¿Necesitas ayuda? Contáctanos</a>
+            </div>
+        </div>
+    </div>
+</div>
 
 
  <!-- Noticias -->
@@ -1297,7 +1512,7 @@
 </script>
 
     <!--script boton popover-->
-        <script>
+     <script>
         document.addEventListener('DOMContentLoaded', function () {
         const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
         const popoverList = [...popoverTriggerList].map(triggerEl => new bootstrap.Popover(triggerEl));
@@ -1323,6 +1538,7 @@
 </script>
 
 <script>
+    // Animación al abrir el modal Sobre Mí -->
 document.addEventListener('DOMContentLoaded', function () {
     var modalSobreMi = document.getElementById('modalSobreMi');
     if (modalSobreMi) {
@@ -1337,6 +1553,54 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 </script>
+
+<!-- Código JavaScript para filtrado de consejos -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Filtrado de tarjetas de consejos
+    const filterBtns = document.querySelectorAll('.tip-filter');
+    const tipCards = document.querySelectorAll('.tip-card');
+    
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            // Quitar active de todos los botones
+            filterBtns.forEach(b => b.classList.remove('active'));
+            // Añadir active al botón clickeado
+            this.classList.add('active');
+            
+            const filter = this.getAttribute('data-filter');
+            
+            // Mostrar u ocultar tarjetas según el filtro
+            tipCards.forEach(card => {
+                if (filter === 'all' || card.classList.contains(filter)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+    
+    // Efecto hover para las tarjetas
+    tipCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            const img = this.querySelector('.card-img-top');
+            if (img) {
+                img.style.transform = 'scale(1.05)';
+                img.style.transition = 'transform 0.5s ease';
+            }
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            const img = this.querySelector('.card-img-top');
+            if (img) {
+                img.style.transform = 'scale(1)';
+            }
+        });
+    });
+});
+</script>
+
 
 <!-- Chat de WhatsApp Flotante  -->
 <a href="https://wa.me/18297470675?text=Hola%20Rafael%2C%20me%20gustaría%20recibir%20información%20profesional%20sobre%20el%20servicio%20de%20reparación%20de%20tarjetas%20electrónicas%20inverter.%20Gracias." 

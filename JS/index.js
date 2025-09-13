@@ -549,6 +549,73 @@ document.addEventListener('DOMContentLoaded', function () {
     // Flip card functionality has been removed
 });
 
+// Reemplaza toda la sección actual de scroll suave con esto:
+
+// Scroll suave compatible con Safari
+document.addEventListener('DOMContentLoaded', function() {
+    // Selecciona todos los enlaces del navbar que apuntan a secciones internas
+    const navLinks = document.querySelectorAll('a[href^="#"]');
+    
+    // Añade el evento click a cada enlace
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Previene el comportamiento predeterminado
+            e.preventDefault();
+            
+            // Obtiene el destino del enlace
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return; // Ignora si es solo "#"
+            
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                // Obtiene la altura del navbar
+                const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                
+                // Calcula la posición correcta
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - navbarHeight - 20; // 20px extra de margen
+                
+                // Animación de scroll personalizada para compatibilidad con Safari
+                smoothScrollTo(offsetPosition, 800);
+            }
+        });
+    });
+    
+    /**
+     * Función de scroll suave compatible con todos los navegadores
+     * @param {number} targetY - Posición Y objetivo
+     * @param {number} duration - Duración de la animación en ms
+     */
+    function smoothScrollTo(targetY, duration) {
+        const startY = window.pageYOffset;
+        const distance = targetY - startY;
+        const startTime = new Date().getTime();
+        
+        // Función de animación (easeInOutQuad)
+        function easeInOutQuad(t) {
+            return t < 0.5 
+                ? 2 * t * t 
+                : -1 + (4 - 2 * t) * t;
+        }
+        
+        function scroll() {
+            const currentTime = new Date().getTime();
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const easedProgress = easeInOutQuad(progress);
+            
+            window.scrollTo(0, startY + distance * easedProgress);
+            
+            if (elapsed < duration) {
+                requestAnimationFrame(scroll);
+            }
+        }
+        
+        requestAnimationFrame(scroll);
+    }
+});
+
 
 
 
