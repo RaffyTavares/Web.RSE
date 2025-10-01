@@ -88,6 +88,8 @@ document.addEventListener('DOMContentLoaded', function() {
  * - Sistema de filtrado por categorías
  * - Efectos visuales en hover
  */
+
+
 document.addEventListener('DOMContentLoaded', function () {
     // Referencias a elementos del DOM
     const carousel = document.getElementById('servicios-carousel');
@@ -248,51 +250,33 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('resize', updatePagination);
 });
 
+
+
 // =============================================================================
-// SECCIÓN NOSOTROS - ROTACIÓN DE IMÁGENES
+// SECCIÓN NOSOTROS - ROTACIÓN DE IMÁGENES DE FONDO
 // =============================================================================
 
 /**
- * Gestiona la rotación automática de imágenes en la sección "Nosotros"
- * con efectos de transición elegantes
+ * Gestiona la rotación automática de imágenes de fondo en la sección "Nosotros"
+ * con efectos de transición elegantes adaptados al nuevo diseño glassmorphism
  */
+
+
+
+// Ejecutar cuando el DOM esté completamente cargado
 document.addEventListener('DOMContentLoaded', function () {
-    const imagenes = [
-        'img/fachada.RSE.jpg',
-        'img/taller1.JPG',
-        'img/logo1.png'
-        // Más imágenes pueden agregarse aquí
-    ];
-    let idx = 0;
-    const imgElement = document.getElementById('nosotros-img');
+    console.log('📋 DOM cargado, inicializando componentes...');
+    console.log('🌐 URL actual:', window.location.href);
+    console.log('📁 Directorio actual:', window.location.pathname);
     
-    if (imgElement) {
-        imgElement.style.transition = 'opacity 0.7s, transform 0.7s';
-        
-        // Configurar rotación de imágenes cada 5 segundos
-        setInterval(() => {
-            // Fase 1: Desvanecer y deslizar a la izquierda
-            imgElement.style.opacity = 0;
-            imgElement.style.transform = 'translateX(-30px) scale(0.98)';
-            
-            // Fase 2: Cambiar la imagen
-            setTimeout(() => {
-                idx = (idx + 1) % imagenes.length;
-                imgElement.src = imagenes[idx];
-                
-                // Fase 3: Preparar para entrada desde la derecha
-                imgElement.onload = () => {
-                    imgElement.style.transform = 'translateX(80px) scale(0.58)';
-                    
-                    // Fase 4: Aparecer y centrar
-                    setTimeout(() => {
-                        imgElement.style.opacity = 1;
-                        imgElement.style.transform = 'translateX(0) scale(1)';
-                    }, 50);
-                };
-            }, 700);
-        }, 5000);
-    }
+    // Esperar un poco más para asegurar que todos los elementos estén renderizados
+    setTimeout(() => {
+        console.log('⏰ Timeout ejecutado, iniciando rotación...');
+        initImageRotation();
+    }, 1000);
+
+    // También intentar inmediatamente
+    initImageRotation();
 
     // Inicializar popovers de Bootstrap
     const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
@@ -305,6 +289,14 @@ document.addEventListener('DOMContentLoaded', function () {
         html: true, // Permitir contenido HTML
         container: 'body', // Asegura que el popover no se corte
     }));
+});
+
+// También intentar cuando la página esté completamente cargada
+window.addEventListener('load', function() {
+    console.log('🔄 Window load - intentando inicializar rotación nuevamente...');
+    setTimeout(() => {
+        initImageRotation();
+    }, 500);
 });
 
 // =============================================================================
@@ -613,6 +605,63 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         requestAnimationFrame(scroll);
+    }
+});
+
+// =============================================================================
+// CARRUSEL DE TARJETAS - CONTROLES DE PAUSA/REPRODUCCIÓN
+// =============================================================================
+
+/**
+ * Gestiona los botones de pausa y reproducción del carrusel de tarjetas
+ */
+document.addEventListener('DOMContentLoaded', function() {
+    const pauseButton = document.getElementById('pauseCarousel');
+    const playButton = document.getElementById('playCarousel');
+    const carousel = document.getElementById('carouselTarjetas');
+    
+    if (pauseButton && playButton && carousel) {
+        const carouselInstance = new bootstrap.Carousel(carousel);
+        
+        // Función para actualizar estados visuales
+        function updateButtonStates(isPaused) {
+            if (isPaused) {
+                pauseButton.classList.add('pressed');
+                playButton.classList.remove('pressed');
+            } else {
+                pauseButton.classList.remove('pressed');
+                playButton.classList.add('pressed');
+            }
+        }
+        
+        // Pausar carrusel
+        pauseButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            carouselInstance.pause();
+            updateButtonStates(true);
+            
+            // Feedback visual temporal
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 150);
+        });
+        
+        // Reproducir carrusel
+        playButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            carouselInstance.cycle();
+            updateButtonStates(false);
+            
+            // Feedback visual temporal
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 150);
+        });
+        
+        // Estado inicial (reproduciendo)
+        updateButtonStates(false);
     }
 });
 

@@ -1,4 +1,4 @@
-<?php include 'variables.php'; ?>
+<?php  ?>
 
 <head>
 
@@ -20,4 +20,3 @@
     <link rel="icon" type="image/png" href="img/logo1.png">
 
 </head>
-<?php include 'variables.php'; ?>

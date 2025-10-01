@@ -18,79 +18,254 @@
     </head>
 <body>
 
-    <!-- Navbar ---------------------------------------------------------------------------------------------------------------->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary bg-opacity-75 shadow-sm fixed-top" style="backdrop-filter: blur(8px);">
+    <!-- Navbar Mejorada - Estilo Página Principal -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary bg-opacity-50 shadow-sm fixed-top" style="backdrop-filter: blur(6px); transition: all 0.3s;">
         <div class="container">
-
-                <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-                    <img src="img/logo1.png" alt="Logo de Rafael Soluciones Electronica" class="img-zoom d-inline-block align-text-top" style="width: 48px; height: auto;">
-                    <b class="text-info mb-0">Rafael Soluciones Electronica</b>
-                </a>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+            <!-- Logo y nombre de la marca -->
+            <a class="navbar-brand d-flex align-items-center gap-2" href="index.php">
+                <span class="bg-white rounded-circle shadow-sm d-flex align-items-center justify-content-center" style="width:52px; height:52px;">
+                    <img src="img/logo1.png" alt="Logo de Rafael Soluciones Electrónica" style="width: 38px; height: 38px;">
+                </span>
+                <span class="fw-bold text-info fs-4 ms-1" style="letter-spacing:1px;">RSE</span>
+            </a>
+            
+            <!-- Botón de menú hamburguesa ELEGANTE - SOLO MÓVILES -->
+            <button class="navbar-toggler border-0 elegant-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="hamburger-container">
+                    <div class="hamburger-inner">
+                        <span class="hamburger-line hamburger-line-1"></span>
+                        <span class="hamburger-line hamburger-line-2"></span>
+                        <span class="hamburger-line hamburger-line-3"></span>
+                    </div>
+                </div>
             </button>
-
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.html"><i class="bi bi-house"></i> Inicio <span class="visually-hidden">(current)</span></a>
+        
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-lg-center gap-lg-2">
+                    <!-- INICIO -->
+                    <li class="nav-item menu-fade">
+                        <a class="nav-link px-3 py-2 rounded-3" href="index.php">
+                            <i class="bi bi-house"></i> <span>Inicio</span>
+                        </a>
                     </li>
-                  
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" href="recursos.html"><i class="bi bi-file-earmark-pdf-fill"></i> <i class="bi bi-file-play"></i> Recursos</a>
+                    <li class="nav-item d-none d-lg-block">
+                        <span class="vr mx-2 text-info opacity-50"></span>
                     </li>
-
+                    <!-- CONTACTO -->
+                    <li class="nav-item menu-fade">
+                        <a class="nav-link px-3 py-2 rounded-3" href="index.php#contacto">
+                            <i class="bi bi-person-lines-fill"></i> <span>Contacto</span>
+                        </a>
+                    </li>
+                    <!-- AYUDA/SOPORTE -->
+                    <li class="nav-item ms-lg-2 menu-fade">
+                        <a class="btn btn-info fw-bold px-4 py-2 d-flex align-items-center gap-2 shadow-lg rounded-pill"
+                           href="https://wa.me/18297470675?text=Necesito ayuda con los recursos técnicos" target="_blank"
+                           style="font-size: 1rem; letter-spacing:1px; background: linear-gradient(45deg, #17a2b8, #138496); border-color: #17a2b8; color: white;">
+                            <i class="bi bi-question-circle"></i> Ayuda
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Sección de Recursos ---------------------------------------------------------------------------------------------------->
-<section id="recursos" class="py-5" style="background: linear-gradient(135deg, #272c36 0%, #8fa8ca 100%);">
-    <div class="container">
-        <h2 class="text-center text-info fw-bold mb-5 mt-5 pt-5" data-aos="fade-down" style="font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; font-size: 2.8rem; letter-spacing: 2px; text-shadow: 0 2px 8px #222;">
-            Recursos para Diagnósticos
-        </h2>
-        <p class="text-center lead text-light mb-5" data-aos="fade-up" data-aos-delay="100" style="font-family: 'Lora', 'Georgia', serif; font-size: 1.35rem; font-style: italic; text-shadow: 0 1px 4px #222;">
-            <strong>Aquí encontrarás documentación, videos y guías para ayudarte a diagnosticar fallas en tus equipos.</strong>
-        </p>
+    <!-- Estilos del Navbar movidos a recursos.css -->
 
-        <!-- Barra de búsqueda -->
-        <div class="row mb-4" data-aos="fade-up">
-            <div class="col-md-6 mx-auto">
-                <div class="input-group">
-                    <input type="text" id="searchResources" class="form-control" placeholder="Buscar recursos...">
-                    <button class="btn btn-info" type="button" id="searchButton">
-                        <i class="bi bi-search"></i>
-                    </button>
+    <!-- Estilos visuales mejorados movidos a recursos.css -->
+
+    <!-- Sección de Recursos - DISEÑO MEJORADO -->
+<section id="recursos" class="py-5" style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); min-height: 100vh; position: relative; overflow: hidden;">
+    
+    <!-- Elementos decorativos de fondo -->
+    <div class="position-absolute" style="top: -50px; right: -50px; width: 200px; height: 200px; background: rgba(255,255,255,0.05); border-radius: 50%; z-index: 1;"></div>
+    <div class="position-absolute" style="bottom: -100px; left: -100px; width: 300px; height: 300px; background: rgba(23,162,184,0.1); border-radius: 50%; z-index: 1;"></div>
+    
+    <div class="container position-relative" style="z-index: 2;">
+        <!-- Header Principal Mejorado -->
+        <div class="text-center mb-5" style="padding-top: 80px;">
+            <div class="d-inline-block p-4 mb-4" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; border: 1px solid rgba(255,255,255,0.2);">
+                <i class="bi bi-tools text-info" style="font-size: 4rem; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));"></i>
+            </div>
+            <h2 class="text-white fw-bold mb-3" data-aos="fade-down" style="font-family: 'Montserrat', sans-serif; font-size: 3.2rem; letter-spacing: 2px; text-shadow: 0 4px 16px rgba(0,0,0,0.5);">
+                Centro de Recursos Técnicos
+            </h2>
+            <p class="text-white-50 lead mb-4" data-aos="fade-up" data-aos-delay="100" style="font-family: 'Lora', serif; font-size: 1.4rem; font-style: italic; max-width: 800px; margin: 0 auto; text-shadow: 0 2px 8px rgba(0,0,0,0.3);">
+                <strong>Documentación, videos y guías especializadas para ayudarte a diagnosticar fallas en equipos inverter</strong>
+            </p>
+            
+            <!-- Estadísticas rápidas -->
+            <div class="row mt-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-md-4">
+                    <div class="p-3" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 15px; border: 1px solid rgba(255,255,255,0.2);">
+                        <i class="bi bi-file-earmark-pdf text-danger fs-2"></i>
+                        <h4 class="text-white mt-2 mb-0">5+</h4>
+                        <small class="text-white-50">Documentos Técnicos</small>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-3" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 15px; border: 1px solid rgba(255,255,255,0.2);">
+                        <i class="bi bi-play-circle text-primary fs-2"></i>
+                        <h4 class="text-white mt-2 mb-0">4+</h4>
+                        <small class="text-white-50">Videos Tutoriales</small>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-3" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 15px; border: 1px solid rgba(255,255,255,0.2);">
+                        <i class="bi bi-tools text-success fs-2"></i>
+                        <h4 class="text-white mt-2 mb-0">3+</h4>
+                        <small class="text-white-50">Herramientas Interactivas</small>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Documentos PDF -->
-        <div class="row mb-4" data-aos="fade-right" data-aos-delay="200">
-            <div class="col-md-12">
-                <h3 class="text-info mb-3" style="font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; font-size: 2rem; letter-spacing: 1px;">
-                    <i class="bi bi-file-earmark-pdf-fill"></i> Documentos
+        <!-- Barra de búsqueda mejorada -->
+        <div class="row mb-5" data-aos="fade-up" data-aos-delay="300">
+            <div class="col-md-8 col-lg-6 mx-auto">
+                <div class="p-4" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(15px); border-radius: 25px; border: 1px solid rgba(255,255,255,0.2); box-shadow: 0 8px 32px rgba(0,0,0,0.1);">
+                    <div class="input-group input-group-lg" style="border-radius: 20px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.1);">
+                        <input type="text" id="searchResources" class="form-control border-0" placeholder="Buscar recursos, documentos, videos..." style="background: rgba(255,255,255,0.95); font-size: 1.1rem; padding: 1rem 1.5rem;">
+                        <button class="btn border-0" type="button" id="searchButton" style="background: linear-gradient(45deg, #17a2b8, #138496); color: white; padding: 1rem 2rem; font-weight: bold;">
+                            <i class="bi bi-search fs-5"></i>
+                        </button>
+                    </div>
+                    <div class="mt-3 text-center">
+                        <small class="text-white-50">
+                            <i class="bi bi-lightbulb me-1"></i>
+                            Busca por marca, modelo, código de error o tipo de falla
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menú de Navegación de Secciones -->
+        <div class="row mb-5" data-aos="fade-up" data-aos-delay="400">
+            <div class="col-12">
+                <div class="text-center mb-4">
+                    <h5 class="text-white fw-bold mb-3">
+                        <i class="bi bi-compass text-info me-2"></i>
+                        Navegar por Secciones
+                    </h5>
+                    <p class="text-white-50 mb-4">Acceso rápido a todas las secciones de recursos disponibles</p>
+                </div>
+                
+                <!-- Navegación principal de secciones -->
+                <div class="d-flex justify-content-center mb-4">
+                    <nav class="section-navigation p-4 w-100" style="background: rgba(255,255,255,0.15); backdrop-filter: blur(15px); border-radius: 20px; border: 2px solid rgba(255,255,255,0.3); box-shadow: 0 8px 32px rgba(0,0,0,0.1); max-width: 900px;">
+                        <div class="row g-3 align-items-stretch justify-content-center">
+                            <!-- Documentos -->
+                            <div class="col-lg-3 col-md-6 col-12">
+                                <a href="#documentos-section" class="nav-section-btn btn btn-outline-light w-100 py-2 smooth-scroll">
+                                    <i class="bi bi-file-earmark-pdf text-danger me-2"></i>
+                                    <span class="d-none d-md-inline">Documentos</span>
+                                    <span class="d-md-none">Docs</span>
+                                    <small class="d-block text-muted">5 PDFs</small>
+                                </a>
+                            </div>
+                            <!-- Videos -->
+                            <div class="col-lg-3 col-md-6 col-12">
+                                <a href="#videos-section" class="nav-section-btn btn btn-outline-light w-100 py-2 smooth-scroll">
+                                    <i class="bi bi-play-circle text-info me-2"></i>
+                                    <span class="d-none d-md-inline">Videos</span>
+                                    <span class="d-md-none">Videos</span>
+                                    <small class="d-block text-muted">6 Tutoriales</small>
+                                </a>
+                            </div>
+                            <!-- Herramientas -->
+                            <div class="col-lg-3 col-md-6 col-12">
+                                <a href="#herramientas-section" class="nav-section-btn btn btn-outline-light w-100 py-2 smooth-scroll">
+                                    <i class="bi bi-calculator text-success me-2"></i>
+                                    <span class="d-none d-md-inline">Herramientas</span>
+                                    <span class="d-md-none">Tools</span>
+                                    <small class="d-block text-muted">3 Calculadoras</small>
+                                </a>
+                            </div>
+                            <!-- Tienda -->
+                            <div class="col-lg-3 col-md-6 col-12">
+                                <a href="#tienda-section" class="nav-section-btn btn btn-outline-light w-100 py-2 smooth-scroll">
+                                    <i class="bi bi-shop text-warning me-2"></i>
+                                    <span class="d-none d-md-inline">Tienda</span>
+                                    <span class="d-md-none">Shop</span>
+                                    <small class="d-block text-muted">Componentes</small>
+                                </a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                
+                <!-- Indicador de progreso de navegación -->
+                <div class="progress-indicator text-center">
+                    <div class="d-inline-flex gap-3 p-3" style="background: rgba(255,255,255,0.15); border-radius: 20px; border: 1px solid rgba(255,255,255,0.3);">
+                        <span class="progress-dot active" data-section="documentos" title="Documentos"></span>
+                        <span class="progress-dot" data-section="videos" title="Videos"></span>
+                        <span class="progress-dot" data-section="herramientas" title="Herramientas"></span>
+                        <span class="progress-dot" data-section="tienda" title="Tienda"></span>
+                    </div>
+                    <p class="text-white-50 mt-2 mb-0 small">
+                        <i class="bi bi-mouse me-1"></i>
+                        Haz clic en los puntos o botones para navegar
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Documentos PDF - Sección Mejorada -->
+        <div id="documentos-section" class="mb-5" data-aos="fade-right" data-aos-delay="400">
+            <div class="text-center mb-4">
+                <div class="d-inline-block p-3 mb-3" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 15px; border: 1px solid rgba(255,255,255,0.2);">
+                    <i class="bi bi-file-earmark-pdf-fill text-danger" style="font-size: 2.5rem;"></i>
+                </div>
+                <h3 class="text-white mb-3" style="font-family: 'Montserrat', sans-serif; font-size: 2.2rem; letter-spacing: 1px; text-shadow: 0 2px 8px rgba(0,0,0,0.3);">
+                    Documentos Técnicos
                 </h3>
-                <div class="alert alert-warning shadow-sm" role="alert" style="font-family: 'Lora', 'Georgia', serif; font-size: 1.1rem;">
-                    <strong>¡Importante!</strong> Los códigos de errores se verifican por tarjeta, no por marca de aire. Muchas marcas usan el mismo código, así que verifica por tarjeta. <strong>Nota:</strong> Algunos equipos traen el código de error en la tapa de la tarjeta del condensador (Samsung, Lennox, Ciac, entre otros).
+                <p class="text-white-50 lead" style="max-width: 600px; margin: 0 auto;">
+                    Manuales especializados y guías de diagnóstico para equipos inverter
+                </p>
+            </div>
+            
+            <!-- Alerta informativa mejorada -->
+            <div class="alert border-0 shadow-lg mb-4" role="alert" style="background: linear-gradient(45deg, rgba(255,193,7,0.9), rgba(255,235,59,0.9)); backdrop-filter: blur(10px); border-radius: 15px; border: 1px solid rgba(255,255,255,0.3);">
+                <div class="d-flex align-items-start">
+                    <i class="bi bi-exclamation-triangle-fill text-warning fs-3 me-3 mt-1"></i>
+                    <div>
+                        <h6 class="alert-heading text-dark fw-bold mb-2">¡Información Importante!</h6>
+                        <p class="mb-1 text-dark" style="font-family: 'Lora', serif; line-height: 1.6;">
+                            <strong>Los códigos de errores se verifican por tarjeta, no por marca de aire.</strong> Muchas marcas usan el mismo código, así que verifica por tarjeta.
+                        </p>
+                        <small class="text-dark-50">
+                            <i class="bi bi-info-circle me-1"></i>
+                            <strong>Nota:</strong> Algunos equipos traen el código de error en la tapa de la tarjeta del condensador (Samsung, Lennox, Ciac, entre otros).
+                        </small>
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <ul class="nav nav-pills" id="documentTabs" role="tablist">
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link active" id="all-tab" data-bs-toggle="pill" data-bs-target="#all-docs" type="button" role="tab" aria-controls="all-docs" aria-selected="true">Todos</button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="manual-tab" data-bs-toggle="pill" data-bs-target="#manual-docs" type="button" role="tab" aria-controls="manual-docs" aria-selected="false">Manuales</button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="guide-tab" data-bs-toggle="pill" data-bs-target="#guide-docs" type="button" role="tab" aria-controls="guide-docs" aria-selected="false">Guías</button>
-                        </li>
-                    </ul>
-                </div>
+            </div>
+            
+            <!-- Tabs mejoradas -->
+            <div class="mb-4">
+                <ul class="nav nav-pills justify-content-center" id="documentTabs" role="tablist" style="gap: 1rem;">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active px-4 py-2" id="all-tab" data-bs-toggle="pill" data-bs-target="#all-docs" type="button" role="tab" 
+                                style="border-radius: 25px; background: rgba(255,255,255,0.9); color: #1e3c72; font-weight: bold; border: none; transition: all 0.3s ease;">
+                            <i class="bi bi-grid-3x3-gap me-2"></i>Todos
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link px-4 py-2" id="manual-tab" data-bs-toggle="pill" data-bs-target="#manual-docs" type="button" role="tab
+                                style="border-radius: 25px; background: rgba(255,255,255,0.2); color: white; font-weight: bold; border: none; transition: all 0.3s ease;">
+                            <i class="bi bi-book me-2"></i>Manuales
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link px-4 py-2" id="guide-tab" data-bs-toggle="pill" data-bs-target="#guide-docs" type="button" role="tab"
+                                style="border-radius: 25px; background: rgba(255,255,255,0.2); color: white; font-weight: bold; border: none; transition: all 0.3s ease;">
+                            <i class="bi bi-compass me-2"></i>Guías
+                        </button>
+                    </li>
+                </ul>
+            </div>
                 <div class="tab-content" id="documentTabsContent">
                     <!-- Tab para Todos los documentos -->
                     <div class="tab-pane fade show active" id="all-docs" role="tabpanel" aria-labelledby="all-tab">
@@ -216,9 +391,9 @@
         </div>
 
         <!-- Videos ------------------------------------------------------------------------------------------------------------->
-        <div class="row mb-4 bg-light p-4 rounded-4 shadow" data-aos="fade-left" data-aos-delay="300">
+        <div id="videos-section" class="row mb-4 bg-light p-4 rounded-4 shadow" data-aos="fade-left" data-aos-delay="300">
             <div class="col-md-12">
-                <h2 class="text-center text-info mb-5" style="font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; font-size: 2.2rem; letter-spacing: 1px;">
+                <h2 class="video-section-title mb-5" style="font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;">
                     <i class="bi bi-play-circle"></i> Videos Tutoriales
                 </h2>
                 <div class="mb-4 text-center">
@@ -251,111 +426,443 @@
                 <p class="text-center lead text-dark mb-4" style="font-family: 'Lora', 'Georgia', serif; font-size: 1.2rem; font-style: italic;">
                     <strong>Estos videos te ayudarán a entender mejor el diagnóstico y reparación de equipos inverter.</strong>
                 </p>
-                <div class="row justify-content-center" id="videoCarousel">
-                    <div class="col-lg-4 col-md-6 video-item" data-aos="zoom-in" data-aos-delay="200" data-category="diagnostico">
-                        <div class="card mb-4 border-0 shadow-lg rounded-4">
-                            <div class="card-body">
-                                <h5 class="card-title text-info" style="font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; font-size: 1.3rem;">
-                                    <i class="bi bi-cpu"></i> Revisión básica de una tarjeta inverter
-                                </h5>
+                
+                <!-- Carrusel de videos LADO A LADO con navegación -->
+                <div id="videoCarousel" class="position-relative">
+                    <div class="row g-3">
+                        <!-- Video 1 -->
+                        <div class="col-12 col-md-6 col-lg-4 video-item" data-aos="fade-in" data-aos-delay="200" data-category="diagnostico">
+                            <div class="card border-0 shadow rounded-3 h-100">
+                                <!-- Video embed -->
                                 <div class="ratio ratio-16x9">
                                     <iframe src="https://www.youtube.com/embed/4FnlDX6D_8g?si=V7XEJnw-GoPUIFiH" 
                                         title="Revisión básica de una tarjeta inverter" 
                                         frameborder="0" 
                                         allowfullscreen
-                                        aria-label="Video tutorial sobre revisión básica de tarjeta inverter">
+                                        class="rounded-top-3">
                                     </iframe>
                                 </div>
-                                <p class="card-text mt-3" style="font-family: 'Lora', 'Georgia', serif; font-size: 1.05rem;">
-                                    <strong>Cómo verificar la tarjeta inverter de un aire acondicionado para determinar su estado.</strong>
-                                </p>
+                                <!-- Contenido del video -->
+                                <div class="card-body p-3">
+                                    <div class="d-flex justify-content-between align-items-start mb-2">
+                                        <h6 class="card-title text-info fw-bold mb-0" style="font-size: 1rem; line-height: 1.2;">
+                                            <i class="bi bi-cpu me-1"></i>Revisión Tarjeta Inverter
+                                        </h6>
+                                        <span class="badge bg-info bg-opacity-10 text-info px-2 py-1 ms-2" style="font-size: 0.7rem;">
+                                            Diagnóstico
+                                        </span>
+                                    </div>
+                                    <p class="card-text text-muted small mb-2" style="font-size: 0.85rem; line-height: 1.3;">
+                                        Verificar tarjeta inverter para determinar su estado.
+                                    </p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <small class="text-muted">
+                                            <i class="bi bi-clock me-1"></i>8:45
+                                        </small>
+                                        <a href="https://www.youtube.com/watch?v=4FnlDX6D_8g" target="_blank" class="btn btn-outline-info btn-sm">
+                                            <i class="bi bi-play me-1"></i>Ver
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 video-item" data-aos="zoom-in" data-aos-delay="200" data-category="componentes">
-                        <div class="card mb-4 border-0 shadow-lg rounded-4">
-                            <div class="card-body">
-                                <h5 class="card-title text-info" style="font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; font-size: 1.3rem;">
-                                    <i class="bi bi-box"></i> Módulo IPM
-                                </h5>
+
+                        <!-- Video 2 -->
+                        <div class="col-12 col-md-6 col-lg-4 video-item" data-aos="fade-in" data-aos-delay="300" data-category="componentes">
+                            <div class="card border-0 shadow rounded-3 h-100">
+                                <!-- Video embed -->
                                 <div class="ratio ratio-16x9">
                                     <iframe src="https://www.youtube.com/embed/TWanWvTUiWY?si=Jx7s99yUCfRR93sC" 
                                         title="Módulo IPM en aires acondicionados" 
                                         frameborder="0" 
                                         allowfullscreen
-                                        aria-label="Video explicativo sobre el módulo IPM en equipos de aire acondicionado">
+                                        class="rounded-top-3">
                                     </iframe>
                                 </div>
-                                <p class="card-text mt-3" style="font-family: 'Lora', 'Georgia', serif; font-size: 1.05rem;">
-                                    <strong>Funcionamiento del módulo IPM, encargado de controlar el compresor.</strong>
-                                </p>
+                                <!-- Contenido del video -->
+                                <div class="card-body p-3">
+                                    <div class="d-flex justify-content-between align-items-start mb-2">
+                                        <h6 class="card-title text-info fw-bold mb-0" style="font-size: 1rem; line-height: 1.2;">
+                                            <i class="bi bi-box me-1"></i>Módulo IPM
+                                        </h6>
+                                        <span class="badge bg-success bg-opacity-10 text-success px-2 py-1 ms-2" style="font-size: 0.7rem;">
+                                            Componentes
+                                        </span>
+                                    </div>
+                                    <p class="card-text text-muted small mb-2" style="font-size: 0.85rem; line-height: 1.3;">
+                                        Funcionamiento del módulo IPM del compresor.
+                                    </p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <small class="text-muted">
+                                            <i class="bi bi-clock me-1"></i>6:32
+                                        </small>
+                                        <a href="https://www.youtube.com/watch?v=TWanWvTUiWY" target="_blank" class="btn btn-outline-success btn-sm">
+                                            <i class="bi bi-play me-1"></i>Ver
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 video-item" data-aos="zoom-in" data-aos-delay="200" data-category="comparativa">
-                        <div class="card mb-4 border-0 shadow-lg rounded-4">
-                            <div class="card-body">
-                                <h5 class="card-title text-info" style="font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; font-size: 1.3rem;">
-                                    <i class="bi bi-arrow-repeat"></i> Inverter vs Convencional
-                                </h5>
+
+                        <!-- Video 3 -->
+                        <div class="col-12 col-md-6 col-lg-4 video-item" data-aos="fade-in" data-aos-delay="400" data-category="comparativa">
+                            <div class="card border-0 shadow rounded-3 h-100">
+                                <!-- Video embed -->
                                 <div class="ratio ratio-16x9">
                                     <iframe src="https://www.youtube.com/embed/0TSFpCY0wxs?si=Fe2fu3e8vY3asco0" 
                                         title="Comparación entre aires acondicionados inverter y convencionales" 
                                         frameborder="0" 
                                         allowfullscreen
-                                        aria-label="Video comparativo entre sistemas de aire acondicionado inverter y convencional">
+                                        class="rounded-top-3">
                                     </iframe>
                                 </div>
-                                <p class="card-text mt-3" style="font-family: 'Lora', 'Georgia', serif; font-size: 1.05rem;">
-                                    <strong>Diferencias, ventajas y desventajas entre aire acondicionado inverter y convencional.</strong>
-                                </p>
+                                <!-- Contenido del video -->
+                                <div class="card-body p-3">
+                                    <div class="d-flex justify-content-between align-items-start mb-2">
+                                        <h6 class="card-title text-info fw-bold mb-0" style="font-size: 1rem; line-height: 1.2;">
+                                            <i class="bi bi-arrow-repeat me-1"></i>Inverter vs Convencional
+                                        </h6>
+                                        <span class="badge bg-warning bg-opacity-10 text-warning px-2 py-1 ms-2" style="font-size: 0.7rem;">
+                                            Comparativa
+                                        </span>
+                                    </div>
+                                    <p class="card-text text-muted small mb-2" style="font-size: 0.85rem; line-height: 1.3;">
+                                        Diferencias entre sistemas inverter y convencional.
+                                    </p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <small class="text-muted">
+                                            <i class="bi bi-clock me-1"></i>12:18
+                                        </small>
+                                        <a href="https://www.youtube.com/watch?v=0TSFpCY0wxs" target="_blank" class="btn btn-outline-warning btn-sm">
+                                            <i class="bi bi-play me-1"></i>Ver
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 video-item" data-aos="zoom-in" data-aos-delay="200" data-category="componentes">
-                        <div class="card mb-4 border-0 shadow-lg rounded-4">
-                            <div class="card-body">
-                                <h5 class="card-title text-info" style="font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; font-size: 1.3rem;">
-                                    <i class="bi bi-fan"></i> Motores BLDC
-                                </h5>
+
+                        <!-- Video 4 -->
+                        <div class="col-12 col-md-6 col-lg-4 video-item" data-aos="fade-in" data-aos-delay="500" data-category="componentes">
+                            <div class="card border-0 shadow rounded-3 h-100">
+                                <!-- Video embed -->
                                 <div class="ratio ratio-16x9">
                                     <iframe src="https://www.youtube.com/embed/MPlZQfKKxoM?si=nk7pj7Dql_XNdlRf" 
                                         title="Motores BLDC en equipos de aire acondicionado" 
                                         frameborder="0" 
                                         allowfullscreen
-                                        aria-label="Video explicativo sobre los motores BLDC utilizados en compresores y ventiladores">
+                                        class="rounded-top-3">
                                     </iframe>
                                 </div>
-                                <p class="card-text mt-3" style="font-family: 'Lora', 'Georgia', serif; font-size: 1.05rem;">
-                                    <strong>Funcionamiento de los motores BLDC en compresores y ventiladores.</strong>
-                                </p>
+                                <!-- Contenido del video -->
+                                <div class="card-body p-3">
+                                    <div class="d-flex justify-content-between align-items-start mb-2">
+                                        <h6 class="card-title text-info fw-bold mb-0" style="font-size: 1rem; line-height: 1.2;">
+                                            <i class="bi bi-fan me-1"></i>Motores BLDC
+                                        </h6>
+                                        <span class="badge bg-success bg-opacity-10 text-success px-2 py-1 ms-2" style="font-size: 0.7rem;">
+                                            Componentes
+                                        </span>
+                                    </div>
+                                    <p class="card-text text-muted small mb-2" style="font-size: 0.85rem; line-height: 1.3;">
+                                        Funcionamiento de motores BLDC en compresores.
+                                    </p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <small class="text-muted">
+                                            <i class="bi bi-clock me-1"></i>9:56
+                                        </small>
+                                        <a href="https://www.youtube.com/watch?v=MPlZQfKKxoM" target="_blank" class="btn btn-outline-success btn-sm">
+                                            <i class="bi bi-play me-1"></i>Ver
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Enlaces Útiles --------------------------------------------------------------------------------------------->
-        <div class="row" data-aos="fade-up" data-aos-delay="600">
-            <div class="col-md-12">
-                <h3 class="text-center text-info mb-5" style="font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; font-size: 2rem;">
-                    <i class="bi bi-link-45deg"></i> Enlaces Útiles
+        <!-- Herramientas Profesionales --------------------------------------------------------------------------------------------->
+        <div id="herramientas-section" class="row mb-5 position-relative" data-aos="fade-up" data-aos-delay="600">
+            <!-- Elementos decorativos flotantes -->
+            <div class="position-absolute" style="top: 20%; left: -3%; width: 150px; height: 150px; background: rgba(23, 162, 184, 0.1); border-radius: 50%; filter: blur(40px); animation: float 12s ease-in-out infinite;"></div>
+            <div class="position-absolute" style="top: 50%; right: -3%; width: 200px; height: 200px; background: rgba(40, 167, 69, 0.08); border-radius: 50%; filter: blur(50px); animation: float 18s ease-in-out infinite reverse;"></div>
+            
+            <div class="col-12">
+                <!-- Header mejorado -->
+                <div class="text-center mb-5" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="d-inline-block p-4 rounded-4 mb-4" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.2);">
+                        <i class="bi bi-tools display-4 text-info"></i>
+                    </div>
+                    <h3 class="display-6 fw-bold text-dark mb-3" style="font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0,0,0,0.1);">
+                        Herramientas Profesionales
+                    </h3>
+                    <p class="lead text-muted mx-auto" style="max-width: 600px; font-family: 'Lora', 'Georgia', serif;">
+                        Accede a nuestras herramientas especializadas para diagnóstico y cálculos técnicos
+                    </p>
+                </div>
+
+                <!-- Cards de herramientas mejoradas -->
+                <div class="row g-4 justify-content-center">
+                    <!-- Herramienta 1: Guía de Reparación -->
+                    <div class="col-lg-4 col-md-6" data-aos="flip-left" data-aos-delay="200">
+                        <a href="guia-reparacion.html" target="_blank" class="text-decoration-none">
+                            <div class="card h-100 border-0 shadow-lg position-relative overflow-hidden tool-card" style="background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-radius: 25px; transition: all 0.4s ease;">
+                                <!-- Gradiente decorativo superior -->
+                                <div class="position-absolute top-0 start-0 w-100" style="height: 6px; background: linear-gradient(90deg, #17a2b8, #20c997);"></div>
+                                
+                                <div class="card-body p-4 text-center">
+                                    <!-- Icono principal -->
+                                    <div class="mb-4 position-relative">
+                                        <div class="rounded-circle d-inline-flex align-items-center justify-content-center position-relative" style="width: 80px; height: 80px; background: linear-gradient(135deg, #17a2b8, #138496); box-shadow: 0 10px 30px rgba(23, 162, 184, 0.3);">
+                                            <i class="bi bi-tools text-white" style="font-size: 2.5rem;"></i>
+                                            <!-- Elemento decorativo flotante -->
+                                            <div class="position-absolute top-0 end-0 rounded-circle" style="width: 20px; height: 20px; background: rgba(255,255,255,0.3); transform: translate(25%, -25%);"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Título -->
+                                    <h5 class="card-title fw-bold mb-3" style="font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; font-size: 1.3rem; color: #2c3e50;">
+                                        Guía de Reparación
+                                    </h5>
+                                    
+                                    <!-- Descripción -->
+                                    <p class="card-text text-muted mb-4" style="font-family: 'Lora', 'Georgia', serif; font-size: 1rem; line-height: 1.6;">
+                                        Manual completo para diagnóstico y reparación de <strong>equipos inverter</strong> con procedimientos paso a paso
+                                    </p>
+                                    
+                                    <!-- Características -->
+                                    <div class="d-flex justify-content-center gap-3 mb-4">
+                                        <span class="badge rounded-pill px-3 py-2" style="background: rgba(23, 162, 184, 0.1); color: #17a2b8; font-size: 0.85rem;">
+                                            <i class="bi bi-check-circle me-1"></i>Paso a paso
+                                        </span>
+                                        <span class="badge rounded-pill px-3 py-2" style="background: rgba(40, 167, 69, 0.1); color: #28a745; font-size: 0.85rem;">
+                                            <i class="bi bi-lightning me-1"></i>Práctico
+                                        </span>
+                                    </div>
+                                    
+                                    <!-- Botón de acción -->
+                                    <div class="d-flex align-items-center justify-content-center gap-2 text-info fw-bold" style="font-family: 'Montserrat', Arial, sans-serif;">
+                                        <span>Acceder Ahora</span>
+                                        <i class="bi bi-arrow-right-circle"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Herramienta 2: Calculadora Energética -->
+                    <div class="col-lg-4 col-md-6" data-aos="flip-left" data-aos-delay="300">
+                        <a href="calculadora-energetica.html" target="_blank" class="text-decoration-none">
+                            <div class="card h-100 border-0 shadow-lg position-relative overflow-hidden tool-card" style="background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-radius: 25px; transition: all 0.4s ease;">
+                                <!-- Gradiente decorativo superior -->
+                                <div class="position-absolute top-0 start-0 w-100" style="height: 6px; background: linear-gradient(90deg, #28a745, #20c997);"></div>
+                                
+                                <div class="card-body p-4 text-center">
+                                    <!-- Icono principal -->
+                                    <div class="mb-4 position-relative">
+                                        <div class="rounded-circle d-inline-flex align-items-center justify-content-center position-relative" style="width: 80px; height: 80px; background: linear-gradient(135deg, #28a745, #20c997); box-shadow: 0 10px 30px rgba(40, 167, 69, 0.3);">
+                                            <i class="bi bi-calculator text-white" style="font-size: 2.5rem;"></i>
+                                            <!-- Elemento decorativo flotante -->
+                                            <div class="position-absolute top-0 end-0 rounded-circle" style="width: 20px; height: 20px; background: rgba(255,255,255,0.3); transform: translate(25%, -25%);"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Título -->
+                                    <h5 class="card-title fw-bold mb-3" style="font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; font-size: 1.3rem; color: #2c3e50;">
+                                        Calculadora Energética
+                                    </h5>
+                                    
+                                    <!-- Descripción -->
+                                    <p class="card-text text-muted mb-4" style="font-family: 'Lora', 'Georgia', serif; font-size: 1rem; line-height: 1.6;">
+                                        Calcula el <strong>consumo energético</strong> y costos de operación de aires acondicionados con precisión
+                                    </p>
+                                    
+                                    <!-- Características -->
+                                    <div class="d-flex justify-content-center gap-3 mb-4">
+                                        <span class="badge rounded-pill px-3 py-2" style="background: rgba(40, 167, 69, 0.1); color: #28a745; font-size: 0.85rem;">
+                                            <i class="bi bi-calculator me-1"></i>Preciso
+                                        </span>
+                                        <span class="badge rounded-pill px-3 py-2" style="background: rgba(255, 193, 7, 0.1); color: #ffc107; font-size: 0.85rem;">
+                                            <i class="bi bi-currency-dollar me-1"></i>Ahorro
+                                        </span>
+                                    </div>
+                                    
+                                    <!-- Botón de acción -->
+                                    <div class="d-flex align-items-center justify-content-center gap-2 text-success fw-bold" style="font-family: 'Montserrat', Arial, sans-serif;">
+                                        <span>Calcular Ahora</span>
+                                        <i class="bi bi-arrow-right-circle"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Herramienta 3: Selector de Aire Ideal -->
+                    <div class="col-lg-4 col-md-6" data-aos="flip-left" data-aos-delay="400">
+                        <a href="calculadora-capacidad-de-equipo.html" target="_blank" class="text-decoration-none">
+                            <div class="card h-100 border-0 shadow-lg position-relative overflow-hidden tool-card" style="background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-radius: 25px; transition: all 0.4s ease;">
+                                <!-- Gradiente decorativo superior -->
+                                <div class="position-absolute top-0 start-0 w-100" style="height: 6px; background: linear-gradient(90deg, #6f42c1, #e83e8c);"></div>
+                                
+                                <div class="card-body p-4 text-center">
+                                    <!-- Icono principal -->
+                                    <div class="mb-4 position-relative">
+                                        <div class="rounded-circle d-inline-flex align-items-center justify-content-center position-relative" style="width: 80px; height: 80px; background: linear-gradient(135deg, #6f42c1, #e83e8c); box-shadow: 0 10px 30px rgba(111, 66, 193, 0.3);">
+                                            <i class="bi bi-sliders text-white" style="font-size: 2.5rem;"></i>
+                                            <!-- Elemento decorativo flotante -->
+                                            <div class="position-absolute top-0 end-0 rounded-circle" style="width: 20px; height: 20px; background: rgba(255,255,255,0.3); transform: translate(25%, -25%);"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Título -->
+                                    <h5 class="card-title fw-bold mb-3" style="font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; font-size: 1.3rem; color: #2c3e50;">
+                                        Selector de Aire Ideal
+                                    </h5>
+                                    
+                                    <!-- Descripción -->
+                                    <p class="card-text text-muted mb-4" style="font-family: 'Lora', 'Georgia', serif; font-size: 1rem; line-height: 1.6;">
+                                        Encuentra la <strong>capacidad perfecta</strong> para tu espacio según dimensiones y características específicas
+                                    </p>
+                                    
+                                    <!-- Características -->
+                                    <div class="d-flex justify-content-center gap-3 mb-4">
+                                        <span class="badge rounded-pill px-3 py-2" style="background: rgba(111, 66, 193, 0.1); color: #6f42c1; font-size: 0.85rem;">
+                                            <i class="bi bi-gear me-1"></i>Personalizado
+                                        </span>
+                                        <span class="badge rounded-pill px-3 py-2" style="background: rgba(220, 53, 69, 0.1); color: #dc3545; font-size: 0.85rem;">
+                                            <i class="bi bi-speedometer2 me-1"></i>Eficiente
+                                        </span>
+                                    </div>
+                                    
+                                    <!-- Botón de acción -->
+                                    <div class="d-flex align-items-center justify-content-center gap-2 fw-bold" style="font-family: 'Montserrat', Arial, sans-serif; color: #6f42c1;">
+                                        <span>Seleccionar Ahora</span>
+                                        <i class="bi bi-arrow-right-circle"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Información adicional -->
+                <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="500">
+                    <div class="p-4 rounded-4 d-inline-block" style="background: rgba(255,255,255,0.8); backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.3); max-width: 600px;">
+                        <i class="bi bi-info-circle text-info fs-2 mb-3"></i>
+                        <h6 class="fw-bold mb-2" style="color: #2c3e50;">Herramientas Desarrolladas por Profesionales</h6>
+                        <p class="text-muted mb-0 small" style="font-family: 'Lora', serif;">
+                            Todas nuestras herramientas han sido desarrolladas por técnicos especializados con más de 10 años de experiencia en el sector
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CSS de herramientas movido a recursos.css -->
+        
+        <!-- Tienda de Componentes --------------------------------------------------------------------------------------------->
+        <div id="tienda-section" class="row mb-5 d-none" data-aos="fade-up" data-aos-delay="800">
+            <div class="col-12 text-center mb-4">
+                <div class="d-inline-block p-3 mb-3" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 15px; border: 1px solid rgba(255,255,255,0.2);">
+                    <i class="bi bi-shop text-warning" style="font-size: 2.5rem;"></i>
+                </div>
+                <h3 class="text-white mb-3" style="font-family: 'Montserrat', sans-serif; font-size: 2.2rem; letter-spacing: 1px; text-shadow: 0 2px 8px rgba(0,0,0,0.3);">
+                    Tienda de Componentes
                 </h3>
-                <h4 class="mb-3" style="font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; font-size: 1.3rem;">Herramientas</h4>
-                <div class="list-group list-group-flush">
-                    <a href="guia-reparacion.html" class="list-group-item list-group-item-action d-flex align-items-center gap-2" target="_blank" style="font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; font-size: 1.1rem;">
-                        <i class="bi bi-tools text-info fs-4"></i>
-                        <span>Guía de Reparación de Equipos Inverter</span>
-                    </a>
-                    <a href="calculadora-energetica.html" class="list-group-item list-group-item-action d-flex align-items-center gap-2" target="_blank" style="font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; font-size: 1.1rem;">
-                        <i class="bi bi-calculator text-info fs-4"></i>
-                        <span>Calculadora de Consumo Energético</span>
-                    </a>
-                    <a href="calculadora-capacidad-de-equipo.html" class="list-group-item list-group-item-action d-flex align-items-center gap-2" target="_blank" style="font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; font-size: 1.1rem;">
-                        <i class="bi bi-sliders text-info fs-4"></i>
-                        <span>Selector de Aire Ideal</span>
-                    </a>
+                <p class="text-white-50 lead mb-4" style="max-width: 600px; margin: 0 auto;">
+                    Encuentra los componentes y repuestos que necesitas para tus reparaciones
+                </p>
+            </div>
+            
+            <!-- Cards de tienda -->
+            <div class="col-12">
+                <div class="row g-4">
+                    <!-- Tarjetas Electrónicas -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 border-0 shadow-lg" style="background: rgba(255,255,255,0.95); backdrop-filter: blur(15px); border-radius: 1rem; transition: all 0.3s ease;">
+                            <div class="card-body p-4 text-center">
+                                <div class="mb-3">
+                                    <i class="bi bi-cpu text-primary" style="font-size: 3rem;"></i>
+                                </div>
+                                <h5 class="card-title text-dark fw-bold mb-3">Tarjetas Electrónicas</h5>
+                                <p class="card-text text-muted mb-4">
+                                    Tarjetas principales y de control para equipos inverter de todas las marcas
+                                </p>
+                                <div class="mb-3">
+                                    <span class="badge bg-success rounded-pill me-2">En Stock</span>
+                                    <span class="badge bg-info rounded-pill">Garantía</span>
+                                </div>
+                                <a href="Tienda/carrito-compras.html" target="_blank" class="btn btn-primary btn-lg w-100 rounded-pill">
+                                    <i class="bi bi-cart-plus me-2"></i>Ver Catálogo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Sensores y Componentes -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 border-0 shadow-lg" style="background: rgba(255,255,255,0.95); backdrop-filter: blur(15px); border-radius: 1rem; transition: all 0.3s ease;">
+                            <div class="card-body p-4 text-center">
+                                <div class="mb-3">
+                                    <i class="bi bi-gear text-success" style="font-size: 3rem;"></i>
+                                </div>
+                                <h5 class="card-title text-dark fw-bold mb-3">Sensores & Componentes</h5>
+                                <p class="card-text text-muted mb-4">
+                                    Sensores de temperatura, termostatos y componentes electrónicos especializados
+                                </p>
+                                <div class="mb-3">
+                                    <span class="badge bg-warning rounded-pill me-2">Limitado</span>
+                                    <span class="badge bg-info rounded-pill">Original</span>
+                                </div>
+                                <a href="Tienda/carrito-compras.html" target="_blank" class="btn btn-success btn-lg w-100 rounded-pill">
+                                    <i class="bi bi-search me-2"></i>Explorar
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Herramientas y Accesorios -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 border-0 shadow-lg" style="background: rgba(255,255,255,0.95); backdrop-filter: blur(15px); border-radius: 1rem; transition: all 0.3s ease;">
+                            <div class="card-body p-4 text-center">
+                                <div class="mb-3">
+                                    <i class="bi bi-tools text-warning" style="font-size: 3rem;"></i>
+                                </div>
+                                <h5 class="card-title text-dark fw-bold mb-3">Herramientas Especializadas</h5>
+                                <p class="card-text text-muted mb-4">
+                                    Herramientas de diagnóstico y reparación para técnicos profesionales
+                                </p>
+                                <div class="mb-3">
+                                    <span class="badge bg-primary rounded-pill me-2">Profesional</span>
+                                    <span class="badge bg-secondary rounded-pill">Técnico</span>
+                                </div>
+                                <a href="Tienda/carrito-compras.html" target="_blank" class="btn btn-warning btn-lg w-100 rounded-pill">
+                                    <i class="bi bi-tools me-2"></i>Ver Herramientas
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Información adicional de la tienda -->
+                <div class="text-center mt-5">
+                    <div class="p-4 rounded-4 d-inline-block" style="background: rgba(255,255,255,0.8); backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.3); max-width: 700px;">
+                        <div class="row align-items-center">
+                            <div class="col-md-3">
+                                <i class="bi bi-truck text-info fs-1"></i>
+                            </div>
+                            <div class="col-md-9">
+                                <h6 class="fw-bold mb-2 text-dark">Envíos a Todo el País</h6>
+                                <p class="text-muted mb-2">Entrega rápida y segura de todos los productos</p>
+                                <small class="text-info">
+                                    <i class="bi bi-whatsapp me-1"></i>
+                                    Consulta disponibilidad: +1 (829) 747-0675
+                                </small>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -365,160 +872,443 @@
 
 
 <!-- Preguntas Frecuentes (FAQ) --------------------------------------------------------->
-<section id="faq" class="py-5 bg-white" style="background: linear-gradient(135deg, #73869a 0%, #c6d5f1 100%);">
-    <div class="container">
-        <h2 class="text-center text-info mb-4">Preguntas Tecnicas Frecuentes</h2>
-        <div class="accordion" id="faqAccordion">
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="faq1-heading">
-                    <button class="accordion-button text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
-                        ¿Cómo identifico el código de error de mi aire acondicionado inverter?
-                    </button>
-                </h2>
-                <div id="faq1" class="accordion-collapse collapse show" aria-labelledby="faq1-heading" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        Los códigos de error suelen mostrarse en el display del equipo o en los LEDs de la tarjeta electrónica. Consulta los manuales disponibles en la sección de Documentos para identificar el significado de cada código según la tarjeta.
+<section id="faq" class="py-5 position-relative overflow-hidden" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh;">
+    <!-- Elementos decorativos flotantes -->
+    <div class="position-absolute" style="top: 10%; left: -5%; width: 200px; height: 200px; background: rgba(255,255,255,0.1); border-radius: 50%; filter: blur(40px); animation: float 15s ease-in-out infinite;"></div>
+    <div class="position-absolute" style="top: 60%; right: -5%; width: 300px; height: 300px; background: rgba(255,255,255,0.08); border-radius: 50%; filter: blur(50px); animation: float 20s ease-in-out infinite reverse;"></div>
+    <div class="position-absolute" style="top: 30%; left: 70%; width: 150px; height: 150px; background: rgba(23, 162, 184,0.2); border-radius: 50%; filter: blur(30px); animation: float 12s ease-in-out infinite;"></div>
+    
+    <div class="container position-relative">
+        <!-- Header mejorado con glassmorphism -->
+        <div class="text-center mb-5" data-aos="fade-down" data-aos-duration="1000">
+            <div class="d-inline-block p-4 rounded-4 mb-4" style="background: rgba(255,255,255,0.15); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.2);">
+                <i class="bi bi-question-circle-fill display-4 text-white"></i>
+            </div>
+            <h2 class="display-5 fw-bold text-white mb-3" style="font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
+                Preguntas Técnicas Frecuentes
+            </h2>
+            <p class="lead text-white-50 mx-auto" style="max-width: 600px; font-family: 'Lora', 'Georgia', serif;">
+                Resuelve tus dudas más comunes sobre reparación y diagnóstico de equipos inverter
+            </p>
+        </div>
+
+        <!-- Acordeón mejorado con glassmorphism -->
+        <div class="row justify-content-center">
+            <div class="col-lg-10 col-xl-8">
+                <div class="accordion" id="faqAccordion">
+                    <!-- FAQ 1 -->
+                    <div class="accordion-item mb-4 border-0 rounded-4 overflow-hidden" data-aos="fade-up" data-aos-delay="100" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.2) !important;">
+                        <h2 class="accordion-header" id="faq1-heading">
+                            <button class="accordion-button bg-transparent text-white fw-bold border-0 rounded-4 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1" style="font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; font-size: 1.1rem; padding: 1.5rem;">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; background: rgba(23, 162, 184, 0.8); backdrop-filter: blur(10px);">
+                                        <i class="bi bi-search text-white fs-4"></i>
+                                    </div>
+                                    <span>¿Cómo identifico el código de error de mi aire acondicionado inverter?</span>
+                                </div>
+                            </button>
+                        </h2>
+                        <div id="faq1" class="accordion-collapse collapse show" aria-labelledby="faq1-heading" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-white" style="padding: 1.5rem 1.5rem 2rem 1.5rem; font-family: 'Lora', 'Georgia', serif; font-size: 1.05rem; line-height: 1.7;">
+                                <div class="p-4 rounded-3" style="background: rgba(255,255,255,0.05); border-left: 4px solid #17a2b8;">
+                                    Los códigos de error suelen mostrarse en el <strong>display del equipo</strong> o en los <strong>LEDs de la tarjeta electrónica</strong>. Consulta los manuales disponibles en la sección de Documentos para identificar el significado de cada código según la marca de la tarjeta.
+                                    <div class="mt-3 p-3 rounded-3" style="background: rgba(23, 162, 184, 0.15);">
+                                        <i class="bi bi-lightbulb text-warning"></i> <strong>Tip:</strong> Toma una foto del código antes de reiniciar el equipo.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="accordion-item mb-4 border-0 rounded-4 overflow-hidden" data-aos="fade-up" data-aos-delay="200" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.2) !important;">
+                        <h2 class="accordion-header" id="faq2-heading">
+                            <button class="accordion-button collapsed bg-transparent text-white fw-bold border-0 rounded-4 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2" style="font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; font-size: 1.1rem; padding: 1.5rem;">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; background: rgba(108, 117, 125, 0.8); backdrop-filter: blur(10px);">
+                                        <i class="bi bi-tools text-white fs-4"></i>
+                                    </div>
+                                    <span>¿Qué debo revisar antes de cambiar una tarjeta electrónica?</span>
+                                </div>
+                            </button>
+                        </h2>
+                        <div id="faq2" class="accordion-collapse collapse" aria-labelledby="faq2-heading" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-white" style="padding: 1.5rem 1.5rem 2rem 1.5rem; font-family: 'Lora', 'Georgia', serif; font-size: 1.05rem; line-height: 1.7;">
+                                <div class="p-4 rounded-3" style="background: rgba(255,255,255,0.05); border-left: 4px solid #6c757d;">
+                                    Antes de reemplazar la tarjeta, verifica el estado de los <strong>componentes externos</strong> como sensores, ventiladores y el compresor. Muchas veces la falla puede estar en estos elementos y no en la tarjeta.
+                                    <div class="mt-3">
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <div class="p-3 rounded-3" style="background: rgba(108, 117, 125, 0.15);">
+                                                    <i class="bi bi-check-circle text-success"></i> <strong>Sensores de temperatura</strong>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="p-3 rounded-3" style="background: rgba(108, 117, 125, 0.15);">
+                                                    <i class="bi bi-check-circle text-success"></i> <strong>Conexiones eléctricas</strong>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="accordion-item mb-4 border-0 rounded-4 overflow-hidden" data-aos="fade-up" data-aos-delay="300" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.2) !important;">
+                        <h2 class="accordion-header" id="faq3-heading">
+                            <button class="accordion-button collapsed bg-transparent text-white fw-bold border-0 rounded-4 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3" style="font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; font-size: 1.1rem; padding: 1.5rem;">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; background: rgba(220, 53, 69, 0.8); backdrop-filter: blur(10px);">
+                                        <i class="bi bi-exclamation-triangle text-white fs-4"></i>
+                                    </div>
+                                    <span>¿Puedo probar un compresor inverter directo sin tarjeta?</span>
+                                </div>
+                            </button>
+                        </h2>
+                        <div id="faq3" class="accordion-collapse collapse" aria-labelledby="faq3-heading" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-white" style="padding: 1.5rem 1.5rem 2rem 1.5rem; font-family: 'Lora', 'Georgia', serif; font-size: 1.05rem; line-height: 1.7;">
+                                <div class="p-4 rounded-3" style="background: rgba(255,255,255,0.05); border-left: 4px solid #dc3545;">
+                                    <div class="alert alert-danger d-flex align-items-center" style="background: rgba(220, 53, 69, 0.15); border: 1px solid rgba(220, 53, 69, 0.3); color: #fff;">
+                                        <i class="bi bi-shield-exclamation fs-4 me-3"></i>
+                                        <strong>¡IMPORTANTE!</strong> No se puede probar un compresor inverter directamente sin su tarjeta electrónica.
+                                    </div>
+                                    Los compresores inverter requieren una <strong>señal de voltaje variable</strong> controlada por la tarjeta electrónica para funcionar correctamente, ya que operan a diferentes velocidades para regular la temperatura.
+                                    <div class="mt-3 p-3 rounded-3" style="background: rgba(220, 53, 69, 0.15);">
+                                        <i class="bi bi-lightning text-warning"></i> Si se conecta a una fuente de alimentación directa, <strong>el compresor podría dañarse permanentemente</strong>.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div class="accordion-item mb-4 border-0 rounded-4 overflow-hidden" data-aos="fade-up" data-aos-delay="400" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.2) !important;">
+                        <h2 class="accordion-header" id="faq4-heading">
+                            <button class="accordion-button collapsed bg-transparent text-white fw-bold border-0 rounded-4 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4" style="font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; font-size: 1.1rem; padding: 1.5rem;">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; background: rgba(40, 167, 69, 0.8); backdrop-filter: blur(10px);">
+                                        <i class="bi bi-gear text-white fs-4"></i>
+                                    </div>
+                                    <span>¿Qué mantenimiento preventivo se recomienda?</span>
+                                </div>
+                            </button>
+                        </h2>
+                        <div id="faq4" class="accordion-collapse collapse" aria-labelledby="faq4-heading" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-white" style="padding: 1.5rem 1.5rem 2rem 1.5rem; font-family: 'Lora', 'Georgia', serif; font-size: 1.05rem; line-height: 1.7;">
+                                <div class="p-4 rounded-3" style="background: rgba(255,255,255,0.05); border-left: 4px solid #28a745;">
+                                    Se recomienda realizar mantenimiento preventivo <strong>cada seis meses</strong> para evitar fallas:
+                                    <div class="mt-4">
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <div class="p-3 rounded-3 h-100" style="background: rgba(40, 167, 69, 0.15);">
+                                                    <i class="bi bi-funnel text-info fs-4 mb-2"></i>
+                                                    <h6 class="text-white">Limpieza de filtros</h6>
+                                                    <small class="text-white-50">Mensual o según uso</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="p-3 rounded-3 h-100" style="background: rgba(40, 167, 69, 0.15);">
+                                                    <i class="bi bi-plug text-info fs-4 mb-2"></i>
+                                                    <h6 class="text-white">Conexiones eléctricas</h6>
+                                                    <small class="text-white-50">Revisar apriete y corrosión</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="p-3 rounded-3 h-100" style="background: rgba(40, 167, 69, 0.15);">
+                                                    <i class="bi bi-motherboard text-info fs-4 mb-2"></i>
+                                                    <h6 class="text-white">Tarjeta electrónica</h6>
+                                                    <small class="text-white-50">Limpieza y inspección visual</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="p-3 rounded-3 h-100" style="background: rgba(40, 167, 69, 0.15);">
+                                                    <i class="bi bi-thermometer text-info fs-4 mb-2"></i>
+                                                    <h6 class="text-white">Sensores</h6>
+                                                    <small class="text-white-50">Verificar funcionamiento</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="faq2-heading">
-                    <button class="accordion-button collapsed text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
-                        ¿Qué debo revisar antes de cambiar una tarjeta electrónica?
-                    </button>
-                </h2>
-                <div id="faq2" class="accordion-collapse collapse" aria-labelledby="faq2-heading" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        Antes de reemplazar la tarjeta, verifica el estado de los componentes externos como sensores, ventiladores y el compresor. Muchas veces la falla puede estar en estos elementos y no en la tarjeta.
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="faq3-heading">
-                    <button class="accordion-button collapsed text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
-                        ¿Puedo probar un compresor inverter directo sin tarjeta?
-                    </button>
-                </h2>
-                <div id="faq3" class="accordion-collapse collapse" aria-labelledby="faq3-heading" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        No, no se puede probar un compresor inverter directamente sin su tarjeta electrónica. 
-                        Los compresores inverter requieren una señal de voltaje variable controlada por la tarjeta electrónica para funcionar correctamente, 
-                        ya que operan a diferentes velocidades para regular la temperatura. 
-                        Si se conecta a una fuente de alimentación directa, el compresor podría dañarse. 
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header text-primary" id="faq4-heading">
-                    <button class="accordion-button collapsed text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
-                        ¿Qué mantenimiento preventivo se recomienda?
-                    </button>
-                </h2>
-                <div id="faq4" class="accordion-collapse collapse" aria-labelledby="faq4-heading" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        Se recomienda no solo limpiar los filtros, tambien revisar conexiones eléctricas, 
-                        limpiar la unidad exterior, dar mantenimiento a la tarjeta electronica y verificar el estado de los sensores al menos cada seis meses para evitar fallas.
+
+                <!-- Botón de contacto para más preguntas -->
+                <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="500">
+                    <div class="p-4 rounded-4 d-inline-block" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.2);">
+                        <h5 class="text-white mb-3">¿Tienes más preguntas?</h5>
+                        <a href="https://wa.me/18297470675?text=Tengo una consulta técnica sobre equipos inverter" target="_blank" class="btn btn-info btn-lg px-4 py-3 rounded-pill shadow-lg" style="background: linear-gradient(45deg, #17a2b8, #138496); border: none; font-weight: 600; font-family: 'Montserrat', Arial, sans-serif;">
+                            <i class="bi bi-whatsapp me-2 fs-5"></i>
+                            Consulta con Nuestros Expertos
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- CSS de FAQ movido a recursos.css -->
 </section>
 
 
- <!-- Footer ---------------------------------------------------------------->
- <footer class="bg-dark text-white py-5">
-    <div class="container">
-        <div class="row gy-4">
-            <!-- Columna 1: Logo e información principal -->
-            <div class="col-lg-4 col-md-6">
-                <div class="d-flex align-items-center mb-3">
-                    <img src="img/logo1.png" alt="Logo RSE" width="40" height="40" class="me-2">
-                    <h5 class="mb-0 text-info fw-bold">Rafael Soluciones Electrónica</h5>
+<!-- Footer Premium ----------------------------------------------------------->
+<footer class="footer-premium-section">
+    <!-- Background Effects -->
+    <div class="footer-background-gradient"></div>
+    <div class="footer-particles"></div>
+    <div class="footer-wave-pattern"></div>
+    
+    <div class="container position-relative">
+        <div class="footer-content-wrapper">
+            <div class="row gy-4">
+                <!-- Columna 1: Logo e información principal -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="footer-brand-section">
+                        <div class="brand-container">
+                            <div class="logo-glow-wrapper">
+                                <img src="img/logo1.png" alt="Logo RSE" class="footer-logo">
+                                <div class="logo-glow-ring"></div>
+                            </div>
+                            <div class="brand-text">
+                                <h5 class="brand-title">Rafael Soluciones</h5>
+                                <span class="brand-subtitle">Electrónica</span>
+                            </div>
+                        </div>
+                        
+                        <div class="brand-description">
+                            <p>Transformamos el futuro de la <span class="highlight-text">climatización</span> 
+                               a través de soluciones electrónicas <span class="highlight-text">innovadoras</span> 
+                               y servicios de <strong>excelencia técnica</strong>.</p>
+                        </div>
+                        
+                        <!-- Social Media Premium -->
+                        <div class="social-media-premium">
+                            <div class="social-title">Síguenos</div>
+                            <div class="social-links">
+                                <a href="https://www.instagram.com/rafael_soluciones_electronica" 
+                                   class="social-link instagram" target="_blank">
+                                    <div class="social-icon-wrapper">
+                                        <i class="bi bi-instagram"></i>
+                                        <div class="icon-ripple"></div>
+                                    </div>
+                                    <span class="social-label">Instagram</span>
+                                </a>
+                                <a href="https://wa.me/18297470675" 
+                                   class="social-link whatsapp" target="_blank">
+                                    <div class="social-icon-wrapper">
+                                        <i class="bi bi-whatsapp"></i>
+                                        <div class="icon-ripple"></div>
+                                    </div>
+                                    <span class="social-label">WhatsApp</span>
+                                </a>
+                                <a href="mailto:info@rselectronicas.com" 
+                                   class="social-link email">
+                                    <div class="social-icon-wrapper">
+                                        <i class="bi bi-envelope"></i>
+                                        <div class="icon-ripple"></div>
+                                    </div>
+                                    <span class="social-label">Email</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <p class="text-light mb-3">Especialistas en reparación de tarjetas electrónicas para aires acondicionados y neveras con tecnología inverter.</p>
-                <div class="d-flex mb-4">
-                    <a href="https://www.instagram.com/rafael_soluciones_electronica" class="text-white me-3" target="_blank">
-                        <i class="bi bi-instagram fs-4"></i>
-                    </a>
-                    <a href="https://wa.me/18297470675" class="text-white me-3" target="_blank">
-                        <i class="bi bi-whatsapp fs-4"></i>
-                    </a>
-                    <a href="mailto:info@rselectronicas.com" class="text-white me-3">
-                        <i class="bi bi-envelope fs-4"></i>
-                    </a>
+                
+                <!-- Columna 2: Enlaces rápidos -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="footer-links-section">
+                        <div class="section-header">
+                            <div class="header-icon">
+                                <i class="bi bi-compass"></i>
+                            </div>
+                            <h5 class="section-title">Navegación Rápida</h5>
+                            <div class="title-underline"></div>
+                        </div>
+                        
+                        <div class="quick-links-grid">
+                            <a href="index.php#inicio" class="quick-link home-link">
+                                <div class="link-icon">
+                                    <i class="bi bi-house"></i>
+                                </div>
+                                <span class="link-text">Inicio</span>
+                                <div class="link-arrow">
+                                    <i class="bi bi-arrow-right"></i>
+                                </div>
+                            </a>
+                            <a href="index.php#servicios" class="quick-link services-link">
+                                <div class="link-icon">
+                                    <i class="bi bi-tools"></i>
+                                </div>
+                                <span class="link-text">Servicios</span>
+                                <div class="link-arrow">
+                                    <i class="bi bi-arrow-right"></i>
+                                </div>
+                            </a>
+                            <a href="index.php#nosotros" class="quick-link about-link">
+                                <div class="link-icon">
+                                    <i class="bi bi-building"></i>
+                                </div>
+                                <span class="link-text">Nosotros</span>
+                                <div class="link-arrow">
+                                    <i class="bi bi-arrow-right"></i>
+                                </div>
+                            </a>
+                            <a href="index.php#contacto" class="quick-link contact-link">
+                                <div class="link-icon">
+                                    <i class="bi bi-person"></i>
+                                </div>
+                                <span class="link-text">Contacto</span>
+                                <div class="link-arrow">
+                                    <i class="bi bi-arrow-right"></i>
+                                </div>
+                            </a>
+                            <a href="index.php#blog" class="quick-link blog-link">
+                                <div class="link-icon">
+                                    <i class="bi bi-journal"></i>
+                                </div>
+                                <span class="link-text">Blog</span>
+                                <div class="link-arrow">
+                                    <i class="bi bi-arrow-right"></i>
+                                </div>
+                            </a>
+                            <a href="recursos.html" class="quick-link resources-link">
+                                <div class="link-icon">
+                                    <i class="bi bi-folder"></i>
+                                </div>
+                                <span class="link-text">Recursos</span>
+                                <div class="link-arrow">
+                                    <i class="bi bi-arrow-right"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            
-            <!-- Columna 2: Enlaces rápidos -->
-            <div class="col-lg-4 col-md-6">
-                <h5 class="mb-3">Enlaces Rápidos</h5>
-                <div class="d-flex flex-wrap gap-3">
-                    <a href="index.html#inicio" class="text-white text-decoration-none">
-                        <i class="bi bi-house me-1"></i> Inicio
-                    </a>
-                    <a href="index.html#servicios" class="text-white text-decoration-none">
-                        <i class="bi bi-tools me-1"></i> Servicios
-                    </a>
-                    <a href="index.html#nosotros" class="text-white text-decoration-none">
-                        <i class="bi bi-building me-1"></i> Nosotros
-                    </a>
-                    <a href="index.html#contacto" class="text-white text-decoration-none">
-                        <i class="bi bi-person me-1"></i> Contacto
-                    </a>
-                    <a href="index.html#blog" class="text-white text-decoration-none">
-                        <i class="bi bi-journal me-1"></i> Blog
-                    </a>
-                    <a href="recursos.html" class="text-white text-decoration-none">
-                        <i class="bi bi-folder me-1"></i> Recursos
-                    </a>
+                
+                <!-- Columna 3: Contacto Premium -->
+                <div class="col-lg-4 col-md-12" data-aos="fade-up" data-aos-delay="500">
+                    <div class="footer-contact-section">
+                        <div class="section-header">
+                            <div class="header-icon">
+                                <i class="bi bi-headset"></i>
+                            </div>
+                            <h5 class="section-title">Contacto Directo</h5>
+                            <div class="title-underline"></div>
+                        </div>
+                        
+                        <div class="contact-info-premium">
+                            <div class="contact-item location-item">
+                                <div class="contact-icon">
+                                    <i class="bi bi-geo-alt-fill"></i>
+                                    <div class="icon-pulse-ring"></div>
+                                </div>
+                                <div class="contact-content">
+                                    <div class="contact-label">Ubicación</div>
+                                    <a href="https://maps.app.goo.gl/VwUhjC9KbW2UYQVP8" 
+                                       target="_blank" class="contact-value location-link">
+                                        Calle Barahona #163, San Carlos<br>
+                                        Santo Domingo, R.D.
+                                        <i class="bi bi-box-arrow-up-right ms-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item phone-item">
+                                <div class="contact-icon">
+                                    <i class="bi bi-telephone-fill"></i>
+                                    <div class="icon-pulse-ring"></div>
+                                </div>
+                                <div class="contact-content">
+                                    <div class="contact-label">Teléfono</div>
+                                    <a href="tel:8295965912" class="contact-value phone-link">
+                                        829-596-5912
+                                        <div class="call-indicator">
+                                            <i class="bi bi-telephone"></i>
+                                            <span>Llamar</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item schedule-item">
+                                <div class="contact-icon">
+                                    <i class="bi bi-clock-fill"></i>
+                                    <div class="icon-pulse-ring"></div>
+                                </div>
+                                <div class="contact-content">
+                                    <div class="contact-label">Horarios</div>
+                                    <div class="schedule-details">
+                                        <div class="schedule-row">
+                                            <span class="days">Lun-Vie:</span>
+                                            <span class="hours">9:00-5:30</span>
+                                        </div>
+                                        <div class="schedule-row">
+                                            <span class="days">Sábado:</span>
+                                            <span class="hours">9:00-1:00</span>
+                                        </div>
+                                        <div class="status-badge" id="business-status-recursos">
+                                            <i class="bi bi-check-circle-fill" id="status-icon-recursos"></i>
+                                            <span id="status-text-recursos">Abierto Ahora</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            
-            <!-- Columna 3: Contacto -->
-            <div class="col-lg-4 col-md-12">
-                <h5 class="mb-3">Información de Contacto</h5>
-                <p class="mb-2">
-                    <i class="bi bi-geo-alt-fill me-2 text-info"></i>
-                    <a href="https://maps.app.goo.gl/VwUhjC9KbW2UYQVP8" target="_blank" class="text-white text-decoration-none">
-                        Calle Barahona #163, San Carlos, Santo Domingo, R.D.
-                    </a>
-                </p>
-                <p class="mb-2">
-                    <i class="bi bi-telephone-fill me-2 text-info"></i>
-                    <a href="tel:8295965912" class="text-white text-decoration-none">829-596-5912</a>
-                </p>
-                <p class="mb-2">
-                    <i class="bi bi-clock-fill me-2 text-info"></i>
-                    <span>Lun-Vie: 9:00-5:30 | Sáb: 9:00-1:00</span>
-                </p>
             </div>
         </div>
         
-        <!-- Línea divisoria -->
-        <hr class="my-4 bg-secondary">
-        
-        <!-- Copyright y términos legales -->
-        <div class="row">
-            <div class="col-md-6 text-center text-md-start">
-                <p class="mb-0">&copy; 2025 Todos los derechos reservados. RSE</p>
+        <!-- Separador Premium -->
+        <div class="footer-separator">
+            <div class="separator-line"></div>
+            <div class="separator-diamond">
+                <i class="bi bi-diamond-fill"></i>
             </div>
-            <div class="col-md-6 text-center text-md-end">
-                <a href="politica-privacidad.html" class="text-white me-3">Política de Privacidad</a>
-                <a href="terminos-condiciones.html" class="text-white">Términos y Condiciones</a>
+            <div class="separator-line"></div>
+        </div>
+        
+        <!-- Copyright Premium -->
+        <div class="footer-bottom">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <div class="copyright-info">
+                        <div class="copyright-main">
+                            &copy; 2025 <strong>Rafael Soluciones Electrónica</strong>
+                        </div>
+                        <div class="copyright-sub">
+                            Todos los derechos reservados | 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <div class="legal-links">
+                        <a href="politica-privacidad.html" class="legal-link">
+                            <i class="bi bi-shield-check me-1"></i>
+                            Privacidad
+                        </a>
+                        <a href="terminos-condiciones.html" class="legal-link">
+                            <i class="bi bi-file-text me-1"></i>
+                            Términos
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </footer>
 
 <!-- Chat de WhatsApp Flotante  -->
-        <a href="https://wa.me/18297470675?text=Hola%20Rafael%2C%20me%20gustaría%20recibir%20información%20profesional%20sobre%20el%20servicio%20de%20reparación%20de%20tarjetas%20electrónicas%20inverter.%20Gracias." 
+       <!-- <a href="https://wa.me/18297470675?text=Hola%20Rafael%2C%20me%20gustaría%20recibir%20información%20profesional%20sobre%20el%20servicio%20de%20reparación%20de%20tarjetas%20electrónicas%20inverter.%20Gracias." 
            class="btn btn-success rounded-circle shadow-lg position-fixed animate__animated animate__heartBeat animate__infinite" 
            style="bottom:30px; right:30px; z-index: 1050;" 
            target="_blank" 
            aria-label="WhatsApp">
             <i class="bi bi-whatsapp" style="font-size: 2rem;"></i>
-        </a>
+        </a>    -->
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -526,13 +1316,122 @@
 <!-- AOS JS debe ir antes de la inicialización -->
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
-<!-- boton back to top -->
-<button id="backToTop" class="btn btn-info rounded-circle shadow position-fixed" 
-    style="bottom: 90px; left: 30px; z-index: 1050; display: none;">
-    <i class="bi bi-arrow-up"></i>
-</button>
+<!-- Botón Back to Top ULTRA SIMPLE -->
+<div style="position: fixed; bottom: 30px; right: 30px; z-index: 9999;">
+    <button id="backToTop" class="btn btn-primary" 
+        style="width: 60px; height: 60px; border-radius: 50%; font-size: 1.5rem; font-weight: bold; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"
+        title="Volver al inicio">
+        ↑
+    </button>
+</div>
 
 <!-- Script personalizado para la página recursos -->
 <script src="JS/recursos.js"></script>
+
+<!-- JavaScript para actualizar estado del negocio dinámicamente -->
+<script>
+function updateBusinessStatusRecursos() {
+    // Obtener hora actual en República Dominicana (GMT-4)
+    const now = new Date();
+    const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+    const dominicanTime = new Date(utc + (-4 * 3600000)); // GMT-4
+    
+    const currentDay = dominicanTime.getDay(); // 0 = Domingo, 1 = Lunes, ... 6 = Sábado
+    const currentHour = dominicanTime.getHours();
+    const currentMinute = dominicanTime.getMinutes();
+    const currentTime = currentHour + (currentMinute / 60);
+    
+    // Horarios de trabajo
+    const weekdayOpen = 9;    // 9:00 AM
+    const weekdayClose = 17.5; // 5:30 PM
+    const saturdayOpen = 9;    // 9:00 AM
+    const saturdayClose = 13;  // 1:00 PM
+    
+    const statusBadge = document.getElementById('business-status-recursos');
+    const statusIcon = document.getElementById('status-icon-recursos');
+    const statusText = document.getElementById('status-text-recursos');
+    
+    if (!statusBadge || !statusIcon || !statusText) return;
+    
+    let isOpen = false;
+    let status = 'closed';
+    let message = 'Cerrado';
+    let iconClass = 'bi-x-circle-fill';
+    
+    // Verificar si es día laborable (Lunes a Viernes)
+    if (currentDay >= 1 && currentDay <= 5) {
+        if (currentTime >= weekdayOpen && currentTime < weekdayClose) {
+            isOpen = true;
+            status = 'open';
+            message = 'Abierto Ahora';
+            iconClass = 'bi-check-circle-fill';
+        } else if (currentTime >= (weekdayOpen - 1) && currentTime < weekdayOpen) {
+            // Abre en 1 hora
+            status = 'opening-soon';
+            message = 'Abre en 1 hora';
+            iconClass = 'bi-clock-fill';
+        } else if (currentTime >= (weekdayClose - 0.5) && currentTime < weekdayClose) {
+            // Cierra en 30 min
+            isOpen = true;
+            status = 'open';
+            message = 'Cierra en 30 min';
+            iconClass = 'bi-exclamation-circle-fill';
+        }
+    }
+    // Verificar si es sábado
+    else if (currentDay === 6) {
+        if (currentTime >= saturdayOpen && currentTime < saturdayClose) {
+            isOpen = true;
+            status = 'open';
+            message = 'Abierto Ahora';
+            iconClass = 'bi-check-circle-fill';
+        } else if (currentTime >= (saturdayOpen - 1) && currentTime < saturdayOpen) {
+            // Abre en 1 hora
+            status = 'opening-soon';
+            message = 'Abre en 1 hora';
+            iconClass = 'bi-clock-fill';
+        } else if (currentTime >= (saturdayClose - 0.5) && currentTime < saturdayClose) {
+            // Cierra en 30 min
+            isOpen = true;
+            status = 'open';
+            message = 'Cierra en 30 min';
+            iconClass = 'bi-exclamation-circle-fill';
+        }
+    }
+    // Domingo - cerrado todo el día
+    else {
+        status = 'closed';
+        message = 'Cerrado - Domingo';
+        iconClass = 'bi-x-circle-fill';
+    }
+    
+    // Actualizar clases CSS
+    statusBadge.className = `status-badge ${status}`;
+    
+    // Actualizar icono
+    statusIcon.className = `bi ${iconClass}`;
+    
+    // Actualizar texto
+    statusText.textContent = message;
+    
+    // Console log para debug (opcional)
+    console.log(`Business Status Updated (Recursos): ${message} at ${dominicanTime.toLocaleTimeString()}`);
+}
+
+// Ejecutar al cargar la página
+document.addEventListener('DOMContentLoaded', function() {
+    updateBusinessStatusRecursos();
+    
+    // Actualizar cada minuto
+    setInterval(updateBusinessStatusRecursos, 60000);
+});
+
+// También ejecutar inmediatamente si el DOM ya está cargado
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateBusinessStatusRecursos);
+} else {
+    updateBusinessStatusRecursos();
+}
+</script>
 </body>
 </html>

@@ -18,10 +18,11 @@ $instagram = "https://www.instagram.com/rafael_soluciones_electronica";
 <body>
     <?php include 'components/navbar.php'; ?>
     <?php include 'components/header.php'; ?>
-    <?php include 'components/services.php'; ?>
+    <?php include 'components/services2.php'; ?>
     <?php include 'components/service-modals.php'; ?>
     <?php include 'components/process.php'; ?>
     <?php include 'components/cards-carousel.php'; ?>
+    <?php include 'components/gallery.php'; ?>
     <?php include 'components/about.php'; ?>
     <?php include 'components/about-modal.php'; ?>
     <?php include 'components/values.php'; ?>

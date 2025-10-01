@@ -2,197 +2,1339 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Calculadora de BTU</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="icon" href="img/calculadora.jpeg" type="image/jpg">
-  <!-- Google Fonts para fuentes elegantes -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Lora:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
-  <!-- Bootstrap Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-  <!-- Animate.css para animaciones -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-  <style>
-    body {
-      background: linear-gradient(135deg, #232526 0%, #414345 100%);
-      font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
-      color: #f8f9fa;
-    }
-    .card {
-      background-color: #fff;
-      border-radius: 18px;
-      box-shadow: 0 6px 24px rgba(0,0,0,0.13);
-      border: none;
-    }
-    .card-title {
-      font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
-      font-size: 2rem;
-      font-weight: 700;
-      color: #1985a1;
-      letter-spacing: 1px;
-      margin-bottom: 0.5rem;
-      text-shadow: 0 2px 8px #b2c7e6;
-    }
-    .form-label {
-      font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
-      font-weight: 500;
-      color: #1985a1;
-      font-size: 1.1rem;
-    }
-    .form-control, .form-select {
-      font-family: 'Lora', 'Georgia', serif;
-      font-size: 1.08rem;
-      border-radius: 10px;
-      border: 1px solid #1985a1;
-    }
-    .btn-secondary {
-      font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
-      font-weight: 700;
-      font-size: 1.1rem;
-      border-radius: 50px;
-      padding: 10px 32px;
-      background: linear-gradient(90deg, #1985a1 0%, #6dd5ed 100%);
-      border: none;
-      color: #fff;
-      box-shadow: 0 2px 8px #b2c7e6;
-      transition: background 0.2s;
-    }
-    .btn-secondary:hover {
-      background: linear-gradient(90deg, #0d6efd 0%, #6dd5ed 100%);
-      color: #fff;
-    }
-    #resultadoBTU {
-      font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #198754;
-      margin-top: 1.5rem;
-      text-shadow: 0 2px 8px #b2c7e6;
-    }
-    .info-text {
-      font-family: 'Lora', 'Georgia', serif;
-      font-size: 1.15rem;
-      color: #222;
-      background: #e3f2fd;
-      border-radius: 12px;
-      padding: 12px 18px;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 2px 8px #b2c7e6;
-    }
-    .card-header-custom {
-      background: linear-gradient(90deg, #1985a1 0%, #6dd5ed 100%);
-      border-top-left-radius: 18px;
-      border-top-right-radius: 18px;
-      padding: 1.5rem 1rem;
-      text-align: center;
-    }
-    .card-header-custom i {
-      font-size: 2.5rem;
-      color: #fff;
-      margin-bottom: 0.5rem;
-      animation: rotateGear 2.5s linear infinite;
-    }
-    @keyframes rotateGear {
-      0% { transform: rotate(0deg);}
-      100% { transform: rotate(360deg);}
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calculadora BTU Premium - Rafael Soluciones Electrónica</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="img/calculadora.jpeg" type="image/jpg">
+    <!-- Google Fonts Premium -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        /* Variables CSS Premium */
+        :root {
+            --primary-blue: #007bff;
+            --secondary-teal: #17a2b8;
+            --success-green: #28a745;
+            --light-green: #20c997;
+            --warning-yellow: #ffc107;
+            --dark-blue: #0056b3;
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --text-light: #718096;
+            --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.07);
+            --shadow-medium: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --shadow-heavy: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--text-primary);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            min-height: 100vh;
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Particles Background */
+        .particles-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+            background-size: 100px 100px, 80px 80px;
+            animation: particlesMove 20s linear infinite;
+        }
+
+        @keyframes particlesMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-100px, -100px); }
+        }
+
+        /* Container Premium */
+        .calculator-container {
+            position: relative;
+            z-index: 10;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        /* Main Card Ultra Premium */
+        .calculator-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(30px);
+            border-radius: 32px;
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.15),
+                0 0 0 1px rgba(255, 255, 255, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            border: none;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .calculator-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--secondary-teal), var(--success-green), var(--light-green));
+            animation: topBorderFlow 5s ease infinite;
+        }
+
+        @keyframes topBorderFlow {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        /* Header Premium */
+        .calculator-header {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-teal) 100%);
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .calculator-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+            animation: headerGlow 4s ease-in-out infinite;
+        }
+
+        @keyframes headerGlow {
+            0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.5; }
+            50% { transform: scale(1.1) rotate(2deg); opacity: 0.8; }
+        }
+
+        .header-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 2;
+            animation: iconFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes iconFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .header-icon i {
+            font-size: 2.5rem;
+            color: white;
+            animation: iconSpin 4s linear infinite;
+        }
+
+        @keyframes iconSpin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .calculator-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .calculator-subtitle {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 0.5rem;
+            margin-top: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .progress-bar-custom {
+            background: linear-gradient(90deg, var(--success-green), var(--light-green));
+            height: 8px;
+            border-radius: 16px;
+            transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress-bar-custom::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            animation: progressShine 2s ease infinite;
+        }
+
+        @keyframes progressShine {
+            0% { left: -100%; }
+            50% { left: 100%; }
+            100% { left: -100%; }
+        }
+
+        /* Form Sections Premium */
+        .calculator-body {
+            padding: 3rem 2rem;
+        }
+
+        .form-section {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(15px);
+            border-radius: 24px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: var(--shadow-medium);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .form-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--secondary-teal));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .form-section:hover::before {
+            transform: scaleX(1);
+        }
+
+        .form-section:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .section-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-teal));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+            box-shadow: var(--shadow-light);
+        }
+
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        /* Form Controls Premium */
+        .form-group-premium {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .form-label-premium {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .form-control-premium,
+        .form-select-premium {
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid rgba(0, 123, 255, 0.2);
+            border-radius: 12px;
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-control-premium:focus,
+        .form-select-premium:focus {
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.15);
+            background: rgba(255, 255, 255, 1);
+            outline: none;
+        }
+
+        .form-control-premium::placeholder {
+            color: var(--text-light);
+            font-weight: 400;
+        }
+
+        /* Range Slider Premium */
+        .range-container {
+            position: relative;
+            margin: 1rem 0;
+        }
+
+        .range-input {
+            width: 100%;
+            height: 6px;
+            border-radius: 5px;
+            background: linear-gradient(90deg, #e2e8f0, #cbd5e0);
+            outline: none;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        .range-input::-webkit-slider-thumb {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-teal));
+            cursor: pointer;
+            border: 2px solid white;
+            box-shadow: var(--shadow-light);
+        }
+
+        .range-input::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-teal));
+            cursor: pointer;
+            border: 2px solid white;
+            box-shadow: var(--shadow-light);
+        }
+
+        .range-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* Switches Premium */
+        .switch-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .switch-container:hover {
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #ccc;
+            transition: 0.3s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background: white;
+            transition: 0.3s;
+            border-radius: 50%;
+            box-shadow: var(--shadow-light);
+        }
+
+        input:checked + .slider {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-teal));
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        /* Calculate Button Premium */
+        .calculate-section {
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .btn-calculate {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-teal) 100%);
+            border: none;
+            border-radius: 50px;
+            padding: 1rem 3rem;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-calculate::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn-calculate:hover::before {
+            left: 100%;
+        }
+
+        .btn-calculate:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(0, 123, 255, 0.4);
+        }
+
+        .btn-calculate:active {
+            transform: translateY(-1px) scale(1.02);
+        }
+
+        /* Results Section Premium */
+        .results-container {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 2.5rem;
+            margin-top: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: var(--shadow-heavy);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transform: scale(0.9);
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .results-container.show {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .results-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--success-green), var(--light-green));
+            animation: resultsBorderGlow 2s ease infinite;
+        }
+
+        @keyframes resultsBorderGlow {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        .result-main {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--success-green), var(--light-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .result-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .result-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .detail-card {
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 16px;
+            padding: 1.5rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .detail-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .detail-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-teal));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin: 0 auto 1rem;
+            font-size: 1.1rem;
+        }
+
+        .detail-value {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .detail-label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        /* Equipment Recommendations */
+        .equipment-recommendations {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px dashed rgba(0, 123, 255, 0.2);
+        }
+
+        .equipment-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .equipment-card {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .equipment-card.recommended {
+            border-color: var(--success-green);
+            background: rgba(40, 167, 69, 0.1);
+        }
+
+        .equipment-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .equipment-btu {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .equipment-details {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .recommended-badge {
+            background: linear-gradient(135deg, var(--success-green), var(--light-green));
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+
+        /* Contact CTA */
+        .contact-cta {
+            background: linear-gradient(135deg, rgba(0, 123, 255, 0.1), rgba(23, 162, 184, 0.1));
+            border-radius: 20px;
+            padding: 2rem;
+            margin-top: 2rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .cta-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .cta-subtitle {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-contact {
+            background: linear-gradient(135deg, var(--success-green), var(--light-green));
+            border: none;
+            border-radius: 50px;
+            padding: 0.75rem 1.5rem;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-contact:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(40, 167, 69, 0.3);
+            color: white;
+            text-decoration: none;
+        }
+
+        .btn-contact.whatsapp {
+            background: #25D366;
+        }
+
+        .btn-contact.phone {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-teal));
+        }
+
+        /* Loading Animation */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .loading-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid #e2e8f0;
+            border-top: 4px solid var(--primary-blue);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .calculator-container {
+                padding: 1rem 0.5rem;
+            }
+
+            .calculator-header {
+                padding: 2rem 1rem;
+            }
+
+            .calculator-body {
+                padding: 2rem 1rem;
+            }
+
+            .form-section {
+                padding: 1.5rem;
+            }
+
+            .btn-calculate {
+                padding: 0.75rem 2rem;
+                font-size: 1rem;
+            }
+
+            .result-main {
+                font-size: 2.5rem;
+            }
+
+            .contact-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn-contact {
+                width: 100%;
+                max-width: 250px;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .calculator-title {
+                font-size: 1.5rem;
+            }
+
+            .calculator-subtitle {
+                font-size: 1rem;
+            }
+
+            .result-main {
+                font-size: 2rem;
+            }
+
+            .equipment-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
-<div class="container py-5">
-  <div class="card shadow rounded-4 animate__animated animate__fadeIn">
-    <div class="card-header-custom">
-      <i class="bi bi-gear-fill"></i>
-      <h3 class="card-title mb-0">Calculadora de Capacidad de tu Aire Ideal</h3>
-      <div class="info-text mt-3 mx-auto">
-        Ingresa los datos de tu habitación y obtén la capacidad recomendada en <span class="fw-bold text-primary">BTU</span> para tu aire acondicionado. <br>
-        <span class="text-success">¡Optimiza tu confort y consumo energético!</span>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="text-center mb-3">
-        <img src="img/vector_icono_de_aire_acondicionado.jpeg " alt="vector" class="img-fluid animate__animated animate__zoomIn" style="max-width: 120px;">
-      </div>
-      <form id="btuForm" class="animate__animated animate__fadeInUp">
-        <!-- Dimensiones de la habitación -->
-        <div class="row mb-3">
-          <div class="col-md-6 mb-3 mb-md-0">
-            <label for="ancho" class="form-label"><i class="bi bi-arrows-angle-expand"></i> Ancho de la habitación (m):</label>
-            <input type="number" class="form-control" id="ancho" required step="0.1" min="1" placeholder="Ej: 4.5">
-          </div>
-          <div class="col-md-6">
-            <label for="largo" class="form-label"><i class="bi bi-arrows-angle-expand"></i> Largo de la habitación (m):</label>
-            <input type="number" class="form-control" id="largo" required step="0.1" min="1" placeholder="Ej: 5.0">
-          </div>
-        </div>
-
-        <!-- Factores adicionales -->
-        <div class="row mb-3">
-          <div class="col-md-6 mb-3 mb-md-0">
-            <label for="personas" class="form-label"><i class="bi bi-person"></i> Cantidad de personas:</label>
-            <input type="number" class="form-control" id="personas" required step="1" min="1" placeholder="Ej: 2">
-          </div>
-          <div class="col-md-6">
-            <label for="exposicion" class="form-label"><i class="bi bi-brightness-high"></i> Exposición al sol:</label>
-            <select class="form-select" id="exposicion" required>
-              <option value="1">Baja</option>
-              <option value="1.2">Moderada</option>
-              <option value="1.5">Alta</option>
-            </select>
-          </div>
-        </div>
-
-        <!-- Botón de cálculo -->
-        <div class="text-center">
-          <button type="submit" class="btn btn-secondary px-5"><i class="bi bi-calculator"></i> Calcular</button>
-        </div>
-      </form>
-
-      <!-- Resultado -->
-      <div class="mt-4 text-center">
-        <h4 id="resultadoBTU" class="text-success"></h4>
-      </div>
-    </div>
-  </div>
-</div>
-
-<script>
-  document.getElementById("btuForm").addEventListener("submit", function(e) {
-    e.preventDefault();
+    <!-- Particles Background -->
+    <div class="particles-bg"></div>
     
-    // Obtener valores del formulario
-    const ancho = parseFloat(document.getElementById("ancho").value);
-    const largo = parseFloat(document.getElementById("largo").value);
-    const personas = parseInt(document.getElementById("personas").value);
-    const exposicion = parseFloat(document.getElementById("exposicion").value);
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
 
-    // Validar valores
-    if (ancho <= 0 || largo <= 0 || personas <= 0) {
-      alert("Por favor, ingresa valores válidos.");
-      return;
-    }
+    <div class="calculator-container">
+        <div class="calculator-card" data-aos="fade-up" data-aos-duration="1000">
+            
+            <!-- Header Premium -->
+            <div class="calculator-header">
+                <div class="header-icon">
+                    <i class="fas fa-snowflake"></i>
+                </div>
+                <h1 class="calculator-title">Calculadora BTU</h1>
+                <p class="calculator-subtitle">
+                    Descubre la capacidad exacta que necesita tu espacio con nuestra herramienta avanzada. 
+                    Optimiza tu confort y eficiencia energética con cálculos precisos.
+                </p>
+                <div class="progress-container">
+                    <div class="progress-bar-custom" id="progressBar" style="width: 0%"></div>
+                </div>
+            </div>
 
-    // Calcular área y BTU
-    const area = ancho * largo;
-    const btuBase = area * 600; // Factor base: 600 BTU por m²
-    const btuPersonas = personas * 500; // 500 BTU adicionales por persona
-    const btuTotal = Math.round((btuBase + btuPersonas) * exposicion);
+            <!-- Form Body -->
+            <div class="calculator-body">
+                <form id="btuCalculatorForm">
+                    
+                    <!-- Dimensiones Section -->
+                    <div class="form-section" data-aos="fade-up" data-aos-delay="200">
+                        <div class="section-header">
+                            <div class="section-icon">
+                                <i class="fas fa-ruler-combined"></i>
+                            </div>
+                            <h3 class="section-title">Dimensiones del Espacio</h3>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group-premium">
+                                    <label class="form-label-premium">
+                                        <i class="fas fa-arrows-alt-h text-primary"></i>
+                                        Ancho (metros)
+                                    </label>
+                                    <input type="number" 
+                                           class="form-control-premium" 
+                                           id="ancho" 
+                                           placeholder="Ej: 4.5" 
+                                           step="0.1" 
+                                           min="1" 
+                                           max="20" 
+                                           required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group-premium">
+                                    <label class="form-label-premium">
+                                        <i class="fas fa-arrows-alt-v text-primary"></i>
+                                        Largo (metros)
+                                    </label>
+                                    <input type="number" 
+                                           class="form-control-premium" 
+                                           id="largo" 
+                                           placeholder="Ej: 5.0" 
+                                           step="0.1" 
+                                           min="1" 
+                                           max="20" 
+                                           required>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group-premium">
+                            <label class="form-label-premium">
+                                <i class="fas fa-arrows-alt text-primary"></i>
+                                Altura del techo (metros)
+                            </label>
+                            <div class="range-container">
+                                <input type="range" 
+                                       class="range-input" 
+                                       id="altura" 
+                                       min="2.4" 
+                                       max="4.0" 
+                                       step="0.1" 
+                                       value="2.7">
+                                <div class="range-labels">
+                                    <span>2.4m</span>
+                                    <span id="alturaValue">2.7m</span>
+                                    <span>4.0m</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-    // Lista de capacidades estándar en BTU
-    const capacidades = [9000, 12000, 18000, 24000, 36000, 48000, 56000, 80000, 96000];
+                    <!-- Ocupación Section -->
+                    <div class="form-section" data-aos="fade-up" data-aos-delay="400">
+                        <div class="section-header">
+                            <div class="section-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3 class="section-title">Ocupación y Uso</h3>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group-premium">
+                                    <label class="form-label-premium">
+                                        <i class="fas fa-user text-primary"></i>
+                                        Número de personas
+                                    </label>
+                                    <select class="form-select-premium" id="personas" required>
+                                        <option value="1">1 persona</option>
+                                        <option value="2" selected>2 personas</option>
+                                        <option value="3">3 personas</option>
+                                        <option value="4">4 personas</option>
+                                        <option value="5">5 personas</option>
+                                        <option value="6">6+ personas</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group-premium">
+                                    <label class="form-label-premium">
+                                        <i class="fas fa-home text-primary"></i>
+                                        Tipo de habitación
+                                    </label>
+                                    <select class="form-select-premium" id="tipoHabitacion" required>
+                                        <option value="1">Dormitorio</option>
+                                        <option value="1.1">Sala de estar</option>
+                                        <option value="1.2">Cocina</option>
+                                        <option value="1.3">Oficina</option>
+                                        <option value="1.1">Comedor</option>
+                                        <option value="1.4">Sala de servidores</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-    // Función para encontrar el valor más cercano
-    const capacidadRecomendada = capacidades.reduce((prev, curr) => {
-      return Math.abs(curr - btuTotal) < Math.abs(prev - btuTotal) ? curr : prev;
-    });
+                    <!-- Condiciones Ambientales Section -->
+                    <div class="form-section" data-aos="fade-up" data-aos-delay="600">
+                        <div class="section-header">
+                            <div class="section-icon">
+                                <i class="fas fa-sun"></i>
+                            </div>
+                            <h3 class="section-title">Condiciones Ambientales</h3>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group-premium">
+                                    <label class="form-label-premium">
+                                        <i class="fas fa-eye text-primary"></i>
+                                        Exposición solar
+                                    </label>
+                                    <select class="form-select-premium" id="exposicion" required>
+                                        <option value="0.9">Muy poca (norte/sombra)</option>
+                                        <option value="1">Poca (mañana)</option>
+                                        <option value="1.2" selected>Moderada (este/oeste)</option>
+                                        <option value="1.4">Alta (sur/tarde)</option>
+                                        <option value="1.6">Muy alta (todo el día)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group-premium">
+                                    <label class="form-label-premium">
+                                        <i class="fas fa-thermometer-half text-primary"></i>
+                                        Aislamiento térmico
+                                    </label>
+                                    <select class="form-select-premium" id="aislamiento" required>
+                                        <option value="1.3">Malo (casa antigua)</option>
+                                        <option value="1.1">Regular</option>
+                                        <option value="1" selected>Bueno (construcción moderna)</option>
+                                        <option value="0.9">Excelente (casa nueva)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
 
-    // Mostrar resultado redondeado
-    document.getElementById("resultadoBTU").innerHTML = 
-      `<span class="text-primary"><i class="bi bi-check-circle-fill"></i> Capacidad recomendada:</span> <span class="fw-bold">${capacidadRecomendada.toLocaleString()} BTU</span>`;
-  });
-</script>
+                        <!-- Switches Premium -->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="switch-container">
+                                    <div>
+                                        <div class="form-label-premium mb-1">
+                                            <i class="fas fa-tv text-primary"></i>
+                                            Equipos electrónicos
+                                        </div>
+                                        <small class="text-muted">TV, computadoras, etc.</small>
+                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox" id="equipos">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="switch-container">
+                                    <div>
+                                        <div class="form-label-premium mb-1">
+                                            <i class="fas fa-fire text-primary"></i>
+                                            Fuentes de calor
+                                        </div>
+                                        <small class="text-muted">Cocina, iluminación intensa</small>
+                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox" id="calor">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
+                    <!-- Calculate Button -->
+                    <div class="calculate-section" data-aos="fade-up" data-aos-delay="800">
+                        <button type="submit" class="btn-calculate">
+                            <i class="fas fa-calculator me-2"></i>
+                            Calcular BTU Requeridos
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Results Container -->
+                <div class="results-container" id="resultsContainer">
+                    <div class="result-main" id="resultMain">0 BTU</div>
+                    <div class="result-subtitle">Capacidad recomendada para tu espacio</div>
+                    
+                    <div class="result-details">
+                        <div class="detail-card">
+                            <div class="detail-icon">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <div class="detail-value" id="areaTotal">0 m²</div>
+                            <div class="detail-label">Área total</div>
+                        </div>
+                        <div class="detail-card">
+                            <div class="detail-icon">
+                                <i class="fas fa-cube"></i>
+                            </div>
+                            <div class="detail-value" id="volumenTotal">0 m³</div>
+                            <div class="detail-label">Volumen total</div>
+                        </div>
+                        <div class="detail-card">
+                            <div class="detail-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div class="detail-value" id="consumoEstimado">0 kW</div>
+                            <div class="detail-label">Consumo estimado</div>
+                        </div>
+                        <div class="detail-card">
+                            <div class="detail-icon">
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                            <div class="detail-value" id="costoMensual">$0</div>
+                            <div class="detail-label">Costo mensual aprox.</div>
+                        </div>
+                    </div>
+
+                    <!-- Equipment Recommendations -->
+                    <div class="equipment-recommendations">
+                        <h4 class="equipment-title">Equipos Recomendados</h4>
+                        <div class="equipment-grid" id="equipmentGrid">
+                            <!-- Equipment cards will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Contact CTA -->
+                    <div class="contact-cta">
+                        <h4 class="cta-title">¿Necesitas asesoría profesional?</h4>
+                        <p class="cta-subtitle">
+                            Nuestros técnicos especializados pueden ayudarte a elegir e instalar 
+                            el equipo perfecto para tu espacio
+                        </p>
+                        <div class="contact-buttons">
+                            <a href="https://wa.me/18297470675" class="btn-contact whatsapp" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                                WhatsApp
+                            </a>
+                            <a href="tel:8295965912" class="btn-contact phone">
+                                <i class="fas fa-phone"></i>
+                                Llamar Ahora
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Progress tracking
+        let currentProgress = 0;
+        const totalSteps = 8; // Number of form inputs
+
+        function updateProgress() {
+            const inputs = document.querySelectorAll('input[required], select[required]');
+            let completedSteps = 0;
+            
+            inputs.forEach(input => {
+                if (input.value && input.value !== '') {
+                    completedSteps++;
+                }
+            });
+            
+            const progress = (completedSteps / inputs.length) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+        }
+
+        // Height slider update
+        document.getElementById('altura').addEventListener('input', function() {
+            document.getElementById('alturaValue').textContent = this.value + 'm';
+            updateProgress();
+        });
+
+        // Update progress on all form changes
+        document.querySelectorAll('input, select').forEach(element => {
+            element.addEventListener('change', updateProgress);
+            element.addEventListener('input', updateProgress);
+        });
+
+        // Equipment database
+        const equipmentDatabase = [
+            { btu: 9000, tons: 0.75, area: "15-25 m²", consumption: 0.8, price: 350 },
+            { btu: 12000, tons: 1, area: "20-35 m²", consumption: 1.1, price: 450 },
+            { btu: 18000, tons: 1.5, area: "30-50 m²", consumption: 1.6, price: 650 },
+            { btu: 24000, tons: 2, area: "45-65 m²", consumption: 2.2, price: 850 },
+            { btu: 36000, tons: 3, area: "65-95 m²", consumption: 3.2, price: 1200 },
+            { btu: 48000, tons: 4, area: "85-120 m²", consumption: 4.3, price: 1600 },
+            { btu: 60000, tons: 5, area: "110-150 m²", consumption: 5.4, price: 2000 }
+        ];
+
+        // Form submission
+        document.getElementById('btuCalculatorForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            calculateBTU();
+        });
+
+        function showLoading() {
+            document.getElementById('loadingOverlay').classList.add('show');
+        }
+
+        function hideLoading() {
+            document.getElementById('loadingOverlay').classList.remove('show');
+        }
+
+        function calculateBTU() {
+            showLoading();
+
+            // Get form values
+            const ancho = parseFloat(document.getElementById('ancho').value);
+            const largo = parseFloat(document.getElementById('largo').value);
+            const altura = parseFloat(document.getElementById('altura').value);
+            const personas = parseInt(document.getElementById('personas').value);
+            const tipoHabitacion = parseFloat(document.getElementById('tipoHabitacion').value);
+            const exposicion = parseFloat(document.getElementById('exposicion').value);
+            const aislamiento = parseFloat(document.getElementById('aislamiento').value);
+            const equipos = document.getElementById('equipos').checked;
+            const calor = document.getElementById('calor').checked;
+
+            // Validate inputs
+            if (!ancho || !largo || ancho <= 0 || largo <= 0) {
+                alert('Por favor, ingresa dimensiones válidas');
+                hideLoading();
+                return;
+            }
+
+            setTimeout(() => {
+                // Calculate area and volume
+                const area = ancho * largo;
+                const volumen = area * altura;
+
+                // Base BTU calculation (more sophisticated)
+                let btuBase = area * 650; // Base factor per m²
+                
+                // Height adjustment
+                if (altura > 3) {
+                    btuBase *= 1.1;
+                } else if (altura < 2.5) {
+                    btuBase *= 0.95;
+                }
+
+                // People heat load
+                const btuPersonas = personas * 400;
+
+                // Room type adjustment
+                btuBase *= tipoHabitacion;
+
+                // Environmental factors
+                btuBase *= exposicion;
+                btuBase *= aislamiento;
+
+                // Additional equipment
+                if (equipos) btuBase += 1000;
+                if (calor) btuBase += 1500;
+
+                // Calculate final BTU
+                const btuTotal = Math.round(btuBase + btuPersonas);
+
+                // Find recommended equipment
+                const recommendedEquipment = equipmentDatabase.find(eq => eq.btu >= btuTotal) || 
+                                           equipmentDatabase[equipmentDatabase.length - 1];
+
+                // Calculate consumption and cost (Dominican Republic rates)
+                const consumoKW = recommendedEquipment.consumption;
+                const costoMensual = Math.round(consumoKW * 24 * 30 * 8.5 / 100) * 100; // RD$ per month
+
+                // Update results
+                updateResults(btuTotal, area, volumen, consumoKW, costoMensual, recommendedEquipment);
+                
+                hideLoading();
+            }, 1500); // Simulate calculation time
+        }
+
+        function updateResults(btuTotal, area, volumen, consumo, costo, recommended) {
+            // Update main result
+            document.getElementById('resultMain').textContent = btuTotal.toLocaleString() + ' BTU';
+            
+            // Update details
+            document.getElementById('areaTotal').textContent = area.toFixed(1) + ' m²';
+            document.getElementById('volumenTotal').textContent = volumen.toFixed(1) + ' m³';
+            document.getElementById('consumoEstimado').textContent = consumo.toFixed(1) + ' kW';
+            document.getElementById('costoMensual').textContent = 'RD$' + costo.toLocaleString();
+
+            // Generate equipment recommendations
+            generateEquipmentRecommendations(btuTotal, recommended);
+
+            // Show results with animation
+            document.getElementById('resultsContainer').classList.add('show');
+            
+            // Scroll to results
+            document.getElementById('resultsContainer').scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'center' 
+            });
+        }
+
+        function generateEquipmentRecommendations(targetBTU, recommended) {
+            const grid = document.getElementById('equipmentGrid');
+            grid.innerHTML = '';
+
+            // Filter relevant equipment (within range)
+            const relevantEquipment = equipmentDatabase.filter(eq => 
+                eq.btu >= targetBTU * 0.8 && eq.btu <= targetBTU * 1.3
+            );
+
+            // If no equipment in range, show closest ones
+            if (relevantEquipment.length === 0) {
+                const closest = equipmentDatabase.reduce((prev, curr) => 
+                    Math.abs(curr.btu - targetBTU) < Math.abs(prev.btu - targetBTU) ? curr : prev
+                );
+                relevantEquipment.push(closest);
+            }
+
+            relevantEquipment.forEach(equipment => {
+                const isRecommended = equipment.btu === recommended.btu;
+                const card = document.createElement('div');
+                card.className = `equipment-card ${isRecommended ? 'recommended' : ''}`;
+                
+                card.innerHTML = `
+                    <div class="equipment-btu">${equipment.btu.toLocaleString()} BTU</div>
+                    <div class="equipment-details">
+                        <div><strong>${equipment.tons} Ton</strong></div>
+                        <div>Área: ${equipment.area}</div>
+                        <div>Consumo: ${equipment.consumption} kW</div>
+                        <div>Desde: RD$${equipment.price.toLocaleString()}</div>
+                    </div>
+                    ${isRecommended ? '<div class="recommended-badge">Recomendado</div>' : ''}
+                `;
+                
+                grid.appendChild(card);
+            });
+        }
+
+        // Initialize progress
+        updateProgress();
+
+        // Add some interactive effects
+        document.querySelectorAll('.form-control-premium, .form-select-premium').forEach(element => {
+            element.addEventListener('focus', function() {
+                this.parentElement.style.transform = 'translateY(-2px)';
+            });
+            
+            element.addEventListener('blur', function() {
+                this.parentElement.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Animate form sections on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.transform = 'translateY(0)';
+                    entry.target.style.opacity = '1';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.form-section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
 </body>
 </html>
