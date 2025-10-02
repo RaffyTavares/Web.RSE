@@ -3,104 +3,930 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Política de Privacidad</title>
+    <title>Política de Privacidad - Rafael Soluciones Electrónica</title>
+    <meta name="description" content="Política de privacidad de Rafael Soluciones Electrónica. Conoce cómo protegemos y utilizamos tu información personal.">
+    
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="CSS/politica-terminos.css">
     <link rel="icon" type="image/png" href="img/logo1.png">
-
-    <!-- Fuente elegante de Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
-
+    
+    <!-- Fuentes elegantes de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
+        :root {
+            --primary-color: #0dcaf0;
+            --secondary-color: #6c757d;
+            --accent-color: #495057;
+            --text-color: #333;
+            --bg-light: #f8f9fa;
+            --success-color: #28a745;
+            --warning-color: #ffc107;
+            --privacy-color: #6f42c1;
+        }
+
         body {
             font-family: 'Montserrat', Arial, sans-serif;
-            background: #f9f9f9;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            line-height: 1.7;
+            color: var(--text-color);
+            min-height: 100vh;
         }
-        h1, h2 {
+
+        .main-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            margin: 2rem auto;
+            overflow: hidden;
+            max-width: 1200px;
+        }
+
+        /* ===== HEADER ESPECIALIZADO PARA PRIVACIDAD ===== */
+        .header-section {
+            background: linear-gradient(135deg, #6f42c1 0%, #5a2d91 50%, var(--primary-color) 100%);
+            color: white;
+            padding: 3rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="privacy-pattern" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="0.8" fill="rgba(255,255,255,0.08)"/><circle cx="40" cy="70" r="1.2" fill="rgba(255,255,255,0.06)"/><circle cx="90" cy="90" r="0.9" fill="rgba(255,255,255,0.05)"/><circle cx="10" cy="50" r="0.7" fill="rgba(255,255,255,0.07)"/></pattern></defs><rect width="100" height="100" fill="url(%23privacy-pattern)"/></svg>');
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(1deg); }
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .company-info {
+            background: rgba(255,255,255,0.15);
+            padding: 2rem;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255,255,255,0.2);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .company-info:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .company-logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 4px solid rgba(255,255,255,0.3);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .company-logo:hover {
+            transform: scale(1.05) rotate(5deg);
+            border-color: rgba(255,255,255,0.6);
+        }
+
+        .company-name {
             font-family: 'Playfair Display', serif;
             font-weight: 700;
+            font-size: 1.8rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .company-tagline {
+            font-size: 1rem;
+            opacity: 0.9;
+            font-weight: 300;
             letter-spacing: 1px;
         }
-        h1 {
-            font-size: 2.5rem;
+
+        .page-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+            background: linear-gradient(45deg, #fff, #e3f2fd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
+
+        .privacy-badge {
+            background: rgba(255,255,255,0.25);
+            padding: 1.2rem 2rem;
+            border-radius: 50px;
+            font-size: 1.15rem;
+            border: 2px solid rgba(255,255,255,0.4);
+            backdrop-filter: blur(15px);
+            color: white !important;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            font-weight: 600;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .privacy-badge::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .privacy-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.4);
+            background: rgba(255,255,255,0.3);
+            border-color: rgba(255,255,255,0.6);
+        }
+
+        .privacy-badge i {
+            margin-right: 0.8rem;
+            color: #4caf50;
+            font-size: 1.3rem;
+            text-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+            animation: pulse-glow 2s infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { 
+                color: #4caf50;
+                text-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+            }
+            50% { 
+                color: #66bb6a;
+                text-shadow: 0 0 20px rgba(76, 175, 80, 0.8);
+            }
+        }
+
+        /* ===== CONTENIDO ===== */
+        .content-wrapper {
+            padding: 3rem;
+        }
+
+        .table-of-contents {
+            background: linear-gradient(135deg, var(--bg-light), #e9ecef);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            border-left: 6px solid var(--privacy-color);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .table-of-contents h3 {
+            color: var(--privacy-color);
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .table-of-contents ul {
+            list-style: none;
+            padding-left: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 0.8rem;
+        }
+
+        .table-of-contents li {
+            margin: 0;
+        }
+
+        .table-of-contents a {
+            text-decoration: none;
+            color: var(--accent-color);
+            padding: 0.8rem 1.2rem;
+            display: block;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            font-weight: 500;
+        }
+
+        .table-of-contents a:hover {
+            color: white;
+            background: var(--privacy-color);
+            transform: translateX(10px);
+            box-shadow: 0 4px 15px rgba(111, 66, 193, 0.3);
+        }
+
+        .section {
+            margin-bottom: 3rem;
+            padding: 2.5rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-left: 6px solid var(--privacy-color);
+            transition: all 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        }
+
         h2 {
-            font-size: 1.5rem;
-            margin-top: 2rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 2rem;
+            color: var(--privacy-color);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
         }
-        .footer {
-            margin-top: 3rem;
-            font-size: 1rem;
-            color: #555;
+
+        h2 i {
+            font-size: 1.8rem;
+            padding: 0.5rem;
+            background: linear-gradient(135deg, var(--privacy-color), #5a2d91);
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(111, 66, 193, 0.3);
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-left: 6px solid var(--privacy-color);
+            box-shadow: 0 4px 15px rgba(111, 66, 193, 0.1);
+        }
+
+        .security-box {
+            background: linear-gradient(135deg, #e8f5e8, #c8e6c9);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-left: 6px solid #4caf50;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.1);
+        }
+
+        .rights-box {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-left: 6px solid #2196f3;
+            box-shadow: 0 4px 15px rgba(33, 150, 243, 0.1);
+        }
+
+        ul {
+            padding-left: 2rem;
+        }
+
+        li {
+            margin-bottom: 0.8rem;
+            position: relative;
+            font-weight: 400;
+        }
+
+        li::before {
+            content: "🔒";
+            position: absolute;
+            left: -1.5rem;
+            font-weight: bold;
+        }
+
+        /* ===== FOOTER ESPECIALIZADO PARA PRIVACIDAD ===== */
+        .contact-footer {
+            background: linear-gradient(135deg, #4a148c 0%, #6a1b9a 50%, #8e24aa 100%);
+            color: white;
+            padding: 4rem 0 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="privacy-footer-pattern" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M25,5 L45,25 L25,45 L5,25 Z" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/><circle cx="25" cy="25" r="3" fill="rgba(255,255,255,0.15)"/></pattern></defs><rect width="100" height="100" fill="url(%23privacy-footer-pattern)"/></svg>');
+            animation: tech-float 15s linear infinite;
+        }
+
+        @keyframes tech-float {
+            0% { transform: translateX(0) translateY(0); }
+            100% { transform: translateX(-50px) translateY(-50px); }
+        }
+
+        .footer-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #fff, var(--primary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .footer-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-card {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.15);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+
+        .contact-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, var(--privacy-color), #5a2d91);
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 10px 25px rgba(111, 66, 193, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover .contact-icon {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 15px 35px rgba(111, 66, 193, 0.6);
+        }
+
+        .contact-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .contact-info {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .contact-link {
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 2rem;
+            background: linear-gradient(135deg, var(--privacy-color), #5a2d91);
+            border-radius: 25px;
+            display: inline-block;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(111, 66, 193, 0.3);
+        }
+
+        .contact-link:hover {
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(111, 66, 193, 0.5);
+            background: linear-gradient(135deg, #5a2d91, var(--privacy-color));
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 2rem;
+            text-align: center;
+        }
+
+        .home-button {
+            background: linear-gradient(135deg, var(--success-color), #20c997);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(40, 167, 69, 0.3);
+            border: 2px solid transparent;
+        }
+
+        .home-button:hover {
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(40, 167, 69, 0.5);
+            border-color: rgba(255,255,255,0.3);
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: linear-gradient(135deg, var(--privacy-color), #5a2d91);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(111, 66, 193, 0.4);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 1000;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 30px rgba(111, 66, 193, 0.6);
+        }
+
+        @media (max-width: 768px) {
+            .page-title { font-size: 2.5rem; }
+            .content-wrapper { padding: 2rem 1.5rem; }
+            .section { padding: 1.5rem; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .table-of-contents ul { grid-template-columns: 1fr; }
+            .company-info { padding: 1.5rem; }
+            .footer-title { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container-fluid p-0">
+        <div class="main-container">
+            <!-- HEADER ESPECIALIZADO PARA PRIVACIDAD -->
+            <div class="header-section">
+                <div class="container header-content">
+                    <div class="company-info">
+                        <div class="d-flex align-items-center justify-content-center gap-4 flex-wrap">
+                            <a href="index.php" class="text-decoration-none">
+                                <img src="img/logo1.png" alt="Logo de Rafael Soluciones Electrónica" class="company-logo">
+                            </a>
+                            <div class="text-center text-md-start">
+                                <h4 class="company-name">Rafael Soluciones Electrónica</h4>
+                                <p class="company-tagline mb-0">🔐 Privacidad • Seguridad • Confianza</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h1 class="page-title text-center">Política de Privacidad</h1>
+                    
+                    <div class="text-center">
+                        <div class="privacy-badge d-inline-block">
+                            <i class="fas fa-shield-alt"></i>
+                            Última actualización: 1 de octubre, 2025
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-            <a class="navbar-brand d-flex align-items-center gap-2" href="index.php">
-                <img src="img/logo1.png" alt="Logo de Rafael Soluciones Electronica" class="img-zoom d-inline-block align-text-top" style="width: 100px; height: auto;">
-                <b class="text-info mb-0">Rafael Soluciones Electronica</b>
-            </a>
-        <h1 class="text-center">Política de Privacidad</h1>
-        <p class="text-center"><small>Última actualización: 8/1/2025</small></p>
+            <!-- Content Section -->
+            <div class="content-wrapper">
+                <div class="container">
+                    <!-- Tabla de Contenidos -->
+                    <div class="table-of-contents">
+                        <h3><i class="fas fa-list-ul"></i> Índice de Contenidos</h3>
+                        <ul>
+                            <li><a href="#seccion1">1. Introducción</a></li>
+                            <li><a href="#seccion2">2. Información que Recopilamos</a></li>
+                            <li><a href="#seccion3">3. Uso de la Información</a></li>
+                            <li><a href="#seccion4">4. Compartir Información</a></li>
+                            <li><a href="#seccion5">5. Seguridad de los Datos</a></li>
+                            <li><a href="#seccion6">6. Sus Derechos</a></li>
+                            <li><a href="#seccion7">7. Cookies y Tecnologías Similares</a></li>
+                            <li><a href="#seccion8">8. Cambios en esta Política</a></li>
+                        </ul>
+                    </div>
 
-        <h2>1. Introducción</h2>
-        <p>
-            En Rafael soluciones electronica, nos comprometemos a proteger y respetar su privacidad. Esta política explica cómo recopilamos, usamos y protegemos su información personal cuando visita nuestro sitio web https://rselectronicas.com/.
-        </p>
+                    <!-- Sección 1 -->
+                    <div class="section" id="seccion1">
+                        <h2><i class="fas fa-user-shield"></i> 1. Introducción</h2>
+                        <p>
+                            En <strong>Rafael Soluciones Electrónica</strong>, nos comprometemos firmemente a proteger y 
+                            respetar su privacidad. Esta política explica detalladamente cómo recopilamos, usamos y 
+                            protegemos su información personal cuando visita nuestro sitio web.
+                        </p>
+                        <div class="highlight-box">
+                            <p><strong><i class="fas fa-info-circle"></i> Importante:</strong> Al utilizar nuestros servicios, 
+                            usted acepta las prácticas descritas en esta política de privacidad. Le recomendamos leerla cuidadosamente.</p>
+                        </div>
+                        <p>
+                            Estamos comprometidos con la transparencia y el cumplimiento de las regulaciones de 
+                            protección de datos aplicables en la República Dominicana.
+                        </p>
+                    </div>
 
-        <h2>2. Información que Recopilamos</h2>
-        <p>
-            Podemos recopilar y procesar la siguiente información:
-        </p>
-        <ul>
-            <li><strong>Información de contacto:</strong> Nombre, dirección de correo electrónico, número de teléfono.</li>
-            <li><strong>Información técnica:</strong> Dirección IP, tipo de navegador, versión del sistema operativo.</li>
-            <li><strong>Información de uso:</strong> Cómo utiliza nuestro sitio web, páginas visitadas, tiempo de permanencia.</li>
-        </ul>
+                    <!-- Sección 2 -->
+                    <div class="section" id="seccion2">
+                        <h2><i class="fas fa-database"></i> 2. Información que Recopilamos</h2>
+                        <p>Recopilamos diferentes tipos de información para brindarle el mejor servicio posible:</p>
+                        
+                        <h4><i class="fas fa-address-card"></i> Información Personal:</h4>
+                        <ul>
+                            <li>Nombre completo y apellidos</li>
+                            <li>Dirección de correo electrónico</li>
+                            <li>Número de teléfono</li>
+                            <li>Dirección física (cuando sea necesario para el servicio)</li>
+                        </ul>
 
-        <h2>3. Uso de la Información</h2>
-        <p>
-            Utilizamos su información para:
-        </p>
-        <ul>
-            <li>Proporcionar y mejorar nuestros servicios.</li>
-            <li>Responder a sus consultas y solicitudes.</li>
-            <li>Enviar comunicaciones promocionales (si ha dado su consentimiento).</li>
-        </ul>
+                        <h4><i class="fas fa-laptop-code"></i> Información Técnica:</h4>
+                        <ul>
+                            <li>Dirección IP y ubicación geográfica aproximada</li>
+                            <li>Tipo y versión del navegador</li>
+                            <li>Sistema operativo del dispositivo</li>
+                            <li>Resolución de pantalla y configuración del dispositivo</li>
+                        </ul>
 
-        <h2>4. Compartir Información</h2>
-        <p>
-            No compartimos su información personal con terceros, excepto cuando sea necesario para cumplir con la ley o proteger nuestros derechos.
-        </p>
+                        <div class="security-box">
+                            <h4><i class="fas fa-chart-line"></i> Información de Uso:</h4>
+                            <ul>
+                                <li>Páginas visitadas y tiempo de permanencia</li>
+                                <li>Origen de la visita (referencia)</li>
+                                <li>Patrones de navegación y preferencias</li>
+                                <li>Interacciones con nuestros servicios</li>
+                            </ul>
+                        </div>
+                    </div>
 
-        <h2>5. Seguridad de los Datos</h2>
-        <p>
-            Implementamos medidas de seguridad para proteger su información personal contra accesos no autorizados o divulgación.
-        </p>
+                    <!-- Sección 3 -->
+                    <div class="section" id="seccion3">
+                        <h2><i class="fas fa-cogs"></i> 3. Uso de la Información</h2>
+                        <p>Utilizamos su información personal para los siguientes propósitos legítimos:</p>
+                        
+                        <h4>Servicios Principales:</h4>
+                        <ul>
+                            <li>Proporcionar y mantener nuestros servicios de reparación electrónica</li>
+                            <li>Procesar y gestionar sus solicitudes de servicio</li>
+                            <li>Comunicarnos con usted sobre servicios y consultas</li>
+                            <li>Brindar soporte técnico y atención al cliente</li>
+                        </ul>
 
-        <h2>6. Sus Derechos</h2>
-        <p>
-            Usted tiene derecho a acceder, corregir o eliminar su información personal. Para ejercer estos derechos, contáctenos en RSelectronica1725@gmail.com.
-        </p>
+                        <div class="highlight-box">
+                            <h4>Mejoras y Desarrollo:</h4>
+                            <ul>
+                                <li>Analizar y mejorar nuestros servicios</li>
+                                <li>Desarrollar nuevas funcionalidades</li>
+                                <li>Personalizar su experiencia de usuario</li>
+                                <li>Realizar investigaciones de mercado (anonimizadas)</li>
+                            </ul>
+                        </div>
 
-        <h2>7. Cambios en esta Política</h2>
-        <p>
-            Podemos actualizar esta política ocasionalmente. Le notificaremos cualquier cambio importante a través de nuestro sitio web.
-        </p>
+                        <h4>Comunicaciones (Solo con Consentimiento):</h4>
+                        <ul>
+                            <li>Enviar actualizaciones sobre sus servicios</li>
+                            <li>Informar sobre nuevos servicios relevantes</li>
+                            <li>Proporcionar contenido educativo sobre mantenimiento electrónico</li>
+                        </ul>
+                    </div>
 
-        <div class="footer">
-            <p>Si tiene preguntas sobre esta política, contáctenos en:</p>
-            <p>
-                <strong>Email:</strong>RSelectronica1725@gmail.com | 
-                <strong>Teléfono:</strong> 829-596-5912
-            </p>
+                    <!-- Sección 4 -->
+                    <div class="section" id="seccion4">
+                        <h2><i class="fas fa-share-alt"></i> 4. Compartir Información</h2>
+                        <p>
+                            Respetamos la confidencialidad de su información personal. <strong>No vendemos ni alquilamos</strong> 
+                            su información personal a terceros bajo ninguna circunstancia.
+                        </p>
+
+                        <div class="security-box">
+                            <h4><i class="fas fa-shield-alt"></i> Circunstancias Excepcionales:</h4>
+                            <p>Solo compartimos información cuando es estrictamente necesario:</p>
+                            <ul>
+                                <li><strong>Cumplimiento Legal:</strong> Cuando lo requiera la ley o autoridades competentes</li>
+                                <li><strong>Protección de Derechos:</strong> Para proteger nuestros derechos legales o propiedad</li>
+                                <li><strong>Seguridad:</strong> Para prevenir fraudes o actividades maliciosas</li>
+                                <li><strong>Proveedores de Servicio:</strong> Con partners tecnológicos bajo estrictos acuerdos de confidencialidad</li>
+                            </ul>
+                        </div>
+
+                        <p>
+                            Todos nuestros socios comerciales deben cumplir con los mismos estándares de 
+                            protección de datos que aplicamos internamente.
+                        </p>
+                    </div>
+
+                    <!-- Sección 5 -->
+                    <div class="section" id="seccion5">
+                        <h2><i class="fas fa-lock"></i> 5. Seguridad de los Datos</h2>
+                        <p>
+                            Implementamos múltiples capas de seguridad para proteger su información personal 
+                            contra accesos no autorizados, alteración, divulgación o destrucción.
+                        </p>
+
+                        <div class="security-box">
+                            <h4><i class="fas fa-shield-virus"></i> Medidas de Seguridad Técnicas:</h4>
+                            <ul>
+                                <li><strong>Encriptación:</strong> Cifrado SSL/TLS para todas las transmisiones de datos</li>
+                                <li><strong>Firewalls:</strong> Protección perimetral avanzada</li>
+                                <li><strong>Acceso Restringido:</strong> Solo personal autorizado puede acceder a datos sensibles</li>
+                                <li><strong>Monitoreo:</strong> Supervisión continua de sistemas y accesos</li>
+                            </ul>
+                        </div>
+
+                        <div class="highlight-box">
+                            <h4><i class="fas fa-users-cog"></i> Medidas Organizacionales:</h4>
+                            <ul>
+                                <li>Capacitación regular del personal en protección de datos</li>
+                                <li>Políticas internas estrictas de manejo de información</li>
+                                <li>Auditorías periódicas de seguridad</li>
+                                <li>Procedimientos de respuesta a incidentes</li>
+                            </ul>
+                        </div>
+
+                        <p>
+                            <strong>Importante:</strong> Aunque implementamos las mejores prácticas de seguridad, 
+                            ningún sistema es 100% infalible. Le recomendamos mantener seguras sus credenciales de acceso.
+                        </p>
+                    </div>
+
+                    <!-- Sección 6 -->
+                    <div class="section" id="seccion6">
+                        <h2><i class="fas fa-user-check"></i> 6. Sus Derechos</h2>
+                        <p>
+                            Usted tiene derechos fundamentales sobre su información personal que respetamos y facilitamos:
+                        </p>
+
+                        <div class="rights-box">
+                            <h4><i class="fas fa-hand-paper"></i> Derechos Principales:</h4>
+                            <ul>
+                                <li><strong>Acceso:</strong> Solicitar una copia de la información que tenemos sobre usted</li>
+                                <li><strong>Rectificación:</strong> Corregir información inexacta o incompleta</li>
+                                <li><strong>Eliminación:</strong> Solicitar la eliminación de sus datos personales</li>
+                                <li><strong>Portabilidad:</strong> Recibir sus datos en formato legible por máquina</li>
+                                <li><strong>Oposición:</strong> Oponerse al procesamiento de sus datos</li>
+                                <li><strong>Limitación:</strong> Restringir el procesamiento en ciertas circunstancias</li>
+                            </ul>
+                        </div>
+
+                        <div class="highlight-box">
+                            <h4><i class="fas fa-envelope-open-text"></i> Cómo Ejercer Sus Derechos:</h4>
+                            <p>Para ejercer cualquiera de estos derechos, contáctenos a través de:</p>
+                            <ul>
+                                <li><strong>Email:</strong> RSelectronica1725@gmail.com</li>
+                                <li><strong>Teléfono:</strong> 829-596-5912</li>
+                                <li><strong>Tiempo de Respuesta:</strong> Máximo 30 días hábiles</li>
+                            </ul>
+                        </div>
+
+                        <p>
+                            Procesaremos su solicitud de manera gratuita, a menos que sea manifiestamente 
+                            infundada o excesiva, en cuyo caso podríamos cobrar una tarifa razonable.
+                        </p>
+                    </div>
+
+                    <!-- Sección 7 -->
+                    <div class="section" id="seccion7">
+                        <h2><i class="fas fa-cookie-bite"></i> 7. Cookies y Tecnologías Similares</h2>
+                        <p>
+                            Utilizamos cookies y tecnologías similares para mejorar su experiencia de navegación 
+                            y analizar el uso de nuestro sitio web.
+                        </p>
+
+                        <h4>Tipos de Cookies que Utilizamos:</h4>
+                        <ul>
+                            <li><strong>Cookies Esenciales:</strong> Necesarias para el funcionamiento del sitio</li>
+                            <li><strong>Cookies de Rendimiento:</strong> Para analizar cómo se usa el sitio</li>
+                            <li><strong>Cookies de Funcionalidad:</strong> Para recordar sus preferencias</li>
+                        </ul>
+
+                        <div class="highlight-box">
+                            <h4><i class="fas fa-sliders-h"></i> Control de Cookies:</h4>
+                            <p>Usted puede controlar las cookies a través de:</p>
+                            <ul>
+                                <li>Configuración de su navegador web</li>
+                                <li>Herramientas de opt-out específicas</li>
+                                <li>Nuestro panel de preferencias de cookies</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Sección 8 -->
+                    <div class="section" id="seccion8">
+                        <h2><i class="fas fa-edit"></i> 8. Cambios en esta Política</h2>
+                        <p>
+                            Podemos actualizar esta política de privacidad ocasionalmente para reflejar cambios 
+                            en nuestras prácticas, servicios o requisitos legales.
+                        </p>
+
+                        <div class="highlight-box">
+                            <h4><i class="fas fa-bell"></i> Notificación de Cambios:</h4>
+                            <ul>
+                                <li>Publicaremos la versión actualizada en nuestro sitio web</li>
+                                <li>Notificaremos cambios importantes por email</li>
+                                <li>Proporcionaremos un período de adaptación cuando sea aplicable</li>
+                                <li>La fecha de "última actualización" siempre será visible</li>
+                            </ul>
+                        </div>
+
+                        <p>
+                            Le recomendamos revisar periódicamente esta política para mantenerse informado 
+                            sobre cómo protegemos su información.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FOOTER ESPECIALIZADO PARA PRIVACIDAD -->
+            <div class="contact-footer">
+                <div class="container footer-content">
+                    <h3 class="footer-title">¿Preguntas sobre privacidad?</h3>
+                    <p class="footer-subtitle">Estamos comprometidos con la transparencia. Contáctanos para cualquier consulta sobre privacidad</p>
+                    
+                    <div class="contact-grid">
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope-open"></i>
+                            </div>
+                            <h4 class="contact-title">Email de Privacidad</h4>
+                            <p class="contact-info">RSelectronica1725@gmail.com</p>
+                            <a href="mailto:RSelectronica1725@gmail.com?subject=Consulta%20de%20Privacidad" class="contact-link">
+                                <i class="fas fa-paper-plane"></i> Consultar Privacidad
+                            </a>
+                        </div>
+
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-volume"></i>
+                            </div>
+                            <h4 class="contact-title">Línea Directa</h4>
+                            <p class="contact-info">829-596-5912</p>
+                            <a href="tel:+18295965912" class="contact-link">
+                                <i class="fas fa-phone-alt"></i> Llamar Ahora
+                            </a>
+                        </div>
+
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marked-alt"></i>
+                            </div>
+                            <h4 class="contact-title">Oficina</h4>
+                            <p class="contact-info">Santo Domingo<br>República Dominicana</p>
+                            <a href="https://maps.app.goo.gl/VwUhjC9KbW2UYQVP8" class="contact-link" target="_blank" rel="noopener">
+                                <i class="fas fa-directions"></i> Visítanos
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-bottom">
+                        <a href="index.php" class="home-button">
+                            <i class="fas fa-home"></i>
+                            Volver al Inicio
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
+    <!-- Botón Volver Arriba -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Script personalizado -->
+    <script>
+        // Smooth scrolling para enlaces internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Botón volver arriba
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Highlight de sección activa
+        const sections = document.querySelectorAll('.section');
+        const navLinks = document.querySelectorAll('.table-of-contents a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Efectos de animación al hacer scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observar secciones para animaciones
+        document.querySelectorAll('.section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+    </script>
 </body>
 </html>
