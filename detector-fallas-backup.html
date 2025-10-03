@@ -1,0 +1,1551 @@
+<!DOCTYPE html>
+<html lang="es" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Detector de fallas inteligente para aires acondicionados inverter. Diagnóstico paso a paso con soluciones profesionales - RSE Reparaciones.">
+    <meta name="keywords" content="detector fallas, aire acondicionado, inverter, diagnóstico, reparación, RSE">
+    <meta name="author" content="RSE - Reparaciones Especializadas">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Detector de Fallas Inteligente - RSE">
+    <meta property="og:description" content="Sistema experto para diagnosticar fallas en equipos inverter paso a paso">
+    <meta property="og:image" content="img/logo1.png">
+    <meta property="og:type" content="website">
+    
+    <title>Detector de Fallas Inteligente - RSE | Diagnóstico Profesional</title>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" as="style">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/logo1.png">
+    
+    <style>
+        :root {
+            /* Color System */
+            --primary-color: #dc3545;
+            --primary-rgb: 220, 53, 69;
+            --secondary-color: #fd7e14;
+            --secondary-rgb: 253, 126, 20;
+            --success-color: #28a745;
+            --success-rgb: 40, 167, 69;
+            --info-color: #17a2b8;
+            --info-rgb: 23, 162, 184;
+            --warning-color: #ffc107;
+            --warning-rgb: 255, 193, 7;
+            --danger-color: #dc3545;
+            --dark-color: #2c3e50;
+            --light-color: #f8f9fa;
+            
+            /* Spacing System */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2rem;
+            --space-xl: 3rem;
+            
+            /* Border Radius */
+            --radius-sm: 10px;
+            --radius-md: 15px;
+            --radius-lg: 20px;
+            --radius-xl: 25px;
+            
+            /* Shadows */
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 25px rgba(0,0,0,0.15);
+            --shadow-xl: 0 20px 40px rgba(0,0,0,0.1);
+            
+            /* Transitions */
+            --transition-fast: 0.2s ease;
+            --transition-normal: 0.3s ease;
+            --transition-slow: 0.6s ease;
+            
+            /* Typography */
+            --font-primary: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-secondary: 'Lora', Georgia, serif;
+        }
+        
+        body {
+            font-family: var(--font-secondary);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            margin: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Performance optimizations */
+        * {
+            box-sizing: border-box;
+        }
+        
+        .gpu-accelerated {
+            transform: translateZ(0);
+            will-change: transform, opacity;
+        }
+        
+        /* Header Styles */
+        .detector-header {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: var(--radius-xl);
+            padding: var(--space-xl) var(--space-lg);
+            text-align: center;
+            margin-bottom: var(--space-xl);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .detector-header .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .detector-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(220, 53, 69, 0.1), transparent, rgba(253, 126, 20, 0.1), transparent);
+            animation: rotate 20s linear infinite;
+            z-index: -1;
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .detector-icon {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--space-lg);
+            box-shadow: 0 20px 40px rgba(var(--primary-rgb), 0.3);
+            position: relative;
+        }
+        
+        .detector-icon i {
+            font-size: 4rem;
+            color: white;
+        }
+        
+        .detector-icon::after {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--primary-color));
+            border-radius: 50%;
+            z-index: -1;
+            animation: pulse-ring 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse-ring {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(1.3); opacity: 0; }
+        }
+        
+        /* Diagnostic Container */
+        .diagnostic-container {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(15px);
+            border-radius: var(--radius-xl);
+            padding: var(--space-lg);
+            box-shadow: var(--shadow-xl);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        .step-container {
+            display: none;
+            animation: fadeInUp var(--transition-slow);
+        }
+        
+        .step-container.active {
+            display: block;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Steps & Questions */
+        .step-header {
+            text-align: center;
+            margin-bottom: var(--space-lg);
+            padding-bottom: var(--space-sm);
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: var(--space-sm);
+            box-shadow: 0 10px 30px rgba(var(--primary-rgb), 0.3);
+            font-family: var(--font-primary);
+        }
+        
+        .question-card {
+            background: linear-gradient(135deg, var(--light-color), #e9ecef);
+            border: none;
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            margin-bottom: var(--space-lg);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        /* Option Buttons */
+        .option-btn {
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            margin-bottom: var(--space-sm);
+            width: 100%;
+            text-align: left;
+            transition: all var(--transition-normal);
+            font-family: var(--font-primary);
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        .option-btn:hover {
+            border-color: var(--primary-color);
+            background: rgba(var(--primary-rgb), 0.05);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(var(--primary-rgb), 0.2);
+        }
+        
+        .option-btn.selected {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+        
+        .option-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: var(--space-sm);
+            color: white;
+            transition: background var(--transition-normal);
+        }
+        
+        .option-btn:hover .option-icon,
+        .option-btn.selected .option-icon {
+            background: rgba(255,255,255,0.2);
+        }
+        
+        /* Progress System */
+        .progress-container {
+            margin-bottom: var(--space-lg);
+        }
+        
+        .progress-custom {
+            height: 8px;
+            background: rgba(var(--primary-rgb), 0.1);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+        }
+        
+        .progress-bar-custom {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: var(--radius-sm);
+            transition: width var(--transition-slow);
+            position: relative;
+        }
+        
+        .progress-bar-custom::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: shimmer 2s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        /* Results */
+        .result-container {
+            text-align: center;
+            padding: var(--space-xl) var(--space-lg);
+        }
+        
+        .result-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--space-lg);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .result-success .result-icon {
+            background: linear-gradient(135deg, var(--success-color), #20c997);
+        }
+        
+        .result-warning .result-icon {
+            background: linear-gradient(135deg, var(--warning-color), var(--secondary-color));
+        }
+        
+        .result-danger .result-icon {
+            background: linear-gradient(135deg, var(--danger-color), #e74c3c);
+        }
+        
+        .result-info .result-icon {
+            background: linear-gradient(135deg, var(--info-color), #138496);
+        }
+        
+        .solution-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            margin: var(--space-sm) 0;
+            box-shadow: var(--shadow-lg);
+            border-left: 5px solid var(--primary-color);
+            text-align: left;
+        }
+        
+        /* Action Buttons */
+        .action-btn {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border: none;
+            border-radius: var(--radius-xl);
+            padding: var(--space-sm) var(--space-lg);
+            color: white;
+            font-weight: 600;
+            font-family: var(--font-primary);
+            transition: all var(--transition-normal);
+            text-decoration: none;
+            display: inline-block;
+            margin: var(--space-xs);
+        }
+        
+        .action-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(var(--primary-rgb), 0.4);
+            color: white;
+        }
+        
+        .secondary-btn {
+            background: linear-gradient(135deg, var(--info-color), #138496);
+        }
+        
+        .secondary-btn:hover {
+            box-shadow: 0 15px 35px rgba(var(--info-rgb), 0.4);
+        }
+        
+        /* Navigation */
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: var(--space-lg);
+            padding-top: var(--space-lg);
+            border-top: 2px solid #e9ecef;
+        }
+        
+        .nav-btn {
+            background: linear-gradient(135deg, #6c757d, #495057);
+            border: none;
+            border-radius: var(--radius-md);
+            padding: var(--space-sm) var(--space-lg);
+            color: white;
+            font-weight: 600;
+            font-family: var(--font-primary);
+            transition: all var(--transition-normal);
+            cursor: pointer;
+        }
+        
+        .nav-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(108, 117, 125, 0.3);
+        }
+        
+        .nav-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .nav-btn.primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        }
+        
+        .nav-btn.primary:hover:not(:disabled) {
+            box-shadow: 0 10px 25px rgba(var(--primary-rgb), 0.3);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .detector-header {
+                padding: 2rem 1rem;
+            }
+            
+            .diagnostic-container {
+                padding: 1.5rem;
+            }
+            
+            .option-btn {
+                padding: 1rem;
+            }
+            
+            .nav-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background: rgba(0,0,0,0.1); backdrop-filter: blur(10px); z-index: 1050;" role="navigation" aria-label="Navegación principal">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="recursos.html" aria-label="Ir a recursos RSE">
+                <img src="img/logo1.png" alt="Logo RSE" width="40" height="40" class="me-2">
+                <span class="fw-bold">RSE</span>
+            </a>
+            <a href="recursos.html" class="btn btn-outline-light btn-sm" aria-label="Volver a la página de recursos">
+                <i class="bi bi-arrow-left me-1" aria-hidden="true"></i> Volver a Recursos
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container" style="padding-top: 120px; padding-bottom: 50px;" role="main">
+        <!-- Header -->
+        <header class="detector-header gpu-accelerated" data-aos="fade-down">
+            <div class="container">
+                <div class="detector-icon">
+                    <i class="bi bi-search" aria-hidden="true"></i>
+                </div>
+                <h1 class="display-4 fw-bold text-white mb-3" style="font-family: var(--font-primary);">
+                    Detector de Fallas Inteligente
+                </h1>
+                <p class="lead text-white-50 mb-0" style="max-width: 600px; margin: 0 auto;">
+                    Sistema experto que te guía paso a paso para identificar y resolver las fallas más comunes en equipos inverter
+                </p>
+            </div>
+        </header>
+
+        <!-- Diagnostic Tool -->
+        <section class="diagnostic-container gpu-accelerated" data-aos="fade-up" role="application" aria-label="Herramienta de diagnóstico">
+            <!-- Progress Bar -->
+            <div class="progress-container" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Progreso del diagnóstico">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="text-muted small fw-bold">Progreso del Diagnóstico</span>
+                    <span class="text-muted small" id="progressText" aria-live="polite">0%</span>
+                </div>
+                <div class="progress-custom">
+                    <div class="progress-bar-custom" id="progressBar" style="width: 0%"></div>
+                </div>
+            </div>
+
+            <!-- Step 1: Initial Symptoms -->
+            <div class="step-container active" id="step1">
+                <div class="step-header">
+                    <div class="step-number">1</div>
+                    <h3 class="fw-bold text-dark mb-2">Síntomas Iniciales</h3>
+                    <p class="text-muted">¿Cuál es el problema principal que presenta el equipo?</p>
+                </div>
+                
+                <div class="question-card">
+                    <h5 class="fw-bold mb-4 text-dark">Selecciona el síntoma que mejor describe la falla:</h5>
+                    
+                    <button class="option-btn" data-value="no-enciende" onclick="selectOption(this, 'step1')">
+                        <div class="d-flex align-items-center">
+                            <div class="option-icon">
+                                <i class="bi bi-power"></i>
+                            </div>
+                            <div>
+                                <div class="fw-bold mb-1">No enciende</div>
+                                <small class="text-muted">El equipo no responde al encender, no hay luces ni sonidos</small>
+                            </div>
+                        </div>
+                    </button>
+                    
+                    <button class="option-btn" data-value="enciende-no-enfria" onclick="selectOption(this, 'step1')">
+                        <div class="d-flex align-items-center">
+                            <div class="option-icon">
+                                <i class="bi bi-thermometer-half"></i>
+                            </div>
+                            <div>
+                                <div class="fw-bold mb-1">Enciende pero no enfría</div>
+                                <small class="text-muted">El display funciona pero no genera aire frío</small>
+                            </div>
+                        </div>
+                    </button>
+                    
+                    <button class="option-btn" data-value="ruidos-extraños" onclick="selectOption(this, 'step1')">
+                        <div class="d-flex align-items-center">
+                            <div class="option-icon">
+                                <i class="bi bi-volume-up"></i>
+                            </div>
+                            <div>
+                                <div class="fw-bold mb-1">Ruidos extraños</div>
+                                <small class="text-muted">Sonidos anormales, vibraciones o golpeteos</small>
+                            </div>
+                        </div>
+                    </button>
+                    
+                    <button class="option-btn" data-value="error-display" onclick="selectOption(this, 'step1')">
+                        <div class="d-flex align-items-center">
+                            <div class="option-icon">
+                                <i class="bi bi-exclamation-triangle"></i>
+                            </div>
+                            <div>
+                                <div class="fw-bold mb-1">Código de error en display</div>
+                                <small class="text-muted">Aparece un código de error en la pantalla</small>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 2: Power Check -->
+            <div class="step-container" id="step2">
+                <div class="step-header">
+                    <div class="step-number">2</div>
+                    <h3 class="fw-bold text-dark mb-2">Verificación de Alimentación</h3>
+                    <p class="text-muted">Vamos a verificar si el problema es de alimentación eléctrica</p>
+                </div>
+                
+                <div class="question-card">
+                    <h5 class="fw-bold mb-4 text-dark">¿El equipo recibe energía eléctrica?</h5>
+                    
+                    <button class="option-btn" data-value="si-energia" onclick="selectOption(this, 'step2')">
+                        <div class="d-flex align-items-center">
+                            <div class="option-icon">
+                                <i class="bi bi-check-circle"></i>
+                            </div>
+                            <div>
+                                <div class="fw-bold mb-1">Sí, hay energía</div>
+                                <small class="text-muted">El breaker está activado y hay voltaje en el tomacorriente</small>
+                            </div>
+                        </div>
+                    </button>
+                    
+                    <button class="option-btn" data-value="no-energia" onclick="selectOption(this, 'step2')">
+                        <div class="d-flex align-items-center">
+                            <div class="option-icon">
+                                <i class="bi bi-x-circle"></i>
+                            </div>
+                            <div>
+                                <div class="fw-bold mb-1">No hay energía</div>
+                                <small class="text-muted">El breaker está desactivado o no hay voltaje</small>
+                            </div>
+                        </div>
+                    </button>
+                    
+                    <button class="option-btn" data-value="energia-intermitente" onclick="selectOption(this, 'step2')">
+                        <div class="d-flex align-items-center">
+                            <div class="option-icon">
+                                <i class="bi bi-lightning"></i>
+                            </div>
+                            <div>
+                                <div class="fw-bold mb-1">Energía intermitente</div>
+                                <small class="text-muted">La energía va y viene, o hay fluctuaciones de voltaje</small>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 3: Component Check -->
+            <div class="step-container" id="step3">
+                <div class="step-header">
+                    <div class="step-number">3</div>
+                    <h3 class="fw-bold text-dark mb-2">Verificación de Componentes</h3>
+                    <p class="text-muted">Vamos a revisar los componentes principales</p>
+                </div>
+                
+                <div class="question-card">
+                    <h5 class="fw-bold mb-4 text-dark">¿Qué componentes están funcionando?</h5>
+                    
+                    <button class="option-btn" data-value="display-funciona" onclick="selectOption(this, 'step3')">
+                        <div class="d-flex align-items-center">
+                            <div class="option-icon">
+                                <i class="bi bi-display"></i>
+                            </div>
+                            <div>
+                                <div class="fw-bold mb-1">Display funciona</div>
+                                <small class="text-muted">La pantalla enciende y responde al control remoto</small>
+                            </div>
+                        </div>
+                    </button>
+                    
+                    <button class="option-btn" data-value="ventilador-funciona" onclick="selectOption(this, 'step3')">
+                        <div class="d-flex align-items-center">
+                            <div class="option-icon">
+                                <i class="bi bi-fan"></i>
+                            </div>
+                            <div>
+                                <div class="fw-bold mb-1">Ventilador funciona</div>
+                                <small class="text-muted">El ventilador interno gira pero no hay frío</small>
+                            </div>
+                        </div>
+                    </button>
+                    
+                    <button class="option-btn" data-value="compresor-no-funciona" onclick="selectOption(this, 'step3')">
+                        <div class="d-flex align-items-center">
+                            <div class="option-icon">
+                                <i class="bi bi-gear"></i>
+                            </div>
+                            <div>
+                                <div class="fw-bold mb-1">Compresor no funciona</div>
+                                <small class="text-muted">No se escucha el compresor trabajar</small>
+                            </div>
+                        </div>
+                    </button>
+                    
+                    <button class="option-btn" data-value="nada-funciona" onclick="selectOption(this, 'step3')">
+                        <div class="d-flex align-items-center">
+                            <div class="option-icon">
+                                <i class="bi bi-exclamation-circle"></i>
+                            </div>
+                            <div>
+                                <div class="fw-bold mb-1">Nada funciona</div>
+                                <small class="text-muted">No hay respuesta de ningún componente</small>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 4: Specific Diagnostics -->
+            <div class="step-container" id="step4">
+                <div class="step-header">
+                    <div class="step-number">4</div>
+                    <h3 class="fw-bold text-dark mb-2">Diagnóstico Específico</h3>
+                    <p class="text-muted">Vamos a identificar la falla específica según los síntomas</p>
+                </div>
+                
+                <div class="question-card">
+                    <h5 class="fw-bold mb-4 text-dark" id="step4Question">Pregunta dinámica según síntomas</h5>
+                    
+                    <div id="step4Options">
+                        <!-- Dynamic options will be inserted here -->
+                    </div>
+                </div>
+            </div>
+            <div class="step-container" id="results">
+                <div class="result-container">
+                    <div id="resultContent">
+                        <!-- Dynamic content will be inserted here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="nav-buttons">
+                <button class="nav-btn" id="prevBtn" onclick="previousStep()" disabled>
+                    <i class="bi bi-chevron-left me-2"></i>Anterior
+                </button>
+                <button class="nav-btn primary" id="nextBtn" onclick="nextStep()" disabled>
+                    Siguiente<i class="bi bi-chevron-right ms-2"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    
+    <script>
+        // Diagnostic System - Modern Architecture
+        class DiagnosticSystem {
+            constructor() {
+                this.currentStep = 1;
+                this.totalSteps = 4; // Increased from 3 to 4
+                this.answers = {};
+                this.selectedOptions = {};
+                this.diagnosticData = {};
+                this.init();
+            }
+
+            init() {
+                this.initializeElements();
+                this.bindEvents();
+                this.updateNavigation();
+                this.saveProgress();
+            }
+
+            initializeElements() {
+                this.elements = {
+                    progressBar: document.getElementById('progressBar'),
+                    progressText: document.getElementById('progressText'),
+                    prevBtn: document.getElementById('prevBtn'),
+                    nextBtn: document.getElementById('nextBtn'),
+                    resultContent: document.getElementById('resultContent'),
+                    results: document.getElementById('results'),
+                    navButtons: document.querySelector('.nav-buttons')
+                };
+            }
+
+            bindEvents() {
+                // Button events
+                this.elements.prevBtn?.addEventListener('click', () => this.previousStep());
+                this.elements.nextBtn?.addEventListener('click', () => this.nextStep());
+
+                // Keyboard navigation
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowLeft' && !this.elements.prevBtn.disabled) {
+                        this.previousStep();
+                    } else if (e.key === 'ArrowRight' && !this.elements.nextBtn.disabled) {
+                        this.nextStep();
+                    }
+                });
+
+                // Auto-save progress
+                window.addEventListener('beforeunload', () => this.saveProgress());
+            }
+
+            selectOption(button, step) {
+                try {
+                    // Validation
+                    if (!button || !step) {
+                        throw new Error('Parámetros inválidos');
+                    }
+
+                    // Remove previous selections
+                    const stepElement = document.getElementById(step);
+                    if (!stepElement) {
+                        throw new Error('Paso no encontrado');
+                    }
+
+                    const allButtons = stepElement.querySelectorAll('.option-btn');
+                    allButtons.forEach(btn => {
+                        btn.classList.remove('selected');
+                        btn.setAttribute('aria-selected', 'false');
+                    });
+
+                    // Set new selection
+                    button.classList.add('selected');
+                    button.setAttribute('aria-selected', 'true');
+
+                    // Store answer
+                    const value = button.getAttribute('data-value');
+                    this.answers[step] = value;
+                    this.selectedOptions[step] = button;
+
+                    // Update accessibility
+                    button.focus();
+                    
+                    // Enable next button
+                    this.elements.nextBtn.disabled = false;
+                    
+                    // Auto-advance after delay (optional)
+                    setTimeout(() => {
+                        if (this.answers[step] === value) {
+                            this.elements.nextBtn.focus();
+                        }
+                    }, 500);
+
+                    // Save progress
+                    this.saveProgress();
+
+                } catch (error) {
+                    console.error('Error selecting option:', error);
+                    this.showError('Error al seleccionar la opción. Intenta nuevamente.');
+                }
+            }
+
+            nextStep() {
+                try {
+                    if (this.currentStep < this.totalSteps) {
+                        this.hideStep(this.currentStep);
+                        this.currentStep++;
+                        this.showStep(this.currentStep);
+                        this.updateProgress();
+                        this.updateNavigation();
+                        this.saveProgress();
+                    } else {
+                        this.showResults();
+                    }
+                } catch (error) {
+                    console.error('Error in nextStep:', error);
+                    this.showError('Error al avanzar. Intenta nuevamente.');
+                }
+            }
+
+            previousStep() {
+                try {
+                    if (this.currentStep > 1) {
+                        this.hideStep(this.currentStep);
+                        this.currentStep--;
+                        this.showStep(this.currentStep);
+                        this.updateProgress();
+                        this.updateNavigation();
+                        this.saveProgress();
+                    }
+                } catch (error) {
+                    console.error('Error in previousStep:', error);
+                    this.showError('Error al retroceder. Intenta nuevamente.');
+                }
+            }
+
+            hideStep(stepNumber) {
+                const step = document.getElementById(`step${stepNumber}`);
+                if (step) {
+                    step.classList.remove('active');
+                    step.setAttribute('aria-hidden', 'true');
+                }
+            }
+
+            showStep(stepNumber) {
+                const step = document.getElementById(`step${stepNumber}`);
+                if (step) {
+                    // Generate dynamic content for step 4
+                    if (stepNumber === 4) {
+                        this.generateStep4Content();
+                    }
+                    
+                    step.classList.add('active');
+                    step.setAttribute('aria-hidden', 'false');
+                    
+                    // Focus management
+                    const firstButton = step.querySelector('.option-btn');
+                    if (firstButton) {
+                        setTimeout(() => firstButton.focus(), 100);
+                    }
+                }
+            }
+
+            generateStep4Content() {
+                const symptom = this.answers.step1;
+                const power = this.answers.step2;
+                const components = this.answers.step3;
+                
+                const questionElement = document.getElementById('step4Question');
+                const optionsElement = document.getElementById('step4Options');
+                
+                let question = '';
+                let options = [];
+                
+                if (symptom === 'no-enciende' && power === 'si-energia') {
+                    question = '¿Qué sucede cuando intentas encender el equipo?';
+                    options = [
+                        {
+                            value: 'luces-parpadean',
+                            icon: 'lightbulb',
+                            title: 'Las luces parpadean',
+                            description: 'Se ven luces o display parpadeando al intentar encender'
+                        },
+                        {
+                            value: 'sonido-click',
+                            icon: 'volume-up',
+                            title: 'Se escucha un click',
+                            description: 'Hay un sonido de click pero no arranca'
+                        },
+                        {
+                            value: 'nada-absoluto',
+                            icon: 'x-circle',
+                            title: 'No pasa nada',
+                            description: 'No hay luces, sonidos ni respuesta alguna'
+                        }
+                    ];
+                } else if (symptom === 'enciende-no-enfria') {
+                    question = '¿El ventilador interno funciona correctamente?';
+                    options = [
+                        {
+                            value: 'ventilador-si-funciona',
+                            icon: 'fan',
+                            title: 'Sí funciona',
+                            description: 'El ventilador gira normalmente pero no hay frío'
+                        },
+                        {
+                            value: 'ventilador-lento',
+                            icon: 'speedometer',
+                            title: 'Funciona lento',
+                            description: 'El ventilador gira pero más lento de lo normal'
+                        },
+                        {
+                            value: 'ventilador-no-funciona',
+                            icon: 'x-octagon',
+                            title: 'No funciona',
+                            description: 'El ventilador no gira para nada'
+                        }
+                    ];
+                } else if (symptom === 'ruidos-extraños') {
+                    question = '¿Qué tipo de ruido escuchas?';
+                    options = [
+                        {
+                            value: 'ruido-metalico',
+                            icon: 'tools',
+                            title: 'Ruido metálico',
+                            description: 'Sonidos como metal rozando o golpeando'
+                        },
+                        {
+                            value: 'ruido-silbido',
+                            icon: 'wind',
+                            title: 'Silbido o zumbido',
+                            description: 'Sonido agudo como silbido o zumbido eléctrico'
+                        },
+                        {
+                            value: 'ruido-vibracion',
+                            icon: 'phone-vibrate',
+                            title: 'Vibración excesiva',
+                            description: 'El equipo vibra más de lo normal'
+                        }
+                    ];
+                } else {
+                    question = '¿Has notado algún detalle adicional?';
+                    options = [
+                        {
+                            value: 'olor-quemado',
+                            icon: 'exclamation-triangle',
+                            title: 'Olor a quemado',
+                            description: 'Se percibe olor a quemado o plástico derretido'
+                        },
+                        {
+                            value: 'goteo-agua',
+                            icon: 'droplet',
+                            title: 'Goteo de agua',
+                            description: 'El equipo gotea agua de forma anormal'
+                        },
+                        {
+                            value: 'temperatura-caliente',
+                            icon: 'thermometer-high',
+                            title: 'Se calienta mucho',
+                            description: 'El equipo se siente muy caliente al tacto'
+                        }
+                    ];
+                }
+                
+                questionElement.textContent = question;
+                
+                const optionsHTML = options.map(option => `
+                    <button class="option-btn" data-value="${option.value}" onclick="selectOption(this, 'step4')">
+                        <div class="d-flex align-items-center">
+                            <div class="option-icon">
+                                <i class="bi bi-${option.icon}"></i>
+                            </div>
+                            <div>
+                                <div class="fw-bold mb-1">${option.title}</div>
+                                <small class="text-muted">${option.description}</small>
+                            </div>
+                        </div>
+                    </button>
+                `).join('');
+                
+                optionsElement.innerHTML = optionsHTML;
+            }
+                const progress = Math.round((this.currentStep / this.totalSteps) * 100);
+                const progressElement = this.elements.progressBar;
+                const textElement = this.elements.progressText;
+                
+                if (progressElement && textElement) {
+                    progressElement.style.width = progress + '%';
+                    textElement.textContent = progress + '%';
+                    
+                    // Update ARIA attributes
+                    const container = progressElement.closest('[role="progressbar"]');
+                    if (container) {
+                        container.setAttribute('aria-valuenow', progress);
+                    }
+                }
+            }
+
+            updateProgress() {
+                const progress = Math.round((this.currentStep / this.totalSteps) * 100);
+                const progressElement = this.elements.progressBar;
+                const textElement = this.elements.progressText;
+                
+                if (progressElement && textElement) {
+                    progressElement.style.width = progress + '%';
+                    textElement.textContent = progress + '%';
+                    
+                    // Update ARIA attributes
+                    const container = progressElement.closest('[role="progressbar"]');
+                    if (container) {
+                        container.setAttribute('aria-valuenow', progress);
+                    }
+                }
+            }
+                const prevBtn = this.elements.prevBtn;
+                const nextBtn = this.elements.nextBtn;
+                
+                if (prevBtn) {
+                    prevBtn.disabled = this.currentStep === 1;
+                    prevBtn.setAttribute('aria-disabled', this.currentStep === 1);
+                }
+                
+                if (nextBtn && this.currentStep <= this.totalSteps) {
+                    const hasAnswer = Boolean(this.answers[`step${this.currentStep}`]);
+                    nextBtn.disabled = !hasAnswer;
+                    nextBtn.setAttribute('aria-disabled', !hasAnswer);
+                    
+                    nextBtn.innerHTML = this.currentStep === this.totalSteps ? 
+                        'Ver Diagnóstico<i class="bi bi-check-circle ms-2" aria-hidden="true"></i>' : 
+                        'Siguiente<i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>';
+                }
+            }
+
+            updateNavigation() {
+                const prevBtn = this.elements.prevBtn;
+                const nextBtn = this.elements.nextBtn;
+                
+                if (prevBtn) {
+                    prevBtn.disabled = this.currentStep === 1;
+                    prevBtn.setAttribute('aria-disabled', this.currentStep === 1);
+                }
+                
+                if (nextBtn && this.currentStep <= this.totalSteps) {
+                    const hasAnswer = Boolean(this.answers[`step${this.currentStep}`]);
+                    nextBtn.disabled = !hasAnswer;
+                    nextBtn.setAttribute('aria-disabled', !hasAnswer);
+                    
+                    nextBtn.innerHTML = this.currentStep === this.totalSteps ? 
+                        'Ver Diagnóstico<i class="bi bi-check-circle ms-2" aria-hidden="true"></i>' : 
+                        'Siguiente<i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>';
+                }
+            }
+                try {
+                    // Hide all steps
+                    for (let i = 1; i <= this.totalSteps; i++) {
+                        this.hideStep(i);
+                    }
+                    
+                    // Update progress to 100%
+                    this.elements.progressBar.style.width = '100%';
+                    this.elements.progressText.textContent = '100%';
+                    
+                    // Generate and show diagnosis
+                    const diagnosis = this.generateDiagnosis();
+                    this.elements.resultContent.innerHTML = diagnosis;
+                    
+                    // Show results with animation
+                    this.elements.results.classList.add('active');
+                    this.elements.results.setAttribute('aria-hidden', 'false');
+                    
+                    // Hide navigation
+                    if (this.elements.navButtons) {
+                        this.elements.navButtons.style.display = 'none';
+                    }
+                    
+                    // Focus on first action button
+                    setTimeout(() => {
+                        const firstAction = this.elements.results.querySelector('.action-btn');
+                        if (firstAction) firstAction.focus();
+                    }, 100);
+                    
+                    // Save final results
+                    this.saveDiagnosticHistory(diagnosis);
+                    
+                } catch (error) {
+                    console.error('Error showing results:', error);
+                    this.showError('Error al mostrar resultados. Intenta nuevamente.');
+                }
+            }
+
+            generateDiagnosis() {
+            if (symptom === 'no-enciende') {
+                if (power === 'no-energia') {
+                    severity = 'warning';
+                    icon = 'exclamation-triangle';
+                    title = 'Problema de Alimentación Eléctrica';
+                    solution = `
+                        <div class="solution-card">
+                            <h5 class="text-warning fw-bold"><i class="bi bi-lightning me-2"></i>Falla de Energía</h5>
+                            <p><strong>Causa probable:</strong> Problema en la alimentación eléctrica del equipo.</p>
+                            <h6 class="fw-bold mt-3">Soluciones a revisar:</h6>
+                            <ul class="text-start">
+                                <li>Verificar que el breaker esté activado</li>
+                                <li>Revisar fusibles del aire acondicionado</li>
+                                <li>Medir voltaje en el tomacorriente (debe ser 220V)</li>
+                                <li>Revisar conexiones eléctricas flojas</li>
+                                <li>Verificar estado del cable de alimentación</li>
+                            </ul>
+                            <div class="alert alert-info mt-3">
+                                <i class="bi bi-info-circle me-2"></i>
+                                <strong>Importante:</strong> Si no tienes experiencia con electricidad, contacta a un técnico especializado.
+                            </div>
+                        </div>
+                    `;
+                    actions = `
+                        <a href="https://wa.me/18297470675?text=Hola%2C%20mi%20aire%20acondicionado%20no%20enciende%20y%20detecté%20que%20puede%20ser%20un%20problema%20eléctrico.%20¿Pueden%20ayudarme%3F" 
+                           target="_blank" class="action-btn">
+                            <i class="bi bi-whatsapp me-2"></i>Contactar Técnico
+                        </a>
+                        <a href="recursos.html#documentos-section" target="_blank" class="action-btn secondary-btn">
+                            <i class="bi bi-file-pdf me-2"></i>Ver Manuales
+                        </a>
+                    `;
+                } else if (components === 'nada-funciona') {
+                    severity = 'danger';
+                    icon = 'x-circle';
+                    title = 'Falla en Tarjeta Electrónica';
+                    solution = `
+                        <div class="solution-card">
+                            <h5 class="text-danger fw-bold"><i class="bi bi-cpu me-2"></i>Tarjeta Principal Dañada</h5>
+                            <p><strong>Causa probable:</strong> La tarjeta electrónica principal está dañada o no recibe alimentación.</p>
+                            <h6 class="fw-bold mt-3">Diagnóstico recomendado:</h6>
+                            <ul class="text-start">
+                                <li>Verificar fusibles de la tarjeta principal</li>
+                                <li>Revisar voltaje de entrada a la tarjeta (220V)</li>
+                                <li>Inspeccionar componentes quemados visualmente</li>
+                                <li>Verificar condensadores electrolíticos hinchados</li>
+                                <li>Revisar conexiones de cables a la tarjeta</li>
+                            </ul>
+                            <div class="alert alert-warning mt-3">
+                                <i class="bi bi-shield-exclamation me-2"></i>
+                                <strong>Atención:</strong> Esta reparación requiere conocimientos avanzados en electrónica.
+                            </div>
+                        </div>
+                    `;
+                    actions = `
+                        <a href="https://wa.me/18297470675?text=Hola%2C%20mi%20aire%20acondicionado%20no%20enciende%20y%20parece%20que%20la%20tarjeta%20electrónica%20está%20dañada.%20¿Pueden%20hacer%20el%20diagnóstico%3F" 
+                           target="_blank" class="action-btn">
+                            <i class="bi bi-tools me-2"></i>Solicitar Reparación
+                        </a>
+                        <a href="Tienda/carrito-compras.html" target="_blank" class="action-btn secondary-btn">
+                            <i class="bi bi-cart me-2"></i>Ver Repuestos
+                        </a>
+                    `;
+                }
+            } else if (symptom === 'enciende-no-enfria') {
+                if (components === 'compresor-no-funciona') {
+                    severity = 'warning';
+                    icon = 'gear';
+                    title = 'Problema del Sistema de Refrigeración';
+                    solution = `
+                        <div class="solution-card">
+                            <h5 class="text-warning fw-bold"><i class="bi bi-gear me-2"></i>Compresor Inverter</h5>
+                            <p><strong>Causa probable:</strong> El compresor inverter no está funcionando correctamente.</p>
+                            <h6 class="fw-bold mt-3">Verificaciones necesarias:</h6>
+                            <ul class="text-start">
+                                <li>Revisar código de error en display (si aparece)</li>
+                                <li>Verificar que llegue señal a la tarjeta del compresor</li>
+                                <li>Revisar módulo IPM (Intelligent Power Module)</li>
+                                <li>Verificar sensores de temperatura</li>
+                                <li>Revisar presiones del sistema de refrigeración</li>
+                                <li>Verificar conexiones entre tarjetas</li>
+                            </ul>
+                            <div class="alert alert-danger mt-3">
+                                <i class="bi bi-exclamation-triangle me-2"></i>
+                                <strong>Importante:</strong> NO conectes el compresor inverter directamente a 220V. Puede dañarse permanentemente.
+                            </div>
+                        </div>
+                    `;
+                    actions = `
+                        <a href="https://wa.me/18297470675?text=Mi%20aire%20acondicionado%20enciende%20pero%20no%20enfría%2C%20el%20compresor%20no%20funciona.%20¿Pueden%20hacer%20el%20diagnóstico%3F" 
+                           target="_blank" class="action-btn">
+                            <i class="bi bi-whatsapp me-2"></i>Diagnóstico Profesional
+                        </a>
+                        <a href="recursos.html#videos-section" target="_blank" class="action-btn secondary-btn">
+                            <i class="bi bi-play me-2"></i>Ver Videos
+                        </a>
+                    `;
+                }
+            } else if (symptom === 'error-display') {
+                severity = 'info';
+                icon = 'info-circle';
+                title = 'Código de Error Detectado';
+                solution = `
+                    <div class="solution-card">
+                        <h5 class="text-info fw-bold"><i class="bi bi-display me-2"></i>Análisis de Código de Error</h5>
+                        <p><strong>Situación:</strong> El equipo muestra un código de error específico que nos ayudará a identificar la falla exacta.</p>
+                        <h6 class="fw-bold mt-3">Próximos pasos:</h6>
+                        <ul class="text-start">
+                            <li>Anota el código de error exacto que aparece</li>
+                            <li>Consulta los manuales de códigos por marca de tarjeta</li>
+                            <li>Verifica si el código es intermitente o permanente</li>
+                            <li>Toma una foto del código antes de reiniciar</li>
+                        </ul>
+                        <div class="alert alert-success mt-3">
+                            <i class="bi bi-lightbulb me-2"></i>
+                            <strong>Ventaja:</strong> Los códigos de error nos permiten identificar la falla específica rápidamente.
+                        </div>
+                    </div>
+                `;
+                actions = `
+                    <a href="https://wa.me/18297470675?text=Mi%20aire%20acondicionado%20muestra%20un%20código%20de%20error.%20¿Pueden%20ayudarme%20a%20interpretarlo%3F" 
+                       target="_blank" class="action-btn">
+                        <i class="bi bi-chat-dots me-2"></i>Interpretar Código
+                    </a>
+                    <a href="recursos.html#documentos-section" target="_blank" class="action-btn secondary-btn">
+                        <i class="bi bi-book me-2"></i>Manual de Códigos
+                    </a>
+                `;
+            }
+
+            return `
+                <div class="result-${severity}">
+                    <div class="result-icon">
+                        <i class="bi bi-${icon}"></i>
+                    </div>
+                    <h2 class="fw-bold text-dark mb-4">${title}</h2>
+                    ${solution}
+                    <div class="mt-4">
+                        ${actions}
+                    </div>
+                    <div class="mt-4">
+                        <button class="btn btn-outline-secondary" onclick="resetDiagnostic()">
+                            <i class="bi bi-arrow-clockwise me-2"></i>Nuevo Diagnóstico
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+            generateActionButtons(data) {
+                const whatsappMessages = {
+                    'warning': 'Hola, mi aire acondicionado no enciende y detecté que puede ser un problema eléctrico. ¿Pueden ayudarme?',
+                    'danger': 'Hola, mi aire acondicionado no enciende y parece que la tarjeta electrónica está dañada. ¿Pueden hacer el diagnóstico?',
+                    'info': 'Mi aire acondicionado muestra un código de error. ¿Pueden ayudarme a interpretarlo?'
+                };
+
+                const message = whatsappMessages[data.severity] || 'Necesito ayuda con mi aire acondicionado.';
+                const encodedMessage = encodeURIComponent(message);
+
+                return `
+                    <a href="https://wa.me/18297470675?text=${encodedMessage}" 
+                       target="_blank" class="action-btn" aria-label="Contactar técnico por WhatsApp">
+                        <i class="bi bi-whatsapp me-2" aria-hidden="true"></i>Contactar Técnico
+                    </a>
+                    <a href="recursos.html#documentos-section" target="_blank" class="action-btn secondary-btn" aria-label="Ver documentos técnicos">
+                        <i class="bi bi-file-pdf me-2" aria-hidden="true"></i>Ver Manuales
+                    </a>
+                    ${data.difficulty === 'avanzado' || data.difficulty === 'profesional' ? 
+                        `<a href="Tienda/carrito-compras.html" target="_blank" class="action-btn secondary-btn" aria-label="Ver repuestos disponibles">
+                            <i class="bi bi-cart me-2" aria-hidden="true"></i>Ver Repuestos
+                        </a>` : ''
+                    }
+                `;
+            }
+
+            resetDiagnostic() {
+                try {
+                    this.currentStep = 1;
+                    this.answers = {};
+                    this.selectedOptions = {};
+                    this.diagnosticData = {};
+                    
+                    // Hide results
+                    this.elements.results.classList.remove('active');
+                    this.elements.results.setAttribute('aria-hidden', 'true');
+                    
+                    // Show first step
+                    this.showStep(1);
+                    
+                    // Reset progress
+                    this.elements.progressBar.style.width = '0%';
+                    this.elements.progressText.textContent = '0%';
+                    
+                    // Reset navigation
+                    this.elements.navButtons.style.display = 'flex';
+                    this.updateNavigation();
+                    
+                    // Clear all selections
+                    document.querySelectorAll('.option-btn').forEach(btn => {
+                        btn.classList.remove('selected');
+                        btn.setAttribute('aria-selected', 'false');
+                    });
+                    
+                    // Clear localStorage
+                    this.clearProgress();
+                    
+                    // Focus on first option
+                    setTimeout(() => {
+                        const firstOption = document.querySelector('#step1 .option-btn');
+                        if (firstOption) firstOption.focus();
+                    }, 100);
+                    
+                } catch (error) {
+                    console.error('Error resetting diagnostic:', error);
+                    this.showError('Error al reiniciar. Recarga la página.');
+                }
+            }
+
+            downloadReport() {
+                try {
+                    if (!this.diagnosticData) {
+                        throw new Error('No hay datos de diagnóstico disponibles');
+                    }
+
+                    const reportData = {
+                        fecha: new Date().toLocaleDateString('es-ES'),
+                        hora: new Date().toLocaleTimeString('es-ES'),
+                        sintomas: this.answers,
+                        diagnostico: this.diagnosticData,
+                        recomendaciones: this.diagnosticData.solutions
+                    };
+
+                    const reportText = this.generateReportText(reportData);
+                    const blob = new Blob([reportText], { type: 'text/plain;charset=utf-8' });
+                    const url = URL.createObjectURL(blob);
+                    
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `reporte-diagnostico-${Date.now()}.txt`;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                    
+                } catch (error) {
+                    console.error('Error downloading report:', error);
+                    this.showError('Error al descargar el reporte.');
+                }
+            }
+
+            generateReportText(data) {
+                return `
+═══════════════════════════════════════════════════════════════
+                    REPORTE DE DIAGNÓSTICO - RSE
+═══════════════════════════════════════════════════════════════
+
+Fecha: ${data.fecha}
+Hora: ${data.hora}
+
+--- SÍNTOMAS REPORTADOS ---
+Síntoma principal: ${this.getSymptomDescription(data.sintomas.step1)}
+Alimentación eléctrica: ${this.getPowerDescription(data.sintomas.step2)}
+Estado de componentes: ${this.getComponentDescription(data.sintomas.step3)}
+
+--- DIAGNÓSTICO ---
+Título: ${data.diagnostico.title}
+Descripción: ${data.diagnostico.description}
+Severidad: ${data.diagnostico.severity}
+Tiempo estimado: ${data.diagnostico.estimatedTime}
+Dificultad: ${data.diagnostico.difficulty}
+
+--- VERIFICACIONES RECOMENDADAS ---
+${data.recomendaciones.map((rec, index) => `${index + 1}. ${rec}`).join('\n')}
+
+--- ADVERTENCIA ---
+${data.diagnostico.warning}
+
+--- CONTACTO ---
+Para asistencia técnica profesional:
+WhatsApp: +1 (829) 747-0675
+Web: RSE - Reparaciones Especializadas
+
+═══════════════════════════════════════════════════════════════
+Reporte generado automáticamente por el Detector de Fallas RSE
+═══════════════════════════════════════════════════════════════
+                `;
+            }
+
+            getSymptomDescription(value) {
+                const descriptions = {
+                    'no-enciende': 'El equipo no enciende',
+                    'enciende-no-enfria': 'Enciende pero no enfría',
+                    'ruidos-extraños': 'Ruidos extraños',
+                    'error-display': 'Código de error en display'
+                };
+                return descriptions[value] || value;
+            }
+
+            getPowerDescription(value) {
+                const descriptions = {
+                    'si-energia': 'Hay energía eléctrica',
+                    'no-energia': 'No hay energía eléctrica',
+                    'energia-intermitente': 'Energía intermitente'
+                };
+                return descriptions[value] || value;
+            }
+
+            getComponentDescription(value) {
+                const descriptions = {
+                    'display-funciona': 'Display funciona',
+                    'ventilador-funciona': 'Ventilador funciona',
+                    'compresor-no-funciona': 'Compresor no funciona',
+                    'nada-funciona': 'Ningún componente funciona'
+                };
+                return descriptions[value] || value;
+            }
+
+            saveProgress() {
+                try {
+                    const progressData = {
+                        currentStep: this.currentStep,
+                        answers: this.answers,
+                        timestamp: Date.now()
+                    };
+                    localStorage.setItem('rse-diagnostic-progress', JSON.stringify(progressData));
+                } catch (error) {
+                    console.warn('Could not save progress:', error);
+                }
+            }
+
+            loadProgress() {
+                try {
+                    const saved = localStorage.getItem('rse-diagnostic-progress');
+                    if (saved) {
+                        const data = JSON.parse(saved);
+                        // Only restore if less than 1 hour old
+                        if (Date.now() - data.timestamp < 3600000) {
+                            this.currentStep = data.currentStep;
+                            this.answers = data.answers;
+                            return true;
+                        }
+                    }
+                } catch (error) {
+                    console.warn('Could not load progress:', error);
+                }
+                return false;
+            }
+
+            clearProgress() {
+                try {
+                    localStorage.removeItem('rse-diagnostic-progress');
+                } catch (error) {
+                    console.warn('Could not clear progress:', error);
+                }
+            }
+
+            saveDiagnosticHistory(diagnosis) {
+                try {
+                    const historyKey = 'rse-diagnostic-history';
+                    let history = JSON.parse(localStorage.getItem(historyKey) || '[]');
+                    
+                    const record = {
+                        id: Date.now(),
+                        timestamp: new Date().toISOString(),
+                        answers: this.answers,
+                        diagnosis: this.diagnosticData
+                    };
+                    
+                    history.unshift(record);
+                    // Keep only last 10 diagnostics
+                    history = history.slice(0, 10);
+                    
+                    localStorage.setItem(historyKey, JSON.stringify(history));
+                } catch (error) {
+                    console.warn('Could not save diagnostic history:', error);
+                }
+            }
+
+            showError(message) {
+                // Create a simple toast notification
+                const toast = document.createElement('div');
+                toast.className = 'alert alert-danger position-fixed top-0 start-50 translate-middle-x mt-3';
+                toast.style.zIndex = '9999';
+                toast.innerHTML = `
+                    <i class="bi bi-exclamation-triangle me-2"></i>
+                    ${message}
+                    <button type="button" class="btn-close ms-2" onclick="this.parentElement.remove()"></button>
+                `;
+                
+                document.body.appendChild(toast);
+                
+                // Auto-remove after 5 seconds
+                setTimeout(() => {
+                    if (toast.parentElement) {
+                        toast.remove();
+                    }
+                }, 5000);
+            }
+
+            getErrorDiagnosis() {
+                return `
+                    <div class="result-danger">
+                        <div class="result-icon">
+                            <i class="bi bi-exclamation-triangle" style="font-size: 3rem; color: white;"></i>
+                        </div>
+                        <h2 class="fw-bold text-dark mb-4">Error en el Diagnóstico</h2>
+                        <div class="solution-card">
+                            <h5 class="text-danger fw-bold">
+                                <i class="bi bi-exclamation-triangle me-2"></i>Error Técnico
+                            </h5>
+                            <p>Ocurrió un error al procesar el diagnóstico. Por favor, contacta directamente al servicio técnico.</p>
+                        </div>
+                        <div class="mt-4">
+                            <a href="https://wa.me/18297470675?text=Necesito ayuda con el diagnóstico de mi aire acondicionado" 
+                               target="_blank" class="action-btn">
+                                <i class="bi bi-whatsapp me-2"></i>Contactar Técnico
+                            </a>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        // Global functions for compatibility
+        let diagnosticSystem;
+
+        function selectOption(button, step) {
+            diagnosticSystem.selectOption(button, step);
+        }
+
+        function nextStep() {
+            diagnosticSystem.nextStep();
+        }
+
+        function previousStep() {
+            diagnosticSystem.previousStep();
+        }
+
+        function resetDiagnostic() {
+            diagnosticSystem.resetDiagnostic();
+        }
+
+        // Initialize when DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize AOS
+            AOS.init({
+                duration: 1000,
+                once: true,
+                offset: 100
+            });
+
+            // Initialize diagnostic system
+            diagnosticSystem = new DiagnosticSystem();
+
+            // Try to load previous progress
+            if (diagnosticSystem.loadProgress()) {
+                console.log('Previous progress restored');
+            }
+        });
+    </script>
+</body>
+</html>
