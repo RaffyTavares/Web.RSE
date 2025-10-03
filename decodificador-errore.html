@@ -1,0 +1,1701 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decodificador de Códigos de Error - Rafael Soluciones Electrónica</title>
+    <meta name="description" content="Decodificador instantáneo de códigos de error para equipos de aire acondicionado inverter. Base de datos completa con soluciones.">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS para animaciones -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/logo1.png">
+    
+    <style>
+        :root {
+            --primary-color: #dc3545;
+            --secondary-color: #fd7e14;
+            --accent-color: #495057;
+            --success-color: #28a745;
+            --warning-color: #ffc107;
+            --info-color: #17a2b8;
+            --text-color: #333;
+            --bg-light: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: var(--text-color);
+        }
+
+        /* Header Mejorado */
+        .header-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 4rem 0 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="error-pattern" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M25,5 L45,25 L25,45 L5,25 Z" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/><circle cx="25" cy="25" r="3" fill="rgba(255,255,255,0.15)"/></pattern></defs><rect width="100" height="100" fill="url(%23error-pattern)"/></svg>');
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateX(0) translateY(0); }
+            100% { transform: translateX(-50px) translateY(-50px); }
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .tool-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem auto;
+            border: 3px solid rgba(255,255,255,0.3);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .page-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 1rem;
+        }
+
+        .page-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        /* Contenedor Principal */
+        .main-container {
+            background: white;
+            border-radius: 25px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin: -2rem auto 3rem auto;
+            position: relative;
+            z-index: 3;
+            overflow: hidden;
+        }
+
+        /* Buscador de Códigos */
+        .search-section {
+            background: linear-gradient(135deg, var(--bg-light), #e9ecef);
+            padding: 3rem 2rem;
+            border-radius: 25px 25px 0 0;
+        }
+
+        .search-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .search-input-group {
+            position: relative;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .search-input {
+            font-size: 1.5rem;
+            padding: 1.5rem 2rem 1.5rem 4rem;
+            border: 3px solid rgba(220, 53, 69, 0.2);
+            border-radius: 20px;
+            background: white;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 1px;
+            flex: 1;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25), 0 12px 35px rgba(0,0,0,0.15);
+            transform: translateY(-2px);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            z-index: 5;
+        }
+
+        .search-btn {
+            font-size: 1.2rem;
+            padding: 1.2rem 2rem;
+            border-radius: 15px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border: none;
+            color: white;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(220, 53, 69, 0.3);
+            white-space: nowrap;
+        }
+
+        .search-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(220, 53, 69, 0.4);
+            background: linear-gradient(135deg, #e63946, #f77f00);
+        }
+
+        .search-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .search-filters {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .filter-btn {
+            padding: 0.8rem 1.5rem;
+            border: 2px solid rgba(220, 53, 69, 0.3);
+            background: white;
+            color: var(--primary-color);
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(220, 53, 69, 0.3);
+        }
+
+        /* Resultado del Código */
+        .result-section {
+            padding: 2rem;
+            display: none;
+        }
+
+        .result-card {
+            background: linear-gradient(135deg, #fff, #f8f9fa);
+            border: 1px solid #e9ecef;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .result-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+
+        .code-display {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 25px rgba(220, 53, 69, 0.3);
+        }
+
+        .code-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .code-description {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .severity-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .severity-low { 
+            background: rgba(40, 167, 69, 0.1); 
+            color: var(--success-color); 
+            border: 2px solid rgba(40, 167, 69, 0.3);
+        }
+        
+        .severity-medium { 
+            background: rgba(255, 193, 7, 0.1); 
+            color: var(--warning-color); 
+            border: 2px solid rgba(255, 193, 7, 0.3);
+        }
+        
+        .severity-high { 
+            background: rgba(220, 53, 69, 0.1); 
+            color: var(--primary-color); 
+            border: 2px solid rgba(220, 53, 69, 0.3);
+        }
+
+        .diagnosis-section, .solution-section {
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .diagnosis-steps, .solution-steps {
+            background: var(--bg-light);
+            border-radius: 15px;
+            padding: 1.5rem;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .step-number {
+            background: var(--primary-color);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-title {
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .step-description {
+            color: #6c757d;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Base de Datos de Códigos */
+        .database-section {
+            padding: 3rem 2rem;
+            background: #f8f9fa;
+        }
+
+        .brand-tabs {
+            margin-bottom: 2rem;
+        }
+
+        .nav-pills .nav-link {
+            border-radius: 25px;
+            padding: 0.8rem 1.5rem;
+            margin: 0 0.5rem;
+            font-weight: 600;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .nav-pills .nav-link.active {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .codes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .code-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .code-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            border-color: var(--primary-color);
+        }
+
+        .code-card-header {
+            display: flex;
+            justify-content: between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .code-card-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .code-card-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        .code-card-description {
+            color: #6c757d;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Botones de Navegación */
+        .nav-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .nav-btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            box-shadow: 0 5px 15px rgba(220, 53, 69, 0.3);
+        }
+
+        .nav-btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(220, 53, 69, 0.4);
+            color: white;
+        }
+
+        .nav-btn-secondary {
+            background: white;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .nav-btn-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .page-title { font-size: 2.5rem; }
+            .search-input { font-size: 1.2rem; padding: 1.2rem 1.5rem 1.2rem 3.5rem; }
+            .search-input-group { 
+                flex-direction: column; 
+                gap: 1rem;
+            }
+            .search-btn {
+                font-size: 1.1rem;
+                padding: 1rem 1.5rem;
+                width: 100%;
+            }
+            .code-number { font-size: 2rem; }
+            .codes-grid { grid-template-columns: 1fr; }
+            .search-filters { justify-content: center; }
+            .nav-buttons { flex-direction: column; align-items: center; }
+        }
+
+        /* Animaciones adicionales */
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .bounce-in {
+            animation: bounceIn 0.6s ease-out;
+        }
+
+        @keyframes bounceIn {
+            0% { opacity: 0; transform: scale(0.3); }
+            50% { opacity: 1; transform: scale(1.05); }
+            70% { transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="header-section">
+        <div class="container header-content text-center">
+            <div class="tool-icon" data-aos="zoom-in">
+                <i class="bi bi-search" style="font-size: 3rem;"></i>
+            </div>
+            
+            <h1 class="page-title" data-aos="fade-down" data-aos-delay="100">
+                Decodificador de Errores
+            </h1>
+            
+            <p class="page-subtitle" data-aos="fade-up" data-aos-delay="200">
+                Identifica y resuelve códigos de error de equipos inverter al instante
+            </p>
+
+            <div class="row justify-content-center mt-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="col-md-4 text-center">
+                    <div class="p-3" style="background: rgba(255,255,255,0.1); border-radius: 15px; backdrop-filter: blur(10px);">
+                        <i class="bi bi-database text-warning fs-2"></i>
+                        <h4 class="text-white mt-2 mb-0">500+</h4>
+                        <small class="text-white-50">Códigos en Base de Datos</small>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="p-3" style="background: rgba(255,255,255,0.1); border-radius: 15px; backdrop-filter: blur(10px);">
+                        <i class="bi bi-lightning text-info fs-2"></i>
+                        <h4 class="text-white mt-2 mb-0">Instantáneo</h4>
+                        <small class="text-white-50">Diagnóstico Rápido</small>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="p-3" style="background: rgba(255,255,255,0.1); border-radius: 15px; backdrop-filter: blur(10px);">
+                        <i class="bi bi-tools text-success fs-2"></i>
+                        <h4 class="text-white mt-2 mb-0">Soluciones</h4>
+                        <small class="text-white-50">Paso a Paso</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenedor Principal -->
+    <div class="container">
+        <div class="main-container">
+            <!-- Sección de Búsqueda -->
+            <div class="search-section">
+                <div class="search-container" data-aos="fade-up">
+                    <h3 class="text-center mb-4" style="color: var(--primary-color); font-weight: 700;">
+                        <i class="bi bi-search me-2"></i>
+                        Buscar Código de Error
+                    </h3>
+                    
+                    <div class="search-input-group">
+                        <i class="bi bi-search search-icon"></i>
+                        <input type="text" 
+                               id="errorCodeInput" 
+                               class="form-control search-input" 
+                               placeholder="Ingresa el código (ej: E1, F02, CH01, etc.)"
+                               autocomplete="off">
+                        <button type="button" 
+                                id="searchButton"
+                                class="btn btn-primary search-btn">
+                            <i class="bi bi-search me-1"></i>
+                            Buscar
+                        </button>
+                    </div>
+
+                    <div class="search-filters">
+                        <button class="filter-btn active" data-filter="all">
+                            <i class="bi bi-grid-3x3-gap me-1"></i>
+                            Todas las Marcas
+                        </button>
+                        <button class="filter-btn" data-filter="panasonic">
+                            <i class="bi bi-cpu me-1"></i>
+                            Panasonic
+                        </button>
+                        <button class="filter-btn" data-filter="lg">
+                            <i class="bi bi-motherboard me-1"></i>
+                            LG
+                        </button>
+                        <button class="filter-btn" data-filter="samsung">
+                            <i class="bi bi-phone me-1"></i>
+                            Samsung
+                        </button>
+                        <button class="filter-btn" data-filter="daikin">
+                            <i class="bi bi-gear me-1"></i>
+                            Daikin
+                        </button>
+                        <button class="filter-btn" data-filter="mitsubishi">
+                            <i class="bi bi-diamond me-1"></i>
+                            Mitsubishi
+                        </button>
+                    </div>
+
+                    <div class="text-center">
+                        <small class="text-muted">
+                            <i class="bi bi-info-circle me-1"></i>
+                            Ingresa el código y presiona "Buscar" o Enter para buscar
+                        </small>
+                    </div>
+
+                    <!-- Botones de prueba rápida -->
+                    <div class="text-center mt-3">
+                        <div class="btn-group" role="group" aria-label="Pruebas rápidas">
+                            <button type="button" class="btn btn-outline-primary btn-sm" onclick="testSearch('E1')">
+                                Probar E1
+                            </button>
+                            <button type="button" class="btn btn-outline-primary btn-sm" onclick="testSearch('CH01')">
+                                Probar CH01
+                            </button>
+                            <button type="button" class="btn btn-outline-primary btn-sm" onclick="testSearch('A0')">
+                                Probar A0
+                            </button>
+                            <button type="button" class="btn btn-outline-success btn-sm" onclick="debugDatabase()">
+                                Ver Base de Datos
+                            </button>
+                            <button type="button" class="btn btn-outline-warning btn-sm" onclick="fullDiagnostic()">
+                                Test Completo
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sección de Resultado -->
+            <div class="result-section" id="resultSection">
+                <div class="result-card bounce-in">
+                    <div class="code-display">
+                        <div class="code-number" id="resultCodeNumber">E1</div>
+                        <div class="code-description" id="resultCodeDescription">Sensor de temperatura interior</div>
+                    </div>
+
+                    <div class="text-center mb-3">
+                        <span class="severity-badge" id="resultSeverity">Severidad Media</span>
+                    </div>
+
+                    <div class="diagnosis-section">
+                        <h4 class="section-title">
+                            <i class="bi bi-stethoscope"></i>
+                            Diagnóstico
+                        </h4>
+                        <div class="diagnosis-steps" id="diagnosisSteps">
+                            <!-- Se llena dinámicamente -->
+                        </div>
+                    </div>
+
+                    <div class="solution-section">
+                        <h4 class="section-title">
+                            <i class="bi bi-tools"></i>
+                            Solución
+                        </h4>
+                        <div class="solution-steps" id="solutionSteps">
+                            <!-- Se llena dinámicamente -->
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-4">
+                        <button class="btn btn-outline-danger btn-lg" onclick="clearSearch()">
+                            <i class="bi bi-arrow-left me-2"></i>
+                            Nueva Búsqueda
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Base de Datos de Códigos -->
+            <div class="database-section">
+                <div class="text-center mb-4" data-aos="fade-up">
+                    <h3 style="color: var(--primary-color); font-weight: 700;">
+                        <i class="bi bi-database me-2"></i>
+                        Base de Datos de Códigos
+                    </h3>
+                    <p class="text-muted">Explora todos los códigos disponibles por marca</p>
+                </div>
+
+                <div class="brand-tabs" data-aos="fade-up" data-aos-delay="100">
+                    <ul class="nav nav-pills justify-content-center" id="brandTabs">
+                        <li class="nav-item">
+                            <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#panasonic-codes">
+                                Panasonic
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#lg-codes">
+                                LG
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#samsung-codes">
+                                Samsung
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#daikin-codes">
+                                Daikin
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
+                    <!-- Panasonic Codes -->
+                    <div class="tab-pane fade show active" id="panasonic-codes">
+                        <div class="codes-grid" id="panasonicGrid">
+                            <!-- Se llena dinámicamente -->
+                        </div>
+                    </div>
+
+                    <!-- LG Codes -->
+                    <div class="tab-pane fade" id="lg-codes">
+                        <div class="codes-grid" id="lgGrid">
+                            <!-- Se llena dinámicamente -->
+                        </div>
+                    </div>
+
+                    <!-- Samsung Codes -->
+                    <div class="tab-pane fade" id="samsung-codes">
+                        <div class="codes-grid" id="samsungGrid">
+                            <!-- Se llena dinámicamente -->
+                        </div>
+                    </div>
+
+                    <!-- Daikin Codes -->
+                    <div class="tab-pane fade" id="daikin-codes">
+                        <div class="codes-grid" id="daikinGrid">
+                            <!-- Se llena dinámicamente -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botones de Navegación -->
+    <div class="container">
+        <div class="nav-buttons" data-aos="fade-up">
+            <a href="recursos.html" class="nav-btn nav-btn-secondary">
+                <i class="bi bi-arrow-left"></i>
+                Volver a Recursos
+            </a>
+            <a href="index.php" class="nav-btn nav-btn-primary">
+                <i class="bi bi-house"></i>
+                Ir al Inicio
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer simple -->
+    <footer class="text-center py-4 mt-5" style="background: rgba(0,0,0,0.1); color: white;">
+        <div class="container">
+            <p class="mb-0">&copy; 2025 Rafael Soluciones Electrónica - Decodificador de Errores</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    
+    <script>
+        // Inicializar AOS
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // Base de datos de códigos de error expandida
+        const errorCodes = {
+            panasonic: [
+                {
+                    code: "E1",
+                    title: "Error de Sensor de Temperatura Interior",
+                    description: "El sensor de temperatura del ambiente interior presenta falla",
+                    severity: "medium",
+                    diagnosis: [
+                        "Verificar conexión del sensor de temperatura interior",
+                        "Medir resistencia del sensor (debe estar entre 10-15kΩ a 25°C)",
+                        "Revisar cableado por cortes o cortocircuitos",
+                        "Verificar que el sensor esté limpio y sin obstrucciones"
+                    ],
+                    solution: [
+                        "Desconectar alimentación del equipo",
+                        "Localizar sensor de temperatura interior (cerca del evaporador)",
+                        "Revisar conexiones y limpiar terminales",
+                        "Si la resistencia está fuera de rango, reemplazar sensor",
+                        "Probar funcionamiento del equipo"
+                    ]
+                },
+                {
+                    code: "E2",
+                    title: "Error de Sensor de Temperatura Exterior",
+                    description: "Falla en el sensor de temperatura del condensador",
+                    severity: "medium",
+                    diagnosis: [
+                        "Verificar sensor de temperatura exterior",
+                        "Medir resistencia del termistor",
+                        "Revisar cableado entre unidades",
+                        "Verificar tarjeta de control exterior"
+                    ],
+                    solution: [
+                        "Acceder a la unidad condensadora",
+                        "Localizar sensor de temperatura exterior",
+                        "Verificar conexiones eléctricas",
+                        "Reemplazar sensor si es necesario",
+                        "Realizar prueba de funcionamiento"
+                    ]
+                },
+                {
+                    code: "F1",
+                    title: "Error de Comunicación",
+                    description: "Falla en la comunicación entre unidades interior y exterior",
+                    severity: "high",
+                    diagnosis: [
+                        "Verificar cableado de comunicación",
+                        "Revisar conexiones en ambas unidades",
+                        "Medir voltajes de comunicación",
+                        "Verificar tarjetas de control"
+                    ],
+                    solution: [
+                        "Revisar cable de comunicación (2 o 3 hilos)",
+                        "Verificar polaridad de conexiones",
+                        "Comprobar continuidad del cableado",
+                        "Reemplazar cable de comunicación si es necesario",
+                        "Verificar tarjetas de control"
+                    ]
+                },
+                {
+                    code: "H11",
+                    title: "Error de Sensor de Temperatura del Compresor",
+                    description: "Problema con el sensor de temperatura del compresor",
+                    severity: "high",
+                    diagnosis: [
+                        "Verificar sensor de temperatura del compresor",
+                        "Medir resistencia del termistor",
+                        "Revisar conexiones eléctricas",
+                        "Verificar temperatura real del compresor"
+                    ],
+                    solution: [
+                        "Desconectar alimentación",
+                        "Localizar sensor en el compresor",
+                        "Limpiar conexiones",
+                        "Reemplazar sensor si es necesario",
+                        "Verificar funcionamiento del sistema"
+                    ]
+                }
+            ],
+            lg: [
+                {
+                    code: "CH01",
+                    title: "Error IPM (Módulo de Potencia)",
+                    description: "Falla en el módulo IPM del inverter",
+                    severity: "high",
+                    diagnosis: [
+                        "Verificar voltajes de alimentación",
+                        "Revisar módulo IPM por sobrecalentamiento",
+                        "Medir resistencias del compresor",
+                        "Verificar ventilador del condensador"
+                    ],
+                    solution: [
+                        "Desconectar alimentación por 30 minutos",
+                        "Verificar ventilación del condensador",
+                        "Revisar filtros de aire obstruidos",
+                        "Si persiste, reemplazar módulo IPM",
+                        "Verificar tarjeta principal"
+                    ]
+                },
+                {
+                    code: "CH02",
+                    title: "Error de Sensor de Corriente DC",
+                    description: "Problema con la detección de corriente DC",
+                    severity: "medium",
+                    diagnosis: [
+                        "Verificar sensor de corriente DC",
+                        "Revisar conexiones del sensor",
+                        "Medir voltajes en la tarjeta",
+                        "Verificar funcionamiento del compresor"
+                    ],
+                    solution: [
+                        "Limpiar conexiones del sensor",
+                        "Verificar calibración del sensor",
+                        "Reemplazar sensor si es defectuoso",
+                        "Revisar tarjeta de control",
+                        "Realizar test de funcionamiento"
+                    ]
+                },
+                {
+                    code: "CH05",
+                    title: "Error de Sensor de Voltaje DC",
+                    description: "Problema en la detección del voltaje DC del bus",
+                    severity: "high",
+                    diagnosis: [
+                        "Verificar voltaje del bus DC",
+                        "Revisar rectificador",
+                        "Verificar capacitores principales",
+                        "Medir voltajes de entrada"
+                    ],
+                    solution: [
+                        "Verificar alimentación AC",
+                        "Revisar puente rectificador",
+                        "Verificar capacitores electrolíticos",
+                        "Reemplazar sensor de voltaje si es necesario",
+                        "Revisar tarjeta de potencia"
+                    ]
+                }
+            ],
+            samsung: [
+                {
+                    code: "E1",
+                    title: "Error de Sensor Temperatura Evaporador",
+                    description: "Sensor de temperatura del evaporador defectuoso",
+                    severity: "medium",
+                    diagnosis: [
+                        "Verificar sensor en evaporador",
+                        "Medir resistencia del termistor",
+                        "Revisar cableado del sensor",
+                        "Verificar tarjeta de control"
+                    ],
+                    solution: [
+                        "Acceder al evaporador interior",
+                        "Localizar sensor de temperatura",
+                        "Verificar conexiones",
+                        "Reemplazar sensor defectuoso",
+                        "Calibrar sistema"
+                    ]
+                },
+                {
+                    code: "E4",
+                    title: "Error de Sobrecarga del Compresor",
+                    description: "El compresor está trabajando en sobrecarga",
+                    severity: "high",
+                    diagnosis: [
+                        "Verificar amperaje del compresor",
+                        "Revisar presiones del sistema",
+                        "Verificar filtros obstruidos",
+                        "Revisar nivel de refrigerante"
+                    ],
+                    solution: [
+                        "Limpiar filtros de aire",
+                        "Verificar flujo de aire",
+                        "Revisar carga de refrigerante",
+                        "Verificar válvula de expansión",
+                        "Revisar compresor por daños"
+                    ]
+                },
+                {
+                    code: "E5",
+                    title: "Error de Comunicación Interior-Exterior",
+                    description: "Falla en la comunicación entre unidades",
+                    severity: "high",
+                    diagnosis: [
+                        "Verificar cableado de comunicación",
+                        "Revisar polaridad de conexiones",
+                        "Medir voltajes de comunicación",
+                        "Verificar tarjetas de ambas unidades"
+                    ],
+                    solution: [
+                        "Revisar cable de comunicación",
+                        "Verificar terminales de conexión",
+                        "Comprobar polaridad correcta",
+                        "Reemplazar cable si es necesario",
+                        "Reset de ambas unidades"
+                    ]
+                }
+            ],
+            daikin: [
+                {
+                    code: "A0",
+                    title: "Error de Protección Externa",
+                    description: "Activación de protección externa del sistema",
+                    severity: "medium",
+                    diagnosis: [
+                        "Verificar conexiones externas",
+                        "Revisar interruptores de protección",
+                        "Verificar alimentación eléctrica",
+                        "Revisar cableado de control"
+                    ],
+                    solution: [
+                        "Verificar alimentación eléctrica",
+                        "Revisar interruptores de protección",
+                        "Comprobar conexiones de control",
+                        "Reset del sistema",
+                        "Verificar funcionamiento normal"
+                    ]
+                },
+                {
+                    code: "A1",
+                    title: "Error PCB Unidad Interior",
+                    description: "Falla en la tarjeta de circuito impreso interior",
+                    severity: "high",
+                    diagnosis: [
+                        "Verificar alimentación de la PCB",
+                        "Revisar componentes visualmente",
+                        "Verificar fusibles de la tarjeta",
+                        "Medir voltajes en la PCB"
+                    ],
+                    solution: [
+                        "Desconectar alimentación",
+                        "Revisar fusibles de la tarjeta",
+                        "Verificar componentes quemados",
+                        "Reemplazar PCB si es necesario",
+                        "Programar nueva tarjeta"
+                    ]
+                },
+                {
+                    code: "A3",
+                    title: "Error de Sensor de Temperatura Exterior",
+                    description: "Falla en el sensor de temperatura exterior",
+                    severity: "medium",
+                    diagnosis: [
+                        "Verificar sensor exterior",
+                        "Medir resistencia del termistor",
+                        "Revisar cableado",
+                        "Verificar conexiones"
+                    ],
+                    solution: [
+                        "Acceder a unidad exterior",
+                        "Localizar sensor de temperatura",
+                        "Limpiar conexiones",
+                        "Reemplazar sensor si es defectuoso",
+                        "Calibrar sistema"
+                    ]
+                }
+            ],
+            mitsubishi: [
+                {
+                    code: "E1",
+                    title: "Error de Sensor de Temperatura Interior",
+                    description: "Falla en el sensor de temperatura interior",
+                    severity: "medium",
+                    diagnosis: [
+                        "Verificar sensor de temperatura interior",
+                        "Medir resistencia del termistor",
+                        "Revisar conexiones eléctricas",
+                        "Verificar tarjeta de control"
+                    ],
+                    solution: [
+                        "Localizar sensor en evaporador",
+                        "Verificar conexiones",
+                        "Limpiar terminales",
+                        "Reemplazar sensor si es necesario",
+                        "Probar funcionamiento"
+                    ]
+                },
+                {
+                    code: "E6",
+                    title: "Error de Motor del Ventilador Interior",
+                    description: "Problema con el motor del ventilador interior",
+                    severity: "high",
+                    diagnosis: [
+                        "Verificar funcionamiento del motor",
+                        "Revisar alimentación del motor",
+                        "Verificar conexiones eléctricas",
+                        "Revisar control de velocidad"
+                    ],
+                    solution: [
+                        "Verificar alimentación del motor",
+                        "Revisar conexiones del motor",
+                        "Verificar capacitor del motor",
+                        "Reemplazar motor si es necesario",
+                        "Probar todas las velocidades"
+                    ]
+                }
+            ]
+        };
+
+        // Variables globales
+        let currentFilter = 'all';
+
+        // Inicialización con debugging mejorado
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🚀 DOM loaded, inicializando decodificador...');
+            console.log('📊 Base de datos cargada:', Object.keys(errorCodes));
+            console.log('📈 Total de códigos:', Object.values(errorCodes).reduce((total, brand) => total + brand.length, 0));
+            
+            // Verificar elementos críticos
+            const input = document.getElementById('errorCodeInput');
+            const resultSection = document.getElementById('resultSection');
+            
+            console.log('🔍 Input encontrado:', !!input);
+            console.log('📋 Sección de resultado encontrada:', !!resultSection);
+            
+            if (!input) {
+                console.error('❌ CRÍTICO: Input de búsqueda no encontrado');
+                return;
+            }
+            
+            if (!resultSection) {
+                console.error('❌ CRÍTICO: Sección de resultado no encontrada');
+                return;
+            }
+            
+            setupEventListeners();
+            populateCodeGrids();
+            
+            console.log('✅ Decodificador inicializado correctamente');
+            console.log('💡 Usa decoderDebug.quickTest() para probar el sistema');
+        });
+
+        // Configurar event listeners
+        function setupEventListeners() {
+            console.log('Configurando event listeners...');
+            const input = document.getElementById('errorCodeInput');
+            const searchButton = document.getElementById('searchButton');
+            const filters = document.querySelectorAll('.filter-btn');
+
+            if (!input) {
+                console.error('No se encontró el input de búsqueda');
+                return;
+            }
+
+            if (!searchButton) {
+                console.error('No se encontró el botón de búsqueda');
+                return;
+            }
+
+            // Evento para el botón de búsqueda
+            searchButton.addEventListener('click', function() {
+                console.log('🔍 Botón de búsqueda clickeado');
+                handleSearch();
+            });
+            
+            // Evento para Enter en el input
+            input.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    console.log('⌨️ Enter presionado');
+                    handleSearch();
+                }
+            });
+
+            // Limpiar resultados cuando se modifica el input
+            input.addEventListener('input', function() {
+                console.log('📝 Input modificado:', this.value);
+                // Ocultar resultados cuando se modifica el texto
+                const resultSection = document.getElementById('resultSection');
+                if (resultSection) {
+                    resultSection.style.display = 'none';
+                }
+            });
+
+            filters.forEach((btn, index) => {
+                btn.addEventListener('click', function() {
+                    console.log('Filtro clickeado:', this.dataset.filter);
+                    filters.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    currentFilter = this.dataset.filter;
+                });
+            });
+
+            console.log('Event listeners configurados correctamente');
+        }
+
+        // Manejar búsqueda con debugging mejorado
+        function handleSearch() {
+            console.log('=== INICIANDO BÚSQUEDA ===');
+            const input = document.getElementById('errorCodeInput');
+            if (!input) {
+                console.error('Input no encontrado');
+                return;
+            }
+
+            const searchTerm = input.value.trim().toUpperCase();
+            console.log('Término de búsqueda:', searchTerm);
+            console.log('Filtro actual:', currentFilter);
+            console.log('Base de datos disponible:', Object.keys(errorCodes));
+            
+            if (searchTerm.length === 0) {
+                console.log('Término de búsqueda vacío, ocultando resultado');
+                hideResult();
+                return;
+            }
+
+            // Debug: Mostrar todos los códigos disponibles
+            console.log('=== CÓDIGOS DISPONIBLES ===');
+            Object.keys(errorCodes).forEach(brand => {
+                console.log(`${brand}:`, errorCodes[brand].map(c => c.code));
+            });
+
+            const result = findErrorCode(searchTerm);
+            console.log('Resultado de búsqueda:', result);
+            
+            if (result) {
+                console.log('✅ Código encontrado, mostrando resultado');
+                displayResult(result);
+            } else {
+                console.log('❌ Código no encontrado');
+                displayNoResult(searchTerm);
+            }
+        }
+
+        // Buscar código de error con debugging mejorado
+        function findErrorCode(code) {
+            console.log('=== BUSCANDO CÓDIGO ===');
+            console.log('Código buscado:', code);
+            console.log('Longitud del código:', code.length);
+            console.log('Tipo de dato:', typeof code);
+            
+            const brands = currentFilter === 'all' ? Object.keys(errorCodes) : [currentFilter];
+            console.log('Marcas seleccionadas para buscar:', brands);
+            
+            for (const brand of brands) {
+                console.log(`\n--- Buscando en marca: ${brand} ---`);
+                
+                if (!errorCodes[brand]) {
+                    console.log(`❌ Marca ${brand} no existe en la base de datos`);
+                    continue;
+                }
+                
+                const brandCodes = errorCodes[brand];
+                console.log(`Códigos en ${brand}:`, brandCodes.map(c => `"${c.code}"`));
+                
+                for (let i = 0; i < brandCodes.length; i++) {
+                    const error = brandCodes[i];
+                    const errorCodeUpper = error.code.toUpperCase();
+                    const match = errorCodeUpper === code;
+                    
+                    console.log(`Comparando: "${errorCodeUpper}" === "${code}" = ${match}`);
+                    
+                    if (match) {
+                        console.log(`✅ ¡CÓDIGO ENCONTRADO EN ${brand.toUpperCase()}!`, error);
+                        return { ...error, brand };
+                    }
+                }
+                
+                console.log(`❌ Código no encontrado en ${brand}`);
+            }
+            
+            console.log('❌ Código no encontrado en ninguna marca');
+            return null;
+        }
+
+        // Mostrar resultado con validación mejorada
+        function displayResult(result) {
+            console.log('🎯 Mostrando resultado:', result);
+            
+            // Asegurar que la sección esté visible primero
+            const resultSection = document.getElementById('resultSection');
+            if (!resultSection) {
+                console.error('❌ CRÍTICO: resultSection no encontrado');
+                return;
+            }
+            
+            // Hacer visible la sección
+            resultSection.style.display = 'block';
+            console.log('✅ Sección de resultado ahora visible');
+            
+            // Buscar elementos después de hacer visible la sección
+            const codeNumber = document.getElementById('resultCodeNumber');
+            const codeDescription = document.getElementById('resultCodeDescription');
+            const severity = document.getElementById('resultSeverity');
+            const diagnosisSteps = document.getElementById('diagnosisSteps');
+            const solutionSteps = document.getElementById('solutionSteps');
+
+            // Validar que todos los elementos existen
+            const elements = {
+                resultSection: !!resultSection,
+                codeNumber: !!codeNumber,
+                codeDescription: !!codeDescription,
+                severity: !!severity,
+                diagnosisSteps: !!diagnosisSteps,
+                solutionSteps: !!solutionSteps
+            };
+            
+            console.log('📋 Estado de elementos:', elements);
+            
+            if (!codeNumber || !codeDescription || !severity || !diagnosisSteps || !solutionSteps) {
+                console.error('❌ CRÍTICO: Elementos del resultado no encontrados:', {
+                    codeNumber: !!codeNumber,
+                    codeDescription: !!codeDescription,
+                    severity: !!severity,
+                    diagnosisSteps: !!diagnosisSteps,
+                    solutionSteps: !!solutionSteps
+                });
+                
+                // Intentar crear la estructura si no existe
+                console.log('🔧 Intentando recrear la estructura...');
+                recreateResultStructure(result);
+                return;
+            }
+
+            try {
+                // Llenar la información
+                codeNumber.textContent = result.code;
+                codeDescription.textContent = result.title;
+                
+                // Configurar severidad
+                severity.className = `severity-badge severity-${result.severity}`;
+                severity.innerHTML = `<i class="bi bi-exclamation-triangle me-1"></i>${getSeverityText(result.severity)}`;
+
+                // Llenar pasos de diagnóstico
+                diagnosisSteps.innerHTML = result.diagnosis.map((step, index) => `
+                    <div class="step-item">
+                        <div class="step-number">${index + 1}</div>
+                        <div class="step-content">
+                            <div class="step-description">${step}</div>
+                        </div>
+                    </div>
+                `).join('');
+
+                // Llenar pasos de solución
+                solutionSteps.innerHTML = result.solution.map((step, index) => `
+                    <div class="step-item">
+                        <div class="step-number">${index + 1}</div>
+                        <div class="step-content">
+                            <div class="step-description">${step}</div>
+                        </div>
+                    </div>
+                `).join('');
+                
+                // Scroll suave hacia el resultado
+                setTimeout(() => {
+                    resultSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
+                
+                console.log('✅ Resultado mostrado exitosamente');
+            } catch (error) {
+                console.error('❌ Error mostrando resultado:', error);
+                recreateResultStructure(result);
+            }
+        }
+
+        // Función para recrear la estructura si no existe
+        function recreateResultStructure(result) {
+            console.log('🔧 Recreando estructura de resultado...');
+            
+            const resultSection = document.getElementById('resultSection');
+            if (!resultSection) {
+                console.error('❌ No se puede recrear: resultSection no existe');
+                return;
+            }
+            
+            resultSection.innerHTML = `
+                <div class="result-card bounce-in">
+                    <div class="code-display">
+                        <div class="code-number" id="resultCodeNumber">${result.code}</div>
+                        <div class="code-description" id="resultCodeDescription">${result.title}</div>
+                    </div>
+
+                    <div class="text-center mb-3">
+                        <span class="severity-badge severity-${result.severity}" id="resultSeverity">
+                            <i class="bi bi-exclamation-triangle me-1"></i>${getSeverityText(result.severity)}
+                        </span>
+                    </div>
+
+                    <div class="diagnosis-section">
+                        <h4 class="section-title">
+                            <i class="bi bi-stethoscope"></i>
+                            Diagnóstico
+                        </h4>
+                        <div class="diagnosis-steps" id="diagnosisSteps">
+                            ${result.diagnosis.map((step, index) => `
+                                <div class="step-item">
+                                    <div class="step-number">${index + 1}</div>
+                                    <div class="step-content">
+                                        <div class="step-description">${step}</div>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+
+                    <div class="solution-section">
+                        <h4 class="section-title">
+                            <i class="bi bi-tools"></i>
+                            Solución
+                        </h4>
+                        <div class="solution-steps" id="solutionSteps">
+                            ${result.solution.map((step, index) => `
+                                <div class="step-item">
+                                    <div class="step-number">${index + 1}</div>
+                                    <div class="step-content">
+                                        <div class="step-description">${step}</div>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-4">
+                        <button class="btn btn-outline-danger btn-lg" onclick="clearSearch()">
+                            <i class="bi bi-arrow-left me-2"></i>
+                            Nueva Búsqueda
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            resultSection.style.display = 'block';
+            
+            setTimeout(() => {
+                resultSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+            
+            console.log('✅ Estructura recreada exitosamente');
+        }
+
+        // Mostrar "no encontrado"
+        function displayNoResult(searchTerm) {
+            console.log('Mostrando mensaje de no encontrado para:', searchTerm);
+            
+            const resultSection = document.getElementById('resultSection');
+            const resultCard = resultSection.querySelector('.result-card');
+            
+            if (!resultSection || !resultCard) {
+                console.error('Elementos para mostrar "no encontrado" no encontrados');
+                return;
+            }
+            
+            resultCard.innerHTML = `
+                <div class="text-center py-5">
+                    <i class="bi bi-search text-muted" style="font-size: 4rem;"></i>
+                    <h3 class="mt-3 text-muted">Código no encontrado</h3>
+                    <p class="text-muted">No se encontró el código "<strong>${searchTerm}</strong>" en la base de datos actual.</p>
+                    <div class="alert alert-info mt-3">
+                        <i class="bi bi-info-circle me-2"></i>
+                        <strong>Sugerencias:</strong>
+                        <ul class="mb-0 mt-2 text-start">
+                            <li>Verifica que el código esté escrito correctamente</li>
+                            <li>Prueba buscar sin espacios o caracteres especiales</li>
+                            <li>Selecciona la marca específica del equipo</li>
+                        </ul>
+                    </div>
+                    <div class="mt-4">
+                        <button class="btn btn-primary me-2" onclick="clearSearch()">
+                            <i class="bi bi-arrow-left me-1"></i>
+                            Nueva Búsqueda
+                        </button>
+                        <a href="https://wa.me/8295965912?text=Consulta sobre código de error: ${searchTerm}" 
+                           target="_blank" class="btn btn-success">
+                            <i class="bi bi-whatsapp me-1"></i>
+                            Consultar Experto
+                        </a>
+                    </div>
+                </div>
+            `;
+            
+            resultSection.style.display = 'block';
+            setTimeout(() => {
+                resultSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+        }
+
+        // Ocultar resultado
+        function hideResult() {
+            const resultSection = document.getElementById('resultSection');
+            if (resultSection) {
+                resultSection.style.display = 'none';
+                console.log('Resultado ocultado');
+            }
+        }
+
+        // Limpiar búsqueda
+        function clearSearch() {
+            const input = document.getElementById('errorCodeInput');
+            if (input) {
+                input.value = '';
+            }
+            hideResult();
+            document.querySelector('.search-section').scrollIntoView({ behavior: 'smooth' });
+            console.log('Búsqueda limpiada');
+        }
+
+        // Obtener texto de severidad
+        function getSeverityText(severity) {
+            const severityMap = {
+                low: 'Severidad Baja',
+                medium: 'Severidad Media', 
+                high: 'Severidad Alta'
+            };
+            return severityMap[severity] || 'Severidad Desconocida';
+        }
+
+        // Poblar grillas de códigos con validación
+        function populateCodeGrids() {
+            console.log('Poblando grillas de códigos...');
+            
+            Object.keys(errorCodes).forEach(brand => {
+                const grid = document.getElementById(`${brand}Grid`);
+                if (grid) {
+                    const codes = errorCodes[brand];
+                    console.log(`Poblando grilla de ${brand} con ${codes.length} códigos`);
+                    
+                    grid.innerHTML = codes.map(code => `
+                        <div class="code-card" onclick="selectCode('${code.code}', '${brand}')">
+                            <div class="code-card-header">
+                                <span class="code-card-number">${code.code}</span>
+                                <span class="severity-badge severity-${code.severity}">${getSeverityText(code.severity)}</span>
+                            </div>
+                            <div class="code-card-title">${code.title}</div>
+                            <div class="code-card-description">${code.description}</div>
+                        </div>
+                    `).join('');
+                } else {
+                    console.warn(`Grilla no encontrada para marca: ${brand}`);
+                }
+            });
+            
+            console.log('Grillas pobladas exitosamente');
+        }
+
+        // Seleccionar código de la grilla
+        function selectCode(code, brand) {
+            console.log(`Código seleccionado: ${code} de marca: ${brand}`);
+            
+            const input = document.getElementById('errorCodeInput');
+            if (input) {
+                input.value = code;
+            }
+            
+            // Cambiar filtro activo
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.filter === brand) {
+                    btn.classList.add('active');
+                    currentFilter = brand;
+                }
+            });
+            
+            handleSearch();
+        }
+
+        // Función de prueba para debug
+        function testSearch(code) {
+            console.log(`🧪 PRUEBA RÁPIDA: Buscando código "${code}"`);
+            const input = document.getElementById('errorCodeInput');
+            if (input) {
+                input.value = code;
+                handleSearch();
+            } else {
+                console.error('❌ Input no encontrado para prueba');
+            }
+        }
+
+        // Función para mostrar toda la base de datos
+        function debugDatabase() {
+            console.log('=== BASE DE DATOS COMPLETA ===');
+            Object.keys(errorCodes).forEach(brand => {
+                console.log(`\n📱 ${brand.toUpperCase()}:`);
+                errorCodes[brand].forEach((code, index) => {
+                    console.log(`  ${index + 1}. "${code.code}" - ${code.title}`);
+                });
+            });
+            
+            console.log('\n=== RESUMEN ===');
+            const totalCodes = Object.values(errorCodes).reduce((total, brand) => total + brand.length, 0);
+            console.log(`Total de códigos: ${totalCodes}`);
+            console.log(`Marcas disponibles: ${Object.keys(errorCodes).length}`);
+        }
+
+        // Función para prueba directa desde consola
+        function quickTest() {
+            console.log('🧪 INICIANDO PRUEBA RÁPIDA...');
+            
+            // Probar que la base de datos existe
+            console.log('1. Base de datos cargada:', !!errorCodes);
+            console.log('2. Marcas disponibles:', Object.keys(errorCodes));
+            
+            // Probar búsqueda directa
+            console.log('3. Probando búsqueda directa de E1...');
+            const result = findErrorCode('E1');
+            console.log('   Resultado:', result ? '✅ Encontrado' : '❌ No encontrado');
+            
+            // Probar elemento HTML
+            const input = document.getElementById('errorCodeInput');
+            console.log('4. Input HTML encontrado:', !!input);
+            
+            if (result) {
+                console.log('✅ Todo parece estar funcionando correctamente');
+            } else {
+                console.log('❌ Hay un problema con la búsqueda');
+            }
+        }
+
+        // Diagnóstico completo del sistema
+        function fullDiagnostic() {
+            console.clear();
+            console.log('🔍 DIAGNÓSTICO COMPLETO DEL DECODIFICADOR');
+            console.log('='.repeat(50));
+            
+            // 1. Verificar base de datos
+            console.log('\n📊 1. VERIFICANDO BASE DE DATOS:');
+            console.log('   Base de datos existe:', typeof errorCodes === 'object');
+            console.log('   Marcas disponibles:', Object.keys(errorCodes));
+            
+            // 2. Verificar estructura de cada marca
+            console.log('\n🏷️ 2. VERIFICANDO ESTRUCTURA POR MARCA:');
+            Object.keys(errorCodes).forEach(brand => {
+                const codes = errorCodes[brand];
+                console.log(`   ${brand}: ${codes.length} códigos`);
+                console.log(`     Códigos: [${codes.map(c => `"${c.code}"`).join(', ')}]`);
+            });
+            
+            // 3. Buscar específicamente E1
+            console.log('\n🔍 3. BUSCANDO E1 ESPECÍFICAMENTE:');
+            Object.keys(errorCodes).forEach(brand => {
+                const codes = errorCodes[brand];
+                const found = codes.find(c => c.code === 'E1' || c.code.toUpperCase() === 'E1');
+                console.log(`   ${brand}: ${found ? '✅ E1 encontrado' : '❌ E1 no encontrado'}`);
+                if (found) {
+                    console.log(`     Datos: ${JSON.stringify(found, null, 2)}`);
+                }
+            });
+            
+            // 4. Verificar filtro actual
+            console.log('\n🔧 4. CONFIGURACIÓN ACTUAL:');
+            console.log('   Filtro actual:', currentFilter);
+            console.log('   Marcas a buscar:', currentFilter === 'all' ? Object.keys(errorCodes) : [currentFilter]);
+            
+            // 5. Simular búsqueda completa
+            console.log('\n🧪 5. SIMULANDO BÚSQUEDA DE E1:');
+            const testResult = findErrorCode('E1');
+            console.log('   Resultado:', testResult ? '✅ Encontrado' : '❌ No encontrado');
+            if (testResult) {
+                console.log('   Datos encontrados:', testResult);
+            }
+            
+            // 6. Verificar elementos HTML
+            console.log('\n🖥️ 6. VERIFICANDO ELEMENTOS HTML:');
+            const elements = {
+                input: document.getElementById('errorCodeInput'),
+                resultSection: document.getElementById('resultSection'),
+                codeNumber: document.getElementById('resultCodeNumber'),
+                codeDescription: document.getElementById('resultCodeDescription')
+            };
+            
+            Object.keys(elements).forEach(key => {
+                console.log(`   ${key}: ${elements[key] ? '✅ Encontrado' : '❌ No encontrado'}`);
+            });
+            
+            console.log('\n' + '='.repeat(50));
+            console.log('Diagnóstico completado. Revisa los resultados arriba.');
+        }
+
+        // Función para limpiar búsqueda
+        function clearSearch() {
+            console.log('🧹 Limpiando búsqueda...');
+            
+            // Limpiar el campo de búsqueda
+            const searchInput = document.getElementById('errorCodeInput');
+            if (searchInput) {
+                searchInput.value = '';
+                searchInput.focus();
+            }
+            
+            // Ocultar la sección de resultado
+            const resultSection = document.getElementById('resultSection');
+            if (resultSection) {
+                resultSection.style.display = 'none';
+            }
+            
+            // Scroll hacia la sección de búsqueda
+            const searchSection = document.querySelector('.search-container');
+            if (searchSection) {
+                searchSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+            
+            console.log('✅ Búsqueda limpiada');
+        }
+
+        // Función para obtener texto de severidad
+        function getSeverityText(severity) {
+            const severityTexts = {
+                'low': 'Prioridad Baja',
+                'medium': 'Prioridad Media',
+                'high': 'Prioridad Alta',
+                'critical': 'Crítico'
+            };
+            return severityTexts[severity] || 'Severidad Desconocida';
+        }
+
+        // Exponer funciones para debugging
+        window.decoderDebug = {
+            testSearch,
+            errorCodes,
+            findErrorCode,
+            debugDatabase,
+            quickTest,
+            fullDiagnostic,
+            currentFilter: () => currentFilter,
+            // Funciones de acceso directo
+            showAllCodes: () => {
+                Object.keys(errorCodes).forEach(brand => {
+                    console.log(`\n${brand.toUpperCase()}:`);
+                    errorCodes[brand].forEach(code => {
+                        console.log(`  "${code.code}" - ${code.title}`);
+                    });
+                });
+            },
+            // Búsqueda manual
+            manualSearch: (code) => {
+                console.log(`Búsqueda manual de: "${code}"`);
+                return findErrorCode(code.toUpperCase());
+            }
+        };
+    </script>
+</body>
+</html>
