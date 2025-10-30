@@ -77,13 +77,13 @@
             </a>
         </div>
         
-        <!-- Enlace especial -->
+        <!-- Enlace especial 
         <div class="mt-4" data-aos="fade-up" data-aos-delay="1200">
             <a href="web-efemerides/index-efemerides.html" class="btn btn-sm px-4 py-2 rounded-pill shadow-sm" style="background: linear-gradient(45deg, #17a2b8, #138496); border-color: #17a2b8; color: white;">
                 <i class="bi bi-calendar-event me-2"></i>Efemérides de Hoy
             </a>
         </div>
-        
+        -->
         <!-- Indicadores de scroll -->
         <div class="mt-5 pt-4" data-aos="fade-up" data-aos-delay="1500">
             <a href="#nosotros" class="text-white text-decoration-none">

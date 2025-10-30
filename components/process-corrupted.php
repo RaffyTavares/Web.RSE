@@ -1,12 +1,23 @@
 <?php  ?>
 <!-- Proceso de Trabajo Section -->
-<section id="proceso-trabajo" class="py-5 bg-gradient position-relative" style="background: linear-gradient(135deg, #2a3441 0%, #343a46 50%, #3d4956 100%); overflow: hidden;">
-    <!-- Grid Background Elegante -->
-    <div class="elegant-grid-background"></div>
-    <div class="grid-overlay-pattern"></div>
-    <div class="floating-particles"></div>
-    
-    <div class="container position-relative" style="z-index: 10;">
+<section id="proceso-trabajo" class="py-5 bg-gradient" style="background: linear-gradient(                                    <div class="d-flex align-items-center mb-3">
+                            <span class="timeline-icon icon-indigo bg-gradient text-white me-3 rounded-circle d-flex align-items-center justify-content-center position-relative" style="width: 56px; height: 56px; background: linear-gradient(135deg, #6f42c1 0%, #563d7c 100%); box-shadow: 0 8px 25px rgba(111, 66, 193, 0.3);">
+                                <i class="bi bi-clipboard-check" style="font-size: 1.5rem; color: #ffffff;"></i>
+                                <div class="position-absolute top-0 start-0 w-100 h-100 rounded-circle" style="background: rgba(255,255,255,0.2); animation: pulse-effect 2s infinite;"></div>
+                            </span>       <div class="d-flex ali                        <div class="d-flex ali                        <div class="d-flex align-items-center mb-3">
+                            <span class="timeline-icon icon-cyan bg-gradient text-white me-3 rounded-circle d-flex align-items-center justify-content-center position-relative" style="width: 56px; height: 56px; background: linear-gradient(135deg, #17a2b8 0%, #138496 100%); box-shadow: 0 8px 25px rgba(23, 162, 184, 0.3);">
+                                <i class="bi bi-tools" style="font-size: 1.5rem; color: #ffffff;"></i>
+                                <div class="position-absolute top-0 start-0 w-100 h-100 rounded-circle" style="background: rgba(255,255,255,0.2); animation: pulse-effect 2s infinite;"></div>
+                            </span>ems-center mb-3">
+                            <span class="timeline-icon icon-yellow bg-gradient text-white me-3 rounded-circle d-flex align-items-center justify-content-center position-relative" style="width: 56px; height: 56px; background: linear-gradient(135deg, #ffc107 0%, #e0a800 100%); box-shadow: 0 8px 25px rgba(255, 193, 7, 0.3);">
+                                <i class="bi bi-check-circle" style="font-size: 1.5rem; color: #ffffff;"></i>
+                                <div class="position-absolute top-0 start-0 w-100 h-100 rounded-circle" style="background: rgba(255,255,255,0.2); animation: pulse-effect 2s infinite;"></div>
+                            </span>ems-center mb-3">
+                            <span class="timeline-icon icon-green bg-gradient text-white me-3 rounded-circle d-flex align-items-center justify-content-center position-relative" style="width: 56px; height: 56px; background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%); box-shadow: 0 8px 25px rgba(40, 167, 69, 0.3);">
+                                <i class="bi bi-calculator" style="font-size: 1.5rem; color: #ffffff;"></i>
+                                <div class="position-absolute top-0 start-0 w-100 h-100 rounded-circle" style="background: rgba(255,255,255,0.2); animation: pulse-effect 2s infinite;"></div>
+                            </span>g, #f8fafc 0%, #e3eafc 100%);">
+    <div class="container">
         <!-- Título Elegante para Proceso de Trabajo -->
         <div class="text-center mb-5">
             <div class="process-title-wrapper position-relative d-inline-block">
@@ -30,12 +41,12 @@
                 </div>
             </div>
         </div>
-        <p class="text-center mb-5 fs-5 fst-italic" style="max-width: 700px; margin: 0 auto; color: #e9ecef; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">
+        <p class="text-center text-muted mb-5 fs-5 fst-italic" style="max-width: 700px; margin: 0 auto;">
             Descubre cómo garantizamos eficiencia, calidad y transparencia en cada servicio.
         </p>
         <div class="timeline position-relative">
             <!-- Línea central -->
-            <div class="position-absolute top-0 start-50 translate-middle-x h-100" style="width: 4px; background: linear-gradient(180deg, #007bff 0%, #17a2b8 50%, #0056b3 100%); box-shadow: 0 0 10px rgba(0,123,255,0.5);"></div>
+            <div class="position-absolute top-0 start-50 translate-middle-x h-100" style="width: 4px; background: #0d6efd1a;"></div>
             <div class="row gy-5">
 
                 <!-- PASO 1: Recepción y Registro -->
@@ -72,7 +83,7 @@
                                         <small class="fw-medium text-dark">Costo de chequeo:</small>
                                     </div>
                                     <span class="badge bg-success-subtle text-success px-3 py-2 rounded-pill">
-                                        <i class="bi bi-gift-fill me-1"></i>Desde $300
+                                        <i class="bi bi-gift-fill me-1"></i>GRATIS
                                     </span>
                                 </div>
                             </div>
@@ -310,243 +321,6 @@
 
 <style>
 /* ===================================================================================== */
-/* FONDO DE CUADRÍCULA ELEGANTE Y MODERNA */
-/* ===================================================================================== */
-
-/* Fondo de cuadrícula principal */
-.elegant-grid-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-  opacity: 0.8;
-  background-image: 
-    linear-gradient(rgba(0, 123, 255, 0.25) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 123, 255, 0.25) 1px, transparent 1px),
-    linear-gradient(rgba(23, 162, 184, 0.15) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(23, 162, 184, 0.15) 1px, transparent 1px);
-  background-size: 
-    50px 50px,
-    50px 50px,
-    10px 10px,
-    10px 10px;
-  background-position: 
-    0 0,
-    0 0,
-    0 0,
-    0 0;
-  animation: gridFloat 30s ease-in-out infinite;
-}
-
-/* Patrón de overlay con efecto de profundidad */
-.grid-overlay-pattern {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 2;
-  opacity: 0.35;
-  background-image: 
-    radial-gradient(circle at 25% 25%, rgba(0, 123, 255, 0.2) 0%, transparent 50%),
-    radial-gradient(circle at 75% 75%, rgba(23, 162, 184, 0.18) 0%, transparent 50%),
-    radial-gradient(circle at 50% 50%, rgba(111, 66, 193, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 10% 90%, rgba(0, 220, 130, 0.12) 0%, transparent 50%);
-  background-size: 
-    300px 300px,
-    250px 250px,
-    180px 180px,
-    220px 220px;
-  background-position: 
-    0 0,
-    100px 100px,
-    50px 50px,
-    200px 150px;
-  animation: overlayPulse 25s ease-in-out infinite;
-}
-
-/* Partículas flotantes elegantes */
-.floating-particles {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 3;
-  pointer-events: none;
-}
-
-.floating-particles::before,
-.floating-particles::after {
-  content: '';
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  background: rgba(86, 98, 112, 0.3);
-  border-radius: 50%;
-  animation: floatParticles 20s linear infinite;
-}
-
-.floating-particles::before {
-  top: 20%;
-  left: 15%;
-  animation-delay: 0s;
-  background: rgba(0, 123, 255, 0.6);
-  box-shadow: 
-    200px 50px 0 rgba(0, 123, 255, 0.4),
-    400px 150px 0 rgba(23, 162, 184, 0.5),
-    600px 80px 0 rgba(0, 220, 130, 0.3),
-    800px 200px 0 rgba(111, 66, 193, 0.4),
-    300px 300px 0 rgba(0, 123, 255, 0.35),
-    700px 350px 0 rgba(23, 162, 184, 0.3),
-    500px 400px 0 rgba(0, 220, 130, 0.25);
-}
-
-.floating-particles::after {
-  top: 60%;
-  left: 70%;
-  animation-delay: -10s;
-  background: rgba(23, 162, 184, 0.6);
-  box-shadow: 
-    -150px -30px 0 rgba(23, 162, 184, 0.4),
-    -350px -100px 0 rgba(0, 123, 255, 0.5),
-    -500px -60px 0 rgba(0, 220, 130, 0.3),
-    -250px -180px 0 rgba(111, 66, 193, 0.4),
-    -450px -250px 0 rgba(0, 123, 255, 0.35),
-    -650px -300px 0 rgba(23, 162, 184, 0.3);
-}
-
-/* Efecto de intersección de líneas */
-.elegant-grid-background::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: 
-    linear-gradient(45deg, transparent 49%, rgba(0, 123, 255, 0.3) 50%, transparent 51%),
-    linear-gradient(-45deg, transparent 49%, rgba(23, 162, 184, 0.25) 50%, transparent 51%);
-  background-size: 100px 100px, 100px 100px;
-  animation: diagonalShift 40s linear infinite;
-}
-
-/* Gradiente sutil para dar profundidad */
-.elegant-grid-background::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: 
-    radial-gradient(ellipse at top, rgba(0, 123, 255, 0.1) 0%, transparent 60%),
-    radial-gradient(ellipse at bottom, rgba(23, 162, 184, 0.08) 0%, transparent 60%),
-    linear-gradient(135deg, rgba(42, 52, 65, 0.3) 0%, rgba(61, 73, 86, 0.2) 100%);
-}
-
-/* Animaciones suaves y elegantes */
-@keyframes gridFloat {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-    opacity: 0.8;
-  }
-  25% {
-    transform: translate(10px, -5px) scale(1.02);
-    opacity: 0.9;
-  }
-  50% {
-    transform: translate(-5px, 10px) scale(0.98);
-    opacity: 0.7;
-  }
-  75% {
-    transform: translate(-10px, -5px) scale(1.01);
-    opacity: 0.85;
-  }
-}
-
-@keyframes overlayPulse {
-  0%, 100% {
-    opacity: 0.35;
-    transform: scale(1) rotate(0deg);
-  }
-  33% {
-    opacity: 0.5;
-    transform: scale(1.05) rotate(1deg);
-  }
-  66% {
-    opacity: 0.25;
-    transform: scale(0.95) rotate(-1deg);
-  }
-}
-
-@keyframes floatParticles {
-  0% {
-    transform: translateY(0px) translateX(0px) rotate(0deg);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-20px) translateX(10px) rotate(360deg);
-    opacity: 0;
-  }
-}
-
-@keyframes diagonalShift {
-  0% {
-    background-position: 0 0, 0 0;
-  }
-  100% {
-    background-position: 120px 120px, -120px 120px;
-  }
-}
-
-/* Efecto responsivo para mantener la elegancia en móviles */
-@media (max-width: 768px) {
-  .elegant-grid-background {
-    background-size: 
-      40px 40px,
-      40px 40px,
-      15px 15px,
-      15px 15px;
-    opacity: 0.3;
-  }
-  
-  .grid-overlay-pattern {
-    background-size: 
-      200px 200px,
-      150px 150px,
-      100px 100px;
-    opacity: 0.1;
-  }
-  
-  .floating-particles::before,
-  .floating-particles::after {
-    display: none; /* Ocultar partículas en móviles para mejor rendimiento */
-  }
-}
-
-/* Efecto de interacción sutil */
-#proceso-trabajo:hover .elegant-grid-background {
-  animation-duration: 15s;
-  opacity: 0.95;
-  transition: all 1s ease;
-}
-
-#proceso-trabajo:hover .grid-overlay-pattern {
-  opacity: 0.45;
-  animation-duration: 15s;
-  transition: all 1s ease;
-}
-
-/* ===================================================================================== */
 /* TÍTULO ELEGANTE PARA PROCESO DE TRABAJO */
 /* ===================================================================================== */
 .process-title-wrapper {
@@ -615,10 +389,10 @@
 
 .process-title-main {
   font-weight: 800;
-  color: #00d4ff;
+  color: #007bff;
   display: block;
   letter-spacing: 1.5px;
-  text-shadow: 0 3px 8px rgba(0,212,255,0.4), 0 0 20px rgba(0,123,255,0.3);
+  text-shadow: 0 3px 6px rgba(0,123,255,0.15);
   line-height: 1.1;
   margin-bottom: 0.1rem;
   position: relative;
@@ -626,14 +400,13 @@
 
 .process-title-sub {
   font-weight: 600;
-  color: #b8c5d1;
+  color: #495057;
   display: block;
   font-size: 0.75em;
   font-style: italic;
-  opacity: 0.9;
+  opacity: 0.85;
   letter-spacing: 1px;
   text-transform: uppercase;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
 .title-workflow-line {
@@ -698,8 +471,8 @@
 }
 
 .process-title-wrapper:hover .process-title-main {
-  color: #00ffff;
-  text-shadow: 0 4px 12px rgba(0,255,255,0.6), 0 0 25px rgba(0,212,255,0.4);
+  color: #0056b3;
+  text-shadow: 0 4px 8px rgba(0,123,255,0.2);
   transform: translateY(-2px);
   transition: all 0.3s ease;
 }
@@ -809,14 +582,9 @@
 
 .timeline-card {
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  border: 1px solid rgba(0,123,255,0.2);
+  border: 1px solid rgba(0,0,0,0.05);
   overflow: hidden;
   position: relative;
-  background: rgba(255,255,255,0.95);
-  backdrop-filter: blur(10px);
-  box-shadow: 
-    0 8px 32px rgba(0,0,0,0.3),
-    0 4px 16px rgba(0,123,255,0.1);
 }
 
 .timeline-card::before {
@@ -838,12 +606,11 @@
 .timeline-card:hover {
   transform: translateY(-15px) scale(1.05);
   box-shadow: 
-    0 25px 60px rgba(0,0,0,0.4),
-    0 15px 35px rgba(0,123,255,0.3),
-    inset 0 1px 0 rgba(255,255,255,0.9);
-  border-color: rgba(0,123,255,0.6);
-  background: rgba(255,255,255,0.98);
-  backdrop-filter: blur(20px);
+    0 25px 50px rgba(0,123,255,0.15),
+    0 15px 35px rgba(0,0,0,0.1),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+  border-color: rgba(0,123,255,0.4);
+  background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
 }
 
 /* Estilos para todos los iconos del timeline */
@@ -851,6 +618,55 @@
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+}
+
+/* Asegurar que los fondos gradiente siempre sean visibles */
+.timeline-icon[style*="background"] {
+  background: var(--bg-gradient) !important;
+}
+
+.timeline-icon i {
+  font-size: 1.5rem !important;
+  z-index: 10 !important;
+  position: relative !important;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Colores específicos para cada icono - SIEMPRE visibles */
+.timeline-icon[style*="6f42c1"] i {
+  color: #ffffff !important; /* Púrpura - blanco funciona bien */
+}
+
+.timeline-icon[style*="007bff"] i {
+  color: #ffffff !important; /* Azul - blanco funciona bien */
+}
+
+.timeline-icon[style*="28a745"] i {
+  color: #ffffff !important; /* Verde - blanco funciona bien */
+}
+
+.timeline-icon[style*="ffc107"] i {
+  color: #ffffff !important; /* Amarillo - blanco para contraste */
+}
+
+.timeline-icon[style*="17a2b8"] i {
+  color: #ffffff !important; /* Cyan - blanco funciona bien */
+}
+
+/* Efecto de pulso universal - mantiene colores originales */
+@keyframes pulse-effect {
+  0% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
 }
 
 /* Efectos para los detalles de cada paso */
@@ -873,6 +689,8 @@
   transform: translateY(-3px) scale(1.08);
   box-shadow: 0 8px 25px rgba(0,0,0,0.2);
 }
+
+/* Los efectos hover están definidos arriba - no duplicar */
 
 /* Animación del título en hover */
 .timeline-card:hover h5 {
@@ -978,33 +796,88 @@
   }
 }
 
+
+
 /* ===================================================================================== */
-/* EFECTOS ESPECÍFICOS PARA LOS ICONOS DE COLOR */
+/* ESTILOS PARA EL NUEVO PASO DE RECEPCIÓN */
 /* ===================================================================================== */
 
-/* Efecto de pulso para los iconos */
-@keyframes pulse-effect {
+/* Animación de pulso para el icono de recepción */
+@keyframes pulse-reception {
   0% {
-    opacity: 0.3;
+    opacity: 0.4;
     transform: scale(1);
   }
   50% {
-    opacity: 0.1;
-    transform: scale(1.1);
+    opacity: 0.2;
+    transform: scale(1.15);
   }
   100% {
-    opacity: 0.3;
+    opacity: 0.4;
     transform: scale(1);
   }
 }
 
-/* Asegurar que todos los iconos mantengan siempre su color visible */
-.timeline-icon i[class*="bi-"] {
-    color: #ffffff !important;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-    font-weight: bold !important;
+/* Efectos hover específicos para la tarjeta de recepción */
+.timeline-card:hover .timeline-icon[style*="6f42c1"] {
+  background: linear-gradient(135deg, #8b5a9d 0%, #6f42c1 100%) !important;
+  transform: scale(1.05);
+  box-shadow: 0 12px 35px rgba(111, 66, 193, 0.4) !important;
+  transition: all 0.3s ease;
 }
 
+
+
+/* Efectos para los badges informativos */
+.reception-details .badge {
+  transition: all 0.3s ease;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.reception-details .badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+/* Animación sutil para la sección de normativas */
+.timeline-card:hover .reception-details > div:last-child {
+  background: rgba(111, 66, 193, 0.08) !important;
+  transform: translateX(5px);
+  transition: all 0.3s ease;
+}
+
+/* Badge "NUEVO" con animación */
+.timeline-card .badge[style*="28a745"] {
+  animation: newBadgeGlow 3s ease-in-out infinite;
+}
+
+@keyframes newBadgeGlow {
+  0%, 100% {
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+  }
+  50% {
+    box-shadow: 0 6px 25px rgba(40, 167, 69, 0.5);
+    transform: scale(1.05);
+  }
+}
+
+/* Responsive para la nueva tarjeta */
+@media (max-width: 768px) {
+  .reception-details .row {
+    --bs-gutter-x: 1rem;
+  }
+  
+  .reception-details .col-sm-6 {
+    margin-bottom: 1rem;
+  }
+  
+  .timeline-card .position-absolute.top-0.end-0 {
+    transform: translate(25%, -25%) !important;
+  }
+}
+
+/* Asegurar que los iconos mantengan siempre su color visible */
 .timeline-icon.icon-purple i,
 .timeline-icon.icon-blue i,
 .timeline-icon.icon-green i,
@@ -1012,49 +885,6 @@
 .timeline-icon.icon-cyan i,
 .timeline-icon.icon-indigo i {
     color: #ffffff !important;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-    font-weight: bold !important;
-}
-
-/* Forzar fondos gradient visibles siempre */
-.timeline-icon.icon-purple {
-    background: linear-gradient(135deg, #6f42c1 0%, #8b5a9d 100%) !important;
-}
-
-.timeline-icon.icon-blue {
-    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
-}
-
-.timeline-icon.icon-green {
-    background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%) !important;
-}
-
-.timeline-icon.icon-yellow {
-    background: linear-gradient(135deg, #ffc107 0%, #e0a800 100%) !important;
-}
-
-.timeline-icon.icon-cyan {
-    background: linear-gradient(135deg, #17a2b8 0%, #138496 100%) !important;
-}
-
-.timeline-icon.icon-indigo {
-    background: linear-gradient(135deg, #6f42c1 0%, #563d7c 100%) !important;
-}
-
-/* Reglas adicionales para sobrescribir Bootstrap Icons */
-span.timeline-icon i {
-    color: #ffffff !important;
-    opacity: 1 !important;
-}
-
-/* Asegurar visibilidad con pseudo-elementos si los iconos no cargan */
-.timeline-icon::before {
-    position: relative;
-    z-index: 1;
-}
-
-.timeline-icon i::before {
-    color: inherit !important;
 }
 
 /* ===================================================================================== */

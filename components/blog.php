@@ -219,12 +219,12 @@
             </div>
         </div>
         
-        <!-- Botón "Ver más consejos" -->
+        <!-- Botón "Ver más consejos" 
         <div class="text-center mt-5" data-aos="fade-up">
             <a href="consejos-tecnicos.html" class="btn btn-outline-primary btn-lg px-4 rounded-pill">
                 <i class="bi bi-book me-2"></i> Ver biblioteca completa de consejos
             </a>
-        </div>
+        </div> -->
     </div>
 </section>
 

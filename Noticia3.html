@@ -8,124 +8,142 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <style>
-        .news-header {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 100px 0;
-            margin-bottom: 30px;
-        }
-        .tag {
-            font-size: 0.9rem;
-        }
-        .highlight {
-            border-left: 4px solid #0d6efd;
-            padding-left: 15px;
-            font-style: italic;
-            margin: 20px 0;
-        }
-        .news-img {
-            border-radius: 5px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-        }
-        .conclusion-box {
-            background-color: #f8f9fa;
-            border-radius: 8px;
-            padding: 25px;
-            margin: 30px 0;
-            border-left: 5px solid #0d6efd;
-        }
-        .social-share i {
-            font-size: 1.5rem;
-            margin-right: 15px;
-            color: #555;
-            transition: color 0.3s;
-        }
-        .social-share i:hover {
-            color: #0d6efd;
-        }
-        .author-img {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-        footer {
-            background-color: #f8f9fa;
-            padding: 30px 0;
-            margin-top: 50px;
-        }
-    </style>
+    <link rel="icon" type="image/png" href="img/logo1.png">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 </head>
-<body>
-    <!-- Header -->
-    <header class="news-header text-center">
+<body class="modern-tech-body">
+    <!-- Fondo tecnológico -->
+    <div class="tech-background-overlay">
+        <div class="tech-grid-layer"></div>
+        <div class="tech-particles-layer"></div>
+        <div class="tech-gradient-layer"></div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg modern-navbar">
         <div class="container">
-            <span class="badge bg-primary tag mb-2">TECNOLOGÍA</span>
-            <h1 class="display-4 fw-bold">Nueva generación de aires acondicionados inverter reduce el consumo energético en un 40%</h1>
-            <p class="lead">Los últimos avances en tecnología inverter prometen revolucionar la eficiencia energética en climatización</p>
-            <div class="text-muted">Por Carlos Méndez | 15 de Agosto, 2023</div>
+            <a class="navbar-brand d-flex align-items-center gap-3 modern-brand" href="index.php">
+                <div class="brand-logo-wrapper">
+                    <img src="img/logo1.png" alt="Logo de Rafael Soluciones Electronica" class="brand-logo">
+                </div>
+                <div class="brand-text-wrapper">
+                    <span class="brand-main-text">Rafael Soluciones</span>
+                    <span class="brand-sub-text">Electrónica</span>
+                </div>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Header tecnológico modernizado -->
+    <header class="modern-news-header text-center">
+        <div class="container">
+            <div class="header-content-wrapper">
+                <span class="modern-tech-badge">TECNOLOGÍA</span>
+                <h1 class="display-4 fw-bold modern-header-title">Nueva generación de aires acondicionados inverter reduce el consumo energético en un 40%</h1>
+                <p class="lead modern-header-subtitle">Los últimos avances en tecnología inverter prometen revolucionar la eficiencia energética en climatización</p>
+                <div class="modern-header-meta">
+                    <i class="bi bi-person-circle"></i>
+                    <span>Por Carlos Méndez</span>
+                    <span class="separator">|</span>
+                    <i class="bi bi-calendar3"></i>
+                    <span>15 de Agosto, 2023</span>
+                </div>
+            </div>
         </div>
     </header>
 
     <!-- Contenido principal -->
-    <div class="container">
+    <div class="container main-content">
         <div class="row">
             <div class="col-lg-8 mx-auto">
-                <article>
-                    <p class="lead">La más reciente innovación en sistemas de climatización con tecnología inverter está marcando un antes y un después en la eficiencia energética de hogares y empresas.</p>
-                    
-                    <p>Los principales fabricantes han presentado esta semana sus nuevos modelos de aires acondicionados con tecnología inverter de quinta generación, que incorporan inteligencia artificial para optimizar el consumo energético según los patrones de uso y las condiciones ambientales.</p>
-                    
-                    <div class="highlight">
-                        <p class="mb-0">"Estamos ante un salto tecnológico sin precedentes. Los nuevos sistemas inverter pueden aprender de los hábitos de los usuarios y ajustar automáticamente su funcionamiento para maximizar el confort minimizando el consumo"</p>
-                        <footer class="blockquote-footer mt-2">Dra. Elena Torres, <cite title="Source Title">Directora del Instituto de Eficiencia Energética</cite></footer>
-                    </div>
-                    
-                    <h3 class="mt-5">¿Cómo funciona la nueva tecnología?</h3>
-                    <p>Los aires acondicionados inverter convencionales ajustan la velocidad del compresor para mantener la temperatura deseada, evitando los ciclos de encendido y apagado de los sistemas tradicionales. La nueva generación va un paso más allá:</p>
-                    
-                    <ul>
-                        <li>Algoritmos predictivos que anticipan los cambios de temperatura</li>
-                        <li>Sensores que detectan la presencia humana y ajustan la climatización por zonas</li>
-                        <li>Integración con sistemas de energía solar para optimizar el consumo en horas de máxima producción</li>
-                        <li>Comunicación con la red eléctrica para funcionar en momentos de menor demanda</li>
-                    </ul>
-                    
-                    <img src="https://images.unsplash.com/photo-1581822261290-991b316c4380?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Nuevo sistema inverter" class="img-fluid news-img">
-                    <div class="text-center text-muted mb-4"><small>Nuevo sistema inverter con conectividad inteligente</small></div>
-                    
-                    <h3>Impacto económico y ambiental</h3>
-                    <p>Según los estudios presentados, estos equipos pueden reducir el consumo eléctrico entre un 35% y 40% comparado con los modelos inverter anteriores, y hasta un 70% respecto a los sistemas no inverter.</p>
-                    
-                    <p>Este avance coincide con la ola de calor que afecta a Europa y América del Norte, donde la demanda de aire acondicionado se ha disparado, poniendo bajo presión los sistemas eléctricos de varios países.</p>
-                    
-                    <div class="conclusion-box">
-                        <h4 class="mt-0">En resumen</h4>
-                        <p class="mb-0">La nueva generación de aires acondicionados inverter no solo representa un avance tecnológico significativo, sino también una contribución importante a la sostenibilidad ambiental y al ahorro económico de los consumidores en un contexto de precios energéticos en alza.</p>
-                    </div>
-                    
-                    <div class="d-flex justify-content-between align-items-center mt-5 mb-5 social-share">
-                        <div>
-                            <span class="me-3">Compartir:</span>
-                            <i class="bi bi-facebook"></i>
-                            <i class="bi bi-twitter"></i>
-                            <i class="bi bi-linkedin"></i>
-                            <i class="bi bi-whatsapp"></i>
+                <article class="modern-tech-card animate__animated animate__fadeInUp" data-aos="fade-up" data-aos-duration="900">
+                    <div class="modern-card-content">
+                        <div class="article-content">
+                            <p class="lead-paragraph">La más reciente innovación en sistemas de climatización con tecnología inverter está marcando un antes y un después en la eficiencia energética de hogares y empresas.</p>
+                            
+                            <p class="content-paragraph">Los principales fabricantes han presentado esta semana sus nuevos modelos de aires acondicionados con tecnología inverter de quinta generación, que incorporan inteligencia artificial para optimizar el consumo energético según los patrones de uso y las condiciones ambientales.</p>
+                            
+                            <div class="modern-highlight-quote">
+                                <div class="quote-content">
+                                    <p class="quote-text">"Estamos ante un salto tecnológico sin precedentes. Los nuevos sistemas inverter pueden aprender de los hábitos de los usuarios y ajustar automáticamente su funcionamiento para maximizar el confort minimizando el consumo"</p>
+                                    <footer class="quote-footer">
+                                        <i class="bi bi-dash"></i>
+                                        Dra. Elena Torres, <cite>Directora del Instituto de Eficiencia Energética</cite>
+                                    </footer>
+                                </div>
+                            </div>
+                            
+                            <h3 class="modern-section-title">
+                                <i class="bi bi-gear-fill"></i>
+                                ¿Cómo funciona la nueva tecnología?
+                            </h3>
+                            <p class="content-paragraph">Los aires acondicionados inverter convencionales ajustan la velocidad del compresor para mantener la temperatura deseada, evitando los ciclos de encendido y apagado de los sistemas tradicionales. La nueva generación va un paso más allá:</p>
+                            
+                            <ul class="modern-tech-list">
+                                <li><i class="bi bi-cpu"></i>Algoritmos predictivos que anticipan los cambios de temperatura</li>
+                                <li><i class="bi bi-person-check"></i>Sensores que detectan la presencia humana y ajustan la climatización por zonas</li>
+                                <li><i class="bi bi-sun"></i>Integración con sistemas de energía solar para optimizar el consumo en horas de máxima producción</li>
+                                <li><i class="bi bi-lightning"></i>Comunicación con la red eléctrica para funcionar en momentos de menor demanda</li>
+                            </ul>
+                            
+                            <div class="modern-image-wrapper">
+                                <img src="https://images.unsplash.com/photo-1581822261290-991b316c4380?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Nuevo sistema inverter" class="modern-article-image">
+                                <div class="image-tech-overlay"></div>
+                                <div class="image-caption">Nuevo sistema inverter con conectividad inteligente</div>
+                            </div>
+                            
+                            <h3 class="modern-section-title">
+                                <i class="bi bi-graph-up-arrow"></i>
+                                Impacto económico y ambiental
+                            </h3>
+                            <p class="content-paragraph">Según los estudios presentados, estos equipos pueden reducir el consumo eléctrico entre un 35% y 40% comparado con los modelos inverter anteriores, y hasta un 70% respecto a los sistemas no inverter.</p>
+                            
+                            <p class="content-paragraph">Este avance coincide con la ola de calor que afecta a Europa y América del Norte, donde la demanda de aire acondicionado se ha disparado, poniendo bajo presión los sistemas eléctricos de varios países.</p>
+                            
+                            <div class="modern-conclusion-box">
+                                <h4 class="conclusion-title">
+                                    <i class="bi bi-lightbulb"></i>
+                                    En resumen
+                                </h4>
+                                <p class="conclusion-text">La nueva generación de aires acondicionados inverter no solo representa un avance tecnológico significativo, sino también una contribución importante a la sostenibilidad ambiental y al ahorro económico de los consumidores en un contexto de precios energéticos en alza.</p>
+                            </div>
+                            
+                            <div class="modern-social-section">
+                                <div class="social-share-wrapper">
+                                    <span class="share-label">Compartir:</span>
+                                    <div class="social-icons">
+                                        <i class="bi bi-facebook"></i>
+                                        <i class="bi bi-twitter"></i>
+                                        <i class="bi bi-linkedin"></i>
+                                        <i class="bi bi-whatsapp"></i>
+                                    </div>
+                                </div>
+                                <div class="bookmark-wrapper">
+                                    <i class="bi bi-bookmark"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="modern-author-section">
+                                <div class="author-info">
+                                    <div class="author-avatar">
+                                        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1160&q=80" alt="Autor" class="author-img">
+                                    </div>
+                                    <div class="author-details">
+                                        <h5 class="author-name">Carlos Méndez</h5>
+                                        <p class="author-bio">Especialista en tecnología y eficiencia energética con más de 10 años de experiencia en el sector.</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div>
-                            <i class="bi bi-bookmark"></i>
-                        </div>
-                    </div>
-                    
-                    <div class="d-flex align-items-center border-top pt-4">
-                        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1160&q=80" alt="Autor" class="author-img me-3">
-                        <div>
-                            <h5 class="mb-0">Carlos Méndez</h5>
-                            <p class="text-muted mb-0">Especialista en tecnología y eficiencia energética con más de 10 años de experiencia en el sector.</p>
+                        
+                        <div class="article-footer">
+                            <a href="index.php#noticias" class="modern-back-btn animate__animated animate__fadeInLeft" data-aos="fade-left" data-aos-delay="400">
+                                <span class="btn-icon"><i class="bi bi-arrow-left"></i></span>
+                                <span class="btn-text">Volver a Noticias</span>
+                                <div class="btn-glow-effect"></div>
+                            </a>
                         </div>
                     </div>
                 </article>
@@ -134,14 +152,1120 @@
     </div>
 
     <!-- Footer -->
-    <footer class="text-center">
+    <footer class="modern-tech-footer">
         <div class="container">
-            <p>© 2023 Tecnología Hoy - Todos los derechos reservados</p>
-            <p class="text-muted">Actualizado hace 2 horas</p>
+            <div class="footer-content">
+                <p class="footer-text">&copy; 2025 R.S.E | Rafael Soluciones Electrónica</p>
+                <div class="footer-decoration"></div>
+            </div>
         </div>
     </footer>
 
+    <style>
+/* ===================================================================================== */
+/* ESTILOS TECNOLÓGICOS MODERNOS PARA NOTICIA 3 */
+/* ===================================================================================== */
+
+/* Reset y variables */
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-cyan: #00d4ff;
+    --secondary-cyan: #17a2b8;
+    --dark-bg: #1a1d23;
+    --darker-bg: #0f1115;
+    --gradient-bg: linear-gradient(135deg, #1a1d23 0%, #2d3748 50%, #1a202c 100%);
+    --text-light: rgba(255, 255, 255, 0.9);
+    --text-muted: rgba(255, 255, 255, 0.7);
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(0, 212, 255, 0.2);
+}
+
+/* ===================================================================================== */
+/* FONDO TECNOLÓGICO BASE */
+/* ===================================================================================== */
+
+.modern-tech-body {
+    background: var(--gradient-bg);
+    min-height: 100vh;
+    color: var(--text-light);
+    position: relative;
+    overflow-x: hidden;
+}
+
+.tech-background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.tech-grid-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(0, 212, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 212, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(rgba(23, 162, 184, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(23, 162, 184, 0.05) 1px, transparent 1px);
+    background-size: 
+        80px 80px,
+        80px 80px,
+        20px 20px,
+        20px 20px;
+    animation: gridFloat 30s ease-in-out infinite;
+    opacity: 0.6;
+}
+
+.tech-particles-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 20%, rgba(0, 212, 255, 0.1) 1px, transparent 1px),
+        radial-gradient(circle at 80% 40%, rgba(23, 162, 184, 0.08) 1px, transparent 1px),
+        radial-gradient(circle at 40% 80%, rgba(0, 212, 255, 0.06) 1px, transparent 1px),
+        radial-gradient(circle at 90% 10%, rgba(23, 162, 184, 0.09) 1px, transparent 1px);
+    background-size: 300px 300px, 250px 250px, 200px 200px, 180px 180px;
+    animation: particlesFloat 25s linear infinite;
+}
+
+.tech-gradient-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(ellipse at top left, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse at bottom right, rgba(23, 162, 184, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at center, rgba(111, 66, 193, 0.05) 0%, transparent 50%);
+    animation: gradientShift 35s ease-in-out infinite;
+}
+
+/* ===================================================================================== */
+/* NAVBAR MODERNO */
+/* ===================================================================================== */
+
+.modern-navbar {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+    padding: 1rem 0;
+    position: relative;
+    z-index: 1000;
+}
+
+.modern-brand {
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.modern-brand:hover {
+    transform: translateY(-2px);
+}
+
+.brand-logo-wrapper {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-cyan) 0%, var(--secondary-cyan) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.brand-logo-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.2) 50%, transparent 70%);
+    transform: rotate(-45deg);
+    animation: logoShine 3s ease-in-out infinite;
+}
+
+.brand-logo {
+    width: 35px;
+    height: auto;
+    position: relative;
+    z-index: 2;
+    filter: brightness(1.2);
+}
+
+.brand-text-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-main-text {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--primary-cyan);
+    text-shadow: 0 2px 6px rgba(0, 212, 255, 0.3);
+    line-height: 1.1;
+}
+
+.brand-sub-text {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    font-style: italic;
+    letter-spacing: 0.5px;
+    margin-top: -2px;
+}
+
+.modern-brand:hover .brand-logo-wrapper {
+    transform: scale(1.05);
+    box-shadow: 0 12px 35px rgba(0, 212, 255, 0.5);
+}
+
+.modern-brand:hover .brand-main-text {
+    color: #ffffff;
+    text-shadow: 0 3px 8px rgba(0, 212, 255, 0.5);
+}
+
+/* ===================================================================================== */
+/* HEADER MODERNIZADO */
+/* ===================================================================================== */
+
+.modern-news-header {
+    background: linear-gradient(135deg, rgba(26, 29, 35, 0.95) 0%, rgba(45, 55, 72, 0.9) 100%), url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    padding: 120px 0;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.modern-news-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(0, 212, 255, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(23, 162, 184, 0.1) 0%, transparent 50%);
+    animation: headerGradientShift 25s ease-in-out infinite;
+}
+
+.header-content-wrapper {
+    position: relative;
+    z-index: 2;
+}
+
+.modern-tech-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary-cyan) 0%, var(--secondary-cyan) 100%);
+    color: white;
+    padding: 0.6rem 1.5rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.modern-tech-badge::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.2) 50%, transparent 70%);
+    transform: rotate(-45deg);
+    animation: badgeShine 4s ease-in-out infinite;
+}
+
+.modern-header-title {
+    color: white;
+    text-shadow: 0 4px 12px rgba(0, 212, 255, 0.3), 0 2px 6px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.modern-header-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+}
+
+.modern-header-meta {
+    color: var(--text-muted);
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.modern-header-meta i {
+    color: var(--primary-cyan);
+    filter: drop-shadow(0 1px 3px rgba(0, 212, 255, 0.3));
+}
+
+.separator {
+    color: var(--primary-cyan);
+    font-weight: bold;
+}
+
+/* ===================================================================================== */
+/* CONTENIDO PRINCIPAL */
+/* ===================================================================================== */
+
+.main-content {
+    position: relative;
+    z-index: 10;
+    padding: 3rem 0;
+}
+
+/* ===================================================================================== */
+/* CARD PRINCIPAL MODERNA */
+/* ===================================================================================== */
+
+.modern-tech-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.4),
+        0 25px 80px rgba(0, 212, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+}
+
+.modern-tech-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--primary-cyan), transparent);
+    animation: cardTopGlow 4s ease-in-out infinite;
+}
+
+.modern-tech-card:hover {
+    transform: translateY(-10px) scale(1.01);
+    box-shadow: 
+        0 35px 80px rgba(0, 0, 0, 0.5),
+        0 40px 100px rgba(0, 212, 255, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    border-color: rgba(0, 212, 255, 0.4);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* ===================================================================================== */
+/* CONTENIDO DE LA CARD */
+/* ===================================================================================== */
+
+.modern-card-content {
+    padding: 2rem;
+    position: relative;
+}
+
+.article-content {
+    margin-bottom: 2rem;
+}
+
+.lead-paragraph {
+    font-size: 1.15rem;
+    font-weight: 500;
+    line-height: 1.7;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border-left: 3px solid var(--primary-cyan);
+    background: rgba(0, 212, 255, 0.05);
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.modern-tech-card:hover .lead-paragraph {
+    background: rgba(0, 212, 255, 0.1);
+    transform: translateX(5px);
+    box-shadow: 0 4px 15px rgba(0, 212, 255, 0.2);
+}
+
+.content-paragraph {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    text-align: justify;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.modern-tech-card:hover .content-paragraph {
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* ===================================================================================== */
+/* CITA DESTACADA MODERNA */
+/* ===================================================================================== */
+
+.modern-highlight-quote {
+    background: rgba(0, 212, 255, 0.08);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 2rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.modern-highlight-quote::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--primary-cyan), var(--secondary-cyan));
+    animation: quoteGlow 3s ease-in-out infinite alternate;
+}
+
+.quote-content {
+    position: relative;
+    z-index: 2;
+}
+
+.quote-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-light);
+    font-style: italic;
+    margin-bottom: 1rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.quote-footer {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.quote-footer i {
+    color: var(--primary-cyan);
+    font-size: 1.2rem;
+}
+
+.quote-footer cite {
+    color: var(--primary-cyan);
+    font-style: normal;
+    font-weight: 600;
+}
+
+/* ===================================================================================== */
+/* TÍTULOS DE SECCIÓN MODERNOS */
+/* ===================================================================================== */
+
+.modern-section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-cyan);
+    margin: 2.5rem 0 1.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    text-shadow: 0 2px 6px rgba(0, 212, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.modern-section-title i {
+    color: var(--secondary-cyan);
+    filter: drop-shadow(0 1px 3px rgba(0, 212, 255, 0.4));
+}
+
+.modern-tech-card:hover .modern-section-title {
+    color: #ffffff;
+    text-shadow: 0 3px 8px rgba(0, 212, 255, 0.5);
+    transform: translateY(-1px);
+}
+
+/* ===================================================================================== */
+/* LISTA TECNOLÓGICA MODERNA */
+/* ===================================================================================== */
+
+.modern-tech-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.modern-tech-list li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem;
+    margin-bottom: 0.8rem;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 212, 255, 0.1);
+    border-radius: 10px;
+    color: var(--text-light);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.modern-tech-list li:hover {
+    background: rgba(0, 212, 255, 0.08);
+    border-color: rgba(0, 212, 255, 0.3);
+    transform: translateX(5px);
+}
+
+.modern-tech-list li i {
+    color: var(--primary-cyan);
+    font-size: 1.2rem;
+    filter: drop-shadow(0 1px 3px rgba(0, 212, 255, 0.3));
+    min-width: 20px;
+}
+
+/* ===================================================================================== */
+/* IMAGEN MODERNA */
+/* ===================================================================================== */
+
+.modern-image-wrapper {
+    position: relative;
+    margin: 2rem 0;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.modern-image-wrapper .modern-article-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: brightness(0.9) contrast(1.1);
+    transition: all 0.6s ease;
+}
+
+.modern-image-wrapper:hover .modern-article-image {
+    transform: scale(1.05);
+    filter: brightness(1) contrast(1.2) saturate(1.1);
+}
+
+.modern-image-wrapper .image-tech-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(23, 162, 184, 0.05) 100%);
+    transition: all 0.4s ease;
+}
+
+.modern-image-wrapper:hover .image-tech-overlay {
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.2) 0%, rgba(23, 162, 184, 0.1) 100%);
+}
+
+.image-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: var(--text-muted);
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+/* ===================================================================================== */
+/* CAJA DE CONCLUSIÓN MODERNA */
+/* ===================================================================================== */
+
+.modern-conclusion-box {
+    background: rgba(0, 212, 255, 0.08);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 2rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.modern-conclusion-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-cyan), var(--secondary-cyan));
+    animation: conclusionGlow 3s ease-in-out infinite alternate;
+}
+
+.conclusion-title {
+    color: var(--primary-cyan);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    text-shadow: 0 2px 6px rgba(0, 212, 255, 0.3);
+}
+
+.conclusion-title i {
+    color: var(--secondary-cyan);
+    filter: drop-shadow(0 1px 3px rgba(0, 212, 255, 0.4));
+}
+
+.conclusion-text {
+    color: var(--text-light);
+    line-height: 1.7;
+    margin: 0;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* ===================================================================================== */
+/* SECCIÓN SOCIAL MODERNA */
+/* ===================================================================================== */
+
+.modern-social-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    border-top: 1px solid rgba(0, 212, 255, 0.2);
+    border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+    margin: 2rem 0;
+}
+
+.social-share-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.share-label {
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icons i {
+    font-size: 1.3rem;
+    color: var(--text-muted);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 212, 255, 0.1);
+}
+
+.social-icons i:hover {
+    color: var(--primary-cyan);
+    background: rgba(0, 212, 255, 0.1);
+    border-color: rgba(0, 212, 255, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 212, 255, 0.3);
+}
+
+.bookmark-wrapper i {
+    font-size: 1.3rem;
+    color: var(--text-muted);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 212, 255, 0.1);
+}
+
+.bookmark-wrapper i:hover {
+    color: var(--primary-cyan);
+    background: rgba(0, 212, 255, 0.1);
+    border-color: rgba(0, 212, 255, 0.3);
+    transform: translateY(-3px);
+}
+
+/* ===================================================================================== */
+/* SECCIÓN DE AUTOR MODERNA */
+/* ===================================================================================== */
+
+.modern-author-section {
+    padding: 1.5rem 0;
+    margin-top: 2rem;
+}
+
+.author-info {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(0, 212, 255, 0.1);
+    border-radius: 15px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.author-info:hover {
+    background: rgba(0, 212, 255, 0.05);
+    border-color: rgba(0, 212, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.author-avatar {
+    position: relative;
+}
+
+.author-img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-cyan);
+    box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
+    filter: brightness(1.1);
+}
+
+.author-details {
+    flex: 1;
+}
+
+.author-name {
+    color: var(--primary-cyan);
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 1px 3px rgba(0, 212, 255, 0.3);
+}
+
+.author-bio {
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.5;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer del artículo */
+.article-footer {
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+/* ===================================================================================== */
+/* BOTÓN MODERNO */
+/* ===================================================================================== */
+
+.modern-back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem 2rem;
+    background: rgba(0, 212, 255, 0.2);
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(0, 212, 255, 0.4);
+    border-radius: 30px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.modern-back-btn:hover {
+    background: rgba(0, 212, 255, 0.3);
+    border-color: rgba(0, 212, 255, 0.7);
+    color: white;
+    text-decoration: none;
+    transform: translateY(-3px) translateX(-5px);
+    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+.btn-icon {
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.modern-back-btn:hover .btn-icon {
+    transform: translateX(-3px);
+}
+
+.btn-text {
+    position: relative;
+    z-index: 2;
+}
+
+.btn-glow-effect {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.modern-back-btn:hover .btn-glow-effect {
+    left: 100%;
+}
+
+/* ===================================================================================== */
+/* FOOTER MODERNO */
+/* ===================================================================================== */
+
+.modern-tech-footer {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(0, 212, 255, 0.2);
+    padding: 2rem 0;
+    margin-top: 3rem;
+    position: relative;
+}
+
+.footer-content {
+    text-align: center;
+    position: relative;
+}
+
+.footer-text {
+    color: var(--text-muted);
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.footer-decoration {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--primary-cyan), transparent);
+    margin: 1rem auto 0;
+    border-radius: 2px;
+    animation: footerGlow 4s ease-in-out infinite;
+}
+
+/* ===================================================================================== */
+/* ANIMACIONES TECNOLÓGICAS */
+/* ===================================================================================== */
+
+@keyframes gridFloat {
+    0%, 100% {
+        transform: translate(0, 0);
+        opacity: 0.6;
+    }
+    50% {
+        transform: translate(8px, -10px);
+        opacity: 0.8;
+    }
+}
+
+@keyframes particlesFloat {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    100% {
+        transform: translate(-20px, -20px) rotate(360deg);
+    }
+}
+
+@keyframes gradientShift {
+    0%, 100% {
+        opacity: 0.8;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes headerGradientShift {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+@keyframes logoShine {
+    0% {
+        transform: translateX(-100%) translateY(-100%) rotate(-45deg);
+    }
+    50% {
+        transform: translateX(0%) translateY(0%) rotate(-45deg);
+    }
+    100% {
+        transform: translateX(100%) translateY(100%) rotate(-45deg);
+    }
+}
+
+@keyframes badgeShine {
+    0% {
+        transform: translateX(-100%) translateY(-100%) rotate(-45deg);
+    }
+    50% {
+        transform: translateX(0%) translateY(0%) rotate(-45deg);
+    }
+    100% {
+        transform: translateX(100%) translateY(100%) rotate(-45deg);
+    }
+}
+
+@keyframes cardTopGlow {
+    0%, 100% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes quoteGlow {
+    0% {
+        opacity: 0.8;
+        transform: scaleY(1);
+    }
+    100% {
+        opacity: 1;
+        transform: scaleY(1.05);
+    }
+}
+
+@keyframes conclusionGlow {
+    0% {
+        opacity: 0.8;
+        transform: scaleX(1);
+    }
+    100% {
+        opacity: 1;
+        transform: scaleX(1.1);
+    }
+}
+
+@keyframes footerGlow {
+    0%, 100% {
+        opacity: 0.6;
+        transform: scaleX(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scaleX(1.2);
+    }
+}
+
+/* ===================================================================================== */
+/* RESPONSIVE DESIGN */
+/* ===================================================================================== */
+
+@media (max-width: 768px) {
+    .tech-grid-layer {
+        background-size: 50px 50px, 50px 50px, 15px 15px, 15px 15px;
+        opacity: 0.4;
+    }
+    
+    .tech-particles-layer {
+        display: none;
+    }
+    
+    .modern-news-header {
+        padding: 80px 0;
+        background-attachment: scroll;
+    }
+    
+    .modern-header-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .modern-tech-card {
+        border-radius: 15px;
+        margin: 1rem;
+    }
+    
+    .modern-tech-card:hover {
+        transform: translateY(-5px) scale(1.005);
+    }
+    
+    .modern-card-content {
+        padding: 1.5rem;
+    }
+    
+    .modern-section-title {
+        font-size: 1.3rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .lead-paragraph {
+        font-size: 1.05rem;
+        padding: 0.8rem;
+    }
+    
+    .content-paragraph {
+        font-size: 0.95rem;
+        text-align: left;
+    }
+    
+    .modern-tech-list li {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .modern-social-section {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .author-info {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .modern-back-btn {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .brand-main-text {
+        font-size: 1.2rem;
+    }
+    
+    .brand-sub-text {
+        font-size: 0.8rem;
+    }
+    
+    .brand-logo-wrapper {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .brand-logo {
+        width: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .modern-news-header {
+        padding: 60px 0;
+    }
+    
+    .main-content {
+        padding: 2rem 0;
+    }
+    
+    .modern-tech-card {
+        margin: 0.5rem;
+        border-radius: 12px;
+    }
+    
+    .modern-card-content {
+        padding: 1rem;
+    }
+    
+    .modern-section-title {
+        font-size: 1.2rem;
+    }
+    
+    .lead-paragraph {
+        font-size: 1rem;
+        padding: 0.6rem;
+        margin-bottom: 1rem;
+    }
+    
+    .content-paragraph {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+    
+    .modern-highlight-quote,
+    .modern-conclusion-box {
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+    }
+    
+    .social-icons {
+        gap: 0.5rem;
+    }
+}
+
+/* Efectos especiales al hacer hover en toda la página */
+.modern-tech-body:hover .tech-grid-layer {
+    animation-duration: 20s;
+    opacity: 0.8;
+}
+
+.modern-tech-body:hover .tech-particles-layer {
+    animation-duration: 20s;
+}
+
+.modern-tech-body:hover .tech-gradient-layer {
+    animation-duration: 25s;
+}
+    </style>
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
 </body>
 </html>

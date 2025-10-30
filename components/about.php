@@ -1,7 +1,13 @@
 <?php ?>
 <!-- Nosotros Section -->
-<section id="nosotros" class="py-3" style="background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);">
-    <div class="container">
+<section id="nosotros" class="py-3 position-relative" style="background: linear-gradient(135deg, #1a1d23 0%, #2d3748 50%, #1a202c 100%); overflow: hidden;">
+    
+    <!-- Fondo tecnológico moderno -->
+    <div class="about-tech-background"></div>
+    <div class="about-grid-overlay"></div>
+    <div class="about-floating-particles"></div>
+    
+    <div class="container position-relative" style="z-index: 10;">
         <!-- Título Elegante para Nosotros -->
         <div class="text-center mb-3">
             <div class="about-title-wrapper position-relative d-inline-block">
@@ -122,6 +128,137 @@
 
 <style>
 /* ===================================================================================== */
+/* FONDO TECNOLÓGICO MODERNO PARA NOSOTROS */
+/* ===================================================================================== */
+
+/* Fondo tecnológico principal */
+.about-tech-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    opacity: 0.6;
+    background-image: 
+        linear-gradient(rgba(0, 212, 255, 0.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 212, 255, 0.12) 1px, transparent 1px),
+        linear-gradient(rgba(23, 162, 184, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(23, 162, 184, 0.08) 1px, transparent 1px);
+    background-size: 
+        70px 70px,
+        70px 70px,
+        20px 20px,
+        20px 20px;
+    animation: aboutGridFloat 30s ease-in-out infinite;
+}
+
+.about-grid-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    opacity: 0.3;
+    background-image: 
+        radial-gradient(circle at 15% 85%, rgba(0, 212, 255, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 85% 15%, rgba(23, 162, 184, 0.12) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(111, 66, 193, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 25% 25%, rgba(0, 220, 130, 0.1) 0%, transparent 50%);
+    background-size: 
+        400px 400px,
+        350px 350px,
+        250px 250px,
+        300px 300px;
+    background-position: 
+        0 0,
+        100% 100%,
+        50% 50%,
+        25% 75%;
+    animation: aboutOverlayShift 35s ease-in-out infinite;
+}
+
+.about-floating-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.about-floating-particles::before,
+.about-floating-particles::after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: rgba(0, 212, 255, 0.7);
+    border-radius: 50%;
+    animation: aboutFloatTech 18s linear infinite;
+}
+
+.about-floating-particles::before {
+    top: 15%;
+    left: 10%;
+    box-shadow: 
+        250px 120px 0 rgba(0, 212, 255, 0.5),
+        500px 80px 0 rgba(23, 162, 184, 0.6),
+        750px 200px 0 rgba(111, 66, 193, 0.4),
+        350px 300px 0 rgba(0, 220, 130, 0.3),
+        600px 350px 0 rgba(0, 212, 255, 0.4);
+}
+
+.about-floating-particles::after {
+    top: 70%;
+    left: 80%;
+    animation-delay: -9s;
+    box-shadow: 
+        -200px -80px 0 rgba(23, 162, 184, 0.5),
+        -450px -150px 0 rgba(0, 212, 255, 0.6),
+        -300px -250px 0 rgba(111, 66, 193, 0.4),
+        -600px -100px 0 rgba(0, 220, 130, 0.3);
+}
+
+/* Animaciones tecnológicas */
+@keyframes aboutGridFloat {
+    0%, 100% {
+        transform: translate(0, 0);
+        opacity: 0.6;
+    }
+    50% {
+        transform: translate(8px, -12px);
+        opacity: 0.8;
+    }
+}
+
+@keyframes aboutOverlayShift {
+    0%, 100% {
+        background-position: 0% 0%, 100% 100%, 50% 50%, 25% 75%;
+    }
+    50% {
+        background-position: 100% 100%, 0% 0%, 25% 75%, 75% 25%;
+    }
+}
+
+@keyframes aboutFloatTech {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translateY(-20px) rotate(180deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0px) rotate(360deg);
+        opacity: 0.7;
+    }
+}
+
+/* ===================================================================================== */
 /* TÍTULO ELEGANTE PARA NOSOTROS */
 /* ===================================================================================== */
 .about-title-wrapper {
@@ -155,7 +292,7 @@
 .company-shield {
   width: 60px;
   height: 60px;
-  background: linear-gradient(135deg, #007bff 0%, #0056b3 50%, #004085 100%);
+  background: linear-gradient(135deg, #00d4ff 0%, #17a2b8 50%, #0056b3 100%);
   border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
   display: flex;
   align-items: center;
@@ -163,7 +300,7 @@
   color: white;
   font-size: 1.8rem;
   box-shadow: 
-    0 8px 25px rgba(0,123,255,0.3),
+    0 8px 25px rgba(0,212,255,0.4),
     inset 0 2px 10px rgba(255,255,255,0.2),
     inset 0 -2px 10px rgba(0,0,0,0.1);
   position: relative;
@@ -179,7 +316,7 @@
   left: -2px;
   right: -2px;
   bottom: -2px;
-  background: linear-gradient(45deg, #007bff, #17a2b8, #007bff, #0056b3);
+  background: linear-gradient(45deg, #00d4ff, #17a2b8, #00d4ff, #0056b3);
   border-radius: inherit;
   z-index: -1;
   animation: borderRotate 3s linear infinite;
@@ -198,10 +335,10 @@
 
 .about-title-main {
   font-weight: 800;
-  color: #007bff;
+  color: #00d4ff;
   display: block;
   letter-spacing: 1.5px;
-  text-shadow: 0 3px 6px rgba(0,123,255,0.15);
+  text-shadow: 0 3px 8px rgba(0,212,255,0.4), 0 0 20px rgba(0,123,255,0.3);
   line-height: 1.1;
   margin-bottom: 0.1rem;
   position: relative;
@@ -215,19 +352,20 @@
   transform: translateX(-50%);
   width: 40px;
   height: 2px;
-  background: linear-gradient(90deg, transparent 0%, #007bff 50%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, #00d4ff 50%, transparent 100%);
   opacity: 0.6;
 }
 
 .about-title-sub {
   font-weight: 600;
-  color: #495057;
+  color: #b8c5d1;
   display: block;
   font-size: 0.75em;
   font-style: italic;
-  opacity: 0.85;
+  opacity: 0.9;
   letter-spacing: 1px;
   text-transform: uppercase;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
 .title-company-line {
@@ -246,25 +384,25 @@
   left: 10px;
   right: 10px;
   height: 3px;
-  background: linear-gradient(90deg, #007bff 0%, #17a2b8 50%, #0056b3 100%);
+  background: linear-gradient(90deg, #00d4ff 0%, #17a2b8 50%, #0056b3 100%);
   border-radius: 2px;
   transform: translateY(-50%);
   animation: companyLinePulse 2.5s ease-in-out infinite;
-  box-shadow: 0 2px 8px rgba(0,123,255,0.2);
+  box-shadow: 0 2px 8px rgba(0,212,255,0.3);
 }
 
 .company-dot {
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  box-shadow: 0 3px 10px rgba(0,123,255,0.3);
+  box-shadow: 0 3px 10px rgba(0,212,255,0.4);
   z-index: 2;
   position: relative;
   border: 2px solid white;
 }
 
 .company-dot-start {
-  background: #007bff;
+  background: #00d4ff;
   animation: companyDotPulse 2s ease-in-out infinite;
 }
 
@@ -450,15 +588,40 @@
   width: 100%;
   margin: 0 auto;
   padding: 2rem 2.5rem;
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(0, 212, 255, 0.2);
   border-radius: 20px;
   box-shadow: 
-    0 8px 32px rgba(0,0,0,0.15),
-    inset 0 1px 0 rgba(255,255,255,0.2);
+    0 8px 32px rgba(0,0,0,0.3),
+    0 20px 60px rgba(0, 212, 255, 0.1),
+    inset 0 1px 0 rgba(255,255,255,0.1);
   animation: floatCard 6s ease-in-out infinite;
+  overflow: hidden;
+}
+
+.floating-info-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.6), transparent);
+  animation: cardBorderGlow 4s ease-in-out infinite;
+}
+
+.floating-info-card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent 30%, rgba(0, 212, 255, 0.03) 50%, transparent 70%);
+  transform: rotate(-45deg);
+  animation: cardShine 8s ease-in-out infinite;
 }
 
 @keyframes floatCard {
@@ -470,7 +633,31 @@
   }
 }
 
-/* Estadísticas Glass Style */
+@keyframes cardBorderGlow {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes cardShine {
+  0% {
+    transform: translateX(-100%) translateY(-100%) rotate(-45deg);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(0%) translateY(0%) rotate(-45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%) translateY(100%) rotate(-45deg);
+    opacity: 0;
+  }
+}
+
+/* Estadísticas Glass Style Modernizadas */
 .stats-section {
   margin-bottom: 1.5rem;
 }
@@ -479,101 +666,130 @@
   position: relative;
   padding: 1.2rem 0.6rem;
   border-radius: 15px;
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(0, 212, 255, 0.2);
   transition: all 0.4s ease;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  box-shadow: 
+    0 4px 15px rgba(0,0,0,0.2),
+    0 8px 25px rgba(0, 212, 255, 0.1);
+  overflow: hidden;
+}
+
+.stat-item-glass::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+  transition: left 0.6s ease;
 }
 
 .stat-item-glass:hover {
   background: rgba(255,255,255,0.15);
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0,123,255,0.2);
-  border-color: rgba(0,123,255,0.3);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 
+    0 15px 35px rgba(0,0,0,0.3),
+    0 20px 50px rgba(0, 212, 255, 0.2);
+  border-color: rgba(0, 212, 255, 0.5);
+}
+
+.stat-item-glass:hover::before {
+  left: 100%;
 }
 
 .stat-item-glass .stat-number {
-  font-size: 2.2rem !important;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  font-size: 2.5rem !important;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5), 0 0 20px rgba(0, 212, 255, 0.3);
   margin-bottom: 0.5rem;
-  filter: brightness(1.2);
+  filter: brightness(1.3);
+  transition: all 0.3s ease;
+}
+
+.stat-item-glass:hover .stat-number {
+  text-shadow: 0 4px 12px rgba(0,0,0,0.7), 0 0 30px rgba(0, 212, 255, 0.6);
+  transform: scale(1.1);
 }
 
 .stat-item-glass .stat-label {
   font-weight: 600;
   letter-spacing: 0.8px;
   text-transform: uppercase;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+  color: rgba(255,255,255,0.8) !important;
 }
 
-/* Separador Glass */
+/* Separador Glass Modernizado */
 .glass-separator {
   background: linear-gradient(90deg, 
     transparent 0%, 
-    rgba(255,255,255,0.3) 20%, 
-    rgba(0,123,255,0.5) 50%, 
-    rgba(255,255,255,0.3) 80%, 
+    rgba(0, 212, 255, 0.4) 20%, 
+    rgba(0, 212, 255, 0.8) 50%, 
+    rgba(0, 212, 255, 0.4) 80%, 
     transparent 100%);
   height: 2px !important;
   border: none !important;
   opacity: 1 !important;
-  box-shadow: 0 1px 10px rgba(0,123,255,0.3);
+  box-shadow: 0 1px 15px rgba(0, 212, 255, 0.5), 0 0 20px rgba(0, 212, 255, 0.3);
 }
 
-/* Texto Glass */
+/* Texto Glass Modernizado */
 .glass-text {
-  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  text-shadow: 0 2px 8px rgba(0,0,0,0.7);
   line-height: 1.6;
+  color: rgba(255,255,255,0.95) !important;
 }
 
 .text-white-75 {
-  color: rgba(255,255,255,0.85) !important;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+  color: rgba(255,255,255,0.9) !important;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.7);
 }
 
 .text-white-50 {
-  color: rgba(255,255,255,0.7) !important;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+  color: rgba(255,255,255,0.8) !important;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.8);
 }
 
-/* Lista Glass */
+/* Lista Glass Modernizada */
 .glass-list li {
   transition: all 0.3s ease;
   padding: 0.8rem;
   border-radius: 10px;
   margin-bottom: 0.8rem !important;
-  background: rgba(255,255,255,0.03);
-  backdrop-filter: blur(5px);
-  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 212, 255, 0.15);
 }
 
 .glass-list li:hover {
-  background: rgba(255,255,255,0.12);
-  transform: translateX(8px);
-  box-shadow: 0 4px 15px rgba(0,123,255,0.15);
-  border-color: rgba(0,123,255,0.2);
+  background: rgba(255,255,255,0.15);
+  transform: translateX(12px);
+  box-shadow: 0 6px 20px rgba(0, 212, 255, 0.25);
+  border-color: rgba(0, 212, 255, 0.4);
 }
 
 .glass-list li i {
-  filter: brightness(1.2) drop-shadow(0 1px 3px rgba(0,0,0,0.5));
+  filter: brightness(1.3) drop-shadow(0 1px 3px rgba(0,0,0,0.7));
   transition: all 0.3s ease;
 }
 
 .glass-list li:hover i {
-  transform: scale(1.15);
-  filter: brightness(1.4) drop-shadow(0 2px 6px rgba(0,0,0,0.7));
+  transform: scale(1.2);
+  filter: brightness(1.5) drop-shadow(0 2px 8px rgba(0, 212, 255, 0.5));
 }
 
-/* Caja de compromiso Glass */
+/* Caja de compromiso Glass Modernizada */
 .glass-commitment-box {
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(0, 212, 255, 0.2);
   border-radius: 15px;
   padding: 1.5rem;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
 }
 
 .glass-commitment-box::before {
@@ -585,7 +801,7 @@
   height: 100%;
   background: linear-gradient(90deg, 
     transparent 0%, 
-    rgba(255,255,255,0.1) 50%, 
+    rgba(0, 212, 255, 0.15) 50%, 
     transparent 100%);
   transition: left 0.8s ease;
 }
@@ -595,51 +811,56 @@
 }
 
 .glass-commitment-box em {
-  text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+  text-shadow: 0 2px 6px rgba(0,0,0,0.7);
   font-size: 1.05em;
+  color: rgba(255,255,255,0.95) !important;
 }
 
-/* Botones Glass */
+/* Botones Glass Modernizados */
 .btn-glass-primary {
-  background: rgba(0,123,255,0.2);
-  backdrop-filter: blur(10px);
-  border: 2px solid rgba(0,123,255,0.4);
+  background: rgba(0, 212, 255, 0.2);
+  backdrop-filter: blur(15px);
+  border: 2px solid rgba(0, 212, 255, 0.4);
   color: white;
   font-weight: 600;
   letter-spacing: 0.5px;
   transition: all 0.3s ease;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.7);
   position: relative;
   overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.2);
 }
 
 .btn-glass-primary:hover {
-  background: rgba(0,123,255,0.35);
-  border-color: rgba(0,123,255,0.6);
+  background: rgba(0, 212, 255, 0.35);
+  border-color: rgba(0, 212, 255, 0.7);
   color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0,123,255,0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 212, 255, 0.4);
+  text-shadow: 0 2px 6px rgba(0,0,0,0.8);
 }
 
 .btn-glass-success {
   background: rgba(25,135,84,0.2);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(15px);
   border: 2px solid rgba(25,135,84,0.4);
   color: white;
   font-weight: 600;
   letter-spacing: 0.5px;
   transition: all 0.3s ease;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.7);
   text-decoration: none;
+  box-shadow: 0 4px 15px rgba(25,135,84,0.2);
 }
 
 .btn-glass-success:hover {
   background: rgba(25,135,84,0.35);
-  border-color: rgba(25,135,84,0.6);
+  border-color: rgba(25,135,84,0.7);
   color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(25,135,84,0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(25,135,84,0.4);
   text-decoration: none;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.8);
 }
 
 /* Efectos adicionales */
@@ -715,6 +936,21 @@
   .stat-item-glass {
     padding: 1rem 0.5rem;
   }
+}
+
+/* Interacción con hover de sección completa */
+#nosotros:hover .about-tech-background {
+  opacity: 0.8;
+  animation-duration: 20s;
+}
+
+#nosotros:hover .about-grid-overlay {
+  opacity: 0.5;
+  animation-duration: 25s;
+}
+
+#nosotros:hover .about-floating-particles {
+  animation-duration: 12s;
 }
 </style>
 

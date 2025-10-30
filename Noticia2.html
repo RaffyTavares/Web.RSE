@@ -8,53 +8,816 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="icon" type="image/png" href="img/logo1.png">
+    <!-- Animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- AOS CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 </head>
-<body class="bg-light">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+<body class="modern-tech-body">
+    <!-- Fondo tecnológico -->
+    <div class="tech-background-overlay">
+        <div class="tech-grid-layer"></div>
+        <div class="tech-particles-layer"></div>
+        <div class="tech-gradient-layer"></div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg modern-navbar">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-                <img src="img/logo1.png" alt="Logo de Rafael Soluciones Electronica" style="width: 60px; height: auto;">
-                <b class="text-info mb-0">Rafael Soluciones Electronica</b>
+            <a class="navbar-brand d-flex align-items-center gap-3 modern-brand" href="index.php">
+                <div class="brand-logo-wrapper">
+                    <img src="img/logo1.png" alt="Logo de Rafael Soluciones Electronica" class="brand-logo">
+                </div>
+                <div class="brand-text-wrapper">
+                    <span class="brand-main-text">Rafael Soluciones</span>
+                    <span class="brand-sub-text">Electrónica</span>
+                </div>
             </a>
         </div>
     </nav>
 
-    <main class="container py-5">
+    <main class="container py-5 main-content">
         <div class="row justify-content-center">
             <div class="col-lg-8">
-                <article class="card shadow-sm animate__animated animate__fadeInUp" data-aos="fade-up" data-aos-duration="900">
-                    <img src="img/Circuit_board.jpeg" class="card-img-top" alt="Reparación de Tarjetas" style="height: 320px; object-fit: cover;">
-                    <div class="card-body">
-                        <h1 class="card-title text-info mb-3"><i class="bi bi-cpu"></i> Mejoras en la Reparación de Tarjetas Electrónicas</h1>
-                        <p class="text-muted mb-2">Publicado el 10 de Junio de 2025</p>
-                        <hr>
-                        <p class="lead">
-                            La reparación de tarjetas electrónicas para aires acondicionados inverter ha experimentado importantes avances en los últimos años. Gracias a nuevas técnicas de diagnóstico y herramientas especializadas, ahora es posible identificar y solucionar fallas con mayor precisión y rapidez.
-                        </p>
-                        <p>
-                            Los técnicos cuentan con equipos de medición avanzados que permiten detectar componentes defectuosos sin necesidad de reemplazar toda la tarjeta, lo que reduce significativamente los costos de reparación para los usuarios. Además, el acceso a manuales técnicos y diagramas actualizados facilita la localización de errores y la aplicación de soluciones específicas para cada marca y modelo.
-                        </p>
-                        <p>
-                            Otra mejora relevante es la disponibilidad de repuestos originales y compatibles en el mercado, lo que garantiza una reparación más duradera y confiable. Los talleres especializados también han implementado procesos de control de calidad más estrictos, asegurando que cada tarjeta reparada funcione correctamente antes de ser instalada nuevamente en el equipo.
-                        </p>
-                        <p>
-                            Estas innovaciones no solo benefician a los técnicos y empresas de servicio, sino también a los usuarios finales, quienes disfrutan de equipos más eficientes y con mayor vida útil.
-                        </p>
-                        <a href="index.php#noticias" class="btn btn-outline-primary mt-3 animate__animated animate__fadeInLeft" data-aos="fade-left" data-aos-delay="400"><i class="bi bi-arrow-left"></i> Volver a Noticias</a>
+                <article class="modern-tech-card animate__animated animate__fadeInUp" data-aos="fade-up" data-aos-duration="900">
+                    <div class="article-image-wrapper">
+                        <img src="img/Circuit_board.jpeg" class="modern-article-image" alt="Reparación de Tarjetas">
+                        <div class="image-tech-overlay"></div>
+                        <div class="image-gradient-border"></div>
+                    </div>
+                    <div class="modern-card-content">
+                        <div class="article-header">
+                            <h1 class="modern-article-title">
+                                <i class="bi bi-cpu title-icon"></i> 
+                                Mejoras en la Reparación de Tarjetas Electrónicas
+                            </h1>
+                            <div class="article-meta">
+                                <i class="bi bi-calendar3"></i>
+                                <span class="publish-date">Publicado el 10 de Junio de 2025</span>
+                            </div>
+                            <div class="title-separator"></div>
+                        </div>
+                        
+                        <div class="article-content">
+                            <p class="lead-paragraph">
+                                La reparación de tarjetas electrónicas para aires acondicionados inverter ha experimentado importantes avances en los últimos años. Gracias a nuevas técnicas de diagnóstico y herramientas especializadas, ahora es posible identificar y solucionar fallas con mayor precisión y rapidez.
+                            </p>
+                            <p class="content-paragraph">
+                                Los técnicos cuentan con equipos de medición avanzados que permiten detectar componentes defectuosos sin necesidad de reemplazar toda la tarjeta, lo que reduce significativamente los costos de reparación para los usuarios. Además, el acceso a manuales técnicos y diagramas actualizados facilita la localización de errores y la aplicación de soluciones específicas para cada marca y modelo.
+                            </p>
+                            <p class="content-paragraph">
+                                Otra mejora relevante es la disponibilidad de repuestos originales y compatibles en el mercado, lo que garantiza una reparación más duradera y confiable. Los talleres especializados también han implementado procesos de control de calidad más estrictos, asegurando que cada tarjeta reparada funcione correctamente antes de ser instalada nuevamente en el equipo.
+                            </p>
+                            <p class="content-paragraph">
+                                Estas innovaciones no solo benefician a los técnicos y empresas de servicio, sino también a los usuarios finales, quienes disfrutan de equipos más eficientes y con mayor vida útil.
+                            </p>
+                        </div>
+                        
+                        <div class="article-footer">
+                            <a href="index.php#noticias" class="modern-back-btn animate__animated animate__fadeInLeft" data-aos="fade-left" data-aos-delay="400">
+                                <span class="btn-icon"><i class="bi bi-arrow-left"></i></span>
+                                <span class="btn-text">Volver a Noticias</span>
+                                <div class="btn-glow-effect"></div>
+                            </a>
+                        </div>
                     </div>
                 </article>
             </div>
         </div>
     </main>
 
-    <footer class="bg-dark text-white text-center py-4 mt-5">
+    <footer class="modern-tech-footer">
         <div class="container">
-            <p class="mb-0">&copy; 2025 R.S.E | Rafael Soluciones Electrónica</p>
+            <div class="footer-content">
+                <p class="footer-text">&copy; 2025 R.S.E | Rafael Soluciones Electrónica</p>
+                <div class="footer-decoration"></div>
+            </div>
         </div>
     </footer>
 
+    <style>
+/* ===================================================================================== */
+/* ESTILOS TECNOLÓGICOS MODERNOS PARA NOTICIA */
+/* ===================================================================================== */
+
+/* Reset y variables */
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-cyan: #00d4ff;
+    --secondary-cyan: #17a2b8;
+    --dark-bg: #1a1d23;
+    --darker-bg: #0f1115;
+    --gradient-bg: linear-gradient(135deg, #1a1d23 0%, #2d3748 50%, #1a202c 100%);
+    --text-light: rgba(255, 255, 255, 0.9);
+    --text-muted: rgba(255, 255, 255, 0.7);
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(0, 212, 255, 0.2);
+}
+
+/* ===================================================================================== */
+/* FONDO TECNOLÓGICO BASE */
+/* ===================================================================================== */
+
+.modern-tech-body {
+    background: var(--gradient-bg);
+    min-height: 100vh;
+    color: var(--text-light);
+    position: relative;
+    overflow-x: hidden;
+}
+
+.tech-background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.tech-grid-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(0, 212, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 212, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(rgba(23, 162, 184, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(23, 162, 184, 0.05) 1px, transparent 1px);
+    background-size: 
+        80px 80px,
+        80px 80px,
+        20px 20px,
+        20px 20px;
+    animation: gridFloat 30s ease-in-out infinite;
+    opacity: 0.6;
+}
+
+.tech-particles-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 20%, rgba(0, 212, 255, 0.1) 1px, transparent 1px),
+        radial-gradient(circle at 80% 40%, rgba(23, 162, 184, 0.08) 1px, transparent 1px),
+        radial-gradient(circle at 40% 80%, rgba(0, 212, 255, 0.06) 1px, transparent 1px),
+        radial-gradient(circle at 90% 10%, rgba(23, 162, 184, 0.09) 1px, transparent 1px);
+    background-size: 300px 300px, 250px 250px, 200px 200px, 180px 180px;
+    animation: particlesFloat 25s linear infinite;
+}
+
+.tech-gradient-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(ellipse at top left, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse at bottom right, rgba(23, 162, 184, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at center, rgba(111, 66, 193, 0.05) 0%, transparent 50%);
+    animation: gradientShift 35s ease-in-out infinite;
+}
+
+/* ===================================================================================== */
+/* NAVBAR MODERNO */
+/* ===================================================================================== */
+
+.modern-navbar {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+    padding: 1rem 0;
+    position: relative;
+    z-index: 1000;
+}
+
+.modern-brand {
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.modern-brand:hover {
+    transform: translateY(-2px);
+}
+
+.brand-logo-wrapper {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-cyan) 0%, var(--secondary-cyan) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.brand-logo-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.2) 50%, transparent 70%);
+    transform: rotate(-45deg);
+    animation: logoShine 3s ease-in-out infinite;
+}
+
+.brand-logo {
+    width: 35px;
+    height: auto;
+    position: relative;
+    z-index: 2;
+    filter: brightness(1.2);
+}
+
+.brand-text-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-main-text {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--primary-cyan);
+    text-shadow: 0 2px 6px rgba(0, 212, 255, 0.3);
+    line-height: 1.1;
+}
+
+.brand-sub-text {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    font-style: italic;
+    letter-spacing: 0.5px;
+    margin-top: -2px;
+}
+
+.modern-brand:hover .brand-logo-wrapper {
+    transform: scale(1.05);
+    box-shadow: 0 12px 35px rgba(0, 212, 255, 0.5);
+}
+
+.modern-brand:hover .brand-main-text {
+    color: #ffffff;
+    text-shadow: 0 3px 8px rgba(0, 212, 255, 0.5);
+}
+
+/* ===================================================================================== */
+/* CONTENIDO PRINCIPAL */
+/* ===================================================================================== */
+
+.main-content {
+    position: relative;
+    z-index: 10;
+    min-height: calc(100vh - 200px);
+}
+
+/* ===================================================================================== */
+/* CARD PRINCIPAL MODERNA */
+/* ===================================================================================== */
+
+.modern-tech-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.4),
+        0 25px 80px rgba(0, 212, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+}
+
+.modern-tech-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--primary-cyan), transparent);
+    animation: cardTopGlow 4s ease-in-out infinite;
+}
+
+.modern-tech-card:hover {
+    transform: translateY(-10px) scale(1.01);
+    box-shadow: 
+        0 35px 80px rgba(0, 0, 0, 0.5),
+        0 40px 100px rgba(0, 212, 255, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    border-color: rgba(0, 212, 255, 0.4);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* ===================================================================================== */
+/* IMAGEN DEL ARTÍCULO */
+/* ===================================================================================== */
+
+.article-image-wrapper {
+    position: relative;
+    height: 350px;
+    overflow: hidden;
+}
+
+.modern-article-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.6s ease;
+    filter: brightness(0.8) contrast(1.1);
+}
+
+.modern-tech-card:hover .modern-article-image {
+    transform: scale(1.05);
+    filter: brightness(1) contrast(1.2) saturate(1.1);
+}
+
+.image-tech-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg, 
+        rgba(0, 212, 255, 0.15) 0%, 
+        rgba(23, 162, 184, 0.1) 50%, 
+        rgba(0, 212, 255, 0.05) 100%
+    );
+    transition: all 0.4s ease;
+}
+
+.modern-tech-card:hover .image-tech-overlay {
+    background: linear-gradient(
+        135deg, 
+        rgba(0, 212, 255, 0.25) 0%, 
+        rgba(23, 162, 184, 0.15) 50%, 
+        rgba(0, 212, 255, 0.1) 100%
+    );
+}
+
+.image-gradient-border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-cyan), var(--secondary-cyan), var(--primary-cyan));
+    opacity: 0.8;
+}
+
+/* ===================================================================================== */
+/* CONTENIDO DE LA CARD */
+/* ===================================================================================== */
+
+.modern-card-content {
+    padding: 2rem;
+    position: relative;
+}
+
+/* Header del artículo */
+.article-header {
+    margin-bottom: 2rem;
+}
+
+.modern-article-title {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 800;
+    color: var(--primary-cyan);
+    margin-bottom: 1rem;
+    text-shadow: 0 3px 8px rgba(0, 212, 255, 0.3);
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.title-icon {
+    font-size: 2rem;
+    color: var(--secondary-cyan);
+    filter: drop-shadow(0 2px 6px rgba(0, 212, 255, 0.4));
+    transition: all 0.3s ease;
+}
+
+.modern-tech-card:hover .modern-article-title {
+    color: #ffffff;
+    text-shadow: 0 4px 12px rgba(0, 212, 255, 0.5), 0 0 20px rgba(0, 212, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.modern-tech-card:hover .title-icon {
+    transform: scale(1.1) rotate(5deg);
+    filter: drop-shadow(0 3px 8px rgba(0, 212, 255, 0.6));
+}
+
+.article-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.article-meta i {
+    color: var(--primary-cyan);
+    filter: drop-shadow(0 1px 3px rgba(0, 212, 255, 0.3));
+}
+
+.publish-date {
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.title-separator {
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-cyan), var(--secondary-cyan));
+    border-radius: 2px;
+    margin: 1rem 0;
+    animation: separatorGlow 3s ease-in-out infinite alternate;
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+}
+
+/* Contenido del artículo */
+.article-content {
+    margin-bottom: 2rem;
+}
+
+.lead-paragraph {
+    font-size: 1.15rem;
+    font-weight: 500;
+    line-height: 1.7;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    padding-left: 1rem;
+    border-left: 3px solid var(--primary-cyan);
+    background: rgba(0, 212, 255, 0.05);
+    padding: 1rem;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.modern-tech-card:hover .lead-paragraph {
+    background: rgba(0, 212, 255, 0.1);
+    transform: translateX(5px);
+    box-shadow: 0 4px 15px rgba(0, 212, 255, 0.2);
+}
+
+.content-paragraph {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    text-align: justify;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.modern-tech-card:hover .content-paragraph {
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Footer del artículo */
+.article-footer {
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+/* ===================================================================================== */
+/* BOTÓN MODERNO */
+/* ===================================================================================== */
+
+.modern-back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem 2rem;
+    background: rgba(0, 212, 255, 0.2);
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(0, 212, 255, 0.4);
+    border-radius: 30px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.modern-back-btn:hover {
+    background: rgba(0, 212, 255, 0.3);
+    border-color: rgba(0, 212, 255, 0.7);
+    color: white;
+    text-decoration: none;
+    transform: translateY(-3px) translateX(-5px);
+    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+.btn-icon {
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.modern-back-btn:hover .btn-icon {
+    transform: translateX(-3px);
+}
+
+.btn-text {
+    position: relative;
+    z-index: 2;
+}
+
+.btn-glow-effect {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.modern-back-btn:hover .btn-glow-effect {
+    left: 100%;
+}
+
+/* ===================================================================================== */
+/* FOOTER MODERNO */
+/* ===================================================================================== */
+
+.modern-tech-footer {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(0, 212, 255, 0.2);
+    padding: 2rem 0;
+    margin-top: 3rem;
+    position: relative;
+}
+
+.footer-content {
+    text-align: center;
+    position: relative;
+}
+
+.footer-text {
+    color: var(--text-muted);
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.footer-decoration {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--primary-cyan), transparent);
+    margin: 1rem auto 0;
+    border-radius: 2px;
+    animation: footerGlow 4s ease-in-out infinite;
+}
+
+/* ===================================================================================== */
+/* ANIMACIONES TECNOLÓGICAS */
+/* ===================================================================================== */
+
+@keyframes gridFloat {
+    0%, 100% {
+        transform: translate(0, 0);
+        opacity: 0.6;
+    }
+    50% {
+        transform: translate(8px, -10px);
+        opacity: 0.8;
+    }
+}
+
+@keyframes particlesFloat {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    100% {
+        transform: translate(-20px, -20px) rotate(360deg);
+    }
+}
+
+@keyframes gradientShift {
+    0%, 100% {
+        opacity: 0.8;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes logoShine {
+    0% {
+        transform: translateX(-100%) translateY(-100%) rotate(-45deg);
+    }
+    50% {
+        transform: translateX(0%) translateY(0%) rotate(-45deg);
+    }
+    100% {
+        transform: translateX(100%) translateY(100%) rotate(-45deg);
+    }
+}
+
+@keyframes cardTopGlow {
+    0%, 100% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes separatorGlow {
+    0% {
+        opacity: 0.8;
+        transform: scaleX(1);
+    }
+    100% {
+        opacity: 1;
+        transform: scaleX(1.1);
+    }
+}
+
+@keyframes footerGlow {
+    0%, 100% {
+        opacity: 0.6;
+        transform: scaleX(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scaleX(1.2);
+    }
+}
+
+/* ===================================================================================== */
+/* RESPONSIVE DESIGN */
+/* ===================================================================================== */
+
+@media (max-width: 768px) {
+    .tech-grid-layer {
+        background-size: 50px 50px, 50px 50px, 15px 15px, 15px 15px;
+        opacity: 0.4;
+    }
+    
+    .tech-particles-layer {
+        display: none;
+    }
+    
+    .modern-tech-card {
+        border-radius: 15px;
+        margin: 1rem;
+    }
+    
+    .modern-tech-card:hover {
+        transform: translateY(-5px) scale(1.005);
+    }
+    
+    .article-image-wrapper {
+        height: 250px;
+    }
+    
+    .modern-card-content {
+        padding: 1.5rem;
+    }
+    
+    .modern-article-title {
+        font-size: 1.6rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .title-icon {
+        font-size: 1.8rem;
+    }
+    
+    .lead-paragraph {
+        font-size: 1.05rem;
+        padding: 0.8rem;
+    }
+    
+    .content-paragraph {
+        font-size: 0.95rem;
+        text-align: left;
+    }
+    
+    .modern-back-btn {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .brand-main-text {
+        font-size: 1.2rem;
+    }
+    
+    .brand-sub-text {
+        font-size: 0.8rem;
+    }
+    
+    .brand-logo-wrapper {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .brand-logo {
+        width: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-content {
+        padding: 2rem 0;
+    }
+    
+    .modern-tech-card {
+        margin: 0.5rem;
+        border-radius: 12px;
+    }
+    
+    .modern-card-content {
+        padding: 1rem;
+    }
+    
+    .article-header {
+        margin-bottom: 1.5rem;
+    }
+    
+    .article-content {
+        margin-bottom: 1.5rem;
+    }
+    
+    .article-footer {
+        padding-top: 1rem;
+    }
+    
+    .modern-article-title {
+        font-size: 1.4rem;
+    }
+    
+    .title-separator {
+        width: 80px;
+        margin: 0.8rem 0;
+    }
+    
+    .lead-paragraph {
+        font-size: 1rem;
+        padding: 0.6rem;
+        margin-bottom: 1rem;
+    }
+    
+    .content-paragraph {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Efectos especiales al hacer hover en toda la página */
+.modern-tech-body:hover .tech-grid-layer {
+    animation-duration: 20s;
+    opacity: 0.8;
+}
+
+.modern-tech-body:hover .tech-particles-layer {
+    animation-duration: 20s;
+}
+
+.modern-tech-body:hover .tech-gradient-layer {
+    animation-duration: 25s;
+}
+    </style>
+
+    <!-- AOS JS -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
       AOS.init();
