@@ -33,18 +33,77 @@
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #1a1d23;
             min-height: 100vh;
             color: var(--text-color);
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        /* Fondo Tecnológico con Cuadrícula */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #1a1d23 0%, #2d3748 50%, #1a202c 100%);
+            z-index: -3;
+        }
+        
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(rgba(0, 212, 255, 0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 212, 255, 0.08) 1px, transparent 1px),
+                radial-gradient(circle at 20% 30%, rgba(0, 212, 255, 0.1) 1px, transparent 1px),
+                radial-gradient(circle at 80% 70%, rgba(23, 162, 184, 0.08) 1px, transparent 1px);
+            background-size: 60px 60px, 60px 60px, 120px 120px, 100px 100px;
+            animation: gridFloat 25s linear infinite;
+            opacity: 0.6;
+            z-index: -2;
+        }
+        
+        @keyframes gridFloat {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(60px, 60px); }
+        }
+        
+        /* Overlay de resplandor */
+        .tech-glow-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(ellipse at top left, rgba(0, 212, 255, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at bottom right, rgba(23, 162, 184, 0.06) 0%, transparent 50%);
+            z-index: -1;
+            animation: glowPulse 8s ease-in-out infinite;
+        }
+        
+        @keyframes glowPulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
         }
 
-        /* Header Mejorado */
+        /* Header Tecnológico Moderno */
         .header-section {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            background: rgba(26, 29, 35, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 2px solid rgba(0, 212, 255, 0.3);
             color: white;
             padding: 4rem 0 2rem 0;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
         }
 
         .header-section::before {
@@ -54,13 +113,35 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="error-pattern" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M25,5 L45,25 L25,45 L5,25 Z" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/><circle cx="25" cy="25" r="3" fill="rgba(255,255,255,0.15)"/></pattern></defs><rect width="100" height="100" fill="url(%23error-pattern)"/></svg>');
-            animation: float 20s linear infinite;
+            background-image: 
+                linear-gradient(rgba(0, 212, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 212, 255, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+            animation: headerGridMove 30s linear infinite;
+            opacity: 0.5;
         }
 
-        @keyframes float {
-            0% { transform: translateX(0) translateY(0); }
-            100% { transform: translateX(-50px) translateY(-50px); }
+        @keyframes headerGridMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(40px, 40px); }
+        }
+        
+        .header-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #00d4ff, #17a2b8, #00d4ff, transparent);
+            animation: headerGlow 3s linear infinite;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.6);
+        }
+        
+        @keyframes headerGlow {
+            0% { transform: translateX(-100%); opacity: 0.5; }
+            50% { opacity: 1; }
+            100% { transform: translateX(100%); opacity: 0.5; }
         }
 
         .header-content {
@@ -71,40 +152,85 @@
         .tool-icon {
             width: 100px;
             height: 100px;
-            background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
+            background: linear-gradient(135deg, #00d4ff, #17a2b8);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 2rem auto;
-            border: 3px solid rgba(255,255,255,0.3);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            border: 3px solid rgba(0, 212, 255, 0.3);
+            box-shadow: 
+                0 15px 35px rgba(0, 0, 0, 0.5),
+                0 0 40px rgba(0, 212, 255, 0.4),
+                inset 0 0 20px rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
+            animation: iconPulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes iconPulse {
+            0%, 100% { 
+                box-shadow: 
+                    0 15px 35px rgba(0, 0, 0, 0.5),
+                    0 0 40px rgba(0, 212, 255, 0.4),
+                    inset 0 0 20px rgba(255, 255, 255, 0.1);
+            }
+            50% { 
+                box-shadow: 
+                    0 20px 45px rgba(0, 0, 0, 0.6),
+                    0 0 60px rgba(0, 212, 255, 0.6),
+                    inset 0 0 30px rgba(255, 255, 255, 0.15);
+            }
         }
 
         .page-title {
             font-family: 'Playfair Display', serif;
             font-size: 3.5rem;
             font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            background: linear-gradient(135deg, #00d4ff 0%, #17a2b8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+            filter: drop-shadow(0 2px 10px rgba(0, 212, 255, 0.4));
             margin-bottom: 1rem;
         }
 
         .page-subtitle {
             font-size: 1.3rem;
-            opacity: 0.9;
+            color: rgba(255, 255, 255, 0.85);
             margin-bottom: 2rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         }
 
-        /* Contenedor Principal */
+        /* Contenedor Principal Glassmórfico */
         .main-container {
-            background: white;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 212, 255, 0.2);
             border-radius: 25px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.5),
+                0 0 40px rgba(0, 212, 255, 0.1);
             margin: -2rem auto 3rem auto;
             position: relative;
             z-index: 3;
             overflow: hidden;
+        }
+        
+        .main-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00d4ff, transparent);
+            animation: containerShine 4s ease-in-out infinite;
+        }
+        
+        @keyframes containerShine {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
         }
 
         /* Buscador de Códigos */
@@ -504,6 +630,9 @@
 </head>
 
 <body>
+    <!-- Overlay de Resplandor Tecnológico -->
+    <div class="tech-glow-bg"></div>
+    
     <!-- Header -->
     <div class="header-section">
         <div class="container header-content text-center">

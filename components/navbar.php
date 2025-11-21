@@ -53,11 +53,11 @@
                 <!-- BLOG con submenú -->
                 <li class="nav-item dropdown menu-fade">
                     <a class="nav-link dropdown-toggle px-3 py-2 rounded-3" href="#" id="blogDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-journal-text"></i> <span>Consejos Técnicos</span>
+                        <i class="bi bi-mortarboard-fill"></i> <span>Centro de Conocimiento</span>
                     </a>
                     <ul class="dropdown-menu shadow rounded-4 border-0 mt-2" aria-labelledby="blogDropdown">
                         <li><a class="dropdown-item" href="#blog"><i class="bi bi-journal-text"></i> Blog</a></li>
-                        <li><a class="dropdown-item" href="#noticias"><i class="bi bi-newspaper"></i> Noticias</a></li>
+                        <li><a class="dropdown-item" href="#noticias"><i class="bi bi-newspaper"></i> Noticias Tech</a></li>
                         <li><a class="dropdown-item" href="recursos.html"><i class="bi bi-folder"></i> Recursos</a></li>
                     </ul>
                 </li>
